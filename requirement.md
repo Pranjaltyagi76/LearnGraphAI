@@ -8,9 +8,9 @@ This file translates [PROJECT.md](PROJECT.md) into testable requirements. IDs ar
 
 Build a personal portfolio demo of **answer → observed-performance estimate → prerequisite-aware hypothesis/evidence request → practice → distinct reassessment**. A diagnosis may abstain. Do not claim latent mastery, causal proof, or actual learning gains from synthetic demonstrations.
 
-P0 uses 12 concepts, 48 distinct questions (one diagnostic, two practice, one reassessment per concept), additional short lessons, and four synthetic profiles. Canonical IDs, graph edges, formulas, and initial thresholds are specified in PROJECT Sections 6 and 8. They need Phase 0 review and versioning before implementation.
+P0 uses 12 concepts, 72 distinct questions (one diagnostic, four practice, one reassessment per concept), additional short lessons, and four synthetic profiles. Canonical IDs, graph edges, formulas, and initial thresholds are specified in PROJECT Sections 6 and 8. They need Phase 0 review and versioning before implementation.
 
-**Known design conflict — OPEN-01:** Four questions per concept leave only one unseen item after three distinct observations qualify a supported gap, so fresh practice plus a different fresh reassessment cannot both follow that diagnosis. These counts are retained as the current baseline, not declared feasible. Resolve the content budget/evidence gate together in Phase 0, update all affected documents, and prove the required trace. Details and candidate resolutions are in [the roadmap](context/phasewise_roadmap.md).
+**Resolved design decision — OPEN-01:** The target is now six questions per concept (72 total): one diagnostic, four practice, and one reassessment. Three initial eligible observations leave two fresh practice questions and a different reassessment. The two-concept authored fixture tests this availability; the complete catalog and broader Phase 0 review remain pending. Details are in [the roadmap](context/phasewise_roadmap.md).
 
 ## 2. Functional requirements
 
@@ -18,7 +18,7 @@ P0 uses 12 concepts, 48 distinct questions (one diagnostic, two practice, one re
 | --- | --- | --- |
 | FR-01 | Enter a labeled synthetic demo without registration or personal information. | Clean-browser flow reaches each of four profiles. |
 | FR-02 | Publish a reviewed, versioned 12-node prerequisite DAG with stable IDs; separate topic membership from prerequisite edges. | Validator rejects unknown nodes, self/duplicate edges, and cycles; arrows match the defined direction. |
-| FR-03 | Author/version 48 distinct questions plus lessons with role, primary concept, contextual tags, difficulty, grading, and provenance. | Catalog validation and human content review; no repeated practice question disguised as reassessment. |
+| FR-03 | Author/version 72 distinct questions plus lessons with role, primary concept, contextual tags, difficulty, grading, and provenance. | Catalog validation and human content review; no repeated practice question disguised as reassessment. |
 | FR-04 | Keep canonical seeds immutable; isolate each browser's visitor events by profile and published versions. | Independent browser contexts do not share mutations; no public seed update endpoint. |
 | FR-05 | Resume local progress after refresh, handle concurrent tabs, and reset only local changes. | Browser tests cover refresh, reset, stale writes, and unavailable storage with a session-only notice. |
 | FR-06 | Validate response events and derive grades/tags/difficulty/attempt counts from server-owned catalog data. | Malformed/forged metadata is rejected; correct and incorrect grading fixtures pass. |

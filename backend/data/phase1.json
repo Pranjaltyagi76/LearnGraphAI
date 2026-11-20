@@ -1,0 +1,542 @@
+{
+  "release_id": "phase1-v1",
+  "schema_version": 1,
+  "stage": "phase1",
+  "curriculum_target_questions": 72,
+  "scope": "Two-concept feasibility slice; full catalog, diagnosis and replay are later phases.",
+  "concepts": [
+    {
+      "id": "function_calls",
+      "definition": "Follow arguments, return values, and execution across function calls."
+    },
+    {
+      "id": "call_stack",
+      "definition": "Track active calls and how returns unwind them."
+    },
+    {
+      "id": "base_cases",
+      "definition": "Identify stopping conditions and boundary behavior in recursion."
+    },
+    {
+      "id": "recursive_progress",
+      "definition": "Verify that recursive calls move toward a stopping condition."
+    },
+    {
+      "id": "recursive_tracing",
+      "definition": "Trace a recursive computation using calls, progress, and base cases."
+    },
+    {
+      "id": "recurrence_relations",
+      "definition": "Express a problem in terms of smaller instances and boundary conditions."
+    },
+    {
+      "id": "overlapping_subproblems",
+      "definition": "Recognize repeated equivalent subproblems."
+    },
+    {
+      "id": "state_definition",
+      "definition": "Define the information needed to identify a subproblem."
+    },
+    {
+      "id": "state_transitions",
+      "definition": "Relate a state to the states used to compute it."
+    },
+    {
+      "id": "dp_base_cases",
+      "definition": "Initialize valid boundary states in a DP formulation."
+    },
+    {
+      "id": "memoization",
+      "definition": "Cache results using a correct state key in top-down evaluation."
+    },
+    {
+      "id": "tabulation",
+      "definition": "Evaluate DP states in an order that makes dependencies available."
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite": "function_calls",
+      "dependent": "call_stack"
+    },
+    {
+      "prerequisite": "function_calls",
+      "dependent": "base_cases"
+    },
+    {
+      "prerequisite": "base_cases",
+      "dependent": "recursive_progress"
+    },
+    {
+      "prerequisite": "call_stack",
+      "dependent": "recursive_tracing"
+    },
+    {
+      "prerequisite": "base_cases",
+      "dependent": "recursive_tracing"
+    },
+    {
+      "prerequisite": "recursive_progress",
+      "dependent": "recursive_tracing"
+    },
+    {
+      "prerequisite": "recursive_tracing",
+      "dependent": "recurrence_relations"
+    },
+    {
+      "prerequisite": "recursive_tracing",
+      "dependent": "overlapping_subproblems"
+    },
+    {
+      "prerequisite": "recurrence_relations",
+      "dependent": "state_definition"
+    },
+    {
+      "prerequisite": "state_definition",
+      "dependent": "state_transitions"
+    },
+    {
+      "prerequisite": "base_cases",
+      "dependent": "dp_base_cases"
+    },
+    {
+      "prerequisite": "state_definition",
+      "dependent": "dp_base_cases"
+    },
+    {
+      "prerequisite": "overlapping_subproblems",
+      "dependent": "memoization"
+    },
+    {
+      "prerequisite": "state_transitions",
+      "dependent": "memoization"
+    },
+    {
+      "prerequisite": "dp_base_cases",
+      "dependent": "memoization"
+    },
+    {
+      "prerequisite": "state_transitions",
+      "dependent": "tabulation"
+    },
+    {
+      "prerequisite": "dp_base_cases",
+      "dependent": "tabulation"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "demo_base_cases",
+      "name": "Mira",
+      "synthetic": true,
+      "summary": "Strong function-call evidence; base-case reasoning needs practice.",
+      "focus_concept_id": "base_cases"
+    }
+  ],
+  "seed_events": [
+    {
+      "activity_id": "function_calls_diagnostic_01",
+      "activity_version": 1,
+      "option_id": "b",
+      "hints_used": 0,
+      "sequence_number": 1
+    },
+    {
+      "activity_id": "function_calls_practice_01",
+      "activity_version": 1,
+      "option_id": "c",
+      "hints_used": 0,
+      "sequence_number": 2
+    },
+    {
+      "activity_id": "function_calls_practice_02",
+      "activity_version": 1,
+      "option_id": "d",
+      "hints_used": 0,
+      "sequence_number": 3
+    },
+    {
+      "activity_id": "base_cases_diagnostic_01",
+      "activity_version": 1,
+      "option_id": "b",
+      "hints_used": 0,
+      "sequence_number": 4
+    },
+    {
+      "activity_id": "base_cases_practice_01",
+      "activity_version": 1,
+      "option_id": "a",
+      "hints_used": 0,
+      "sequence_number": 5
+    },
+    {
+      "activity_id": "base_cases_practice_02",
+      "activity_version": 1,
+      "option_id": "a",
+      "hints_used": 0,
+      "sequence_number": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "function_calls_diagnostic_01",
+      "version": 1,
+      "concept_id": "function_calls",
+      "role": "diagnostic",
+      "difficulty": 0.2,
+      "prompt": "What does this program print?",
+      "code": "def double(n):\n    return n * 2\n\nprint(double(3))",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "6"
+        },
+        {
+          "id": "c",
+          "text": "9"
+        },
+        {
+          "id": "d",
+          "text": "Nothing"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The argument 3 becomes n; double returns 6, which print displays.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "function_calls_practice_01",
+      "version": 1,
+      "concept_id": "function_calls",
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "Which value is returned?",
+      "code": "def add_one(n):\n    return n + 1\n\nadd_one(4)",
+      "options": [
+        {
+          "id": "a",
+          "text": "4"
+        },
+        {
+          "id": "b",
+          "text": "None"
+        },
+        {
+          "id": "c",
+          "text": "5"
+        },
+        {
+          "id": "d",
+          "text": "1"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The function returns 4 + 1 = 5; returning and printing are different actions.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "function_calls_practice_02",
+      "version": 1,
+      "concept_id": "function_calls",
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "What is printed after the nested calls return?",
+      "code": "def double(n):\n    return n * 2\n\nprint(double(double(2)))",
+      "options": [
+        {
+          "id": "a",
+          "text": "4"
+        },
+        {
+          "id": "b",
+          "text": "6"
+        },
+        {
+          "id": "c",
+          "text": "2"
+        },
+        {
+          "id": "d",
+          "text": "8"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "The inner call returns 4, and the outer call doubles it to 8.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "function_calls_practice_03",
+      "version": 1,
+      "concept_id": "function_calls",
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "In what order does output appear?",
+      "code": "def mark():\n    print(\"A\")\n    return 7\n\nprint(mark())",
+      "options": [
+        {
+          "id": "a",
+          "text": "A, then 7"
+        },
+        {
+          "id": "b",
+          "text": "7, then A"
+        },
+        {
+          "id": "c",
+          "text": "Only A"
+        },
+        {
+          "id": "d",
+          "text": "Only 7"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "mark prints A before it returns 7 to the outer print.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "function_calls_practice_04",
+      "version": 1,
+      "concept_id": "function_calls",
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "What value is assigned to value?",
+      "code": "def show(n):\n    print(n)\n\nvalue = show(3)",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "None"
+        },
+        {
+          "id": "c",
+          "text": "0"
+        },
+        {
+          "id": "d",
+          "text": "An empty string"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "Without an explicit return, a Python function returns None even if it prints output.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "function_calls_reassessment_01",
+      "version": 1,
+      "concept_id": "function_calls",
+      "role": "reassessment",
+      "difficulty": 0.4,
+      "prompt": "What does this different composition print?",
+      "code": "def plus_two(n):\n    return n + 2\n\nprint(plus_two(plus_two(1)))",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "4"
+        },
+        {
+          "id": "c",
+          "text": "5"
+        },
+        {
+          "id": "d",
+          "text": "6"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The inner call returns 3 and the outer call returns 5.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "base_cases_diagnostic_01",
+      "version": 1,
+      "concept_id": "base_cases",
+      "role": "diagnostic",
+      "difficulty": 0.2,
+      "prompt": "Which condition stops this sum at the empty prefix?",
+      "code": "def total(n):\n    if CONDITION:\n        return 0\n    return n + total(n - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "n == 0"
+        },
+        {
+          "id": "b",
+          "text": "n > 0"
+        },
+        {
+          "id": "c",
+          "text": "n == -1"
+        },
+        {
+          "id": "d",
+          "text": "n == 2"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "At n == 0, no positive integers remain to add. Returning 0 stops recursion.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "base_cases_practice_01",
+      "version": 1,
+      "concept_id": "base_cases",
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "What is count(3)?",
+      "code": "def count(n):\n    if n == 0:\n        return 0\n    return 1 + count(n - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "3"
+        },
+        {
+          "id": "d",
+          "text": "4"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The base case contributes 0; three preceding calls each add 1.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "base_cases_practice_02",
+      "version": 1,
+      "concept_id": "base_cases",
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "Which result belongs in the factorial base case?",
+      "code": "def factorial(n):\n    if n == 0:\n        return RESULT\n    return n * factorial(n - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "n - 1"
+        },
+        {
+          "id": "d",
+          "text": "None"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The product of no factors is 1; returning 0 would erase every recursive product.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "base_cases_practice_03",
+      "version": 1,
+      "concept_id": "base_cases",
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "Which return value handles both Fibonacci boundary inputs?",
+      "code": "def fib(n):\n    if n <= 1:\n        return RESULT\n    return fib(n - 1) + fib(n - 2)",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "n"
+        },
+        {
+          "id": "d",
+          "text": "n + 1"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "Returning n gives fib(0) = 0 and fib(1) = 1 without another call.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "base_cases_practice_04",
+      "version": 1,
+      "concept_id": "base_cases",
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "Which condition stops this recursive list length?",
+      "code": "def length(items):\n    if CONDITION:\n        return 0\n    return 1 + length(items[1:])",
+      "options": [
+        {
+          "id": "a",
+          "text": "len(items) == 1"
+        },
+        {
+          "id": "b",
+          "text": "len(items) > 0"
+        },
+        {
+          "id": "c",
+          "text": "items is None"
+        },
+        {
+          "id": "d",
+          "text": "len(items) == 0"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "An empty list has length 0 and is the state reached after removing all elements.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    },
+    {
+      "id": "base_cases_reassessment_01",
+      "version": 1,
+      "concept_id": "base_cases",
+      "role": "reassessment",
+      "difficulty": 0.4,
+      "prompt": "What should power(base, 0) return?",
+      "code": "def power(base, exponent):\n    if exponent == 0:\n        return RESULT\n    return base * power(base, exponent - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "base"
+        },
+        {
+          "id": "b",
+          "text": "0"
+        },
+        {
+          "id": "c",
+          "text": "1"
+        },
+        {
+          "id": "d",
+          "text": "exponent - 1"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "For a nonzero base, exponent zero contributes the multiplicative identity 1 and stops recursion.",
+      "provenance": "Original LearnGraph AI authored content, 2026-11-20"
+    }
+  ]
+}

@@ -13,7 +13,7 @@ User instructions take precedence. Keep the requirements, detailed specification
 ## Non-negotiable project constraints
 
 - Recurring service budget: ₹0 / $0. No paid plan, API, GPU, domain, automatic top-up, or reliance on expiring credits. No payment setup without a new explicit user instruction changing this constraint.
-- P0: 12 concepts, 48 distinct questions plus lessons, four synthetic profiles, anonymous browser-local sandboxes, deterministic FastAPI analysis, and a real practice/reassessment loop.
+- P0: 12 concepts, 72 distinct questions plus lessons, four synthetic profiles, anonymous browser-local sandboxes, deterministic FastAPI analysis, and a real practice/reassessment loop.
 - Default hosting: two Vercel Hobby projects and Supabase Free, verified early. Render Free is only an alternative; no paid fallback.
 - No real student data, public signup, arbitrary code execution, LLM dependency, hosted training, or required BKT/DKT in P0.
 - Never invent benchmark numbers, screenshots of nonexistent behavior, deployment URLs, completed tasks, or learning gains.

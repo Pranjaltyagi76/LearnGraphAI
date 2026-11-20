@@ -43,7 +43,7 @@ No raw answers, credential values, raw IP/client identifiers, or future personal
 | Malformed/oversized bodies and invalid versions | Early rejection cost and safe errors. |
 | Unavailable/stale DB connections, paused DB, slow dependency | Timeouts, cleanup, `503`, pending preservation, fallback. |
 
-The catalog/evidence conflict OPEN-01 must be resolved before claiming a complete end-to-end practice/reassessment load scenario. Computational fixtures can be profiled earlier but are not proof of content feasibility.
+OPEN-01 is resolved by the 72-question target and authored-slice item-availability test. Complete practice/reassessment load measurements still require the full implemented loop; computational fixtures alone are not end-to-end evidence.
 
 ## 4. Test sequence and free-budget guard
 
@@ -99,7 +99,7 @@ Keep attempted/failed runs visible. A change in machine, region, fixture, or met
 | --- | --- | --- |
 | Documentation foundation, 2026-11-20 | Requirements/budget/protocol design only | No performance pass/fail; nothing measured. |
 | Phase 1 deployment viability | Not run | Pending code, hosting, and actual measurements. |
-| Phase 3 complete learning loop | Not run | Pending OPEN-01 resolution and implementation. |
+| Phase 3 complete learning loop | Not run | Pending full learning-loop implementation. |
 | Phase 5 release review | Not run | Release not ready. |
 
 Future reviewers must update this ledger from real execution. Do not replace `not measured` with guessed production numbers or promise always-on free hosting.

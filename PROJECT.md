@@ -120,7 +120,7 @@ The landing page and bundled example views remain available without live API/dat
 ### P0 — Required for the first deployed release
 
 - Four synthetic profiles: supported prerequisite weakness, target-skill weakness with secure prerequisites, sparse/unknown evidence, and ambiguous/noisy performance.
-- A 12-concept recursion/introductory-DP curriculum and 48 distinct authored questions, plus short linked lessons.
+- A 12-concept recursion/introductory-DP curriculum and 72 distinct authored questions, plus short linked lessons.
 - Immutable seeds, isolated local sandboxes, refresh/resume, and local reset.
 - Validated event replay, backend grading, deterministic deduplication, and bounded requests.
 - Baseline performance estimates with distinct-activity counts and evidence labels.
@@ -211,7 +211,7 @@ Graph validation must reject unknown IDs, self-edges, duplicate edges, and prere
 
 ### Activity catalog
 
-- Author **48 distinct questions**: one diagnostic, two practice, and one reassessment item per concept. Short lessons are additional catalog entries and do not count as answered evidence.
+- Author **72 distinct questions**: one diagnostic, four practice, and one reassessment item per concept. Short lessons are additional catalog entries and do not count as answered evidence.
 - Each question has exactly one primary assessed concept. Secondary concepts are context tags and receive no baseline correctness update.
 - Record stable activity ID, immutable activity version, role, primary/secondary concepts, authored difficulty in `[0,1]`, answer options, grading rule, explanation, and content provenance/license.
 - Use multiple-choice, code-tracing, and bug-identification questions. Display code as text; never execute user code.
@@ -219,9 +219,9 @@ Graph validation must reject unknown IDs, self-edges, duplicate edges, and prere
 - Mark content intended to be answerable with only assumed entry skills as `foundational`; this permits entry diagnostics without pretending all their prerequisites have already been measured.
 - Write original questions/lessons or link to resources with appropriate attribution. Do not copy proprietary question banks.
 - The public source repository may contain authored grading rules. This is an inspectable educational demo, not a secure examination system: withholding future answers from the normal API/UI is a teaching behavior, not a claim that a determined visitor cannot find them in source.
-- The 48-item catalog demonstrates a bounded loop; it is not enough to claim robust psychometric assessment. When unseen items are exhausted, say so and offer a clearly labeled review rather than fabricating fresh evidence.
+- The 72-item catalog demonstrates a bounded loop; it is not enough to claim robust psychometric assessment. When unseen items are exhausted, say so and offer a clearly labeled review rather than fabricating fresh evidence.
 
-**Open Phase 0 feasibility issue (OPEN-01):** The four-question-per-concept budget conflicts with the three-distinct-observation gate for a supported diagnosis: after qualification only one fresh item remains, while fresh practice plus a different fresh reassessment needs two. The budget and evidence rules are not yet jointly validated. Phase 0 must resolve this explicitly (for example, a reviewed larger catalog or a defensible revised evidence gate), update all affected requirements/configuration, and demonstrate a feasible trace before implementation proceeds beyond the design gate. No option is silently adopted. See [the operational roadmap](context/phasewise_roadmap.md).
+**Resolved budget decision (OPEN-01, 20 November 2026):** Increase the target to 72 questions, six per concept: one diagnostic, four practice, and one reassessment. Three initial eligible items can leave two fresh practice questions and a distinct reassessment. The authored two-concept Phase 1 fixture and its catalog test prove this item-availability trace; the full 72-item catalog still needs authoring/review. This budget does not guarantee threshold crossing, educational benefit, or unlimited fresh content. See [the operational roadmap](context/phasewise_roadmap.md).
 
 ---
 
@@ -724,12 +724,12 @@ All tasks below are planned and unchecked. No provider provisioning or deploymen
 ### Phase 0 — Freeze the focused product and data contracts
 
 - [ ] Review the 12 canonical concepts, entry assumptions, definitions, and proposed prerequisite edges.
-- [ ] Resolve OPEN-01: jointly validate the distinct-item budget, supported-evidence gate, and fresh practice/reassessment path; update all affected totals/rules.
+- [x] Resolve OPEN-01 with the 72-question decision and a tested two-concept fresh-item trace; full catalog authoring remains pending.
 - [ ] Validate IDs, edge direction, graph acyclicity, and topic-versus-skill separation.
 - [ ] Define activity roles, authored grading, event/replay rules, and version/digest contracts.
 - [ ] Review initial evidence thresholds, diagnosis factors, recommendation rules, and exhaustion behavior.
 - [ ] Define immutable demo seeds, browser isolation/reset, and unavailable-service behavior.
-- [ ] Plan the 48 questions and short lessons; author a small first slice before the deployment check.
+- [ ] Plan the 72 questions and short lessons; author a small first slice before the deployment check.
 - [ ] Freeze benchmark split/labeling principles and the P0/P1/P2 boundary.
 - [ ] Record the strict ₹0 provider policy and planned request/retention limits.
 
@@ -774,7 +774,7 @@ All tasks below are planned and unchecked. No provider provisioning or deploymen
 
 ### Phase 4 — Complete P0 content and learner experience
 
-- [ ] Finish and review all 48 distinct questions and linked lessons across 12 concepts.
+- [ ] Finish and review all 72 distinct questions and linked lessons across 12 concepts.
 - [ ] Seed all four contrasting learner profiles and their versioned histories.
 - [ ] Add dashboard, prerequisite graph/list, diagnosis detail, plan locks, and reassessment view.
 - [ ] Cover unknown, early, ambiguous, no-supported-gap, no-suitable-item, and catalog-exhausted states.
@@ -832,7 +832,7 @@ All tasks below are planned and unchecked. No provider provisioning or deploymen
 ### Content, isolation, and live loop
 
 - [ ] Four contrasting synthetic profiles and 12 canonical concepts are available.
-- [ ] The 48 authored questions have valid primary tags, roles, grading, and versions; lessons remain ungraded context.
+- [ ] The 72 authored questions have valid primary tags, roles, grading, and versions; lessons remain ungraded context.
 - [ ] Prerequisite edges reference known nodes, contain no cycles, and render in the correct direction.
 - [ ] Two separate browser contexts have independent progress; neither can modify canonical seeds.
 - [ ] Refresh restores local progress; reset restores only that local profile; unavailable storage produces a clear session-only notice.
@@ -914,7 +914,7 @@ Add measured metrics only after experiments. Mention BKT or other advanced model
 | Frontend | Next.js/TypeScript/Tailwind on Vercel Hobby. |
 | API | Lightweight FastAPI on a second Vercel Hobby project, verified early; Render Free is an alternative only. |
 | Database | Supabase Free for canonical data and quotas; visitor history stays local for P0. |
-| Curriculum | 12 recursion/introductory-DP concepts, 48 distinct questions, short lessons, and four synthetic profiles. |
+| Curriculum | 12 recursion/introductory-DP concepts, 72 distinct questions, short lessons, and four synthetic profiles. |
 | Graph | Reviewed prerequisite DAG with canonical IDs; no graph database. |
 | Baseline | Transparent observed-performance estimate and explicit evidence eligibility/states. |
 | Live consistency | Bounded stateless replay, deterministic grading/deduplication, and one versioned analysis bundle. |

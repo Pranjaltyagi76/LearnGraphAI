@@ -1,6 +1,6 @@
 # Phasewise roadmap
 
-**Updated:** 20 November 2026. **Current stage:** Documentation foundation; application Phase 0 remains open. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
+**Updated:** 20 November 2026. **Current stage:** Phase 1 scaffold/verification in progress at the user’s request; remaining Phase 0 contract/content review is not marked complete. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
 
 This is the operational handoff/status document. Check an item only after its stated artifact or verification exists. Drafting this context does not create the application, validate a model, provision a service, or pass a release gate.
 
@@ -10,22 +10,22 @@ This is the operational handoff/status document. Check an item only after its st
 | --- | --- |
 | Git | Local `main`, origin points to the owner's LearnGraphAI repository; configured owner author/committer identity. Delivery evidence is Git history and the remote branch, not an invented hash here. |
 | Specification | Revised PROJECT.md plus requirements and context references. |
-| Code/dependencies | No frontend/backend code or manifests yet. |
-| Curriculum | Proposed 12 concepts/17 edges only; no authored catalog or reviewed data artifacts. |
-| Services | No Vercel/Supabase/Render resource provisioned by this work; no live URL. |
-| Benchmarks/performance | Procedures and proposed budgets only; no measurements. |
-| Next action | Resolve the content/evidence reachability conflict, then review/freeze the Phase 0 contracts and first authored slice. |
+| Code/dependencies | Next.js/FastAPI scaffold and pinned lockfiles exist; full diagnosis/replay remains Phase 2. |
+| Curriculum | Proposed 12 concepts/17 edges and an authored two-concept, 12-question feasibility slice; complete 72-item catalog pending. |
+| Services | Two Vercel projects created in the user-confirmed Hobby team; Supabase installation/connection is pending. Live database gate remains open. |
+| Benchmarks/performance | Ten API contract/content tests pass; frontend lint/typecheck/build pass. No model-quality benchmark or live database timing yet. |
+| Next action | Complete remaining Phase 0 contract/content review; finish Phase 1 infrastructure verification when Supabase is connected. |
 
-## 2. Phase 0 design blocker — OPEN-01
+## 2. Resolved content-budget decision — OPEN-01
 
-The agreed budget is four distinct questions per concept (48 total). The supported-gap rule requires at least three eligible distinct first responses. Once a concept qualifies, at most one unused item remains, but a fresh practice item **and** a different fresh reassessment item require two. Repeated/hinted attempts cannot legitimately repair this evidence budget.
+On 20 November 2026 the accepted direction changed the target from 48 to **72 questions**: six per concept (one diagnostic, four practice, one reassessment). The supported-evidence minimum stays at three distinct eligible first responses. Three initial observations can therefore leave two unused practice items and a distinct unused reassessment.
 
-Do not mark the live loop/content design ready until this is resolved consistently. Candidate resolutions to evaluate are expanding the item budget (at least five questions per concept for the minimum one-fresh-practice-plus-reassessment path) or revising and validating the evidence gate. Neither alternative is silently adopted by this context setup. If expanding content is chosen, five items per concept is only a minimum for that path, not enough for unlimited recovery or guaranteed threshold crossing.
+- [x] Record the budget decision consistently in PROJECT, requirements, and context.
+- [x] Author 12 questions across `function_calls` and `base_cases`, with three initial responses and three unused items per concept.
+- [x] Pass the catalog feasibility test in `backend/tests/test_api.py` proving two remaining practice questions and one reassessment per authored concept.
+- [ ] Author/review the complete 72-item catalog and demonstrate the complete learning loop in its implementation phase.
 
-- [ ] Construct per-profile/per-gap evidence traces showing counted history, remaining practice, and distinct reassessment.
-- [ ] Select a defensible resolution; do not count lessons, secondary tags, or repeats as new question evidence.
-- [ ] Update PROJECT, requirements, content totals/roles, algorithm configuration, benchmark fixtures, and context together.
-- [ ] Include a feasible diagnostic → diagnosis → fresh practice → fresh reassessment trace in the Phase 0 exit evidence.
+This closes the item-budget conflict for the proposed design and authored slice, not the full Phase 0 gate, full curriculum, or diagnosis/reassessment implementation. More questions do not guarantee learning or readiness-threshold crossing.
 
 ## 3. Documentation foundation
 
@@ -43,7 +43,7 @@ Checkmarks above mean documentation/configuration exists. They do not mean propo
 
 Requirements: FR-02/03/06–11/18, NFR-01/03/09.
 
-- [ ] Resolve OPEN-01 and update all affected totals/rules.
+- [x] Resolve OPEN-01 and update the target budget; verify item availability in the authored two-concept slice.
 - [ ] Review canonical concepts, prerequisite rationale, entry assumptions, and DAG validation rules.
 - [ ] Author/review a small content slice with valid primary tags, grading, roles, and provenance.
 - [ ] Freeze event envelopes, strict schemas, version manifest, digest canonicalization, timestamp policy, and error contracts.
@@ -58,13 +58,13 @@ Requirements: FR-02/03/06–11/18, NFR-01/03/09.
 
 Requirements: FR-19, NFR-01–06/08/10/11.
 
-- [ ] Create minimal frontend/backend scaffolds with verified supported pinned versions and lockfiles.
-- [ ] Add verified local setup commands and placeholder-only environment documentation.
+- [x] Create minimal frontend/backend scaffolds with verified supported pinned versions and lockfiles.
+- [x] Add verified local setup commands and placeholder-only environment documentation.
 - [ ] Configure two Vercel Hobby projects and Supabase Free without paid billing, using correct repository roots.
 - [ ] Apply minimal canonical/quota migrations; verify least-privilege reads and atomic guard behavior.
 - [ ] Verify FastAPI entrypoint, shared source packaging, transaction pooling/TLS, CORS, and production environment ownership.
 - [ ] Exercise browser → API → database → response; measure bundle/cold/warm behavior.
-- [ ] Implement health/readiness and clear unavailable/example states.
+- [x] Implement health/readiness and clear unavailable/example states; hosted database readiness still pending.
 - [ ] Record actual runtime/limits/URLs/checks in deployment and performance documents.
 - [ ] Test Render Free only if the preferred free API path fails its measured viability gate.
 
@@ -147,6 +147,6 @@ At meaningful milestones record: date, phase/task IDs, changed behavior, commit 
 
 | Date | Work | Evidence/status | Next step |
 | --- | --- | --- | --- |
-| 2026-11-20 | Specification and development context foundation | Documentation only; Git history records delivery. OPEN-01 identified; no runtime/benchmark evidence. | Resolve OPEN-01 and complete Phase 0. |
+| 2026-11-20 | Specification and development context foundation | Documentation only; Git history records delivery. OPEN-01 identified; no runtime/benchmark evidence. | Complete Phase 0 review and the Phase 1 live database gate. |
 
 Before a future batch, read [AGENTS.md](../AGENTS.md), inspect working-tree/remote state, and select a coherent slice. Preserve user changes. Deliver authorized work in 4–6 meaningful commits where the scope supports it, using the owner's configured author/committer and no assistant co-author trailers.

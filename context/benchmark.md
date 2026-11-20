@@ -12,7 +12,7 @@ Benchmark quality here means prediction/diagnosis/recommendation behavior. Runti
 4. Do retries, hints, sparse histories, misleading tags, and generator changes expose systematic failures?
 5. Can a profile actually complete fresh practice and distinct reassessment under the content/evidence budget?
 
-Question 5 currently has an unresolved feasibility blocker: see OPEN-01 in [phasewise_roadmap.md](phasewise_roadmap.md). Do not claim an end-to-end benchmark passes while the catalog cannot supply the required fresh items.
+Question 5 led to the resolved 72-question budget decision OPEN-01 in [phasewise_roadmap.md](phasewise_roadmap.md). The authored slice proves remaining-item availability; a complete live-loop benchmark still needs the actual algorithm and full content.
 
 ## 2. Dataset separation
 
@@ -129,7 +129,7 @@ Avoid committing raw large sequences or private records. Small aggregate metrics
 | Prediction baselines | Not implemented/run | Not measured. |
 | Diagnosis holdout | Not authored/run | Not measured. |
 | Recommendation comparisons | Not implemented/run | Not measured. |
-| Fresh practice/reassessment feasibility | Design conflict identified | OPEN-01 blocks Phase 0 exit until resolved. |
+| Fresh practice/reassessment feasibility | OPEN-01 budget resolved; authored-slice test passes | Full catalog/live-loop evidence pending. |
 | Robustness/leakage checks | Not implemented/run | No passing claim. |
 | Real learning benefit | No study | No claim. |
 
