@@ -1,0 +1,48 @@
+# Secrets and provider-local state
+.env
+.env.*
+!.env.example
+!.env.*.example
+.vercel/
+*.pem
+*.key
+
+# Python/local research
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+mlruns/
+mlartifacts/
+
+# Frontend/generated output
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+# Datasets, local databases, uploads, caches
+data/raw/
+data/processed/
+uploads/
+model_cache/
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# Machine-local files
+.DS_Store
+Thumbs.db
+Desktop.ini
