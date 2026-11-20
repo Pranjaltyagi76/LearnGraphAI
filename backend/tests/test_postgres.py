@@ -10,6 +10,8 @@ import psycopg
 import pytest
 from psycopg.types.json import Jsonb
 
+from scripts.verify_runtime import content_hash, inspect_runtime
+
 ROOT = Path(__file__).parents[1]
 pytestmark = pytest.mark.integration
 
@@ -87,3 +89,21 @@ def test_published_content_is_immutable_even_for_seed_owner(database):
             "UPDATE learngraph.releases SET content_hash = %s WHERE id = %s",
             ("b" * 64, "phase1-test"),
         )
+
+
+def test_runtime_audit_rejects_owner_and_detects_content_mismatch(database):
+    payload = json.loads((ROOT / "data/phase1.json").read_text())
+    payload["release_id"] = "audit-" + str(uuid4())
+    with psycopg.connect(database) as conn:
+        conn.execute(
+            "INSERT INTO learngraph.releases(id,content_hash,payload) VALUES (%s,%s,%s)",
+            (payload["release_id"], content_hash(payload), Jsonb(payload)),
+        )
+        owner = inspect_runtime(conn, payload)
+        assert not owner["unprivileged_role"]
+        assert not owner["runtime_grants"]
+        assert not owner["separate_owner_and_hardened_guard"]
+        conn.execute("SET LOCAL ROLE learngraph_runtime")
+        assert all(inspect_runtime(conn, payload).values())
+        changed = {**payload, "profiles": []}
+        assert not inspect_runtime(conn, changed)["source_matches_published_release"]
