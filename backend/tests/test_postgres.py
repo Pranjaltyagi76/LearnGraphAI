@@ -107,3 +107,25 @@ def test_runtime_audit_rejects_owner_and_detects_content_mismatch(database):
         assert all(inspect_runtime(conn, payload).values())
         changed = {**payload, "profiles": []}
         assert not inspect_runtime(conn, changed)["source_matches_published_release"]
+
+
+def test_analysis_package_round_trips_exact_bytes_through_restricted_sql(database):
+    from app.published import payload_hash, publication_input, unpack
+
+    payload = publication_input(ROOT.parent)
+    digest = payload_hash(payload)
+    release_id = payload["manifest"]["identity"]["release_id"]
+    with psycopg.connect(database) as conn:
+        conn.execute(
+            "INSERT INTO learngraph.releases(id,content_hash,payload) VALUES (%s,%s,%s) "
+            "ON CONFLICT DO NOTHING",
+            (release_id, digest, Jsonb(payload)),
+        )
+        conn.execute("SET LOCAL ROLE learngraph_runtime")
+        row = conn.execute(
+            "SELECT content_hash,payload FROM learngraph.releases WHERE id=%s", (release_id,)
+        ).fetchone()
+        assert row[0] == digest and row[1] == payload
+        package = unpack(row[1], row[0])
+        assert len(package.profiles().profiles) == 4
+        assert len(package.seed("demo_base_cases").activities) == 14

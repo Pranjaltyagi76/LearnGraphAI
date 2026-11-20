@@ -9,6 +9,7 @@ class Settings:
     environment: str = "development"
     origins: tuple[str, ...] = ("http://127.0.0.1:3000", "http://localhost:3000")
     release_id: str = "phase1-v1"
+    analysis_release_id: str = ""
     quota_namespace: str = "development"
     on_vercel: bool = False
 
@@ -30,6 +31,7 @@ class Settings:
                 if x.strip() and x.strip() != "*"
             ),
             release_id=os.getenv("RELEASE_ID", "phase1-v1"),
+            analysis_release_id=os.getenv("ANALYSIS_RELEASE_ID", ""),
             quota_namespace=os.getenv("QUOTA_NAMESPACE", "development"),
             on_vercel=os.getenv("VERCEL") == "1",
         )

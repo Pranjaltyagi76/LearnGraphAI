@@ -5,12 +5,14 @@ from psycopg.rows import dict_row
 from psycopg_pool import AsyncConnectionPool
 
 from app.config import Settings
+from app.published import PublishedRelease, payload_hash, unpack
 
 
 class Database:
     def __init__(self, settings: Settings):
         self.settings = settings
         self.pool: AsyncConnectionPool | None = None
+        self.analysis_cache: PublishedRelease | None = None
 
     async def open(self) -> None:
         if self.settings.database_url:
@@ -43,19 +45,35 @@ class Database:
             yield conn
 
     async def release(self) -> dict[str, Any]:
+        return await self.fetch_release(self.settings.release_id)
+
+    async def fetch_release(self, release_id: str) -> dict[str, Any]:
         async with self.connection() as conn:
             row = await (
                 await conn.execute(
                     "SELECT payload, content_hash FROM learngraph.releases WHERE id = %s",
-                    (self.settings.release_id,),
+                    (release_id,),
                 )
             ).fetchone()
             if not row:
                 raise ConnectionError("Published release unavailable")
+            if payload_hash(row["payload"]) != row["content_hash"]:
+                raise ConnectionError("Published release integrity failure")
             return row
+
+    async def analysis_release(self) -> PublishedRelease:
+        if self.analysis_cache is None:
+            row = await self.fetch_release(self.settings.analysis_release_id)
+            published = unpack(row["payload"], row["content_hash"])
+            if published.summary().release_id != self.settings.analysis_release_id:
+                raise ConnectionError("Analysis publication identity failure")
+            self.analysis_cache = published
+        return self.analysis_cache
 
     async def ready(self) -> None:
         await self.release()
+        if self.settings.analysis_release_id:
+            await self.analysis_release()
         async with self.connection() as conn:
             row = await (
                 await conn.execute(

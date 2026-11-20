@@ -14,7 +14,17 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict, Field
 from starlette.exceptions import HTTPException
 
+from app.analysis import analyze
 from app.config import Settings
+from app.contracts import (
+    AnalysisBundle,
+    AnalyzeRequest,
+    ContractViolation,
+    EvaluationSummary,
+    ProfilesResponse,
+    ReleaseSummary,
+    SeedResponse,
+)
 from app.database import Database
 from app.telemetry import emit_request_metrics
 
@@ -134,6 +144,22 @@ def create_app(settings: Settings | None = None, database=None) -> FastAPI:
     async def api_error(request: Request, exc: APIError):
         return failure(exc.status, exc.code, exc.message, request.state.request_id, exc.retry_after)
 
+    @application.exception_handler(ContractViolation)
+    async def contract_error(request: Request, exc: ContractViolation):
+        status = (
+            404
+            if exc.code == "profile_not_found"
+            else 409
+            if exc.code in {"version_mismatch", "event_conflict"}
+            else 422
+        )
+        return failure(
+            status,
+            exc.code,
+            "Analysis input could not be accepted. Check the demo state.",
+            request.state.request_id,
+        )
+
     @application.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, exc: RequestValidationError):
         return failure(
@@ -160,6 +186,14 @@ def create_app(settings: Settings | None = None, database=None) -> FastAPI:
         require_config()
         return await db.release()
 
+    async def published(release_id: str | None = None):
+        require_config()
+        if not config.analysis_release_id:
+            raise APIError(503, "not_configured", "Full analysis is not configured.")
+        if release_id is not None and release_id != config.analysis_release_id:
+            raise APIError(409, "version_mismatch", "This analysis release is not supported.")
+        return await db.analysis_release()
+
     async def guard(request: Request):
         require_config()
         address = request.client.host if request.client else "unknown"
@@ -177,7 +211,11 @@ def create_app(settings: Settings | None = None, database=None) -> FastAPI:
 
     @application.get("/health")
     async def health():
-        return {"status": "ok", "service": "learngraph-ai-api", "stage": "phase1"}
+        return {
+            "status": "ok",
+            "service": "learngraph-ai-api",
+            "stage": "phase3" if config.analysis_release_id else "phase1",
+        }
 
     @application.get("/ready")
     async def ready():
@@ -189,6 +227,37 @@ def create_app(settings: Settings | None = None, database=None) -> FastAPI:
     async def profiles():
         release = await canonical()
         return {"release_id": config.release_id, "profiles": release["payload"]["profiles"]}
+
+    @application.get("/api/v1/demo/release", response_model=ReleaseSummary)
+    async def analysis_pointer():
+        return (await published()).summary()
+
+    @application.get("/api/v1/releases/{release_id}/profiles", response_model=ProfilesResponse)
+    async def analysis_profiles(release_id: str):
+        return (await published(release_id)).profiles()
+
+    @application.get(
+        "/api/v1/releases/{release_id}/profiles/{profile_id}/seed", response_model=SeedResponse
+    )
+    async def analysis_seed(release_id: str, profile_id: str):
+        package = await published(release_id)
+        if profile_id not in package.release.profiles:
+            raise APIError(404, "profile_not_found", "Synthetic profile not found.")
+        return package.seed(profile_id)
+
+    @application.post("/api/v1/demo/analyze", response_model=AnalysisBundle)
+    async def full_analysis(body: AnalyzeRequest, request: Request):
+        await guard(request)
+        receipt = datetime.now(UTC)
+        package = await published(body.versions.release_id)
+        return await asyncio.to_thread(analyze, package.release, body, received_at=receipt)
+
+    @application.get("/api/v1/analytics/evaluation", response_model=EvaluationSummary)
+    async def evaluation():
+        package = await published()
+        if package.evaluation is None:
+            raise APIError(404, "evaluation_not_published", "No measured evaluation is published.")
+        return package.evaluation
 
     @application.get("/api/v1/demo/profiles/{profile_id}/seed")
     async def seed(profile_id: str):
