@@ -44,8 +44,9 @@ jobs:
       - run: uv run --frozen python scripts/check_content.py
       - run: uv run --frozen python -m scripts.freeze_phase0
       - run: uv run --frozen python -m scripts.check_phase0
+      - run: uv run --frozen python -m scripts.generate_browser_contracts --check
       - run: uv run --frozen pytest -q
-      - run: uv run --frozen python -m scripts.evaluate --check ../evaluation/results/phase2-v2
+      - run: uv run --frozen python -m scripts.evaluate --check ../evaluation/results/phase3-regression-v1
 
   frontend:
     runs-on: ubuntu-latest
@@ -61,6 +62,11 @@ jobs:
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: "24.18.0"
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          version: "0.12.23"
+          enable-cache: false
+      - run: uv sync --project ../backend --frozen --group dev --python 3.12
       - run: node ../contracts/check-hashes.mjs
       - run: npm ci --no-fund --no-audit
       - run: npm run lint
