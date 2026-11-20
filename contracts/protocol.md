@@ -1,10 +1,10 @@
 # Protocol v1 freeze — 20 November 2026
 
-**State:** implemented by the Phase 2 offline engine and evaluator; HTTP activation remains Phase 3, not a deployed API upgrade. Python models in [contracts.py](../backend/app/contracts.py) and generated JSON Schemas in this directory define structural types; the semantic rules here remain mandatory. The active `phase1-v1` bootstrap release retains its existing shape and content. No visitor history is stored server-side.
+**State:** implemented by the Phase 2 engine/evaluator and activated through the verified Phase 3 API/browser loop. Legacy bootstrap routes remain compatible. Python models in [contracts.py](../backend/app/contracts.py) and generated JSON Schemas in this directory define structural types; the semantic rules here remain mandatory. The active `phase1-v1` bootstrap release retains its existing shape and content. No visitor history is stored server-side.
 
 ## Compatible release and publication
 
-The reviewed draft is `learngraph-review-v1`: graph `graph-v1`, catalog `catalog-slice-v1`, model/config `baseline-v1`, and four individually versioned seeds. [release-manifest.json](release-manifest.json) binds exact runtime-artifact SHA-256 hashes and a compatible version tuple. It is a reviewed draft, not an active/published Supabase release.
+The reviewed draft is `learngraph-review-v1`: graph `graph-v1`, catalog `catalog-slice-v1`, model/config `baseline-v1`, and four individually versioned seeds. [release-manifest.json](release-manifest.json) binds exact runtime-artifact SHA-256 hashes and a compatible version tuple. Its frozen file manifest retains reviewed-draft provenance; Phase 3 has separately published and activated the exact package bytes in the immutable database row. [Publication evidence](../context/evidence/phase3_release.json).
 
 Artifact hashes are SHA-256 over file bytes with LF line endings enforced by .gitattributes. `release_hash` hashes only the manifest's `identity` object using lg-c14n-v1, excluding status/review dates and the hash itself. Identity includes release/contract versions and each artifact's path/hash. Publication copies one fully validated compatible package into a **new** immutable release; future analysis activation uses a separate `ANALYSIS_RELEASE_ID`, followed by deployment and verification. Legacy `RELEASE_ID=phase1-v1` remains compatible with the bootstrap preview. No mutation, partial activation, or automatic history migration. Retain previous compatible artifacts for rollback. The new graph cannot be silently paired with legacy seeds.
 
@@ -20,7 +20,7 @@ The existing `/api/v1/demo/profiles`, `/api/v1/demo/profiles/{id}/seed`, and `/a
 | POST /api/v1/demo/analyze | AnalyzeRequest → AnalysisBundle. |
 | GET /api/v1/analytics/evaluation | EvaluationSummary only after an actual measured artifact is published; otherwise 404 evaluation_not_published. |
 
-HealthResponse and ReadyResponse preserve the existing liveness/readiness structures. [index.json](index.json) maps schema references and implementation status. None of the new routes is implemented by this Phase 0 review. Future handlers accept only supported immutable release tuples (active plus deliberately retained compatible versions); unsupported tuples return 409, never silent rescoring. A client pins the release returned by the pointer and uses release-scoped reads for its session. Roll out backend support before the new frontend; retained Phase 1 routes keep older browser assets working. Full-analysis breaking changes require a new contract/path major version, not an in-place schema replacement.
+HealthResponse and ReadyResponse preserve the existing liveness/readiness structures. [index.json](index.json) maps schema references and implementation status. The Phase 0 review did not implement routes; Phase 3 now implements and deploys all five new routes. Handlers accept only the configured active analysis tuple; future deliberately retained compatible analysis versions must be explicit. As specified, unsupported tuples return 409, never silent rescoring. A client pins the release returned by the pointer and uses release-scoped reads for its session. Roll out backend support before the new frontend; retained Phase 1 routes keep older browser assets working. Full-analysis breaking changes require a new contract/path major version, not an in-place schema replacement.
 
 ## Request and event dictionary
 
@@ -100,4 +100,4 @@ Ordering: enforce raw body/schema bounds → reserve quota → validate release/
 
 - [Pydantic strict validation](https://docs.pydantic.dev/latest/concepts/strict_mode/) and [JSON Schema generation](https://docs.pydantic.dev/latest/concepts/json_schema/): structural schema, with semantic constraints documented above.
 - [Storage state machine](../context/browser_storage.md), [curriculum review](../curriculum/review.md), and [benchmark definition](../evaluation/readme.md).
-- Generated schemas and golden fixtures are checked in CI. They do not announce a working analyze endpoint, browser store, diagnosis engine, or model benchmark.
+- Generated schemas and golden fixtures are checked in CI. They originally froze structure only. Phase 2/3 now provide the tested engine, actual benchmark, deployed endpoint and browser store; the current evidence is linked from the roadmap.

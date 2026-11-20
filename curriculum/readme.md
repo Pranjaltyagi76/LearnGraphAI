@@ -1,6 +1,6 @@
-# Reviewed draft artifacts
+# Reviewed versioned artifacts
 
-This directory is the Phase 0 source of truth for the next compatible release, **not** the currently published Phase 1 payload.
+This directory is the Phase 0 source of truth now published in the separate immutable Phase 3 analysis package. The legacy Phase 1 payload is retained unchanged.
 
 | Artifact | Reviewed content |
 | --- | --- |
@@ -10,7 +10,7 @@ This directory is the Phase 0 source of truth for the next compatible release, *
 | model-config.v1.json | Initial evidence/scoring/plan policy; not empirically calibrated. |
 | [review.md](review.md) | Engineering decisions, per-item review and fresh-loop limits. |
 
-[Release manifest](../contracts/release-manifest.json) binds exact LF file bytes and generated schema. Phase 2 now validates compatible package bytes offline. Live publication/activation remains Phase 3 integration work: validate and aggregate into a new immutable release, retain legacy routes/release, then activate compatible API/frontend code. Do not overwrite [phase1.json](../backend/data/phase1.json), its hash, or Supabase data during this review.
+[Release manifest](../contracts/release-manifest.json) binds exact LF file bytes and generated schema. Phase 2 now validates compatible package bytes offline. Phase 3 publication/activation is complete: the new immutable byte package and compatible API/frontend are verified, while legacy routes/release remain available. Do not overwrite [phase1.json](../backend/data/phase1.json), its hash, or Supabase data during this review.
 
 Verified local commands from backend/ using the existing Windows virtual environment:
 
@@ -23,3 +23,5 @@ Verified local commands from backend/ using the existing Windows virtual environ
 From repository root, `node contracts/check-hashes.mjs` independently verifies canonical UTF-8, hashes and storage keys. CI runs equivalent checks with locked dependencies on Linux. The schema/manifest writer's --write option creates missing artifacts only; it refuses existing differences. Later changes require deliberate artifact/contract version review, not silent regeneration under an old version.
 
 These authored files alone create no service, secret, billing configuration or learner persistence. Phase 2 now consumes them in an implemented offline engine and measured public synthetic audit; see the [model card](../evaluation/model_card.md). Original project content has no selected public license; educator/psychometric validation is not claimed.
+
+The file manifest keeps its original reviewed-draft status as freeze provenance. Database publication is a separate immutable row with a recorded publication timestamp and wrapper hash; it does not edit any frozen source file. [Published release proof](../context/evidence/phase3_release.json) records both hashes, runtime verification and the unchanged legacy row. The remaining sixty questions and educator validation remain open.

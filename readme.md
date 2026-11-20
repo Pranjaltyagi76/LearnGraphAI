@@ -4,13 +4,13 @@
 
 LearnGraph AI is a planned explainable learning-diagnostics portfolio application. It combines a prerequisite graph, transparent estimates of observed performance, and targeted practice to help explain where a learner may need support.
 
-**Status:** Phase 1 is complete: the public Next.js preview delivers a question through FastAPI and Supabase Free, grades an answer on the server, and displays real feedback. TLS, restricted database access, immutable content, shared quotas, deployment resources, and reseeding were verified. Phase 2 now implements the deterministic offline diagnosis/replay engine and measured evaluation. The full 72-question curriculum, saved progress, live analysis routes, and reassessment UI remain later work.
+**Status:** Phases 0–3 are complete at their bounded gates. [Open the live guided learning loop](https://learngraph-ai-web.vercel.app/learn). The retained Phase 1 connection preview delivers a question through FastAPI and Supabase Free, grades an answer on the server, and displays real feedback. TLS, restricted database access, immutable content, shared quotas, deployment resources, and reseeding were verified. Phase 2 now implements the deterministic offline diagnosis/replay engine and measured evaluation. Phase 3 now delivers browser-local progress, full-analysis routes and distinct reassessment in the reviewed two-concept slice. The remaining 60 questions and the complete curriculum/UI audit remain Phase 4 work.
 
-**Phase 0 review is also complete:** [reviewed curriculum](curriculum/review.md), [frozen protocol/schema](contracts/protocol.md), [browser storage contract](context/browser_storage.md), and [synthetic evaluation definitions](evaluation/readme.md) define the implementation inputs. Phase 2 implements analysis/evaluation; browser storage remains Phase 3 work. The new graph, twelve reviewed questions/two lessons, and four profiles are unpublished draft assets; the live preview still serves the immutable Phase 1 slice.
+**Phase 0 review is also complete:** [reviewed curriculum](curriculum/review.md), [frozen protocol/schema](contracts/protocol.md), [browser storage contract](context/browser_storage.md), and [synthetic evaluation definitions](evaluation/readme.md) define the versioned implementation inputs. The graph, twelve reviewed questions/two lessons and four profiles are now published as a separate immutable analysis package. The original Phase 1 slice and routes remain available.
 
-[Live infrastructure preview](https://learngraph-ai-web.vercel.app) · [API readiness](https://learngraph-ai-api.vercel.app/ready) · [Passing source CI run](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44730530223)
+[Live infrastructure preview](https://learngraph-ai-web.vercel.app) · [API readiness](https://learngraph-ai-api.vercel.app/ready) · [Passing source CI run](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44759575477)
 
-Click **Check live connection**, choose an answer, and select **Check my response**. The page starts with a labeled prerecorded example and switches to a live question only after database readiness succeeds. Grading does not save learner progress. Supabase Free can pause after inactivity; the unavailable/example state remains available when the live dependency is down.
+For the guided loop, open **Explore the learning loop**, select a synthetic learner and choose **Analyze this learner**. Answer fresh practice, then use the different same-skill reassessment. In the retained connection preview, click **Check live connection**, choose an answer and select **Check my response**. The page starts with a labeled prerecorded example and switches to a live question only after database readiness succeeds. The guided loop stores synthetic history locally in IndexedDB, with explicit pending/retry/reset recovery; no visitor history is stored on the server. The original connection preview does not save progress. Supabase Free can pause after inactivity; the unavailable/example state remains available when the live dependency is down.
 
 **Service budget:** ₹0 / $0. The project uses verified free plans and may temporarily stop live analysis when quotas or dependencies are unavailable. It does not require a paid AI API or a purchased domain.
 
@@ -23,7 +23,7 @@ Click **Check live connection**, choose an answer, and select **Check my respons
 5. Complete targeted practice and a different same-skill reassessment.
 6. See the updated result without affecting another visitor's progress.
 
-This full learning loop is planned; Phase 1 implements only live question delivery and grading. A baseline correctness estimate is not proof of mastery, causality, or improved learning.
+This learning loop is live for the reviewed two-concept slice. Four synthetic profiles illustrate supported gaps, missing evidence and ambiguity; some skills still lack authored content. A baseline correctness estimate is not proof of mastery, causality, or improved learning.
 
 ## First-release scope
 
@@ -89,7 +89,7 @@ For live API startup, first configure the actual runtime/admin environment priva
 uv run python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --env-file .env.local
 ```
 
-`/health` is process liveness; `/ready` returns `503` until the database, release, quota privileges, and hash secret are available. Phase 1 grading is `POST /api/v1/bootstrap/answer`; full-history HTTP analysis is Phase 3 work; the pure engine and offline CLI are implemented.
+`/health` is process liveness; `/ready` returns `503` until the database, release, quota privileges, and hash secret are available. Phase 1 grading is `POST /api/v1/bootstrap/answer`; full-history analysis is now POST /api/v1/demo/analyze, with release-scoped metadata and browser-local replay. /ready retains the legacy release_id for compatibility; /api/v1/demo/release is the analysis pointer.
 
 Browser checks, after building the frontend:
 
@@ -100,7 +100,7 @@ npm run test:e2e
 
 Contract tests use an explicitly labeled fixture; real SQL tests require an isolated local `TEST_DATABASE_URL` ending in `_test` and otherwise skip. CI supplies real PostgreSQL 17. Neither a contract fixture nor a recorded browser example passes the live Supabase deployment gate.
 
-OPEN-01 and Phase 0 contract/content review are complete. The free frontend → API → database gate passed. Phase 2 CLI analysis and measured offline evaluation now pass. Next is Phase 3: publish a compatible analysis release, integrate the HTTP routes and browser sandbox, and verify the live learning loop. See the roadmap and [measured infrastructure evidence](context/performance_review.md) for exact scope and limitations.
+OPEN-01 and Phase 0 contract/content review are complete. The free frontend → API → database gate passed. Phase 2 CLI analysis and measured offline evaluation now pass. Phase 3 publication and the real deployed learning loop now pass. Next is Phase 4: complete the 72-item curriculum and the full learner experience. See the roadmap and [measured infrastructure evidence](context/performance_review.md) for exact scope and limitations.
 
 ## Repository and contribution workflow
 
@@ -116,9 +116,21 @@ From `backend/`, after the locked development environment is installed:
 
 ```powershell
 uv run --frozen python -m scripts.analyze --profile demo_base_cases --explain
-uv run --frozen python -m scripts.evaluate --check ../evaluation/results/phase2-v2
+uv run --frozen python -m scripts.evaluate --check ../evaluation/results/phase3-regression-v1
 ```
 
 Use `--request path.json --received-at 2026-11-21T00:00:00+00:00` for a complete frozen AnalyzeRequest. The received-at argument is explicit admission time, never a scoring feature. To record a new measurement, use `python -m scripts.evaluate --output ../evaluation/results/a-new-run-id`; existing runs are never overwritten. The saved audit reproduces exact outputs and verifies implementation/input hashes. See the [report](evaluation/results/phase2-v2/report.md), [model card](evaluation/model_card.md) and [handoff](context/phasewise_roadmap.md).
 
-This milestone uses no provider request, new package, or paid service. The live preview continues to serve Phase 1 until Phase 3 activation.
+The original Phase 2 milestone required no provider mutation. Phase 3 now uses the same existing free services, without new dependencies or paid products; its [hosted evidence](context/evidence/phase3_release.json) and [real browser proof](context/evidence/phase3_live.json) record exact scope.
+
+## Local full-analysis activation
+
+The existing owner/runtime environment remains private in backend/.env.local. The new non-secret `ANALYSIS_RELEASE_ID=learngraph-review-v1` activates the published compatible package; keep `RELEASE_ID=phase1-v1` for older clients. For a new database, use the existing migration/runtime setup first, then from backend/:
+
+```powershell
+uv run --frozen python -m scripts.publish_analysis check --evaluation ../evaluation/results/phase3-regression-v1/test.json
+uv run --frozen python -m scripts.publish_analysis publish --evaluation ../evaluation/results/phase3-regression-v1/test.json
+uv run --frozen python -m scripts.publish_analysis verify --evaluation ../evaluation/results/phase3-regression-v1/test.json
+```
+
+Publication refuses an existing different payload. There is no overwrite or automatic history migration. `python -m scripts.generate_browser_contracts --check` verifies browser types/schema against the frozen protocol. Browser tests start an explicitly labeled loopback fixture API; the [separate public verification](frontend/scripts/verify-live.mjs) uses real production services and consumes five analysis reservations.

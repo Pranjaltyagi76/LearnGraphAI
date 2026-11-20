@@ -10,7 +10,7 @@
 >
 > **Deployment goal:** A publicly accessible personal portfolio demo using only free plans, with a strict recurring service budget of **₹0 / $0**.
 >
-> **Status:** Phase 0 engineering review, Phase 1 free deployment and Phase 2 offline engine/evaluation gates are complete. The reviewed graph/catalog/contracts drive reproducible CLI analysis and a measured public synthetic audit; the live preview still serves immutable phase1-v1. Saved progress, full content and live analysis integration remain later work. Parameters are initial policy hypotheses, not validated educational cutoffs.
+> **Status:** Phase 0 engineering review, Phase 1 free deployment and Phase 2 offline engine/evaluation and Phase 3 live-loop gates are complete. The reviewed graph/catalog/contracts drive reproducible CLI analysis and a measured public synthetic audit; the new immutable analysis package drives the live /learn loop alongside retained phase1-v1 routes. Browser-local progress, pending recovery and reassessment now work; full content, complete learner UI and release auditing remain later work. Parameters are initial policy hypotheses, not validated educational cutoffs.
 >
 > **Last revised:** 20 November 2026.
 
@@ -282,7 +282,7 @@ Example client-submitted visitor event, appended to a request's bounded history:
 }
 ```
 
-The request envelope includes the full release/hash/seed/graph/catalog/model version tuple, profile/focus, sandbox UUID/revision, optional failed-trigger selector, and ordered visitor events. The server loads the seed itself; clients cannot replace it. [Protocol v1](contracts/protocol.md), [route index](contracts/index.json), generated JSON Schema, and golden fixtures freeze the data dictionary, normalization, errors and rollout compatibility. The Phase 2 offline engine implements these contracts; Phase 3 will implement their HTTP routes.
+The request envelope includes the full release/hash/seed/graph/catalog/model version tuple, profile/focus, sandbox UUID/revision, optional failed-trigger selector, and ordered visitor events. The server loads the seed itself; clients cannot replace it. [Protocol v1](contracts/protocol.md), [route index](contracts/index.json), generated JSON Schema, and golden fixtures freeze the data dictionary, normalization, errors and rollout compatibility. The Phase 2 offline engine implements these contracts; Phase 3 implements their HTTP routes and verifies their deployed browser/database boundary.
 
 Rules:
 
@@ -726,7 +726,7 @@ This is a plan, not a claim that these files already exist. Create folders as th
 
 ## 18. Implementation roadmap
 
-Phases 0, 1 and 2 have passed their bounded review, deployment and offline-analysis gates; the [operational roadmap](context/phasewise_roadmap.md) records artifacts and checks. Phases 3–7 below remain planned. The [measured synthetic audit](evaluation/model_card.md) does not imply deployed diagnosis, browser persistence, a complete catalog or real-world quality.
+Phases 0, 1, 2 and 3 have passed their bounded review, deployment, offline-analysis and live-loop gates; the [operational roadmap](context/phasewise_roadmap.md) records artifacts and checks. Phases 4–7 below remain planned. The [measured synthetic audit](evaluation/model_card.md) does not imply deployed diagnosis, browser persistence, a complete catalog or real-world quality.
 
 ### Phase 0 — Freeze the focused product and data contracts
 
@@ -770,12 +770,12 @@ Phases 0, 1 and 2 have passed their bounded review, deployment and offline-analy
 
 ### Phase 3 — Ship one complete live learning loop
 
-- [ ] Implement the P0 profile/seed/analyze API and single consistent analysis response.
-- [ ] Build a minimal learner view and an isolated browser sandbox with refresh/resume/reset.
-- [ ] Complete one full diagnostic → supported diagnosis or evidence request → practice → distinct reassessment flow.
-- [ ] Show evidence counts, alternatives, before/after results, and unchanged-estimate explanations.
-- [ ] Add idempotent client retries, pending states, response-order protection, and same-browser tab updates.
-- [ ] Verify the deployed flow with two separate browser contexts and without any LLM key.
+- [x] Implement the P0 profile/seed/analyze API and single consistent analysis response.
+- [x] Build a minimal learner view and an isolated browser sandbox with refresh/resume/reset.
+- [x] Complete one full diagnostic → supported diagnosis or evidence request → practice → distinct reassessment flow.
+- [x] Show evidence counts, alternatives, before/after results, and unchanged-estimate explanations.
+- [x] Add manual retries of the same snapshot, pending states, response-order protection, and same-browser tab updates.
+- [x] Verify the deployed flow with two separate browser contexts and without any LLM key.
 
 **Exit condition:** A visitor completes the real live loop without developer intervention, refreshes without losing local progress, and cannot change another browser's sandbox or the canonical seeds.
 

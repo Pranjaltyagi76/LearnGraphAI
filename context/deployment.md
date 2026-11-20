@@ -1,8 +1,8 @@
 # Free deployment and recovery
 
-**State:** Phase 1 complete: public live question/grading round trip verified on Vercel Hobby and Supabase Free. Full product release remains pending. **Date:** 20 November 2026. **Requirements:** NFR-01–08/10/11/13 and FR-16/17/19 in [requirement.md](../requirement.md).
+**State:** Phase 1 feasibility and Phase 3 public analysis/practice/reassessment loop verified on the existing Vercel Hobby/Supabase Free topology. Full product release remains pending. **Date:** 20 November 2026. **Requirements:** NFR-01–08/10/11/13 and FR-16/17/19 in [requirement.md](../requirement.md).
 
-This runbook is for Phase 1 feasibility and Phase 5 release. The user authorized Phase 1 implementation and confirmed Hobby/no paid billing. Observed hosting state is recorded below; a successful build does not prove database readiness. Tested local entrypoints are in the root README and backend migration README.
+This runbook covers the retained Phase 1 baseline, Phase 3 rollout below and the future Phase 5 release gate. The user authorized Phase 1 implementation and confirmed Hobby/no paid billing. Observed hosting state is recorded below; a successful build does not prove database readiness. Tested local entrypoints are in the root README and backend migration README.
 
 ## 1. Zero-cost policy
 
@@ -125,7 +125,7 @@ Quota cleanup must run through a bounded supported path chosen in Phase 1 (for e
 
 Add concrete evidence and failed results here when available. Never paste credentials or claim successful deployment from a planned runbook.
 
-### Current deployment IDs and next action
+### Phase 1 deployment snapshot (historical)
 
 - Frontend: `dpl_Csccn2itaDGyh8JvmQp8fT9CW1By` (READY).
 - API: `dpl_8VtMQHBUV5boQida7rGVeaFrkTnh` (READY).
@@ -144,3 +144,18 @@ Add concrete evidence and failed results here when available. Never paste creden
 - Supabase pricing rechecked: Free has a 500 MB database allowance, 5 GB egress, two active projects, and pauses after one inactive week. [Official pricing](https://supabase.com/pricing). No inactivity keepalive will be added.
 - Runtime setup/audit helpers are in `backend/scripts/`; source [CI run 44730530223](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44730530223) passed. Separate [hosted checks](evidence/phase1_database.json) verified quota concurrency/global denial, privileges, public-role exclusion, immutability, and logical expiry. Temporary verification quota buckets were removed.
 - The eleven-request [public smoke](evidence/phase1_deployment.json), [provider metrics](evidence/phase1_provider_metrics.json), and [actual browser feedback](evidence/phase1_live_grading.jpg) complete the live Phase 1 evidence. Full model/learning-loop acceptance remains later work.
+
+## Phase 3 production rollout — 20 November 2026
+
+- **Frontend URL:** https://learngraph-ai-web.vercel.app/learn — production, READY, Next.js, deployment dpl_6Sj1MYrhVL7d9MLu7XpcvdeDwQSM.
+- **API URL:** https://learngraph-ai-api.vercel.app — production, READY, FastAPI, deployment dpl_7BHbv5GpXZY8fXBpbUmyXm4iCw7J.
+- **Exact deployed source:** 24826440aa9e2eab076b93a39beede64d6525001. [Source CI](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44759575477) passed both jobs. API was deployed and its real readiness/release pointer verified before the frontend rollout. Provider BUILDING→READY intervals were 17.190/18.671 s, not application cold-start measurements.
+- **Publication:** learngraph-review-v1 is a new immutable JSONB row containing the frozen five-artifact byte package and actual measured summary. The compatible release hash is unchanged; the distinct outer package hash binds publication bytes/evaluation. Owner publish/verify, connector metadata reads and restricted runtime source/stored/hash/TLS checks passed. No SQL migration or visitor-history table/write was added. Legacy phase1-v1/source hash is unchanged.
+- **Activation:** Production ANALYSIS_RELEASE_ID=learngraph-review-v1 is non-secret Config. RELEASE_ID=phase1-v1 and both existing Production Secrets are retained. /ready preserves the legacy release_id while checking both configured packages; GET /api/v1/demo/release is the new analysis pointer. The ignored local file received only this non-secret activation key; existing private connections/secret values were preserved.
+- **Free boundary:** same two Vercel projects and existing Hobby team (owner confirmed), and the connector now confirms Supabase organization Free/project ACTIVE_HEALTHY. No payment, plan, new service, add-on, paid monitor or runtime dependency was introduced. No scheduled keepalive is used. Account-wide remaining allowance is not audited here.
+- **Observed end-to-end:** [public proof](evidence/phase3_live.json) uses two fresh browser processes and real production data without mocks. It verifies metadata/CORS/projection, two fresh practices/distinct reassessment, honest 0.5/developing exhaustion, acknowledged refresh, local reset and independent browser isolation. [Release record](evidence/phase3_release.json) and [desktop](evidence/phase3_live_desktop.png)/[mobile](evidence/phase3_live_desktop_mobile.png) captures identify exact checks and limitations. Five analysis reservations were used; no automatic POST retry.
+- **Observability:** no error-level entries matched these deployment filters in the observed provider windows; no drains are configured. Existing provider logs and bounded request metrics are retained. No full-load, new cold/memory/bundle or disaster-recovery claim is made.
+
+Reproduce a new measurement from frontend/ with `node scripts/verify-live.mjs --output ../context/evidence/a-new-live-run.json --screenshot ../context/evidence/a-new-live-run.png`. It makes five real analysis reservations, writes synthetic evidence locally and never changes canonical seed history. The script uses fresh browser contexts, so it does not delete user browser data. Existing evidence should be kept when recording another run.
+
+The frontend's generated protocol files live inside its deployment root; runtime canonical bytes come from the database, so the backend does not depend on implicit root-level curriculum inclusion. Strict benchmark CI now verifies [Phase 3 regression sources](../evaluation/results/phase3-regression-v1/manifest.json); archived runs retain their original source hashes. Automatic push-to-production Git linkage is still not configured; source push alone does not deploy. Future compatible releases must be validated/published under a new immutable row when content changes, activate API support before clients and retain a deliberately supported rollback target. Full rollback, pause/resume, outage/quota and restore drills remain Phase 5.

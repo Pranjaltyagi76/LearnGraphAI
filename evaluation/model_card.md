@@ -1,6 +1,6 @@
 # Baseline v1 model card
 
-**Measured:** 20 November 2026. **Status:** deterministic offline implementation; public activation and browser integration remain Phase 3. [Measured report](results/phase2-v2/report.md), [per-case final audit](results/phase2-v2/test.json), [run manifest](results/phase2-v2/manifest.json).
+**Measured:** 20 November 2026. **Status:** the deterministic baseline is now active in the verified Phase 3 public API/browser loop; the full curriculum and release audit remain later gates. [Measured report](results/phase2-v2/report.md), [per-case final audit](results/phase2-v2/test.json), [run manifest](results/phase2-v2/manifest.json).
 
 ## Intended use and policy
 
@@ -33,6 +33,12 @@ Comparators share targets, stages and hard safety constraints. Lowest-estimate c
 
 ## Limits and next validation
 
-Only twelve questions/two lessons cover two of twelve concepts. The remaining sixty questions, browser persistence, actual HTTP full-analysis admission/quota integration and deployed loop remain later work. Body/time/quota controls must be verified at that future HTTP boundary. Fixture graph/tag checks are not full-catalog educational evidence. The completed-cycle helper describes observed synthetic workflow, including hinted attempts, without claiming correctness evidence or learning. The sample does not justify uncertainty intervals or probability calibration.
+Only twelve questions/two lessons cover two of twelve concepts. The remaining sixty questions and full release/accessibility audit remain later work. Browser persistence, bounded HTTP admission/shared quotas and the deployed loop are now verified in Phase 3; full quota/outage/restore drills remain Phase 5. Fixture graph/tag checks are not full-catalog educational evidence. The completed-cycle helper describes observed synthetic workflow, including hinted attempts, without claiming correctness evidence or learning. The sample does not justify uncertainty intervals or probability calibration.
 
 Re-running this public audit is regression verification. Output-guided tuning requires a new independent versioned audit and exposure disclosure. Future full-catalog evaluation needs competing gaps, varied dependency assumptions and noise; educational benefit needs a separate appropriate real-world study. BKT, DKT, LLMs and paid services are unnecessary for this baseline.
+
+## Phase 3 activation record
+
+The [source-pinned Phase 3 regression](results/phase3-regression-v1/manifest.json) reproduces the same policy and exposed audit metrics with the new API modules. The original measurements above remain historical; current-source verification uses `python -m scripts.evaluate --check ../evaluation/results/phase3-regression-v1`. The actual summary is included in the published immutable package and served through GET /api/v1/analytics/evaluation.
+
+[Live browser proof](../context/evidence/phase3_live.json) verifies Mira's two fresh practices and distinct reassessment: seed evidence 0/3 correct becomes current evidence 3/6, with smoothed estimate 0.5/developing and exhausted fresh questions. Refresh/local reset and a separate fresh browser pass. These observations demonstrate deployed behavior, not new model-quality evidence, verified student adherence or a learning effect. All earlier sample/exposure/calibration limits remain applicable.

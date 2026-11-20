@@ -1,6 +1,6 @@
 # Performance review
 
-**State:** Phase 1 live deployment/resource checks passed; small descriptive samples are recorded below. Full-analysis deployment and learning-loop performance remain unmeasured; the separate offline quality audit is linked below. **Date:** 20 November 2026.
+**State:** Phase 1 live deployment/resource checks passed; small descriptive samples are recorded below. The separate offline quality audit and small Phase 3 public-loop samples are linked below; a full load/cold/resource profile remains unmeasured. **Date:** 20 November 2026.
 
 This file covers latency, resources, reliability under bounded load, and the effect of free hosting. Model-quality evidence belongs in [benchmark.md](benchmark.md). Runtime constraints originate in PROJECT Sections 12–14 and [requirements](../requirement.md), especially NFR-03–06/10/13.
 
@@ -140,3 +140,11 @@ The earlier unconfigured API returned 503 and the actual browser preserved the e
 ## 11. Phase 2 offline verification — 20 November 2026
 
 [Local review evidence](evidence/phase2_review.json) records 185 passing local tests, five skipped isolated SQL tests, the existing deprecation warning, lint/format, frozen-input checks, Node conformance and exact saved-result reproduction. [Measured benchmark/model card](../evaluation/model_card.md) covers prediction/diagnosis/plan behavior, not latency or learning benefit. The implementation uses only existing runtime packages and Python standard-library arithmetic/metrics. No new provider invocation, deployment/resource claim or load measurement is made. Phase 1 hosted measurements remain historical observations of bootstrap grading; they are not full-analysis timings.
+
+## 12. Phase 3 public-loop samples — 20 November 2026
+
+[Actual browser/API evidence](evidence/phase3_live.json) records ten explicitly timed samples (six metadata/health/readiness/evaluation reads and four primary-browser analysis actions), plus a separately recorded independent-browser analysis. There were five analysis reservations in total. Browser metadata/asset traffic is not all included in this timed list. All recorded responses are 200; versions, future-answer projection and production CORS pass.
+
+The four primary analysis actions took 649, 572, 568 and 605 ms from UI action through response capture. These values include browser/action/network time; they are not pure compute timings, an SLO, a high-load test or classified cold samples. The first browser completes two practices and a different reassessment; the second receives unchanged canonical evidence. Refresh/reset and mobile overflow checks pass. Desktop/mobile captures were inspected. No browser exceptions were captured.
+
+[Release evidence](evidence/phase3_release.json) records provider BUILDING→READY intervals (API 17,190 ms; frontend 18,671 ms), exact source/deployments, actual database size, package bytes, TLS/grants and unchanged legacy hash. No updated function-memory/bundle or cold-load claim is made. Provider error-level scans for these deployments found no matching entries in the recorded windows. There are no configured drains; existing provider logs/bounded request metrics remain the monitoring boundary, with no paid service added. Current local checks: 192 backend tests passed, six isolated SQL tests skipped locally, twenty-three browser tests passed; source CI passed with real isolated SQL and browser checks.

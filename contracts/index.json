@@ -8,7 +8,7 @@
       "success_schema": "protocol-v1.schema.json#/$defs/HealthResponse",
       "request_schema": null,
       "error_schema": "protocol-v1.schema.json#/$defs/ErrorEnvelope",
-      "status": "implemented_phase1"
+      "status": "implemented_phase3"
     },
     {
       "method": "GET",
@@ -16,7 +16,7 @@
       "success_schema": "protocol-v1.schema.json#/$defs/ReadyResponse",
       "request_schema": null,
       "error_schema": "protocol-v1.schema.json#/$defs/ErrorEnvelope",
-      "status": "implemented_phase1"
+      "status": "implemented_phase3"
     },
     {
       "method": "GET",
@@ -24,7 +24,7 @@
       "success_schema": "protocol-v1.schema.json#/$defs/ReleaseSummary",
       "request_schema": null,
       "error_schema": "protocol-v1.schema.json#/$defs/ErrorEnvelope",
-      "status": "frozen_not_implemented"
+      "status": "implemented_phase3"
     },
     {
       "method": "GET",
@@ -32,7 +32,7 @@
       "success_schema": "protocol-v1.schema.json#/$defs/ProfilesResponse",
       "request_schema": null,
       "error_schema": "protocol-v1.schema.json#/$defs/ErrorEnvelope",
-      "status": "frozen_not_implemented"
+      "status": "implemented_phase3"
     },
     {
       "method": "GET",
@@ -40,7 +40,7 @@
       "success_schema": "protocol-v1.schema.json#/$defs/SeedResponse",
       "request_schema": null,
       "error_schema": "protocol-v1.schema.json#/$defs/ErrorEnvelope",
-      "status": "frozen_not_implemented"
+      "status": "implemented_phase3"
     },
     {
       "method": "POST",
@@ -48,7 +48,7 @@
       "success_schema": "protocol-v1.schema.json#/$defs/AnalysisBundle",
       "request_schema": "protocol-v1.schema.json#/$defs/AnalyzeRequest",
       "error_schema": "protocol-v1.schema.json#/$defs/ErrorEnvelope",
-      "status": "frozen_not_implemented"
+      "status": "implemented_phase3"
     },
     {
       "method": "GET",
@@ -56,7 +56,7 @@
       "success_schema": "protocol-v1.schema.json#/$defs/EvaluationSummary",
       "request_schema": null,
       "error_schema": "protocol-v1.schema.json#/$defs/ErrorEnvelope",
-      "status": "frozen_not_implemented"
+      "status": "implemented_phase3"
     }
   ],
   "legacy_routes_preserved": [

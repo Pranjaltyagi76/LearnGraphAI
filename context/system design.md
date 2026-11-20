@@ -1,6 +1,6 @@
 # System design
 
-**Status:** Phase 0 contracts/review and Phase 1 feasibility passed. Pure analysis is implemented and evaluated offline in Phase 2; live full-analysis/browser-store behavior below remains Phase 3 design. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
+**Status:** Phase 0 contracts/review and Phase 1 feasibility passed. Pure analysis is implemented and evaluated offline in Phase 2; Phase 3 now implements and verifies the live full-analysis/browser-store behavior in the reviewed slice. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
 
 This document owns runtime behavior, data flow, consistency, and failure handling. Module layout and technology decisions belong in [architecture.md](architecture.md).
 
@@ -99,7 +99,7 @@ Retrospective diagnosis may use the just-observed failure. Offline next-response
 | `POST /api/v1/demo/analyze` | Versioned history/grade/estimate/diagnosis/plan bundle. | `409` conflict/version mismatch, `413` byte limit, `422` invalid events, `429` quota, `503` unavailable dependency. |
 | `GET /api/v1/analytics/evaluation` | Published measured summary only when an artifact exists. | Explicit unavailable/not-published state before evaluation exists. |
 
-Exact DTOs, generated JSON Schema, data dictionary and safe errors are frozen in [contracts](../contracts/protocol.md). Future FastAPI OpenAPI must reuse these models rather than invent another shape. The new routes are not implemented. Existing /api/v1/demo/profiles, its /{id}/seed and bootstrap/answer keep their deployed legacy contracts. Zero automatic POST retries; explicit retries preserve the same pending snapshot and honor 429 guidance.
+Exact DTOs, generated JSON Schema, data dictionary and safe errors are frozen in [contracts](../contracts/protocol.md). FastAPI now reuses these models for implemented analysis routes and response validation. Existing /api/v1/demo/profiles, its /{id}/seed and bootstrap/answer keep their deployed legacy contracts. Zero automatic POST retries; explicit retries preserve the same pending snapshot and honor 429 guidance.
 
 ## 7. Browser concurrency and local reset
 
@@ -129,12 +129,12 @@ Exact DTOs, generated JSON Schema, data dictionary and safe errors are frozen in
 - [Browser storage](browser_storage.md): transactional pending/acknowledged history, stable keys, reset/new UUID, refresh recovery and cross-tab conflict handling.
 - [Evaluation definition](../evaluation/readme.md): 4 training/8 development/12 public audit cases with separate annotations; six additional blueprint scenarios. No blind-test/generalization or measured benchmark claim.
 
-Phase 1's NOLOGIN runtime group, shared atomic fixed-minute/daily guard, HMAC client signals and bounded cleanup remain verified. These definitions require no extra infrastructure. Phase 2 implements the pure analysis services and compatible-package validation. Phase 3 publishes/activates that package, composes quota/HTTP routes and implements/tests the browser store.
+Phase 1's NOLOGIN runtime group, shared atomic fixed-minute/daily guard, HMAC client signals and bounded cleanup remain verified. These definitions require no extra infrastructure. Phase 2 implements the pure analysis services and compatible-package validation. Phase 3 has published/activated that package, composed quota/HTTP routes and verified the browser store and real live loop.
 
 
 ## 10. Implemented Phase 1 subset — 20 November 2026
 
-The current API implements `/health`, `/ready`, profile/seed reads, and `POST /api/v1/bootstrap/answer`. The bootstrap route validates a response against database-owned question options, reserves the shared budget, grades the answer, and returns `persisted: false`. It is a feasibility endpoint, not the planned full-history `/api/v1/demo/analyze` contract. Offline replay, input digests, estimates, diagnosis and plans are now implemented. Live route composition, local progress and the deployed reassessment flow remain Phase 3 work.
+The retained Phase 1 subset implements `/health`, `/ready`, legacy profile/seed reads and `POST /api/v1/bootstrap/answer`. The bootstrap route validates a response against database-owned question options, reserves the shared budget, grades the answer, and returns `persisted: false`. It is a feasibility endpoint, separate from the now-implemented full-history `/api/v1/demo/analyze` contract. Offline replay, input digests, estimates, diagnosis and plans are now implemented. Live route composition, browser-local progress and distinct reassessment are now verified; the full 72-question curriculum remains Phase 4 work.
 
 The deployed Phase 1 payload contains one synthetic profile and twelve questions. The separate reviewed draft has four profiles, twelve revised questions/two lessons and a reviewed twelve-node/seventeen-edge graph, now exercised by the offline engine. The complete 72-question curriculum remains unfinished.
 
@@ -143,3 +143,9 @@ Verified hosted boundary: public browser → FastAPI → TLS transaction-pooled 
 ## 11. Offline Phase 2 boundary
 
 The [CLI](../backend/scripts/analyze.py) loads a hash-verified release and emits one strict AnalysisBundle with authoritative feedback, null unknown estimates, evidence IDs, bounded candidates, assessment requests and constrained plan. An explicit received-at argument affects admission only. Pure response validation checks relationships beyond JSON Schema. Optional fixed explanations use structured evidence and limits, without an LLM. The [evaluator](../evaluation/readme.md) uses the same pure services with independent labels, preceding-prefix predictions and separate training-only fitting. No visitor state is persisted and no provider was changed for this milestone.
+
+## 12. Verified Phase 3 live slice
+
+The public /learn entry loads the analysis pointer and pinned profile/seed metadata, then opens the profile/version-specific IndexedDB record. An explicit analysis action reserves shared quota and returns the full bundle. New responses first commit pending state; only a response matching the complete snapshot/digest can atomically append an acknowledgement. Refresh restores pending input or labels the cached acknowledged result as saved until live reanalysis. Reset changes sandbox generation; profile changes, concurrent updates and late responses cannot repopulate newer history. No visitor event is written to the database.
+
+[Public browser evidence](evidence/phase3_live.json) records five analysis reservations: initial analysis plus two practices/a distinct reassessment in the first browser, and independent seed analysis in the second browser. The first ends at 0.5/developing, with no fabricated fresh items. Refresh/reset and an unchanged independent browser are verified. Local real-browser tests separately cover pending retry, failures, conflicts and version changes. Basic evidence/plan/timeline and a prerequisite list are delivered; the full learner experience and comprehensive release/accessibility audit remain Phase 4/5.

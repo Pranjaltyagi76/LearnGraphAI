@@ -112,7 +112,7 @@ Manifest fields must include commit, dirty/clean tree state, generator/scenario 
 
 Use repeated seeds or learner-level bootstrap intervals only where sample size supports them. State method, resampling unit, repeats, and confidence level. Do not bootstrap individual correlated events as if independent learners or imply certainty from tiny synthetic samples.
 
-Avoid committing raw large sequences or private records. Small aggregate metrics and authored independent fixtures are suitable. From backend/, `python -m scripts.evaluate --check ../evaluation/results/phase2-v2` verifies the measured source/input hashes and reproduces exact outputs. Use --output with a new directory for a new immutable run.
+Avoid committing raw large sequences or private records. Small aggregate metrics and authored independent fixtures are suitable. From backend/, `python -m scripts.evaluate --check ../evaluation/results/phase3-regression-v1` verifies the measured source/input hashes and reproduces exact outputs. Use --output with a new directory for a new immutable run.
 
 ## 8. Release policy
 
@@ -129,8 +129,8 @@ Avoid committing raw large sequences or private records. Small aggregate metrics
 | Prediction baselines | Measured: 50 eligible public-audit responses | Concept/global log loss 0.640114/0.677044; Brier 0.223396/0.241975. |
 | Public synthetic diagnosis audit | Twelve public-audit cases measured separately from development | Both policies find 2/2 labeled gaps; coverage 2/12; no false diagnosis on four no-gap controls. Exposed, not blind. |
 | Recommendation comparisons | Three policies measured under identical hard constraints | Each: 25/25 catalog items, 12/12 prerequisite-valid plans, 3/3 distinct reassessments, 4/4 annotated exhaustion controls; aggregate tie. |
-| Fresh practice/reassessment feasibility | OPEN-01 budget resolved; authored-slice test passes | Full catalog/live-loop evidence pending. |
-| Contract/split integrity | Frozen hashes/splits validated; domain and independent metric/leakage tests pass | Four structural variants and explicit failures covered; HTTP/browser integration remains Phase 3. |
+| Fresh practice/reassessment feasibility | OPEN-01 budget resolved; authored-slice test passes | The authored-slice live loop now passes Phase 3; full-catalog evidence remains pending. |
+| Contract/split integrity | Frozen hashes/splits validated; domain and independent metric/leakage tests pass | Four structural variants and explicit failures covered; HTTP/browser integration now passes Phase 3. |
 | Real learning benefit | No study | No claim. |
 
 Future entries must link actual run artifacts/commits and record failed as well as passing results.
@@ -144,3 +144,9 @@ The [evaluation packet](../evaluation/readme.md) specifies annotation groups, ex
 Training has 23 eligible responses (13 correct); smoothed global probability is 5/9. Audit predictions exclude thirteen events with explicit reasons; diagnosis counts separately cover two labeled-gap, four no-gap, four missing-evidence and two no-trigger cases. Prerequisite validity uses returned plans as the denominator (twelve); item checks and complete-plan invariants are separate. Exhaustion uses four explicitly annotated controls, rather than selecting a denominator after viewing model outputs. Average precision groups ties, and all null ratios have reasons.
 
 Four [fixture-only structural variants](../evaluation/variants.v1.json) exercise ties, depth/multiple paths, an independent shortcut and contextual tags. Their artificial question scaffolds are not curriculum additions or quality labels. Exact reproduction is a regression check of an exposed public audit. Both diagnosis policies and all three plan policies tie here; no confidence interval, causal explanation or learning effect is claimed. The authored slice remains too narrow for a broad ranking/generalization conclusion.
+
+## 11. Phase 3 regression and live boundary
+
+[phase3-regression-v1](../evaluation/results/phase3-regression-v1/manifest.json) pins the newly composed API sources and reproduces unchanged predictions, diagnoses and plan metrics. The original exposed audit is reused without policy tuning; no new independent-test claim is made. Archive checks require their own source snapshots; the current verification command points to this new regression run. The measured compatible summary is now published in canonical storage and exposed by the live API.
+
+[Real browser verification](evidence/phase3_live.json) additionally demonstrates two fresh practices and a distinct reassessment, saved-history refresh, local reset and isolation in two independent browser processes. It is a functional deployment check, not another quality dataset or evidence of educational benefit. Basic live-loop feasibility is now verified; full-catalog and later release/failure audits remain open.

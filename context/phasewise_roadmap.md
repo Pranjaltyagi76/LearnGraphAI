@@ -1,6 +1,6 @@
 # Phasewise roadmap
 
-**Updated:** 20 November 2026. **Current stage:** Phases 0, 1 and 2 complete at their bounded gates; Phase 3 is next. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
+**Updated:** 20 November 2026. **Current stage:** Phases 0–3 complete at their bounded gates; Phase 4 is next. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
 
 This is the operational handoff/status document. Check an item only after its stated artifact or verification exists. Drafting this context does not create the application, validate a model, provision a service, or pass a release gate.
 
@@ -10,11 +10,11 @@ This is the operational handoff/status document. Check an item only after its st
 | --- | --- |
 | Git | Local `main`, origin points to the owner's LearnGraphAI repository; configured owner author/committer identity. Delivery evidence is Git history and the remote branch, not an invented hash here. |
 | Specification | PROJECT/requirements reconciled with frozen protocol, storage and curriculum review decisions. |
-| Code/dependencies | Pure authoritative replay, exact estimates, bounded diagnosis, constrained plans, explanations and hash-verified release loading implemented; live full-analysis integration remains Phase 3. |
-| Curriculum | Reviewed draft: 12 concepts/17 scoped edges, 12 version-2 questions/2 lessons and 4 synthetic seed definitions. Published Phase 1 slice remains immutable; 60 questions remain. |
+| Code/dependencies | Pure authoritative replay, exact estimates, bounded diagnosis, constrained plans, explanations and hash-verified release loading implemented; live full-analysis routes and the transactional browser loop are implemented and deployed. |
+| Curriculum | Reviewed draft: 12 concepts/17 scoped edges, 12 version-2 questions/2 lessons and 4 synthetic seed definitions. Both the legacy Phase 1 row and separate reviewed analysis package are immutable and live; 60 questions remain. |
 | Services | Two Vercel Hobby projects and a Healthy Supabase Free Nano project. Migration/seed/runtime login configured; public readiness 200 and actual browser grading passed. |
 | Benchmarks/performance | Local checks and source CI pass. Hosted privilege/quota checks, eleven-request smoke, browser grading, artifact/memory and cold/hot provider metrics recorded. Measured public synthetic prediction/diagnosis/plan audit now exists; no real-world or learning-benefit claim. |
-| Next action | Phase 3: publish/activate the compatible analysis release, compose bounded HTTP/quota routes, implement browser sandbox and verify one live loop. |
+| Next action | Phase 4: author/review the remaining 60 questions and complete the learner UI/accessibility coverage; preserve the verified Phase 3 loop. |
 
 ## 2. Resolved content-budget decision — OPEN-01
 
@@ -93,13 +93,15 @@ Requirements: FR-06–11/14/18, NFR-03/09/10.
 
 Requirements: FR-01/04/05/12–17/19, NFR-02/07/12.
 
-- [ ] Implement profile/seed/analyze routes and one coherent response bundle.
-- [ ] Add anonymous local sandbox with pending/acknowledged states, refresh, reset, and stale-response protection.
-- [ ] Ship a feasible question → supported gap/evidence request → fresh practice → different reassessment path.
-- [ ] Show evidence counts, alternatives, and before/after results without inventing improvement.
-- [ ] Test independent browsers and concurrent tabs in the completed loop; Phase 1 recorded/dependency failure and grading-contract cases already pass.
+- [x] Implement profile/seed/analyze routes and one coherent response bundle.
+- [x] Add anonymous local sandbox with pending/acknowledged states, refresh, reset, and stale-response protection.
+- [x] Ship a feasible question → supported gap/evidence request → fresh practice → different reassessment path.
+- [x] Show evidence counts, alternatives, and before/after results without inventing improvement.
+- [x] Test independent browsers and concurrent tabs in the completed loop; Phase 1 recorded/dependency failure and grading-contract cases already pass.
 
 **Gate:** The actual live loop completes without developer intervention and without modifying another sandbox/canonical seed.
+
+**Passed, 20 November 2026:** the real public loop completes in fresh browsers, restores local history and isolates canonical/other-browser state. Exact scope and evidence are recorded below.
 
 ### Phase 4 — Complete curriculum and learner UI
 
@@ -194,3 +196,14 @@ Before a future batch, read [AGENTS.md](../AGENTS.md), inspect working-tree/remo
 - **Actual checks:** 185 local tests passed, five isolated SQL checks skipped locally, one pre-existing Starlette/httpx deprecation warning. Ruff/format, frozen artifacts/content/splits and Node hash conformance pass. The saved benchmark recomputes byte-for-byte with zero retained state/invariant failures. CI runs isolated PostgreSQL/browser regressions plus saved-result reproduction. [Local evidence](evidence/phase2_review.json).
 - **Boundary:** the compatible byte-package constructor is ready for a canonical repository adapter; publication, analysis-release pointer/HTTP admission/quota wiring, browser storage and live activation are Phase 3 integration work. No provider migration, service, payment, dependency, deployment or visitor persistence was introduced. Runtime Phase 1 behavior remains compatible.
 - **Next:** implement the first three Phase 3 tasks together: publish a new immutable compatible release while retaining legacy routes, expose full-analysis metadata/replay with bounded admission and shared quotas, then build/test the IndexedDB pending/acknowledged loop and deploy it on the existing free topology.
+
+### Phase 3 completion — 20 November 2026
+
+- **Passed live gate:** [guided demo](https://learngraph-ai-web.vercel.app/learn), in two fresh independent Chromium browsers. Mira starts with a seed-based supported gap, receives two fresh practices and a different same-skill reassessment, and ends at 0.5/developing with exhausted questions. Seed evidence 0/3 → current evidence 3/6 correct; no mastery or learning claim. Refresh restores accepted history; reset affects only the local sandbox. [Actual proof](evidence/phase3_live.json), [desktop](evidence/phase3_live_desktop.png), [mobile](evidence/phase3_live_desktop_mobile.png).
+- **Published data:** new immutable row learngraph-review-v1, compatible release hash ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80, package hash edfb6e59ca36d9d6d57af5ba3b35602e7addb5f086a4aa05d364516d78b4f76b. Five raw artifact byte strings plus the actual measured synthetic summary round-trip through JSONB. Four profile projections/twelve questions/two lessons omit future grading feedback. Repeated owner verification and restricted runtime verification passed. Legacy phase1-v1/hash is unchanged. No schema migration or visitor database write.
+- **API:** new release pointer/scoped profile/seed routes, POST analyze and measured evaluation route compose the pure engine with byte/schema bounds, shared quotas, safe errors, explicit receipt time and one response bundle. Health reports phase3; /ready retains the legacy release_id while checking both configured packages. Unsupported analysis versions return 409; old routes preserve their shapes.
+- **Browser:** generated strict protocol types/schema, independent hash-vector conformance and request/bundle/cache validation; IndexedDB transactions commit pending before network, atomically acknowledge, and compare observed records on mutation. Refresh/manual retry preserves the complete snapshot; reset changes generation; profile/version/tab conflicts and delayed responses cannot overwrite newer history. BroadcastChannel is advisory; unavailable/blocked/failed storage requires an explicit isolated session-only choice. Invalid records are preserved for export/reset.
+- **Actual checks:** 192 backend tests passed locally; six isolated SQL tests skipped locally and pass in CI. Twenty-three Chromium tests pass, covering the learning loop, two contexts/tabs, retries, mismatches, reset/profile switch in flight, failed/blocked storage, corrupt caches, version isolation and revision overflow. Ruff, type/lint/build, frozen/generated artifacts and exposed regression reproduction pass. [Source CI 44759575477](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44759575477) passed backend/frontend including PostgreSQL 17 and browser tests.
+- **Deployment:** exact tested source 24826440aa9e2eab076b93a39beede64d6525001; API dpl_7BHbv5GpXZY8fXBpbUmyXm4iCw7J and web dpl_6Sj1MYrhVL7d9MLu7XpcvdeDwQSM are READY on the existing production aliases. API was verified before frontend release. No new package, plan, service, payment or paid monitoring was added. [Release evidence](evidence/phase3_release.json) records source/stored hashes, TLS/grants, versions, five public analysis reservations and verification scope. Provider deployment-specific error scans found no matching error logs; no drains are configured.
+- **Benchmark:** [phase3-regression-v1](../evaluation/results/phase3-regression-v1/manifest.json) binds the new API sources and reproduces unchanged baseline metrics. It is another exposed regression replay, not an independent final audit or policy change. Older Phase 2 runs remain archived and require their pinned implementation for strict hash checks.
+- **Next:** Phase 4 full content/UI. Four contrasting profiles and basic evidence/plan/timeline views are already delivered; the remaining sixty questions, full learner experience, comprehensive keyboard/contrast audit and later release/rollback/failure gates remain open.

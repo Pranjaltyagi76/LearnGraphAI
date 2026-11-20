@@ -1,6 +1,6 @@
 # Browser sandbox contract v1
 
-**State:** Phase 0 design freeze; implementation and real multi-tab/browser tests are Phase 3. No saved progress is claimed by the live Phase 1 preview.
+**State:** frozen protocol implemented and verified in Phase 3. The guided /learn loop saves browser-local synthetic progress; the separate legacy Phase 1 preview does not.
 
 ## Authority and key
 
@@ -47,6 +47,12 @@ A late response is ignored if the active profile/key, sandbox UUID, revision, pe
 
 ## Verification obligations
 
-Phase 3 must test actual browser transactions: two tabs stage from the same revision, duplicate retry/ack, refresh with pending work, reset while a response is in flight, profile/version switches, corrupt records, write failure, storage-denied mode, no BroadcastChannel, and blocked database upgrade. [State-transition fixtures](../contracts/fixtures/storage-transitions.json) specify expected outcomes; they do not constitute an implemented browser store.
+Phase 3 tests now verify actual browser transactions: two tabs stage from the same revision, duplicate retry/ack, refresh with pending work, reset while a response is in flight, profile/version switches, corrupt records, write failure, storage-denied mode, no BroadcastChannel, and blocked database upgrade. [State-transition fixtures](../contracts/fixtures/storage-transitions.json) specify expected outcomes; they do not constitute an implemented browser store.
 
 Primary references: [IndexedDB transaction scheduling](https://w3c.github.io/IndexedDB/#transaction-scheduling) and [BroadcastChannel](https://html.spec.whatwg.org/multipage/web-messaging.html#broadcasting-to-other-browsing-contexts). IndexedDB is the authority; messaging is advisory.
+
+## Phase 3 implementation evidence
+
+The real store is [sandbox.ts](../frontend/lib/sandbox.ts); request/cache verification is [protocol.ts](../frontend/lib/protocol.ts), with generated frozen types/schema. Twenty-three browser tests include actual IndexedDB transactions in competing tabs without BroadcastChannel, duplicate acknowledgement, aborted/quota-failed writes, corrupt record/cache preservation and explicit reset, blocked open queues, versionchange closure, maximum revisions, incompatible-version keys, pending refresh/retry, delayed reset/profile responses, session fallback, and the completed learning loop. Database opening is bounded to three seconds; a late successful open closes after timeout. No timer performs network keepalive or automatic submission retries.
+
+[Hosted browser proof](evidence/phase3_live.json) independently verifies the completed production loop, acknowledged refresh, local reset and isolation in two fresh browser processes. [Release evidence](evidence/phase3_release.json) distinguishes that live gate from the loopback fixture API used by regression tests. Raw corrupt non-JSON data stays preserved; when JSON export is impossible, the UI reports that explicitly instead of pretending an export succeeded.
