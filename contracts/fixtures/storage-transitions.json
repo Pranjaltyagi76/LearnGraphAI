@@ -1,0 +1,203 @@
+{
+  "storage_contract_version": 1,
+  "status": "normative_cases_not_executed_browser_store",
+  "cases": [
+    {
+      "id": "two_tab_stage",
+      "given": {
+        "revision": 2,
+        "pending": null
+      },
+      "actions": [
+        "tab_a stages from revision 2",
+        "tab_b stages from revision 2"
+      ],
+      "expected": {
+        "winner_revision": 3,
+        "second_action": "conflict_no_write"
+      }
+    },
+    {
+      "id": "late_after_reset",
+      "given": {
+        "revision": 3,
+        "pending": "event-a"
+      },
+      "actions": [
+        "reset to new sandbox UUID/revision 4",
+        "old revision-3 response arrives"
+      ],
+      "expected": {
+        "action": "ignore_response",
+        "history": []
+      }
+    },
+    {
+      "id": "duplicate_ack",
+      "given": {
+        "revision": 3,
+        "pending": "event-a"
+      },
+      "actions": [
+        "ack event-a",
+        "ack event-a again"
+      ],
+      "expected": {
+        "acknowledged_count": 1,
+        "revision": 4,
+        "second_action": "ignore_response"
+      }
+    },
+    {
+      "id": "refresh_pending",
+      "given": {
+        "revision": 3,
+        "pending": "event-a"
+      },
+      "actions": [
+        "refresh"
+      ],
+      "expected": {
+        "pending": "event-a",
+        "accepted": false,
+        "action": "offer_same_snapshot_retry"
+      }
+    },
+    {
+      "id": "quota_failure",
+      "given": {
+        "revision": 3,
+        "pending": "event-a"
+      },
+      "actions": [
+        "429 Retry-After 40"
+      ],
+      "expected": {
+        "pending": "event-a",
+        "automatic_retry": false,
+        "retry_enabled_after_seconds": 40
+      }
+    },
+    {
+      "id": "dependency_failure",
+      "given": {
+        "revision": 3,
+        "pending": "event-a"
+      },
+      "actions": [
+        "503"
+      ],
+      "expected": {
+        "pending": "event-a",
+        "accepted": false,
+        "automatic_retry": false
+      }
+    },
+    {
+      "id": "invalid_record",
+      "given": {
+        "corrupt": true
+      },
+      "actions": [
+        "restore"
+      ],
+      "expected": {
+        "send_to_api": false,
+        "action": "preserve_and_offer_reset"
+      }
+    },
+    {
+      "id": "failed_commit",
+      "given": {
+        "revision": 2,
+        "pending": null
+      },
+      "actions": [
+        "stage transaction aborts"
+      ],
+      "expected": {
+        "revision": 2,
+        "send_to_api": false,
+        "action": "offer_session_mode"
+      }
+    },
+    {
+      "id": "session_mode",
+      "given": {
+        "persistence": "session"
+      },
+      "actions": [
+        "refresh"
+      ],
+      "expected": {
+        "persistence_guaranteed": false,
+        "overwrite_persisted_record": false
+      }
+    },
+    {
+      "id": "version_switch",
+      "given": {
+        "release_id": "old"
+      },
+      "actions": [
+        "new release tuple selected"
+      ],
+      "expected": {
+        "action": "new_key_offer_reset",
+        "old_record_changed": false
+      }
+    },
+    {
+      "id": "no_channel",
+      "given": {
+        "broadcast_channel": false,
+        "revision": 2
+      },
+      "actions": [
+        "another tab commits revision 3",
+        "stage from revision 2"
+      ],
+      "expected": {
+        "action": "transactional_conflict_no_write"
+      }
+    },
+    {
+      "id": "history_bound",
+      "given": {
+        "acknowledged_count": 200
+      },
+      "actions": [
+        "stage one more response"
+      ],
+      "expected": {
+        "action": "reject_before_network",
+        "truncate": false
+      }
+    },
+    {
+      "id": "stale_profile",
+      "given": {
+        "profile_id": "demo_base_cases"
+      },
+      "actions": [
+        "switch profile",
+        "old profile response arrives"
+      ],
+      "expected": {
+        "action": "ignore_response"
+      }
+    },
+    {
+      "id": "upgrade_blocked",
+      "given": {
+        "connection_open_in_other_tab": true
+      },
+      "actions": [
+        "database version upgrade requested"
+      ],
+      "expected": {
+        "action": "close_on_versionchange_show_reload_notice"
+      }
+    }
+  ]
+}
