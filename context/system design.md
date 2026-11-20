@@ -1,6 +1,6 @@
 # System design
 
-**Status:** P0 target design with an implemented Phase 1 feasibility subset; hosted database readiness remains pending. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
+**Status:** P0 target design with a verified live Phase 1 feasibility subset; full diagnosis/replay remains planned. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
 
 This document owns runtime behavior, data flow, consistency, and failure handling. Module layout and technology decisions belong in [architecture.md](architecture.md).
 
@@ -124,7 +124,7 @@ Errors follow `{code, message, request_id, details}` with bounded safe details. 
 
 - Exact schemas, canonical digest serialization, timestamp skew limits, and storage-key format.
 - Published version/activation mechanism and safe cache invalidation.
-- Runtime database role, quota function transaction semantics, hashed identifier derivation, and expiry cleanup.
+- Full-analysis contracts around the implemented runtime role/quota boundary: Phase 1 uses an inherited NOLOGIN runtime group, atomic fixed-minute/global daily buckets, daily HMAC client hashes, and bounded opportunistic cleanup. See the migration and deployment runbook.
 - Cross-tab conflict strategy and pending-answer recovery behavior.
 - Reviewed curriculum edges, content slice, and independent scenario labels.
 
@@ -137,4 +137,4 @@ The current API implements `/health`, `/ready`, profile/seed reads, and `POST /a
 
 The source contains one synthetic profile and 12 authored questions across two concepts, plus the proposed 12-node/17-edge graph. It does not claim all four profiles or the complete 72-question curriculum exist.
 
-Observed hosted boundary: public browser → public API `/ready` → `503 not_configured`; the UI preserves the explicitly prerecorded state and says no response was accepted. The actual Supabase path is blocked because its integration is not installed/connected. Isolated PostgreSQL CI passed, but that does not substitute for hosted verification.
+Verified hosted boundary: public browser → FastAPI → TLS transaction-pooled Supabase → canonical question and atomic quota guard → real grading feedback. `/ready` returns 200; the browser displayed the correct server explanation after selecting `n`. Runtime canonical/quota writes and public-role access are denied; even the owner cannot update a published release. The initial unconfigured-dependency failure was also exercised before provisioning. Evidence is in [deployment](deployment.md) and [performance review](performance_review.md).

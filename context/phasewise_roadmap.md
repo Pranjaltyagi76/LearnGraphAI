@@ -1,6 +1,6 @@
 # Phasewise roadmap
 
-**Updated:** 20 November 2026. **Current stage:** Phase 1 scaffold/verification in progress at the user’s request; remaining Phase 0 contract/content review is not marked complete. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
+**Updated:** 20 November 2026. **Current stage:** Phase 1 complete; finish remaining Phase 0 contract/content review before Phase 2. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
 
 This is the operational handoff/status document. Check an item only after its stated artifact or verification exists. Drafting this context does not create the application, validate a model, provision a service, or pass a release gate.
 
@@ -12,9 +12,9 @@ This is the operational handoff/status document. Check an item only after its st
 | Specification | Revised PROJECT.md plus requirements and context references. |
 | Code/dependencies | Next.js/FastAPI scaffold and pinned lockfiles exist; full diagnosis/replay remains Phase 2. |
 | Curriculum | Proposed 12 concepts/17 edges and an authored two-concept, 12-question feasibility slice; complete 72-item catalog pending. |
-| Services | Frontend/API deployed and READY on Vercel Hobby. Supabase account connected; Free Nano project `qnboukxsaczidpwtnadl` is Healthy in `us-east-1`. Private owner connection, migration/seeding, runtime provisioning, and live readiness remain pending. |
-| Benchmarks/performance | Ten local API tests and four local browser tests pass; remote frontend/backend CI jobs pass, including isolated PostgreSQL. No model-quality benchmark or hosted DB timing. |
-| Next action | Finish Phase 1 using the private owner connection, then verify the real deployed database path. Remaining Phase 0 contract/content review is still open. |
+| Services | Two Vercel Hobby projects and a Healthy Supabase Free Nano project. Migration/seed/runtime login configured; public readiness 200 and actual browser grading passed. |
+| Benchmarks/performance | Local checks and source CI pass. Hosted privilege/quota checks, eleven-request smoke, browser grading, artifact/memory and cold/hot provider metrics recorded. No model-quality benchmark. |
+| Next action | Complete remaining Phase 0 contract/content review, then implement Phase 2 deterministic diagnosis/replay and offline evaluation. |
 
 ## 2. Resolved content-budget decision — OPEN-01
 
@@ -60,15 +60,17 @@ Requirements: FR-19, NFR-01–06/08/10/11.
 
 - [x] Create minimal frontend/backend scaffolds with verified supported pinned versions and lockfiles.
 - [x] Add verified local setup commands and placeholder-only environment documentation.
-- [ ] Configure two Vercel Hobby projects and Supabase Free without paid billing, using correct repository roots.
-- [ ] Apply minimal canonical/quota migrations; verify least-privilege reads and atomic guard behavior.
-- [ ] Finish live database pooling/TLS and runtime ownership verification; FastAPI packaging, public aliases, project ownership, and production CORS are verified.
-- [ ] Exercise browser → API → database → response; measure bundle/cold/warm behavior.
-- [x] Implement health/readiness and clear unavailable/example states; hosted database readiness still pending.
-- [ ] Record actual runtime/limits/URLs/checks in deployment and performance documents.
-- [ ] Test Render Free only if the preferred free API path fails its measured viability gate.
+- [x] Configure two Vercel Hobby projects and Supabase Free without paid billing, using correct repository roots.
+- [x] Apply minimal canonical/quota migrations; verify least-privilege reads and atomic guard behavior on the hosted database.
+- [x] Verify live transaction pooling/TLS, runtime/owner separation, FastAPI packaging, public aliases, project ownership, and production CORS.
+- [x] Exercise browser → API → database → response; record artifact size, process/provider memory, cold/hot provider metrics, and client smoke timings with their limitations.
+- [x] Implement and exercise health/readiness and clear unavailable/example states; hosted readiness now returns 200.
+- [x] Record runtime/limits/URLs/checks, immutable hash verification, and idempotent reseeding in deployment/performance evidence.
+- [x] Resolve fallback decision: preferred free Vercel path passed; Render is not required or provisioned.
 
 **Gate:** A real public round trip works within verified free eligibility and constraints. Prerecorded examples alone cannot pass.
+
+**Passed, 20 November 2026:** live browser grading and hosted database/resource checks succeeded. Evidence and cold-probe limitations are in [performance review](performance_review.md). This closes Phase 1, not the full learning loop or model evaluation.
 
 ### Phase 2 — Deterministic baseline and offline evaluation
 
@@ -152,22 +154,17 @@ At meaningful milestones record: date, phase/task IDs, changed behavior, commit 
 Before a future batch, read [AGENTS.md](../AGENTS.md), inspect working-tree/remote state, and select a coherent slice. Preserve user changes. Deliver authorized work in 4–6 meaningful commits where the scope supports it, using the owner's configured author/committer and no assistant co-author trailers.
 
 
-### Phase 1 delivery evidence — 20 November 2026
+### Phase 1 completion evidence — 20 November 2026
 
-- Source/verification commit: `daef1171bdf2608911dba09ea6d658a5f19c5dfb`; final documentation-only delivery records these observations.
-- [Frontend preview](https://learngraph-ai-web.vercel.app) and [API health](https://learngraph-ai-api.vercel.app/health) are public. Vercel reports both deployments READY; deployment IDs and environments are in deployment.md.
-- Local: ten API contract/content tests passed; four SQL tests skipped because no local PostgreSQL was configured. Four production-build browser tests passed, including mobile, recorded, unavailable, and grading-contract behavior. Lint/typecheck/build and content/DAG validation pass.
-- [Remote CI](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44700160117): frontend and backend jobs succeeded. Backend is configured with real isolated PostgreSQL 17 and runs the SQL suite. Public raw-log download required authentication, so this report does not invent a separate hosted CI test-count transcript.
-- Public API response: `/health` = 200 JSON; `/ready` = 503 `not_configured`, with the production frontend origin allowed. The actual browser shows the explicit unavailable notice and retains the recorded example.
-- User confirmed no paid billing; Vercel's deployment-context tool independently returned `plan: hobby`. No paid resource was enabled, no database secret supplied, and no Supabase migration was run.
-- **Remaining gate:** install/connect Supabase, select/create a verified free project, apply/verify migration and seed, configure a separate runtime login and hash secret, redeploy API, then prove browser → API → Supabase → grading response. Record DB/cold/warm/resource/recovery evidence afterward. Phase 1 is **not complete** until this succeeds.
-- Vercel deployments were requested explicitly from the exact Git SHA. Automatic Git push-to-deploy linkage is not configured/verified; do not assume a later Git push redeploys these projects automatically.
-
-### Phase 1 continuation — Supabase project provisioned, runtime connection pending
-
-- Verified Supabase's connected Primary account and the owner's Free organization. The user created `learngraph-ai`, project `qnboukxsaczidpwtnadl`; dashboard shows Healthy Nano in `us-east-1`. Data API was disabled and automatic RLS enabled on the creation form. No paid billing/add-on was configured.
-- Verified session/transaction pooler host and ports in the dashboard; free shared host has IPv4 DNS records. No authenticated connection or migration has run yet.
-- Added a read-only runtime/TLS/content audit and a one-time restricted-login helper. Both commits use the owner's author/committer. [CI run 44715705552](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44715705552) passed backend/frontend, including the new isolated PostgreSQL audit.
-- Added bounded deployment smoke tooling and safe production timing/process-memory logging. Local lint/format and ten API tests pass; five PostgreSQL checks skip locally. These prepared hooks are not deployed or measured hosted results.
-- The owner password is requested only in ignored `backend/.env.local` as temporary `SUPABASE_OWNER_PASSWORD`; no password/token should be sent in chat. At the last check that value and `MIGRATION_DATABASE_URL` were empty. The file is excluded by Git.
-- **Resume:** prepare the TLS session-pooler owner DSN privately and remove the temporary password field; migrate/seed/verify; provision runtime; run the read-only runtime audit; set only `DATABASE_URL`/`CLIENT_ID_HASH_SECRET` in API production secrets; deploy the exact pushed source; exercise the real browser round trip and bounded smoke report; record measured evidence. Phase 1 remains incomplete until the gate passes.
+- **Passed gate:** public browser → API → Supabase → real grading feedback. The page switched from its labeled example to a live question, accepted option n, and displayed the server explanation. [Browser proof](evidence/phase1_live_grading.jpg).
+- API source 568048188668d0a687b0b08677475f490099c7fd, deployment dpl_8VtMQHBUV5boQida7rGVeaFrkTnh; unchanged frontend source daef1171bdf2608911dba09ea6d658a5f19c5dfb. Public aliases are in deployment.md. Automatic Git push-to-deploy linkage is not configured; future code pushes require an explicit deployment.
+- Vercel team is Hobby, confirmed without paid billing. Supabase organization is Free; project qnboukxsaczidpwtnadl is Healthy Nano in us-east-1. No paid plan, add-on, payment setup, or keepalive was introduced.
+- Owner migrate/seed/verify and restricted runtime provisioning succeeded. Transaction pooling/TLS, effective grants, owner separation, and source/stored/recomputed hashes passed. Vercel Production Secrets were supplied through CLI stdin. Private configuration remains ignored; the temporary password field was removed.
+- [Hosted database report](evidence/phase1_database.json): twelve reservations with four workers admitted exactly ten, both counters equal ten; global exhaustion rejects another client without incrementing. Runtime writes/public-role access are denied, published releases resist owner mutation, and logical expiry is within 48 hours. Temporary quota fixtures were removed. Database size: 11,237,043 bytes.
+- [Public smoke](evidence/phase1_deployment.json): eleven sequential requests, three grading reservations, no retries. Health/readiness 200, CORS/projection, correct/incorrect grades, and version 409 passed. The separate browser answer used one additional reservation.
+- [Resources](evidence/phase1_resources.json): Python 3.12, reported lambda size 12,699,243 bytes, allocation 2,048 MiB, timeout 15 s, iad1; captured process peak RSS 64,660 KiB. Artifact encoding is unspecified; no uncompressed-size claim.
+- [Provider metrics](evidence/phase1_provider_metrics.json): two cold GET / probes (404, no grading) and sixteen hot invocations. Cold duration average/max 902.5/1,006 ms; TTFB 1,313/1,657 ms. Hot duration average/max 34.5/127 ms. Provider peak memory 210 MB. These are small provider samples, not full client cold-grading latency.
+- Repeated seed/hash verification and a new API deployment preserving canonical data passed. Full disaster restore, pause/resume, version rollback, and full-loop failure recovery remain Phase 5 work.
+- Local lint/format/content and ten API tests passed; five SQL checks skip without a local test DB. [Source CI run 44730530223](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44730530223) passed backend/frontend with isolated PostgreSQL 17 and four browser tests. No model-quality benchmark was run.
+- Initial tool/credential-transfer obstacles were resolved through the authenticated dashboard, owner scripts, and official CLI. Supabase tools remain absent from this chat. Render fallback was unnecessary.
+- **Next:** complete the unchecked Phase 0 graph/content/contracts/evidence review, then implement Phase 2 deterministic replay, estimates, diagnosis/plans, and independent offline evaluation. Full P0 curriculum and learning-loop acceptance remain open.

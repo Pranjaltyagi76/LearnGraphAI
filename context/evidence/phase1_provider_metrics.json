@@ -1,0 +1,203 @@
+{
+  "source": "Vercel CLI 66.5.0 observability, selected API project only",
+  "query": {
+    "metrics": {
+      "invocations": {
+        "metric": "vercel.function_invocation.count",
+        "aggregation": "count"
+      },
+      "duration_avg_ms": {
+        "metric": "vercel.function_invocation.function_duration_ms",
+        "aggregation": "avg"
+      },
+      "duration_max_ms": {
+        "metric": "vercel.function_invocation.function_duration_ms",
+        "aggregation": "max"
+      },
+      "ttfb_avg_ms": {
+        "metric": "vercel.function_invocation.ttfb_ms",
+        "aggregation": "avg"
+      },
+      "ttfb_max_ms": {
+        "metric": "vercel.function_invocation.ttfb_ms",
+        "aggregation": "max"
+      },
+      "peak_memory_mb": {
+        "metric": "vercel.function_invocation.peak_memory_mb",
+        "aggregation": "max"
+      },
+      "active_cpu_ms": {
+        "metric": "vercel.function_invocation.function_cpu_time_ms",
+        "aggregation": "sum"
+      },
+      "origin_transfer_bytes": {
+        "metric": "vercel.function_invocation.fot_total_bytes",
+        "aggregation": "sum"
+      }
+    },
+    "outputs": [
+      "invocations",
+      "duration_avg_ms",
+      "duration_max_ms",
+      "ttfb_avg_ms",
+      "ttfb_max_ms",
+      "peak_memory_mb",
+      "active_cpu_ms",
+      "origin_transfer_bytes"
+    ],
+    "groupBy": [
+      "functionStartType"
+    ],
+    "filter": "deploymentId:dpl_8VtMQHBUV5boQida7rGVeaFrkTnh AND environment:production",
+    "timeRange": {
+      "start": "2026-11-20T11:56:00Z",
+      "end": "2026-11-20T12:01:00Z"
+    }
+  },
+  "result": {
+    "query": {
+      "metrics": {
+        "invocations": {
+          "metric": "vercel.function_invocation.count",
+          "aggregation": "count"
+        },
+        "duration_avg_ms": {
+          "metric": "vercel.function_invocation.function_duration_ms",
+          "aggregation": "avg"
+        },
+        "duration_max_ms": {
+          "metric": "vercel.function_invocation.function_duration_ms",
+          "aggregation": "max"
+        },
+        "ttfb_avg_ms": {
+          "metric": "vercel.function_invocation.ttfb_ms",
+          "aggregation": "avg"
+        },
+        "ttfb_max_ms": {
+          "metric": "vercel.function_invocation.ttfb_ms",
+          "aggregation": "max"
+        },
+        "peak_memory_mb": {
+          "metric": "vercel.function_invocation.peak_memory_mb",
+          "aggregation": "max"
+        },
+        "active_cpu_ms": {
+          "metric": "vercel.function_invocation.function_cpu_time_ms",
+          "aggregation": "sum"
+        },
+        "origin_transfer_bytes": {
+          "metric": "vercel.function_invocation.fot_total_bytes",
+          "aggregation": "sum"
+        }
+      },
+      "outputs": [
+        "invocations",
+        "duration_avg_ms",
+        "duration_max_ms",
+        "ttfb_avg_ms",
+        "ttfb_max_ms",
+        "peak_memory_mb",
+        "active_cpu_ms",
+        "origin_transfer_bytes"
+      ],
+      "groupBy": [
+        "functionStartType"
+      ],
+      "filter": "deploymentId:dpl_8VtMQHBUV5boQida7rGVeaFrkTnh AND environment:production",
+      "timeRange": {
+        "start": "2026-11-20T11:56:00Z",
+        "end": "2026-11-20T12:01:00Z"
+      },
+      "scope": {
+        "ownerId": "team_mRdCuSvoFHIrkEm4K3UAPs7P",
+        "projectIds": [
+          "prj_K3hvjn2d1vKQDzJBTm7DJ14XC0iA"
+        ]
+      }
+    },
+    "summary": [
+      {
+        "functionStartType": "cold",
+        "invocations": 2,
+        "duration_avg_ms": 902.5,
+        "duration_max_ms": 1006,
+        "ttfb_avg_ms": 1313,
+        "ttfb_max_ms": 1657,
+        "peak_memory_mb": 201,
+        "active_cpu_ms": 80,
+        "origin_transfer_bytes": 2364
+      },
+      {
+        "functionStartType": "hot",
+        "invocations": 16,
+        "duration_avg_ms": 34.5,
+        "duration_max_ms": 127,
+        "ttfb_avg_ms": 43.1875,
+        "ttfb_max_ms": 137,
+        "peak_memory_mb": 210,
+        "active_cpu_ms": 170,
+        "origin_transfer_bytes": 16644
+      }
+    ],
+    "data": [],
+    "queryId": "observability-api-a9f6e44c-a8e9-436d-91a0-cc9f4ec4d181",
+    "meta": {
+      "outputs": {
+        "invocations": {
+          "kind": "metric",
+          "metric": "vercel.function_invocation.count",
+          "aggregation": "count",
+          "unit": "count"
+        },
+        "duration_avg_ms": {
+          "kind": "metric",
+          "metric": "vercel.function_invocation.function_duration_ms",
+          "aggregation": "avg",
+          "unit": "milliseconds"
+        },
+        "duration_max_ms": {
+          "kind": "metric",
+          "metric": "vercel.function_invocation.function_duration_ms",
+          "aggregation": "max",
+          "unit": "milliseconds"
+        },
+        "ttfb_avg_ms": {
+          "kind": "metric",
+          "metric": "vercel.function_invocation.ttfb_ms",
+          "aggregation": "avg",
+          "unit": "milliseconds"
+        },
+        "ttfb_max_ms": {
+          "kind": "metric",
+          "metric": "vercel.function_invocation.ttfb_ms",
+          "aggregation": "max",
+          "unit": "milliseconds"
+        },
+        "peak_memory_mb": {
+          "kind": "metric",
+          "metric": "vercel.function_invocation.peak_memory_mb",
+          "aggregation": "max",
+          "unit": "megabytes"
+        },
+        "active_cpu_ms": {
+          "kind": "metric",
+          "metric": "vercel.function_invocation.function_cpu_time_ms",
+          "aggregation": "sum",
+          "unit": "milliseconds"
+        },
+        "origin_transfer_bytes": {
+          "kind": "metric",
+          "metric": "vercel.function_invocation.fot_total_bytes",
+          "aggregation": "sum",
+          "unit": "bytes"
+        }
+      },
+      "effectiveTimeRange": {
+        "start": "2026-11-20T11:56:00.000Z",
+        "end": "2026-11-20T12:01:00.000Z"
+      }
+    }
+  },
+  "interpretation": "Cold group consists of provider GET / probes returning 404 after a fresh deployment; hot group includes public smoke and browser requests. Small descriptive provider samples, not full client cold-start latency or an SLO.",
+  "api_source_commit": "568048188668d0a687b0b08677475f490099c7fd"
+}

@@ -1,0 +1,121 @@
+{
+  "observed_at": "2026-11-20T11:57:15.328846+00:00",
+  "api": "https://learngraph-ai-api.vercel.app",
+  "frontend": "https://learngraph-ai-web.vercel.app",
+  "deployment_id": "dpl_8VtMQHBUV5boQida7rGVeaFrkTnh",
+  "client": {
+    "os": "Windows",
+    "python": "3.12.10"
+  },
+  "method": "Sequential, no retries; cold state unclassified; three grading reservations.",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "elapsed_ms": 735.59,
+      "response_bytes": 62,
+      "server_timing": "api;dur=2.85",
+      "request_id": "ee9d56ec-50e4-4885-9e05-5d7879cc6888"
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "status": 200,
+      "elapsed_ms": 695.6,
+      "response_bytes": 43,
+      "server_timing": "api;dur=121.93",
+      "request_id": "41656143-c974-4671-8a8c-88c0524e6ce3"
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "status": 200,
+      "elapsed_ms": 598.19,
+      "response_bytes": 43,
+      "server_timing": "api;dur=28.59",
+      "request_id": "6e703302-9cf7-48a9-884c-b1008a47e37d"
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "status": 200,
+      "elapsed_ms": 584.48,
+      "response_bytes": 43,
+      "server_timing": "api;dur=27.75",
+      "request_id": "04ca7511-b0ab-45f5-8bc1-043d419c3480"
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "status": 200,
+      "elapsed_ms": 351.49,
+      "response_bytes": 43,
+      "server_timing": "api;dur=27.67",
+      "request_id": "c7839f4e-8883-4716-9942-136145c144fd"
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "status": 200,
+      "elapsed_ms": 579.49,
+      "response_bytes": 43,
+      "server_timing": "api;dur=28.60",
+      "request_id": "e7ece725-40f2-4729-a0f3-c23b170788ba"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/demo/profiles",
+      "status": 200,
+      "elapsed_ms": 330.76,
+      "response_bytes": 206,
+      "server_timing": "api;dur=15.51",
+      "request_id": "53e652a3-caa2-4548-a154-b713cddb28af"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/demo/profiles/demo_base_cases/seed",
+      "status": 200,
+      "elapsed_ms": 433.06,
+      "response_bytes": 7270,
+      "server_timing": "api;dur=15.85",
+      "request_id": "01afd541-e547-479b-993e-e3d684855bf2"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/bootstrap/answer",
+      "status": 200,
+      "elapsed_ms": 364.79,
+      "response_bytes": 250,
+      "server_timing": "api;dur=56.12",
+      "request_id": "6758e6f9-056e-4e83-9c3b-17380ee9f337"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/bootstrap/answer",
+      "status": 200,
+      "elapsed_ms": 335.18,
+      "response_bytes": 251,
+      "server_timing": "api;dur=31.02",
+      "request_id": "0af9dd33-a874-4df6-a4c9-cb33ec49eb92"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/bootstrap/answer",
+      "status": 409,
+      "elapsed_ms": 343.55,
+      "response_bytes": 148,
+      "server_timing": "api;dur=16.10",
+      "request_id": "4efaf080-b63a-4b02-b573-ce7fca6eb460"
+    }
+  ],
+  "passed": true,
+  "readiness_ms": {
+    "n": 5,
+    "p50": 584.48,
+    "p95_nearest_rank": 695.6,
+    "max": 695.6,
+    "interpretation": "Small network/TLS sample; no latency SLO claim."
+  },
+  "api_source_commit": "568048188668d0a687b0b08677475f490099c7fd"
+}

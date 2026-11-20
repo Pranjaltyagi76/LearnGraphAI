@@ -4,11 +4,11 @@
 
 LearnGraph AI is a planned explainable learning-diagnostics portfolio application. It combines a prerequisite graph, transparent estimates of observed performance, and targeted practice to help explain where a learner may need support.
 
-**Status:** Phase 1 scaffold is implemented: a Next.js preview, FastAPI question/grading slice, versioned 12-question source, migration/seed scripts, and verification suites. A Supabase account is connected and a verified Free Nano database project is healthy. Private database credentials, migration/seeding, and the live deployment gate remain pending; Phase 1 is not complete. The full 72-question curriculum, diagnosis/replay engine, saved progress, and reassessment UI remain later work.
+**Status:** Phase 1 is complete: the public Next.js preview delivers a question through FastAPI and Supabase Free, grades an answer on the server, and displays real feedback. TLS, restricted database access, immutable content, shared quotas, deployment resources, and reseeding were verified. The full 72-question curriculum, diagnosis/replay engine, saved progress, and reassessment UI remain later work.
 
-[Hosted infrastructure preview](https://learngraph-ai-web.vercel.app) · [API liveness](https://learngraph-ai-api.vercel.app/health) · [Passing source CI run](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44700160117)
+[Live infrastructure preview](https://learngraph-ai-web.vercel.app) · [API readiness](https://learngraph-ai-api.vercel.app/ready) · [Passing source CI run](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44730530223)
 
-The public page currently shows a labeled prerecorded example. Live grading remains unavailable until Supabase is migrated/seeded and configured with its restricted runtime login and API secrets. The last deployed API reports `503 not_configured`. This is not a completed Phase 1 live database gate.
+Click **Check live connection**, choose an answer, and select **Check my response**. The page starts with a labeled prerecorded example and switches to a live question only after database readiness succeeds. Grading does not save learner progress. Supabase Free can pause after inactivity; the unavailable/example state remains available when the live dependency is down.
 
 **Service budget:** ₹0 / $0. The project uses verified free plans and may temporarily stop live analysis when quotas or dependencies are unavailable. It does not require a paid AI API or a purchased domain.
 
@@ -21,7 +21,7 @@ The public page currently shows a labeled prerecorded example. Live grading rema
 5. Complete targeted practice and a different same-skill reassessment.
 6. See the updated result without affecting another visitor's progress.
 
-These are planned capabilities, not an announcement of a working demo. A baseline correctness estimate is not proof of mastery, causality, or improved learning.
+This full learning loop is planned; Phase 1 implements only live question delivery and grading. A baseline correctness estimate is not proof of mastery, causality, or improved learning.
 
 ## First-release scope
 
@@ -94,7 +94,7 @@ npm run test:e2e
 
 Contract tests use an explicitly labeled fixture; real SQL tests require an isolated local `TEST_DATABASE_URL` ending in `_test` and otherwise skip. CI supplies real PostgreSQL 17. Neither a contract fixture nor a recorded browser example passes the live Supabase deployment gate.
 
-OPEN-01 is resolved by the 72-question target and a tested two-concept authored slice. The remaining design review and the actual free frontend → API → database gate must pass before full-product implementation. See the roadmap for current implementation evidence and external setup requirements.
+OPEN-01 is resolved by the 72-question target and a tested two-concept authored slice. The free frontend → API → database gate has passed; remaining Phase 0 contract/content review precedes Phase 2 diagnosis work. See the roadmap and [measured infrastructure evidence](context/performance_review.md) for the exact scope and limitations.
 
 ## Repository and contribution workflow
 

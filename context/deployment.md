@@ -1,6 +1,6 @@
 # Free deployment and recovery
 
-**State:** Frontend/API deployed on verified Vercel Hobby; Supabase Free Nano project created and Healthy. Private credentials, migrations, and live verification pending. **Date:** 20 November 2026. **Requirements:** NFR-01–08/10/11/13 and FR-16/17/19 in [requirement.md](../requirement.md).
+**State:** Phase 1 complete: public live question/grading round trip verified on Vercel Hobby and Supabase Free. Full product release remains pending. **Date:** 20 November 2026. **Requirements:** NFR-01–08/10/11/13 and FR-16/17/19 in [requirement.md](../requirement.md).
 
 This runbook is for Phase 1 feasibility and Phase 5 release. The user authorized Phase 1 implementation and confirmed Hobby/no paid billing. Observed hosting state is recorded below; a successful build does not prove database readiness. Tested local entrypoints are in the root README and backend migration README.
 
@@ -19,7 +19,7 @@ This runbook is for Phase 1 feasibility and Phase 5 release. The user authorized
 | Git source | Owner's LearnGraphAI repository, `main` | [Repository](https://github.com/Pranjaltyagi76/LearnGraphAI); branch delivery verified separately through Git. |
 | Frontend | Vercel Hobby project, root `frontend/` | `prj_xN0EgVf3CJdn1TyTEbjZehtJK9Wf`; [public preview](https://learngraph-ai-web.vercel.app), READY. |
 | API | Separate Vercel Hobby project, root `backend/` | `prj_K3hvjn2d1vKQDzJBTm7DJ14XC0iA`; [public health](https://learngraph-ai-api.vercel.app/health), READY. |
-| Database | Supabase Free | `qnboukxsaczidpwtnadl`, `learngraph-ai`, `us-east-1`; Healthy Nano project in verified Free organization `ijxtakdqmtyzsqljeifc`. Migration/runtime credentials pending. |
+| Database | Supabase Free | `qnboukxsaczidpwtnadl`, `learngraph-ai`, `us-east-1`; Healthy Nano in Free organization `ijxtakdqmtyzsqljeifc`. Migrated/seeded; TLS runtime audit passed. |
 | Alternative API | Render Free only if required by measured failure | Not provisioned. |
 | CI | Public GitHub repository, standard runners | `.github/workflows/ci.yml`; frontend/backend jobs passed with real isolated PostgreSQL 17. |
 
@@ -69,7 +69,7 @@ Use GitHub/Vercel Git integration where possible to avoid unnecessary deployment
 10. Measure bundle/memory/connection and warm/cold behavior using the performance-review protocol. Test 413/422/429/503, dependency failure, and labeled fallback.
 11. Record actual URLs, versions, project IDs (nonsecrets), date, commands, and results. Pass the gate only if the free live round trip works.
 
-Local npm/API entrypoints have been verified and are documented in the root README. Database commands exist in the migration README; hosted execution remains pending private connection setup.
+Local npm/API entrypoints are verified and documented in the root README. Hosted migrate/seed/verify, runtime provisioning/audit, and a repeated seed/verify have succeeded using the migration README commands. The migration was applied with the owner script; this does not create Supabase CLI migration-history entries.
 
 ## 6. Release procedure — Phase 5
 
@@ -114,13 +114,13 @@ Quota cleanup must run through a bounded supported path chosen in Phase 1 (for e
 
 | Field | Current value |
 | --- | --- |
-| Commit/environment/project IDs | Production source `daef1171bdf2608911dba09ea6d658a5f19c5dfb`; team `team_mRdCuSvoFHIrkEm4K3UAPs7P` (`pranjal-tyagi-ai`). |
-| Verified provider terms date/account limits | 20 November 2026: Vercel context reports `hobby`; owner confirms no paid billing. Supabase organization shows Free, project Healthy Nano. Remaining usage and workload memory are not measured. |
+| Commit/environment/project IDs | API production source `568048188668d0a687b0b08677475f490099c7fd`; unchanged frontend source `daef1171bdf2608911dba09ea6d658a5f19c5dfb`. Team `team_mRdCuSvoFHIrkEm4K3UAPs7P` (`pranjal-tyagi-ai`). |
+| Verified provider terms date/account limits | 20 November 2026: Vercel context reports `hobby`; owner confirms no paid billing. Supabase organization shows Free, project Healthy Nano. Workload resource observations below; full remaining account allowances not audited. |
 | Frontend/API URLs and region | Public primary aliases above; region `iad1`. Team/deployment aliases may be protected; use the observed public primary aliases rather than disabling protection. |
-| Runtime/package versions and bundle | Node 24.x, Next 16.4.6, React 19.3.1, TS 6.0.3; API builder uses Python 3.12 and uv.lock. Both builds succeed; exact uncompressed runtime bundle/peak memory not measured. |
-| Migration/manifest versions | `001_bootstrap.sql`, `phase1-v1` source implemented/tested in isolated CI; not applied to Supabase. |
-| Browser/API/database checks | Browser renders and handles actual readiness failure. Health 200 JSON; readiness 503 `not_configured`; production CORS passes. Hosted DB round trip pending. |
-| Restore/rollback exercise | Not run. |
+| Runtime/package versions and bundle | Frontend Node 24.x, Next 16.4.6, React 19.3.1, TS 6.0.3. API runtime Python 3.12, builder metadata Node 26.x, locked Python dependencies; reported lambda artifact 12,699,243 bytes, allocation 2,048 MiB, timeout 15 s. Size encoding is unspecified; no uncompressed-size claim. |
+| Migration/manifest versions | Owner script applied `001_bootstrap.sql`; immutable `phase1-v1` seeded. Recomputed/source/stored digest `ae54153b27c8193429f7b704ae592cb4c5d23f86dec5cc551b018974db5522dd`. |
+| Browser/API/database checks | Health/readiness 200, exact production CORS, safe seed projection, correct/incorrect grading, version 409, hosted quota/privilege/immutability checks, and actual browser feedback all passed. |
+| Restore/rollback exercise | Idempotent reseed/hash verification and a new API deployment preserving the canonical data passed. Full project-loss restoration, pause/resume, and version rollback remain Phase 5 work. |
 | Cost/settings check | Existing Hobby team selected; owner confirms no paid billing; no paid resource/payment setup performed. Detailed remaining usage not measured. |
 
 Add concrete evidence and failed results here when available. Never paste credentials or claim successful deployment from a planned runbook.
@@ -128,18 +128,19 @@ Add concrete evidence and failed results here when available. Never paste creden
 ### Current deployment IDs and next action
 
 - Frontend: `dpl_Csccn2itaDGyh8JvmQp8fT9CW1By` (READY).
-- API: `dpl_CtHfd2DRvoeyhJyJeqqkKfAkgQ7j` (READY).
-- Frontend production `NEXT_PUBLIC_API_BASE_URL` is `https://learngraph-ai-api.vercel.app`; API allows `https://learngraph-ai-web.vercel.app` and the observed team alias. No production database URL or hash secret has been supplied.
-- Vercel local project IDs are stored in ignored service-local `.vercel/project.json` files. The connector verified target team/project; a local CLI login was not needed for the explicit source deployments.
-- API build logs confirm Python 3.12, installation from `uv.lock`, bytecode compilation, and completed output build in 3 seconds. The reported 9.29 MB value is **build cache size**, not a measured uncompressed runtime bundle.
+- API: `dpl_8VtMQHBUV5boQida7rGVeaFrkTnh` (READY).
+- Frontend production `NEXT_PUBLIC_API_BASE_URL` is `https://learngraph-ai-api.vercel.app`; API allows the public frontend and observed team alias. `DATABASE_URL` and `CLIENT_ID_HASH_SECRET` are hidden Production Secrets. The owner connection is excluded from Vercel runtime.
+- Ignored service-local `.vercel/project.json` files identify the existing projects. Vercel CLI 66.5.0 was authenticated by the owner, and `project inspect --non-interactive` verified the API project/owner/root before secret configuration. Secret values were sent only through stdin; none were printed or placed in process arguments.
+- Deployment metadata separates the reported **12,699,243-byte lambda artifact** from the **9,736,192-byte build cache**. API runtime is Python 3.12. [Resource evidence](evidence/phase1_resources.json) records exact metadata and process measurements.
 - Deployments were triggered explicitly from the exact Git SHA. Project automatic Git linkage was not established; future pushes must not be assumed to deploy automatically. Configure the intended repo/roots through a supported authenticated path when available.
-- **Current external prerequisite:** Save the owner database password privately in ignored `backend/.env.local` as `SUPABASE_OWNER_PASSWORD` (temporary setup input), or configure `MIGRATION_DATABASE_URL` directly. Never put it in chat or Git. Once the owner connection is prepared, remove the temporary password field, run migrate/seed/verify and runtime provisioning/audit, configure Vercel secrets, redeploy, and repeat the real grading round trip. Do not use a fixture or paid alternative to mark the gate passed.
+- **No remaining Phase 1 credential prerequisite:** the temporary `SUPABASE_OWNER_PASSWORD` field was removed after preparing the ignored owner connection. Future maintenance uses the private migration environment and restricted runtime audit; never paste credentials in chat or Git.
 
 ### Supabase provisioning observation — 20 November 2026
 
 - Dashboard account `Pranjaltyagi76`; connected account displayed as **Pranjal's Supabase account**, Primary. Organization **Pranjaltyagi76's Org** displays **Free Plan**. The plugin is installed/enabled, but this chat exposes no Supabase tools; dashboard computer control was used instead.
 - The user created project `learngraph-ai` after entering its database password themselves. Project `qnboukxsaczidpwtnadl` reached **Healthy**, **Nano**, **East US (North Virginia)**. No payment setup or paid add-on was performed.
-- Creation form: Data API disabled; automatic RLS on new public tables enabled. Application access is planned through the private SQL schema and restricted API login.
-- Dashboard confirmed shared pooler `aws-0-us-east-1.pooler.supabase.com`, session port **5432**, transaction port **6543**, owner user `postgres.qnboukxsaczidpwtnadl`. DNS resolved the shared hostname to IPv4 addresses without enabling an IPv4 add-on. Actual authenticated TLS/pooling verification remains pending.
+- Creation form: Data API disabled; automatic RLS on new public tables enabled. Application access uses the private SQL schema and restricted `learngraph_api` login, which inherits the NOLOGIN `learngraph_runtime` group. Its role connection limit is ten; each API instance opens at most one client connection.
+- Dashboard confirmed shared pooler `aws-0-us-east-1.pooler.supabase.com`, session port **5432**, transaction port **6543**, owner user `postgres.qnboukxsaczidpwtnadl`. IPv4 DNS and authenticated TLS access succeeded without a paid IPv4 add-on. Runtime uses transaction pooling with prepared statements disabled; owner migration uses session pooling.
 - Supabase pricing rechecked: Free has a 500 MB database allowance, 5 GB egress, two active projects, and pauses after one inactive week. [Official pricing](https://supabase.com/pricing). No inactivity keepalive will be added.
-- Runtime setup and audit helpers are in `backend/scripts/`; the added audit passed isolated PostgreSQL CI in [run 44715705552](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44715705552). This is not hosted Supabase verification.
+- Runtime setup/audit helpers are in `backend/scripts/`; source [CI run 44730530223](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44730530223) passed. Separate [hosted checks](evidence/phase1_database.json) verified quota concurrency/global denial, privileges, public-role exclusion, immutability, and logical expiry. Temporary verification quota buckets were removed.
+- The eleven-request [public smoke](evidence/phase1_deployment.json), [provider metrics](evidence/phase1_provider_metrics.json), and [actual browser feedback](evidence/phase1_live_grading.jpg) complete the live Phase 1 evidence. Full model/learning-loop acceptance remains later work.

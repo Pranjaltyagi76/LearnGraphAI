@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-11-20T11:55:01.553751+00:00",
+  "project_ref": "qnboukxsaczidpwtnadl",
+  "checks": {
+    "concurrent_client_limit": true,
+    "atomic_both_counters": true,
+    "logical_expiry_within_48h": true,
+    "global_limit_rejects_new_client": true,
+    "runtime_release_write_denied": true,
+    "runtime_quota_write_denied": true,
+    "owner_cannot_mutate_published_content": true,
+    "public_roles_excluded": true,
+    "denied_global_request_did_not_increment": true
+  },
+  "passed": true,
+  "method": "12 reservations using 4 concurrent workers and independent TLS connections; separate verification namespaces; one prefilled global-limit fixture; temporary quota rows removed; no production quota bypass.",
+  "database_version": "PostgreSQL 17.12 on aarch64-unknown-linux-gnu, compiled by gcc (GCC) 15.2.0, 64-bit",
+  "database_bytes": 11237043,
+  "release_table_bytes": 49152,
+  "quota_table_bytes_at_test": 49152,
+  "content_hash": "ae54153b27c8193429f7b704ae592cb4c5d23f86dec5cc551b018974db5522dd",
+  "runtime_connection_audit": {
+    "runtime_grants": true,
+    "separate_owner_and_hardened_guard": true,
+    "source_matches_published_release": true,
+    "tls": true,
+    "unprivileged_role": true
+  },
+  "recovery": "Owner seed and hash verification repeated successfully; existing published release unchanged.",
+  "api_source_commit": "568048188668d0a687b0b08677475f490099c7fd"
+}

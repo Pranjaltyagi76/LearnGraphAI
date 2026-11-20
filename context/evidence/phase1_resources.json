@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-11-20T12:00:44.398350+00:00",
+  "deployment_id": "dpl_8VtMQHBUV5boQida7rGVeaFrkTnh",
+  "state": "READY",
+  "artifact_size_bytes_reported": 12699243,
+  "artifact_size_encoding": "Provider metadata size; do not assume uncompressed size. Standard build passed.",
+  "runtime": "python3.12",
+  "memory_allocation_mib": 2048,
+  "max_duration_seconds": 15,
+  "function_regions": [
+    "iad1"
+  ],
+  "build_node_version": "26.x",
+  "telemetry": {
+    "samples": 13,
+    "max_peak_process_kib": 64660,
+    "instance_first_request_samples": 2,
+    "api_ms_min": 0.38,
+    "api_ms_max": 121.93,
+    "cold_start_latency_isolated": false,
+    "interpretation": "Linux process high-water RSS; not provider-billed memory or per-request allocation. Provider probes preceded public smoke requests."
+  },
+  "api_source_commit": "568048188668d0a687b0b08677475f490099c7fd"
+}

@@ -107,7 +107,7 @@ P0 stores no visitor events in shared learner tables. Later owned persistence is
 | ADR-008 | No arbitrary code execution or public account flow in P0 | Authored questions prove the loop without judge/email/security infrastructure. |
 | ADR-009 | Honest static examples during outages | Portfolio remains inspectable while clearly disclosing live unavailability; does not replace a passing live release gate. |
 
-Decision status is **accepted**; Phase 1 frontend/API builds and isolated PostgreSQL CI passed. Hosted Supabase behavior, full domain services, recovery, and future feature decisions remain unverified. New decisions should record date, trigger/evidence, alternatives, requirement impact, cost impact, and corresponding changes to PROJECT/requirements.
+Decision status is **accepted**; Phase 1 frontend/API builds, isolated PostgreSQL CI, hosted Supabase TLS/privileges/quotas, idempotent reseeding, and live browser grading passed. Full domain services, full disaster restoration/rollback, and future feature decisions remain unverified. New decisions should record date, trigger/evidence, alternatives, requirement impact, cost impact, and corresponding changes to PROJECT/requirements.
 
 ## 7. Security boundaries
 
