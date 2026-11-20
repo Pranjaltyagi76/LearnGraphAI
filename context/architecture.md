@@ -1,6 +1,6 @@
 # Architecture
 
-**Status:** Phase 1 frontend/API/database migration boundaries are implemented; pure diagnosis/replay services and owned persistence remain planned. **Date:** 20 November 2026. Read [system design](system%20design.md) for runtime behavior and [PROJECT.md](../PROJECT.md) for full rationale and algorithms.
+**Status:** Phase 0 reviewed contracts/draft assets and Phase 1 live infrastructure are complete; full diagnosis/replay and browser persistence remain planned. **Date:** 20 November 2026. Read [system design](system%20design.md) for runtime behavior and [PROJECT.md](../PROJECT.md) for full rationale and algorithms.
 
 ## 1. Architecture goals
 
@@ -19,7 +19,7 @@
 | Canonical persistence/quota guard | Supabase Free Postgres | Transaction-pooled runtime access; separate migration/admin access. |
 | Research | Local Python with NumPy/pandas/scikit-learn as needed | Offline environment; compact result artifacts only enter the public application. |
 
-Two Vercel projects do not multiply shared account/team quotas. Verify monorepo shared-file inclusion and native FastAPI packaging in Phase 1. Render Free is an alternative for the same API only if the preferred deployment fails a measured check.
+Two Vercel projects do not multiply shared quotas. Phase 1 verified native FastAPI packaging and the existing slice. Reviewed root-level curriculum/contracts are owner publication inputs, not implicit files inside the backend deployment root; Phase 2 must load the new compatible release from canonical storage. Render is needed only if the preferred path fails its viability gate.
 
 No microservices split, Redis, queue, graph database, hosted MLflow, AI gateway, LLM, or code-execution service is required. Add dependencies only for a concrete requirement and verified free capability.
 
@@ -46,7 +46,7 @@ The browser sends responses, not authoritative scores. It must not recompute an 
 | --- | --- |
 | `app/main.py` | FastAPI creation/lifecycle; verified deployment entrypoint. |
 | `app/api/v1/` | Request/response boundary, route composition, status codes. |
-| `app/schemas/` | Strict versioned input/output/event contracts. |
+| `app/contracts.py` | Implemented offline strict DTOs, normalization/hash helpers and storage-record validation; future handlers/services reuse them. |
 | `app/core/` | Configuration, safe errors, time budgets, quota orchestration. |
 | `app/db/` | Canonical repositories, small pooled connections, narrow quota operation. |
 | `app/services/grading/` | Grade catalog options; derive authoritative metadata. |
@@ -89,7 +89,7 @@ Frontend -> versioned public API contracts; no direct privileged database access
 
 Every reproducible result identifies seed, graph, catalog, and model/configuration versions plus a semantic input digest. Preserve historical published versions needed by public examples. Do not modify a question's grading under an unchanged version.
 
-Draft and published content must be distinguishable. Publish validated graph/catalog/seed/model combinations together as a compatible release manifest. Exact manifest schema and activation/rollback procedure are Phase 0/1 work; a migration does not automatically publish new content.
+Draft and published content are distinct. [Release manifest](../contracts/release-manifest.json) hashes LF artifact bytes and the compatible identity; [protocol](../contracts/protocol.md) defines activation. Owner publication can retain the bounded JSONB release table rather than creating every proposed logical table. A migration or local artifact freeze does not publish content. Keep the active Phase 1 release/routes alongside future analysis releases for older clients.
 
 P0 stores no visitor events in shared learner tables. Later owned persistence is a separate design migration: auth, owner-scoped records, unique event IDs, consistent recomputation, retention/deletion, and mentor assignments must arrive together.
 
@@ -106,6 +106,9 @@ P0 stores no visitor events in shared learner tables. Later owned persistence is
 | ADR-007 | Separate runtime/dev/research dependencies | Keeps builds and cold starts practical; measure every runtime addition. |
 | ADR-008 | No arbitrary code execution or public account flow in P0 | Authored questions prove the loop without judge/email/security infrastructure. |
 | ADR-009 | Honest static examples during outages | Portfolio remains inspectable while clearly disclosing live unavailability; does not replace a passing live release gate. |
+| ADR-010 | Release-scoped future metadata, retained bootstrap routes | Prevent a new catalog/schema from breaking cached Phase 1 clients; activate full analysis separately. |
+| ADR-011 | IndexedDB transactional revision checks; advisory BroadcastChannel | Atomic cross-tab updates and persisted pending snapshots without unsafe localStorage locks or another service. |
+| ADR-012 | Frozen public synthetic audit, explicit exposure limits | Labels are separate from inference and never generated by diagnosis output; public cases do not establish blind generalization. |
 
 Decision status is **accepted**; Phase 1 frontend/API builds, isolated PostgreSQL CI, hosted Supabase TLS/privileges/quotas, idempotent reseeding, and live browser grading passed. Full domain services, full disaster restoration/rollback, and future feature decisions remain unverified. New decisions should record date, trigger/evidence, alternatives, requirement impact, cost impact, and corresponding changes to PROJECT/requirements.
 

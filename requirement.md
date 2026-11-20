@@ -1,6 +1,6 @@
 # LearnGraph AI — Requirements
 
-**Revision:** 20 November 2026. **State:** P0 requirement baseline; Phase 1 free deployment gate verified. Full P0 acceptance remains pending later phases.
+**Revision:** 20 November 2026. **State:** Phase 0 engineering review and Phase 1 free deployment gates verified. Full P0 acceptance remains pending later phases.
 
 This file translates [PROJECT.md](PROJECT.md) into testable requirements. IDs are stable references for implementation, tests, and reviews. Requirements are planned, not evidence that features already exist. User instructions take precedence; changes must be reconciled across the specification and relevant context files.
 
@@ -8,9 +8,9 @@ This file translates [PROJECT.md](PROJECT.md) into testable requirements. IDs ar
 
 Build a personal portfolio demo of **answer → observed-performance estimate → prerequisite-aware hypothesis/evidence request → practice → distinct reassessment**. A diagnosis may abstain. Do not claim latent mastery, causal proof, or actual learning gains from synthetic demonstrations.
 
-P0 uses 12 concepts, 72 distinct questions (one diagnostic, four practice, one reassessment per concept), additional short lessons, and four synthetic profiles. Canonical IDs, graph edges, formulas, and initial thresholds are specified in PROJECT Sections 6 and 8. They need Phase 0 review and versioning before implementation.
+P0 uses 12 concepts, 72 distinct questions (one diagnostic, four practice, one reassessment per concept), short lessons, and four synthetic profiles. Phase 0 froze the reviewed graph, a 12-question/2-lesson slice, four profile definitions, protocol/storage contracts, initial policy configuration, and synthetic evaluation definitions. The remaining 60 questions, complete UI, and analysis/evaluation implementation are later work. Definitions/formulas remain in PROJECT Sections 6 and 8; [review decisions](curriculum/review.md) and [exact protocol](contracts/protocol.md) resolve the former open details.
 
-**Resolved design decision — OPEN-01:** The target is now six questions per concept (72 total): one diagnostic, four practice, and one reassessment. Three initial eligible observations leave two fresh practice questions and a different reassessment. The two-concept authored fixture tests this availability; the complete catalog and broader Phase 0 review remain pending. Details are in [the roadmap](context/phasewise_roadmap.md).
+**Resolved design decision — OPEN-01:** Six questions per concept leave two fresh practices and a distinct reassessment after three seed observations. The reviewed slice verifies this availability and the manual 2/7→3/8→4/9→5/10 trace; it does not guarantee readiness or learning. Phase 0 review is complete; the full catalog and live learning loop remain pending.
 
 ## 2. Functional requirements
 

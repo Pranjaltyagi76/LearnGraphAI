@@ -10,7 +10,7 @@
 >
 > **Deployment goal:** A publicly accessible personal portfolio demo using only free plans, with a strict recurring service budget of **₹0 / $0**.
 >
-> **Status:** Phase 1 scaffold and hosted preview implemented; live Supabase verification remains pending. Algorithm parameters and curriculum edges below are initial design choices to validate, not measured results.
+> **Status:** Phase 0 engineering review and Phase 1 free deployment gate are complete. The reviewed graph/catalog/contracts are frozen draft artifacts for Phase 2; the live preview still serves immutable phase1-v1. Diagnosis, saved progress, full content, and model-quality evaluation remain unimplemented/unmeasured. Parameters are initial policy hypotheses, not validated educational cutoffs.
 >
 > **Last revised:** 20 November 2026.
 
@@ -181,7 +181,7 @@ Assume basic variables, conditionals, loops, and array indexing. Explain this en
 
 ### Initial prerequisite edges
 
-The convention is **prerequisite → dependent**. These are proposed instructional dependencies for this track and require review during Phase 0:
+The convention is **prerequisite → dependent**. These scoped instructional dependencies passed Phase 0 engineering review; they are not universal or causal claims. [Graph metadata/rationales](curriculum/graph.v1.json) and [the item review](curriculum/review.md) are the reviewed draft, not a mutation of the deployed Phase 1 graph:
 
 ```text
 function_calls -> call_stack
@@ -190,13 +190,13 @@ base_cases -> recursive_progress
 call_stack -> recursive_tracing
 base_cases -> recursive_tracing
 recursive_progress -> recursive_tracing
-recursive_tracing -> recurrence_relations
 recursive_tracing -> overlapping_subproblems
-recurrence_relations -> state_definition
-state_definition -> state_transitions
-base_cases -> dp_base_cases
+state_definition -> recurrence_relations
+recurrence_relations -> state_transitions
+recurrence_relations -> dp_base_cases
 state_definition -> dp_base_cases
 overlapping_subproblems -> memoization
+recursive_tracing -> memoization
 state_transitions -> memoization
 dp_base_cases -> memoization
 state_transitions -> tabulation
@@ -269,10 +269,11 @@ Example client-submitted visitor event, appended to a request's bounded history:
 ```json
 {
   "schema_version": 1,
+  "kind": "response",
   "event_id": "b5b06733-2c94-4ba3-b052-e81c9c88d988",
   "sequence_number": 1,
   "activity_id": "base_cases_diagnostic_01",
-  "activity_version": 1,
+  "activity_version": 2,
   "assessment_run_id": "d33fc28e-1a59-40c2-a68d-f49ef27b46d6",
   "occurred_at": "2026-11-20T07:00:00Z",
   "response": {"option_id": "b"},
@@ -281,7 +282,7 @@ Example client-submitted visitor event, appended to a request's bounded history:
 }
 ```
 
-The request envelope also includes seed ID, seed version, graph version, catalog version, model/config version, and the ordered event array. The server loads the immutable seed history itself; clients cannot replace it.
+The request envelope includes the full release/hash/seed/graph/catalog/model version tuple, profile/focus, sandbox UUID/revision, optional failed-trigger selector, and ordered visitor events. The server loads the seed itself; clients cannot replace it. [Protocol v1](contracts/protocol.md), [route index](contracts/index.json), generated JSON Schema, and golden fixtures freeze the data dictionary, normalization, errors and rollout compatibility. These contracts are offline artifacts until Phase 2 implements their routes.
 
 Rules:
 
@@ -324,7 +325,7 @@ Initial configurable display rules:
 | Supported estimate `>= 0.65` | Prerequisite readiness threshold for this demo. |
 | Supported estimate in between | Developing/mixed evidence; not automatically weak or secure. |
 
-These thresholds are proposed defaults, not validated educational cutoffs. Version all parameters and tune only on development data. Report eligible/distinct/all-attempt counts, successes, evidence state, last evidence time, and provenance. Use evidence labels rather than invented confidence percentages.
+These are frozen initial defaults in [baseline-v1](curriculum/model-config.v1.json), not validated educational cutoffs. Version policy changes and tune only on development data. Report eligible/distinct/all-attempt counts, successes, evidence state, last evidence time, and provenance. Use evidence labels rather than invented confidence percentages. Public n=0 estimate is null; exact rational comparisons precede six-decimal output rounding.
 
 New distinct practice/reassessment questions can change the estimate. Completing a lesson, retrying a memorized item, or simply waiting does not automatically improve it. The UI may show little or no numerical change and must explain why.
 
@@ -353,7 +354,7 @@ score(c) = weakness(c) * relevance(c) * evidence_strength(c) * recurrence(c)
 Each factor and the resulting score are in `[0,1]`. Rank only candidates with `n >= 3`, estimate `< 0.45`, and at least two recent failures. Return at most three, ordered by descending score, then shortest distance, then concept ID. No score normalization is required; normalized values would still not be causal probabilities.
 
 - A supported prerequisite gap may produce remediation. An unknown/early prerequisite produces an evidence request, never an inferred weakness.
-- If no candidate qualifies, return `insufficient_evidence`, `ambiguous`, or `no_supported_gap` with reasons. Include separate assessment suggestions where useful.
+- If no failed focus response exists, return `no_failed_trigger`. Otherwise return `supported_gap` when candidates qualify; with none, prioritize `insufficient_evidence` for unknown/early candidates, then `ambiguous` for developing or recently contradictory evidence, otherwise `no_supported_gap`. Include separate assessment requests even alongside supported gaps. Exact shortest-path/tie rules are frozen in the protocol.
 - Distinguish direct target weakness from upstream weakness in wording. A failure must not automatically propagate to every ancestor.
 - Explain that the latest failed response is evidence for a retrospective diagnosis. In predictive evaluation, that same answer must not be available before its prediction.
 - Alternatives include current-item difficulty, ordinary response error, misleading tags, and contradictory recent evidence. Do not fabricate a specific misconception without reviewed supporting information.
@@ -370,10 +371,11 @@ Select the recommendation mode before ranking:
 Hard constraints precede scores:
 
 - Only active, version-matched catalog activities with valid IDs may appear.
-- Remediation practice requires prerequisite readiness, or an earlier supporting step in the plan. Unknown prerequisites require assessment first; supported weak ones require remediation first.
-- A diagnostic may assess an unknown skill, but missing prerequisites make its result ambiguous. Prefer foundational/root diagnostics when possible.
+- Remediation/further practice/reassessment requires every direct prerequisite to have supported estimate ≥0.65. Earlier supporting steps may be shown locked; their mere presence or a lesson completion never grants readiness. Unknown prerequisites require assessment first; supported weak ones require remediation first.
+- A diagnostic may assess an unknown skill when foundational or its direct prerequisites are ready. Otherwise gather upstream/root evidence first. This is the frozen track policy, not a causal conclusion.
 - Use prerequisite topological order. Do not interpret a lesson completion as measured mastery.
 - Reassessment must use a different, unused question for the same primary concept. Never relabel an immediate retry as a fresh reassessment.
+- Do not require the reassessed skill itself to be ready before reassessment. A completed cycle requires prior fresh same-run practice after its anchor; valid out-of-plan responses can still be graded and obey the same first-response evidence rule. Full predicates are in the protocol.
 - Bound plans to five items, including lessons, practice, and reassessment. Recompute after each answer; a planned later item stays locked until its readiness condition is met.
 
 Initial configurable activity ranking within those constraints:
@@ -383,13 +385,13 @@ gap_match = 1 if the primary concept is a selected gap/evidence target, else 0
 prerequisite_coverage = 1 if the primary concept is a needed prerequisite, else 0
 desired_difficulty = 0.2 if not assessed, else clip(estimate, 0.2, 0.8)
 difficulty_fit = 1 - abs(authored_difficulty - desired_difficulty)
-novelty = 1 if the activity has never been answered, else 0
+novelty = 1 if the activity has never appeared in any event, else 0
 recent_repeat = 1 if the activity occurs in the latest 5 submissions, else 0
 score = 0.5*gap_match + 0.2*prerequisite_coverage
         + 0.2*difficulty_fit + 0.1*novelty - 0.5*recent_repeat
 ```
 
-Tie-break by activity ID after prerequisite ordering. Authored difficulty is an ordinal design aid, not calibrated item difficulty. Scores do not estimate expected learning gain. Return a reason and readiness condition for every item. If no valid unused item exists, return `catalog_exhausted` or `no_suitable_activity`; offer a labeled review without counting it as new evidence.
+Tie-break by activity ID after prerequisite/stage ordering; compare exact rational scores before output rounding. Lessons count as seen for novelty/repetition only, never correctness evidence, and are not automatically reinserted after completion in the same cycle. Authored difficulty is ordinal, not calibrated. Scores do not estimate learning gain. Return reasons/readiness conditions; empty fresh pools produce `catalog_exhausted`, missing roles/skills `no_suitable_activity`, and unmet readiness `blocked`. No fabricated items or new evidence from review.
 
 ### 8.7 Explanations
 
@@ -482,6 +484,8 @@ Use Supabase Free Postgres for small canonical data and quota enforcement. UUIDs
 
 Do not create all future tables before the baseline demo works. Keep canonical history and catalog versions needed to reproduce published examples. A historical result must identify seed/input digest, graph, catalog, and model/config versions.
 
+For the bounded P0 release, these canonical entities can remain a validated immutable JSONB package in the existing private learngraph.releases table. Publication validates references before insertion; this review does not require one new table per logical entity. Owner/runtime privileges and quota storage remain as verified in Phase 1.
+
 ### Authorization and connections
 
 - Public visitors have no write access to canonical data or answer-key tables. Public API responses omit answer keys until the relevant feedback is due.
@@ -502,12 +506,15 @@ Version product routes under `/api/v1`. The initial contract uses replay so stat
 | --- | --- | --- |
 | `GET` | `/health` | Lightweight process health; no expensive analysis or secret output. |
 | `GET` | `/ready` | Bounded dependency check; unavailable dependencies return `503`. |
-| `GET` | `/api/v1/demo/profiles` | Profile summaries and published versions. |
-| `GET` | `/api/v1/demo/profiles/{id}/seed` | Immutable canonical history, public catalog, graph, and versions; omit grading secrets. |
+| `GET` | `/api/v1/demo/release` | Future active analysis-release pointer and compatible metadata. |
+| `GET` | `/api/v1/releases/{release_id}/profiles` | Future release-scoped profile summaries and complete version references. |
+| `GET` | `/api/v1/releases/{release_id}/profiles/{id}/seed` | Future pinned seed/catalog/graph projection; omit unanswered grading feedback. |
 | `POST` | `/api/v1/demo/analyze` | Validate full visitor history; grade/replay; return one consistent estimates/diagnosis/plan bundle. |
 | `GET` | `/api/v1/analytics/evaluation` | Static, versioned, measured public evaluation summary. |
 
 The analysis bundle contains a semantic history digest, versions, graded events and permitted feedback, estimates/counts, graph annotations, diagnosis or abstention, evidence requests, and a bounded plan. Failed validation returns no partially accepted result.
+
+The deployed Phase 1 /api/v1/demo/profiles, its /{id}/seed route, and /api/v1/bootstrap/answer retain their legacy payload/release. New release-scoped reads avoid breaking cached preview clients. Future ANALYSIS_RELEASE_ID activation is separate from legacy RELEASE_ID; publish backend compatibility before switching the frontend. See the frozen protocol/index for exact shapes and implementation status.
 
 Use strict Pydantic schemas, bounded arrays/strings, consistent errors `{code, message, request_id, details}`, and pagination for future history endpoints. Do not expose stack traces or answer keys for unanswered items.
 
@@ -520,7 +527,7 @@ Initial application limits, to be validated in the deployment check:
 - Hash identifiers using a rotating server secret; expire buckets within 48 hours. Treat identifiers as coarse abuse signals, not identity; shared networks may share limits. Quota enforcement must use atomic database operations across instances.
 - Quota exhaustion returns `429` with retry guidance. Quota-store/API dependency failure returns `503`; static example views still work. Protect metadata endpoints with appropriate caching and platform-level controls as available on the free plan.
 
-CORS is an origin policy, not authentication or a defense against non-browser abuse. Do not rely on an in-memory limiter as the global budget. Debounce client analysis, disable duplicate submit actions, and retry transient failures with bounded backoff using the same history/event IDs.
+CORS is an origin policy, not authentication or a defense against non-browser abuse. Do not rely on an in-memory limiter as the global budget. Debounce analysis and disable duplicate submissions. Zero automatic POST retries; explicit manual retry preserves the exact snapshot/event IDs and honors Retry-After. Client deadline is 15 seconds; event future-clock allowance is 300 seconds. [IndexedDB recovery/concurrency](context/browser_storage.md) defines the persistent pending state and transactional revision checks.
 
 For P1 server persistence, introduce owned attempt/feedback endpoints only with authentication, durable idempotency, transactional updates or versioned recomputation, and concurrency checks. The UI must never combine a new attempt list with stale mastery or an old plan.
 
@@ -719,33 +726,33 @@ This is a plan, not a claim that these files already exist. Create folders as th
 
 ## 18. Implementation roadmap
 
-All tasks below are planned and unchecked. No provider provisioning or deployment has been performed by this document revision.
+Phase 0 review and Phase 1 deployment have passed their bounded gates; the [operational roadmap](context/phasewise_roadmap.md) records artifacts and checks. Remaining phases below are planned. Reviewed drafts do not imply deployed diagnosis, browser persistence, a complete catalog, or measured model quality.
 
 ### Phase 0 — Freeze the focused product and data contracts
 
-- [ ] Review the 12 canonical concepts, entry assumptions, definitions, and proposed prerequisite edges.
+- [x] Review the 12 canonical concepts, entry assumptions, definitions, and proposed prerequisite edges.
 - [x] Resolve OPEN-01 with the 72-question decision and a tested two-concept fresh-item trace; full catalog authoring remains pending.
-- [ ] Validate IDs, edge direction, graph acyclicity, and topic-versus-skill separation.
-- [ ] Define activity roles, authored grading, event/replay rules, and version/digest contracts.
-- [ ] Review initial evidence thresholds, diagnosis factors, recommendation rules, and exhaustion behavior.
-- [ ] Define immutable demo seeds, browser isolation/reset, and unavailable-service behavior.
-- [ ] Plan the 72 questions and short lessons; author a small first slice before the deployment check.
-- [ ] Freeze benchmark split/labeling principles and the P0/P1/P2 boundary.
-- [ ] Record the strict ₹0 provider policy and planned request/retention limits.
+- [x] Validate IDs, edge direction, graph acyclicity, and topic-versus-skill separation.
+- [x] Define activity roles, authored grading, event/replay rules, and version/digest contracts.
+- [x] Review initial evidence thresholds, diagnosis factors, recommendation rules, and exhaustion behavior.
+- [x] Define immutable demo seeds, browser isolation/reset, and unavailable-service behavior.
+- [x] Plan the 72 questions and short lessons; author a small first slice before the deployment check.
+- [x] Freeze benchmark split/labeling principles and the P0/P1/P2 boundary.
+- [x] Record the strict ₹0 provider policy and planned request/retention limits.
 
 **Exit condition:** A reviewed graph, data dictionary, initial content slice, API contract, and testable acceptance criteria exist. OPEN-01 is resolved with a feasible fresh practice/reassessment trace. Parameters are marked as initial hypotheses.
 
 ### Phase 1 — Verify free deployment before full implementation
 
-- [ ] Initialize the repository and minimal Next.js/FastAPI projects with supported pinned versions and lockfiles.
-- [ ] Configure separate frontend/backend Vercel Hobby projects from their correct root directories; verify personal noncommercial scope and no paid billing.
-- [ ] Create the planned Supabase Free project, apply only initial canonical-data/quota migrations, and seed the small versioned slice.
-- [ ] Verify the FastAPI entrypoint, production runtime/bundle size, shared-source inclusion, and excluded research dependencies.
-- [ ] Test browser → API → pooled database → JSON response, including production CORS and environment variables.
-- [ ] Implement `/health`, `/ready`, minimal shared quotas, and a labeled static example/failure state.
-- [ ] Measure cold/warm behavior, request bounds, database connections, and current free-plan limits.
-- [ ] Test Render Free only if the default measured API path fails; keep all alternatives at ₹0.
-- [ ] Document exact deployment and recovery steps without secret values.
+- [x] Initialize the repository and minimal Next.js/FastAPI projects with supported pinned versions and lockfiles.
+- [x] Configure separate frontend/backend Vercel Hobby projects from their correct root directories; verify personal noncommercial scope and no paid billing.
+- [x] Create the planned Supabase Free project, apply only initial canonical-data/quota migrations, and seed the small versioned slice.
+- [x] Verify the FastAPI entrypoint, production runtime/bundle size, shared-source inclusion, and excluded research dependencies.
+- [x] Test browser → API → pooled database → JSON response, including production CORS and environment variables.
+- [x] Implement `/health`, `/ready`, minimal shared quotas, and a labeled static example/failure state.
+- [x] Measure cold/warm behavior, request bounds, database connections, and current free-plan limits.
+- [x] Resolve fallback decision: Vercel passed, so Render was not needed or provisioned.
+- [x] Document exact deployment and recovery steps without secret values.
 
 **Exit condition:** A minimal public frontend/API/database round trip works on verified free plans. There is a measured viable live path before substantial feature work; fallback-only examples do not pass this gate.
 
@@ -755,7 +762,7 @@ All tasks below are planned and unchecked. No provider provisioning or deploymen
 - [ ] Implement first-response evidence rules, estimates, evidence states, and no-data display behavior.
 - [ ] Implement bounded graph traversal, target/prerequisite candidates, scoring, alternatives, and abstention.
 - [ ] Implement assessment/remediation modes, prerequisite readiness, ranking, and catalog-exhaustion handling.
-- [ ] Build reproducible synthetic histories and independent benchmark scenarios with frozen splits.
+- [ ] Implement evaluators over the frozen scenario definitions and add separately versioned generator/graph variants where required.
 - [ ] Run prefix-based predictive evaluation and initial diagnosis/recommendation comparisons.
 - [ ] Test duplicate/conflicting events, unknown tags, cycles, hints/retries, sparse evidence, and deterministic outputs.
 

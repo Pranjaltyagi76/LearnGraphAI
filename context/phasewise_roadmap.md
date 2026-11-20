@@ -1,6 +1,6 @@
 # Phasewise roadmap
 
-**Updated:** 20 November 2026. **Current stage:** Phase 1 complete; finish remaining Phase 0 contract/content review before Phase 2. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
+**Updated:** 20 November 2026. **Current stage:** Phase 0 engineering review and Phase 1 complete; Phase 2 is next. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
 
 This is the operational handoff/status document. Check an item only after its stated artifact or verification exists. Drafting this context does not create the application, validate a model, provision a service, or pass a release gate.
 
@@ -9,12 +9,12 @@ This is the operational handoff/status document. Check an item only after its st
 | Area | Actual state |
 | --- | --- |
 | Git | Local `main`, origin points to the owner's LearnGraphAI repository; configured owner author/committer identity. Delivery evidence is Git history and the remote branch, not an invented hash here. |
-| Specification | Revised PROJECT.md plus requirements and context references. |
-| Code/dependencies | Next.js/FastAPI scaffold and pinned lockfiles exist; full diagnosis/replay remains Phase 2. |
-| Curriculum | Proposed 12 concepts/17 edges and an authored two-concept, 12-question feasibility slice; complete 72-item catalog pending. |
+| Specification | PROJECT/requirements reconciled with frozen protocol, storage and curriculum review decisions. |
+| Code/dependencies | Offline strict contract/normalization/hash/storage-record models and conformance checks added; full diagnosis/replay remains Phase 2. |
+| Curriculum | Reviewed draft: 12 concepts/17 scoped edges, 12 version-2 questions/2 lessons and 4 synthetic seed definitions. Published Phase 1 slice remains immutable; 60 questions remain. |
 | Services | Two Vercel Hobby projects and a Healthy Supabase Free Nano project. Migration/seed/runtime login configured; public readiness 200 and actual browser grading passed. |
 | Benchmarks/performance | Local checks and source CI pass. Hosted privilege/quota checks, eleven-request smoke, browser grading, artifact/memory and cold/hot provider metrics recorded. No model-quality benchmark. |
-| Next action | Complete remaining Phase 0 contract/content review, then implement Phase 2 deterministic diagnosis/replay and offline evaluation. |
+| Next action | Implement Phase 2 pure replay/estimation/diagnosis/plan services and evaluators, reusing frozen contracts/assets; publish only a compatible new release. |
 
 ## 2. Resolved content-budget decision — OPEN-01
 
@@ -33,7 +33,7 @@ This closes the item-budget conflict for the proposed design and authored slice,
 - [x] Initialize local Git and configure the owner's identity/origin.
 - [x] Add root requirements, README, context-loading instructions, and secret/build ignore rules.
 - [x] Document system design, architecture, phase gates, free deployment, performance review, and benchmarking.
-- [ ] Complete the actual product/content/schema validation required by Phase 0 below.
+- [x] Complete the bounded engineering product/content/schema review required by Phase 0 below.
 
 Checkmarks above mean documentation/configuration exists. They do not mean proposed services/features have been implemented. The Git delivery status can be checked against the remote; no application phase is marked complete by the documentation push.
 
@@ -44,15 +44,17 @@ Checkmarks above mean documentation/configuration exists. They do not mean propo
 Requirements: FR-02/03/06–11/18, NFR-01/03/09.
 
 - [x] Resolve OPEN-01 and update the target budget; verify item availability in the authored two-concept slice.
-- [ ] Review canonical concepts, prerequisite rationale, entry assumptions, and DAG validation rules.
-- [ ] Author/review a small content slice with valid primary tags, grading, roles, and provenance.
-- [ ] Freeze event envelopes, strict schemas, version manifest, digest canonicalization, timestamp policy, and error contracts.
-- [ ] Review evidence eligibility, supported/unknown states, gap scoring, plan locks, and exhaustion behavior.
-- [ ] Define synthetic profiles and independent benchmark scenarios/splits, without creating ground truth from the diagnosis function.
-- [ ] Define local sandbox keys/revisions, pending recovery, reset, and cross-tab conflict rules.
-- [ ] Document actual design choices in system design/architecture; keep proposed values distinguishable from measurements.
+- [x] Review canonical concepts, prerequisite rationale, entry assumptions, and DAG validation rules.
+- [x] Author/review a small content slice with valid primary tags, grading, roles, and provenance.
+- [x] Freeze event envelopes, strict schemas, version manifest, digest canonicalization, timestamp policy, and error contracts.
+- [x] Review evidence eligibility, supported/unknown states, gap scoring, plan locks, and exhaustion behavior.
+- [x] Define synthetic profiles and independent benchmark scenarios/splits, without creating ground truth from the diagnosis function.
+- [x] Define local sandbox keys/revisions, pending recovery, reset, and cross-tab conflict rules.
+- [x] Document actual design choices in system design/architecture; keep proposed values distinguishable from measurements.
 
 **Gate:** Reviewed graph/content slice/data dictionary/contracts exist; a feasible fresh-item loop is demonstrated; no unresolved contradiction is hidden by code.
+
+**Passed, 20 November 2026:** reviewed draft assets, frozen schemas/hash vectors, profile/scenario definitions and storage state machine exist and validate. This is an engineering review, not educator validation, deployed analysis, browser-store implementation, or a model benchmark.
 
 ### Phase 1 — Prove the free deployment path
 
@@ -79,7 +81,7 @@ Requirements: FR-06–11/14/18, NFR-03/09/10.
 - [ ] Implement grading, deduplication, ordering validation, semantic digests, and evidence eligibility.
 - [ ] Implement smoothed estimates/evidence states and bounded graph candidate traversal.
 - [ ] Implement evidence-gated diagnosis/abstention, assessment requests, and constrained plan ranking.
-- [ ] Create immutable synthetic fixtures and independent holdout scenarios with frozen manifests.
+- [ ] Implement evaluation over the frozen synthetic packet and author separately versioned variants/final audits when required; do not describe the public audit as blind.
 - [ ] Evaluate predictions before outcomes; compare the required P0 baselines and report actual metrics.
 - [ ] Test retries/conflicts, hints/missing data, sparse/no-gap/ambiguous cases, ties, exhaustion, and graph errors.
 
@@ -167,4 +169,16 @@ Before a future batch, read [AGENTS.md](../AGENTS.md), inspect working-tree/remo
 - Repeated seed/hash verification and a new API deployment preserving canonical data passed. Full disaster restore, pause/resume, version rollback, and full-loop failure recovery remain Phase 5 work.
 - Local lint/format/content and ten API tests passed; five SQL checks skip without a local test DB. [Source CI run 44730530223](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44730530223) passed backend/frontend with isolated PostgreSQL 17 and four browser tests. No model-quality benchmark was run.
 - Initial tool/credential-transfer obstacles were resolved through the authenticated dashboard, owner scripts, and official CLI. Supabase tools remain absent from this chat. Render fallback was unnecessary.
-- **Next:** complete the unchecked Phase 0 graph/content/contracts/evidence review, then implement Phase 2 deterministic replay, estimates, diagnosis/plans, and independent offline evaluation. Full P0 curriculum and learning-loop acceptance remain open.
+- **Next:** Phase 0 review has now passed (record below); implement Phase 2 deterministic replay, estimates, diagnosis/plans and offline evaluation. Full P0 curriculum and learning-loop acceptance remain open.
+
+### Phase 0 review completion — 20 November 2026
+
+- Reviewed all 12 concepts and 17 scoped edges. The DP route now reaches tabulation without recursion; top-down memoization retains recursive tracing. [Rationales and item review](../curriculum/review.md).
+- Revised 12 draft questions at activity version 2, added two supporting lessons, and defined four explicit synthetic seeds (19 events). The published phase1-v1 semantic hash is unchanged. Sixty more questions and the full curriculum UI remain Phase 4 work.
+- Frozen [protocol/schema/manifest](../contracts/protocol.md): strict event and API structures, compatible release/hash tuples, UTC milliseconds, null metadata, canonical UTF-8/SHA-256, deterministic ordering and bounded errors. New release-scoped metadata preserves legacy bootstrap clients.
+- Reviewed exact evidence eligibility, uncertainty/abstention precedence, rational scores/ties, readiness locks and honest exhaustion. Mira's available fresh practice/reassessment trace ends at 0.5 after three correct new responses, not readiness or a learning claim.
+- Frozen [IndexedDB state machine](browser_storage.md): atomic revision checks, pending focus/trigger snapshots, refresh/retry, reset/new UUID, stale responses, cross-tab conflicts and session-only fallback. Fourteen browser scenarios are defined; actual IndexedDB/browser implementation remains Phase 3.
+- Frozen [evaluation packet](../evaluation/readme.md): 4 training/8 development/12 public synthetic final-audit cases with separate assumptions/annotations, hashes and split integrity checks; six future-catalog/fixture-DAG blueprints. No production diagnosis output generated labels. Cases were visible in review, not blind or evidence of generalization. No evaluator or benchmark ran.
+- Actual local verification: lint/format, schema/manifest, graph/catalog/profile/split checks passed; 68 tests passed and 5 isolated SQL checks skipped locally. Node independently passed nine canonical/hash/storage vectors and five release hashes. [Review evidence](evidence/phase0_review.json). CI now runs the new checks with real isolated PostgreSQL and existing browser regressions.
+- Original-content license remains unselected; educator validation is not claimed. No new infrastructure, billing, production migration or activation was performed.
+- Next: Phase 2 pure replay/eligibility/estimation/diagnosis/plan services, versioned publication, and real offline evaluator. Reuse frozen DTOs/fixtures; do not mark route integration, saved progress or measured model quality complete.

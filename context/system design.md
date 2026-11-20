@@ -1,6 +1,6 @@
 # System design
 
-**Status:** P0 target design with a verified live Phase 1 feasibility subset; full diagnosis/replay remains planned. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
+**Status:** Phase 0 contracts/review and Phase 1 feasibility passed. Full analysis/browser-store behavior below is frozen design for Phase 2/3. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
 
 This document owns runtime behavior, data flow, consistency, and failure handling. Module layout and technology decisions belong in [architecture.md](architecture.md).
 
@@ -39,9 +39,9 @@ The browser is allowed to alter its own synthetic scenario. Server grading preve
 
 ## 3. Profile initialization
 
-1. Fetch profile summaries and published version identifiers.
+1. Future client fetches the active analysis-release pointer, then pins release-scoped profile/seed reads; legacy preview routes retain their Phase 1 shapes.
 2. Fetch the selected immutable seed and public curriculum/catalog projection.
-3. Select the browser storage entry keyed by profile and seed/graph/catalog/model versions.
+3. Select the IndexedDB record keyed by profile, full release/hash/seed/graph/catalog/model tuple and contract version; see the exact ordered key in browser_storage.md.
 4. If versions match, restore acknowledged visitor events; otherwise offer explicit reset/migration guidance.
 5. Validate and analyze the restored prefix before presenting it as a fresh live result. A cached result may be shown with a saved-state label while validation is pending.
 6. Keep future answer options visible as needed, but omit grading keys from ordinary API responses until feedback is due.
@@ -55,7 +55,7 @@ sequenceDiagram
     participant B as Browser sandbox
     participant A as FastAPI
     participant D as Postgres
-    B->>B: Create event ID, sequence, local revision; mark pending
+    B->>B: Commit event, focus/trigger snapshot and pending revision in IndexedDB
     B->>A: Version envelope + bounded full visitor history
     A->>A: Reject oversized/invalid envelope
     A->>D: Atomically reserve request quota
@@ -69,7 +69,7 @@ sequenceDiagram
 
 Large bodies should be rejected before full parsing/expensive work; the quota guard must run before expensive replay/canonical lookups. Count validly admitted analysis attempts against quota even if deeper event validation fails; retries also consume requests. Do not refund counters in a way that permits bypass.
 
-The semantic digest covers canonical version identifiers and normalized, deduplicated analysis input. Freeze canonical serialization and timestamp normalization in Phase 0; request IDs and receipt times are excluded from semantic identity. Same semantic input must produce the same analysis. Changes to scoring or grading require explicit versions.
+The frozen lg-c14n-v1 digest covers versions, profile/focus/trigger selector, and normalized/deduplicated events; receipt/request IDs and sandbox/revision transport fields are excluded. UTC milliseconds, null metadata and safe-integer bounds are defined in [protocol](../contracts/protocol.md) and checked by Python/Node vectors. Same semantic input yields the same analysis; scoring/grading changes require explicit versions.
 
 P0 atomicity is **all-or-nothing analysis response**, not a fictional transaction persisting visitor history. There is no visitor write. When owned persistence is added later, define unique event constraints, real transactions/recomputation, and concurrent-write handling separately.
 
@@ -93,20 +93,21 @@ Retrospective diagnosis may use the just-observed failure. Offline next-response
 | --- | --- | --- |
 | `GET /health` | Lightweight process liveness. | Must not claim database readiness. |
 | `GET /ready` | Bounded dependency readiness; no sensitive details. | `503` if required database/quota access fails. |
-| `GET /api/v1/demo/profiles` | Public summaries and versions. | Controlled unavailable response if canonical metadata cannot be obtained. |
-| `GET /api/v1/demo/profiles/{id}/seed` | Immutable public seed/catalog/graph projection. | Unknown profile `404`; no answer-key table exposure. |
+| `GET /api/v1/demo/release` | Future active analysis-release pointer. | `503` when not configured/published. |
+| `GET /api/v1/releases/{release_id}/profiles` | Future release-scoped summaries and full version references. | Unsupported versions `409`; controlled dependency failure. |
+| `GET /api/v1/releases/{release_id}/profiles/{id}/seed` | Future pinned seed/catalog/graph projection. | Unknown profile `404`; no unanswered feedback exposure. |
 | `POST /api/v1/demo/analyze` | Versioned history/grade/estimate/diagnosis/plan bundle. | `409` conflict/version mismatch, `413` byte limit, `422` invalid events, `429` quota, `503` unavailable dependency. |
 | `GET /api/v1/analytics/evaluation` | Published measured summary only when an artifact exists. | Explicit unavailable/not-published state before evaluation exists. |
 
-Errors follow `{code, message, request_id, details}` with bounded safe details. Freeze exact schemas/OpenAPI in Phase 0/1. Preserve same event IDs on retry; do not retry validation/version failures as transient errors. Honor retry guidance on `429`; bound `503`/network retry attempts.
+Exact DTOs, generated JSON Schema, data dictionary and safe errors are frozen in [contracts](../contracts/protocol.md). Future FastAPI OpenAPI must reuse these models rather than invent another shape. The new routes are not implemented. Existing /api/v1/demo/profiles, its /{id}/seed and bootstrap/answer keep their deployed legacy contracts. Zero automatic POST retries; explicit retries preserve the same pending snapshot and honor 429 guidance.
 
 ## 7. Browser concurrency and local reset
 
-- Maintain a local monotonically increasing sandbox revision and associate each request with its event prefix/revision.
-- Apply a response only if it still matches the active profile, versions, and latest revision. Cancel or ignore stale requests.
-- Use storage-change notification and a tested cross-tab coordination strategy. Detect concurrent edits rather than using silent last-write-wins; reload/resolve before the next submission. Choose the exact lock/revision mechanism during frontend implementation and test browser support/fallback.
-- Reset clears only that profile's browser events/pending state. No server seed mutation is needed.
-- Local storage failure produces a session-only notice; a version mismatch prompts reset/migration. Neither should fabricate a successful analysis.
+- [browser_storage.md](browser_storage.md) owns the frozen IndexedDB transaction/revision state machine and fourteen required browser scenarios.
+- Stage pending event plus focus/trigger/revision, commit, then send outside the transaction. After refresh reconstruct the same request; never replace it with current UI selectors.
+- Acknowledge once only when versions, profile/focus, sandbox UUID, revision, pending ID and recomputed digest match. Cached bundles must describe the acknowledged prefix.
+- Compare-and-swap in one readwrite transaction resolves same-browser tab conflicts. BroadcastChannel is advisory; no-channel fallback still checks authoritative storage before mutations.
+- Reset changes the sandbox UUID and clears only local visitor work. Failed storage commit offers explicit per-tab session mode before any answer is sent. No automatic version migration or false live acceptance.
 
 ## 8. Failure and recovery behavior
 
@@ -120,15 +121,15 @@ Errors follow `{code, message, request_id, details}` with bounded safe details. 
 | No suitable unseen questions | Valid exhausted/no-suitable-item state with optional labeled review. |
 | LLM absent | No effect on P0; templates are the implementation. |
 
-## 9. Contract decisions still to freeze
+## 9. Frozen Phase 0 decisions
 
-- Exact schemas, canonical digest serialization, timestamp skew limits, and storage-key format.
-- Published version/activation mechanism and safe cache invalidation.
-- Full-analysis contracts around the implemented runtime role/quota boundary: Phase 1 uses an inherited NOLOGIN runtime group, atomic fixed-minute/global daily buckets, daily HMAC client hashes, and bounded opportunistic cleanup. See the migration and deployment runbook.
-- Cross-tab conflict strategy and pending-answer recovery behavior.
-- Reviewed curriculum edges, content slice, and independent scenario labels.
+- [Protocol/schema/manifest](../contracts/protocol.md): strict envelopes, exact version/hash identity, 300-second future skew, safe errors, release-scoped rollout, and retained legacy routes.
+- [Curriculum review](../curriculum/review.md): scoped 12-node/17-edge DAG, independent bottom-up DP route, revised 12-question/2-lesson slice and four synthetic seed definitions.
+- [Policy configuration](../curriculum/model-config.v1.json): first-response evidence, explicit uncertainty, rational ranking/ties, measured readiness, distinct reassessment, and honest exhaustion.
+- [Browser storage](browser_storage.md): transactional pending/acknowledged history, stable keys, reset/new UUID, refresh recovery and cross-tab conflict handling.
+- [Evaluation definition](../evaluation/readme.md): 4 training/8 development/12 public audit cases with separate annotations; six additional blueprint scenarios. No blind-test/generalization or measured benchmark claim.
 
-These are Phase 0/1 deliverables, not reasons to provision extra services. Record the implemented choices here when evidence exists.
+Phase 1's NOLOGIN runtime group, shared atomic fixed-minute/daily guard, HMAC client signals and bounded cleanup remain verified. These definitions require no extra infrastructure. Phase 2 implements the pure analysis services and publication path; Phase 3 implements/tests the browser store.
 
 
 ## 10. Implemented Phase 1 subset — 20 November 2026

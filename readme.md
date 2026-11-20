@@ -6,6 +6,8 @@ LearnGraph AI is a planned explainable learning-diagnostics portfolio applicatio
 
 **Status:** Phase 1 is complete: the public Next.js preview delivers a question through FastAPI and Supabase Free, grades an answer on the server, and displays real feedback. TLS, restricted database access, immutable content, shared quotas, deployment resources, and reseeding were verified. The full 72-question curriculum, diagnosis/replay engine, saved progress, and reassessment UI remain later work.
 
+**Phase 0 review is also complete:** [reviewed curriculum](curriculum/review.md), [frozen protocol/schema](contracts/protocol.md), [browser storage contract](context/browser_storage.md), and [synthetic evaluation definitions](evaluation/readme.md) are ready for Phase 2. The new graph, twelve reviewed questions/two lessons, and four profiles are unpublished draft assets; the live preview still serves the immutable Phase 1 slice.
+
 [Live infrastructure preview](https://learngraph-ai-web.vercel.app) · [API readiness](https://learngraph-ai-api.vercel.app/ready) · [Passing source CI run](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44730530223)
 
 Click **Check live connection**, choose an answer, and select **Check my response**. The page starts with a labeled prerecorded example and switches to a live question only after database readiness succeeds. Grading does not save learner progress. Supabase Free can pause after inactivity; the unavailable/example state remains available when the live dependency is down.
@@ -49,6 +51,10 @@ This full learning loop is planned; Phase 1 implements only live question delive
 | [context/deployment.md](context/deployment.md) | Free-plan verification, environment ownership, release, rollback, and recovery. |
 | [context/performance_review.md](context/performance_review.md) | Proposed performance budgets and actual-review recording protocol. |
 | [context/benchmark.md](context/benchmark.md) | Evaluation datasets, leakage prevention, baselines, metrics, and reporting. |
+| [contracts/protocol.md](contracts/protocol.md) | Frozen API/events, hashes, errors, readiness/exhaustion policy, and rollout compatibility. |
+| [curriculum/review.md](curriculum/review.md) | Concept/edge/item review, profile definitions, and fresh-item feasibility limits. |
+| [context/browser_storage.md](context/browser_storage.md) | IndexedDB transactions, pending snapshots, refresh/reset, cross-tab conflicts, and session-only fallback. |
+| [evaluation/readme.md](evaluation/readme.md) | Frozen 4/8/12 synthetic splits, annotation provenance, public-audit limits, and evaluator rules. |
 
 Start a development session with this file, the requirements, and the roadmap. Consult the relevant context document before changing that area. Document decisions in their owning files and reconcile changes with the full specification.
 
@@ -94,7 +100,7 @@ npm run test:e2e
 
 Contract tests use an explicitly labeled fixture; real SQL tests require an isolated local `TEST_DATABASE_URL` ending in `_test` and otherwise skip. CI supplies real PostgreSQL 17. Neither a contract fixture nor a recorded browser example passes the live Supabase deployment gate.
 
-OPEN-01 is resolved by the 72-question target and a tested two-concept authored slice. The free frontend → API → database gate has passed; remaining Phase 0 contract/content review precedes Phase 2 diagnosis work. See the roadmap and [measured infrastructure evidence](context/performance_review.md) for the exact scope and limitations.
+OPEN-01 and Phase 0 contract/content review are complete. The free frontend → API → database gate passed. Next is Phase 2 diagnosis/replay and offline evaluation, using the reviewed draft after a compatible new publication. See the roadmap and [measured infrastructure evidence](context/performance_review.md) for exact scope and limitations.
 
 ## Repository and contribution workflow
 

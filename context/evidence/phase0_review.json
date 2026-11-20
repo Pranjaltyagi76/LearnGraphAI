@@ -1,0 +1,57 @@
+{
+  "review_date": "2026-11-20",
+  "observed_at_utc": "2026-11-20T13:52:49.022865+00:00",
+  "verification_kind": "offline_contract_and_engineering_review_not_model_benchmark",
+  "base_commit": "b95bc95b5026f773e751c2766c214be64bc4705b",
+  "source_tree_at_measurement": "uncommitted Phase 0 review changes; artifact hashes bind the reviewed inputs",
+  "reviewed_release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+  "draft_status": "reviewed_draft_not_published",
+  "environment": {
+    "os": "Windows",
+    "python": "3.12.10",
+    "pydantic": "2.14.4",
+    "node": "v24.18.0"
+  },
+  "checks": {
+    "ruff_check": true,
+    "ruff_format": true,
+    "frozen_schema_manifest": true,
+    "reviewed_curriculum_profiles": true,
+    "evaluation_split_integrity": true,
+    "legacy_phase1_semantic_hash_unchanged": true,
+    "node_canonical_hash_storage_vectors": 9,
+    "node_release_artifact_hashes": 5,
+    "private_values_absent_from_delivery": true,
+    "local_document_links": true,
+    "frozen_json_valid_utf8_lf": true
+  },
+  "pytest": {
+    "passed": 68,
+    "skipped": 5,
+    "skip_reason": "No isolated local TEST_DATABASE_URL; CI supplies PostgreSQL 17.",
+    "warning": "Existing Starlette httpx TestClient deprecation; no test failure."
+  },
+  "assets": {
+    "concepts": 12,
+    "prerequisite_edges": 17,
+    "reviewed_questions": 12,
+    "lessons": 2,
+    "profile_definitions": 4,
+    "seed_events": 19,
+    "audit_cases": 24,
+    "train": 4,
+    "development": 8,
+    "public_final_audit": 12,
+    "future_blueprints_not_run": 6,
+    "storage_scenarios_defined_not_browser_executed": 14
+  },
+  "not_claimed": [
+    "new live analysis routes",
+    "browser persistence implementation",
+    "complete 72-question catalog",
+    "model quality metrics",
+    "blind test or real-world generalization",
+    "educator or psychometric validation"
+  ],
+  "deployment_action": "None; active immutable Phase 1 release and provider configuration retained."
+}

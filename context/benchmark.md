@@ -1,6 +1,6 @@
 # Benchmark and model-quality protocol
 
-**State:** Model-quality protocol only; the authored Phase 1 content fixture exists, but no prediction/diagnosis/recommendation benchmark has run. **Baseline date:** 20 November 2026. **Owner requirements:** FR-08–12/18 and NFR-09 in [requirement.md](../requirement.md). Algorithms and initial thresholds remain in [PROJECT.md](../PROJECT.md), Section 8.
+**State:** Phase 0 protocol and synthetic scenarios frozen; no prediction/diagnosis/recommendation evaluator or benchmark has run. **Baseline date:** 20 November 2026. **Owner requirements:** FR-08–12/18 and NFR-09 in [requirement.md](../requirement.md). Algorithms and initial thresholds remain in [PROJECT.md](../PROJECT.md), Section 8.
 
 Benchmark quality here means prediction/diagnosis/recommendation behavior. Runtime latency/resource tests belong in [performance_review.md](performance_review.md). Neither procedure establishes real learning gains from synthetic outcomes.
 
@@ -25,7 +25,7 @@ Question 5 led to the resolved 72-question budget decision OPEN-01 in [phasewise
 | Hand-authored holdout and generator variants | Stress independence from generator assumptions | Labels defined independently of production ranking; different seeds alone do not ensure independence. |
 | Later EdNet subset | Separate P2 knowledge-tracing study | Appropriate license/subset manifest, different domain claims, no raw records in runtime/Git. |
 
-Use learner-disjoint train/development/test splits; record actual counts, grouping, seeds, generator version, and hashes. Choose feasible sample sizes in Phase 0 after local resource/content constraints are known. There is no fabricated large dataset size or ratio in this document.
+The initial [frozen packet](../evaluation/readme.md) has 4 training, 8 development and 12 public synthetic audit learners, with disjoint learner/group IDs, no identical cross-split observation pattern, separate annotations and hashed manifests. Random eligible comparator seed is 761120. Public demo seeds are excluded. These authored cases were visible during engineering review: they are not blind or evidence of real-world generalization. Any output-guided tuning requires a newly versioned independent final audit; never relabel exposed cases as untouched. Items and broad families are reused across splits and explicitly disclosed. Six future-catalog/fixture-DAG blueprints are not metric observations.
 
 The application catalog is small. Repeated generated responses to the same question do not create new distinct observations. Synthetic benchmark sequences must obey the deployed evidence rules. Any separate larger research item pool must be disclosed and must not be presented as evidence that the small product catalog is sufficient.
 
@@ -61,7 +61,7 @@ The baseline uses only first responses to distinct primary-concept questions wit
 - **Global rate:** One smoothed correctness rate fit on eligible training events only, frozen before evaluation.
 - **Concept baseline:** The versioned `(successes + 2) / (eligible_count + 4)` per learner/concept estimate, with the test learner updated only from its own preceding observations.
 
-Report log loss and Brier score as primary measures. Record a small numerical clipping epsilon for log loss (proposed `1e-15`) without changing the estimator itself. ROC-AUC and PR-AUC require meaningful class support; otherwise report `N/A` and explain. Accuracy, if included, states its decision threshold and is secondary.
+Report log loss and Brier as primary measures; metric-only clipping epsilon is frozen at `1e-15`. ROC-AUC uses pairwise ranking with half credit for ties; the public pr_auc field reports stepwise average precision, grouping equal scores, not trapezoidal interpolation. Both require positive and negative outcomes, otherwise null with an explanation. Report class/exclusion counts. Optional accuracy uses threshold 0.5 and remains secondary.
 
 ## 5. Diagnosis evaluation
 
@@ -127,10 +127,12 @@ Avoid committing raw large sequences or private records. Small aggregate metrics
 | Evaluation | State | Result |
 | --- | --- | --- |
 | Prediction baselines | Not implemented/run | Not measured. |
-| Diagnosis holdout | Not authored/run | Not measured. |
+| Public synthetic diagnosis audit | 12 final-audit cases frozen, plus train/development definitions; not run | No measured result or blind-test claim. |
 | Recommendation comparisons | Not implemented/run | Not measured. |
 | Fresh practice/reassessment feasibility | OPEN-01 budget resolved; authored-slice test passes | Full catalog/live-loop evidence pending. |
-| Robustness/leakage checks | Not implemented/run | No passing claim. |
+| Contract/split integrity | Structural fixtures, disjoint memberships, hashes and strict boundary cases validated | Analysis-quality/behavioral robustness evaluation still not run. |
 | Real learning benefit | No study | No claim. |
 
 Future entries must link actual run artifacts/commits and record failed as well as passing results.
+
+The [evaluation packet](../evaluation/readme.md) specifies annotation groups, exact denominators, future blueprint prerequisites, and the prefix-only Phase 2 runner. `python -m scripts.check_phase0` validates the definitions from backend/; it does not fit or evaluate a model.
