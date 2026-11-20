@@ -41,9 +41,9 @@ export default function HomePage() {
               A wrong answer is a starting point. Trace the prerequisites,
               understand the evidence, and find a clearer next step.
             </p>
-            <a className="primary-link" href="#preview">
-              Explore the preview <span aria-hidden="true">↗</span>
-            </a>
+            <Link className="primary-link" href="/learn">
+              Explore the learning loop <span aria-hidden="true">↗</span>
+            </Link>
             <p className="hero-note">
               Synthetic learners. Explainable estimates. No account needed.
             </p>
@@ -58,8 +58,8 @@ export default function HomePage() {
               <span className="path-muted">Memoization</span>
             </div>
             <p className="path-caption">
-              A small view of the prerequisite journey. Full diagnosis is in
-              development.
+              A small view of the prerequisite journey. Explore the guided demo
+              for evidence, practice, and distinct reassessment.
             </p>
           </div>
           <ConnectionPreview />
@@ -73,8 +73,8 @@ export default function HomePage() {
             <p className="eyebrow">THE LEARNING LOOP</p>
             <h2 id="approach-title">Less guessing. More understanding.</h2>
             <p>
-              The full product is being built in measured steps. This first
-              preview verifies the question and grading path.
+              Explore the guided learning loop, or use this original connection
+              preview to check the question and grading path.
             </p>
           </div>
           <div className="approach-grid">
