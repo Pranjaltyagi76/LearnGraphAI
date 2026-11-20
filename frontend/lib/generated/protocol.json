@@ -1,0 +1,2453 @@
+{
+  "$defs": {
+    "AnalysisBundle": {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_visitor_events": {
+          "maximum": 200,
+          "minimum": 0,
+          "title": "Accepted Visitor Events",
+          "type": "integer"
+        },
+        "contract_version": {
+          "const": 1,
+          "title": "Contract Version",
+          "type": "integer"
+        },
+        "diagnosis": {
+          "$ref": "#/$defs/Diagnosis"
+        },
+        "digest_algorithm": {
+          "const": "sha256-lg-c14n-v1",
+          "title": "Digest Algorithm",
+          "type": "string"
+        },
+        "estimates": {
+          "items": {
+            "$ref": "#/$defs/Estimate"
+          },
+          "maxItems": 12,
+          "minItems": 12,
+          "title": "Estimates",
+          "type": "array"
+        },
+        "focus_concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Focus Concept Id",
+          "type": "string"
+        },
+        "graded_events": {
+          "items": {
+            "$ref": "#/$defs/GradedEvent"
+          },
+          "maxItems": 300,
+          "title": "Graded Events",
+          "type": "array"
+        },
+        "history_digest": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "History Digest",
+          "type": "string"
+        },
+        "local_revision": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Local Revision",
+          "type": "integer"
+        },
+        "persisted": {
+          "const": false,
+          "title": "Persisted",
+          "type": "boolean"
+        },
+        "plan": {
+          "$ref": "#/$defs/Plan"
+        },
+        "profile_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Profile Id",
+          "type": "string"
+        },
+        "requested_trigger_event_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Requested Trigger Event Id"
+        },
+        "sandbox_id": {
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+          "title": "Sandbox Id",
+          "type": "string"
+        },
+        "versions": {
+          "$ref": "#/$defs/Versions"
+        }
+      },
+      "required": [
+        "contract_version",
+        "versions",
+        "profile_id",
+        "sandbox_id",
+        "local_revision",
+        "focus_concept_id",
+        "requested_trigger_event_id",
+        "digest_algorithm",
+        "history_digest",
+        "persisted",
+        "accepted_visitor_events",
+        "graded_events",
+        "estimates",
+        "diagnosis",
+        "plan"
+      ],
+      "title": "AnalysisBundle",
+      "type": "object"
+    },
+    "AnalyzeRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": 1,
+          "title": "Contract Version",
+          "type": "integer"
+        },
+        "events": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "lesson_completed": "#/$defs/LessonEvent",
+                "response": "#/$defs/ResponseEvent"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ResponseEvent"
+              },
+              {
+                "$ref": "#/$defs/LessonEvent"
+              }
+            ]
+          },
+          "maxItems": 200,
+          "title": "Events",
+          "type": "array"
+        },
+        "focus_concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Focus Concept Id",
+          "type": "string"
+        },
+        "local_revision": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Local Revision",
+          "type": "integer"
+        },
+        "profile_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Profile Id",
+          "type": "string"
+        },
+        "sandbox_id": {
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+          "title": "Sandbox Id",
+          "type": "string"
+        },
+        "trigger_event_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Trigger Event Id"
+        },
+        "versions": {
+          "$ref": "#/$defs/Versions"
+        }
+      },
+      "required": [
+        "contract_version",
+        "versions",
+        "profile_id",
+        "sandbox_id",
+        "local_revision",
+        "focus_concept_id",
+        "events"
+      ],
+      "title": "AnalyzeRequest",
+      "type": "object"
+    },
+    "Diagnosis": {
+      "additionalProperties": false,
+      "properties": {
+        "alternatives": {
+          "items": {
+            "enum": [
+              "item_difficulty",
+              "response_error",
+              "tag_mismatch",
+              "mixed_evidence"
+            ],
+            "type": "string"
+          },
+          "maxItems": 4,
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "candidates": {
+          "items": {
+            "$ref": "#/$defs/GapCandidate"
+          },
+          "maxItems": 3,
+          "title": "Candidates",
+          "type": "array"
+        },
+        "evidence_requests": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRequest"
+          },
+          "maxItems": 12,
+          "title": "Evidence Requests",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "supported_gap",
+            "insufficient_evidence",
+            "ambiguous",
+            "no_supported_gap",
+            "no_failed_trigger"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "trigger_event_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Trigger Event Id"
+        }
+      },
+      "required": [
+        "status",
+        "trigger_event_id",
+        "candidates",
+        "evidence_requests",
+        "alternatives"
+      ],
+      "title": "Diagnosis",
+      "type": "object"
+    },
+    "DiagnosisSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "all_cases": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "All Cases",
+          "type": "integer"
+        },
+        "baseline": {
+          "enum": [
+            "lowest_estimate",
+            "prerequisite_aware"
+          ],
+          "title": "Baseline",
+          "type": "string"
+        },
+        "coverage": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Coverage",
+          "type": "number"
+        },
+        "false_diagnosis_rate": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "False Diagnosis Rate"
+        },
+        "labeled_gap_cases": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Labeled Gap Cases",
+          "type": "integer"
+        },
+        "missing_evidence_cases": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Missing Evidence Cases",
+          "type": "integer"
+        },
+        "mrr": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Mrr",
+          "type": "number"
+        },
+        "no_gap_cases": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "No Gap Cases",
+          "type": "integer"
+        },
+        "no_trigger_cases": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "No Trigger Cases",
+          "type": "integer"
+        },
+        "precision_at_1": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Precision At 1",
+          "type": "number"
+        },
+        "precision_at_3": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Precision At 3",
+          "type": "number"
+        },
+        "recall_at_1": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Recall At 1",
+          "type": "number"
+        },
+        "recall_at_3": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Recall At 3",
+          "type": "number"
+        }
+      },
+      "required": [
+        "baseline",
+        "labeled_gap_cases",
+        "all_cases",
+        "no_gap_cases",
+        "missing_evidence_cases",
+        "no_trigger_cases",
+        "precision_at_1",
+        "precision_at_3",
+        "recall_at_1",
+        "recall_at_3",
+        "mrr",
+        "coverage",
+        "false_diagnosis_rate"
+      ],
+      "title": "DiagnosisSummary",
+      "type": "object"
+    },
+    "ErrorDetail": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "maxLength": 120,
+          "title": "Path",
+          "type": "string"
+        },
+        "reason": {
+          "enum": [
+            "required",
+            "invalid_type",
+            "invalid_value",
+            "unknown_reference",
+            "out_of_range"
+          ],
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "reason"
+      ],
+      "title": "ErrorDetail",
+      "type": "object"
+    },
+    "ErrorEnvelope": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": [
+            "invalid_request",
+            "invalid_response",
+            "invalid_order",
+            "invalid_timestamp",
+            "invalid_trigger",
+            "unknown_activity",
+            "profile_not_found",
+            "not_found",
+            "http_error",
+            "event_conflict",
+            "version_mismatch",
+            "payload_too_large",
+            "body_timeout",
+            "quota_exhausted",
+            "not_configured",
+            "dependency_unavailable",
+            "analysis_timeout",
+            "evaluation_not_published"
+          ],
+          "title": "Code",
+          "type": "string"
+        },
+        "details": {
+          "items": {
+            "$ref": "#/$defs/ErrorDetail"
+          },
+          "maxItems": 10,
+          "title": "Details",
+          "type": "array"
+        },
+        "message": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "request_id": {
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+          "title": "Request Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "request_id",
+        "details"
+      ],
+      "title": "ErrorEnvelope",
+      "type": "object"
+    },
+    "Estimate": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "distinct_questions": {
+          "maximum": 300,
+          "minimum": 0,
+          "title": "Distinct Questions",
+          "type": "integer"
+        },
+        "eligible_count": {
+          "maximum": 300,
+          "minimum": 0,
+          "title": "Eligible Count",
+          "type": "integer"
+        },
+        "estimate": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Estimate"
+        },
+        "evidence_event_ids": {
+          "items": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+            "type": "string"
+          },
+          "maxItems": 300,
+          "title": "Evidence Event Ids",
+          "type": "array"
+        },
+        "evidence_state": {
+          "enum": [
+            "not_assessed",
+            "early_estimate",
+            "supported_estimate"
+          ],
+          "title": "Evidence State",
+          "type": "string"
+        },
+        "last_evidence_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "maxLength": 29,
+              "minLength": 20,
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?(?:Z|[+-]\\d{2}:\\d{2})$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Last Evidence At"
+        },
+        "performance_state": {
+          "enum": [
+            "unknown",
+            "early",
+            "weak",
+            "developing",
+            "ready"
+          ],
+          "title": "Performance State",
+          "type": "string"
+        },
+        "recent_failures": {
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Recent Failures",
+          "type": "integer"
+        },
+        "successes": {
+          "maximum": 300,
+          "minimum": 0,
+          "title": "Successes",
+          "type": "integer"
+        },
+        "total_attempts": {
+          "maximum": 300,
+          "minimum": 0,
+          "title": "Total Attempts",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "concept_id",
+        "eligible_count",
+        "successes",
+        "total_attempts",
+        "distinct_questions",
+        "estimate",
+        "evidence_state",
+        "performance_state",
+        "recent_failures",
+        "last_evidence_at",
+        "evidence_event_ids"
+      ],
+      "title": "Estimate",
+      "type": "object"
+    },
+    "EvaluationSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "catalog_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Catalog Version",
+          "type": "string"
+        },
+        "contract_version": {
+          "const": 1,
+          "title": "Contract Version",
+          "type": "integer"
+        },
+        "diagnosis": {
+          "items": {
+            "$ref": "#/$defs/DiagnosisSummary"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "title": "Diagnosis",
+          "type": "array"
+        },
+        "evaluation_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Evaluation Version",
+          "type": "string"
+        },
+        "graph_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Graph Version",
+          "type": "string"
+        },
+        "limitations": {
+          "items": {
+            "maxLength": 240,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 1,
+          "title": "Limitations",
+          "type": "array"
+        },
+        "measured_at": {
+          "format": "date-time",
+          "maxLength": 29,
+          "minLength": 20,
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?(?:Z|[+-]\\d{2}:\\d{2})$",
+          "title": "Measured At",
+          "type": "string"
+        },
+        "model_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Model Version",
+          "type": "string"
+        },
+        "prediction": {
+          "items": {
+            "$ref": "#/$defs/PredictionSummary"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "title": "Prediction",
+          "type": "array"
+        },
+        "recommendation": {
+          "items": {
+            "$ref": "#/$defs/RecommendationSummary"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "title": "Recommendation",
+          "type": "array"
+        },
+        "scenario_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Scenario Version",
+          "type": "string"
+        },
+        "source_commit": {
+          "pattern": "^[a-f0-9]{40}$",
+          "title": "Source Commit",
+          "type": "string"
+        },
+        "split_manifest_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Split Manifest Hash",
+          "type": "string"
+        },
+        "synthetic_only": {
+          "const": true,
+          "title": "Synthetic Only",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "contract_version",
+        "evaluation_version",
+        "scenario_version",
+        "graph_version",
+        "catalog_version",
+        "model_version",
+        "source_commit",
+        "measured_at",
+        "split_manifest_hash",
+        "synthetic_only",
+        "prediction",
+        "diagnosis",
+        "recommendation",
+        "limitations"
+      ],
+      "title": "EvaluationSummary",
+      "type": "object"
+    },
+    "EvidenceRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "needed_observations": {
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Needed Observations",
+          "type": "integer"
+        },
+        "reason": {
+          "enum": [
+            "not_assessed",
+            "early_estimate"
+          ],
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "concept_id",
+        "reason",
+        "needed_observations"
+      ],
+      "title": "EvidenceRequest",
+      "type": "object"
+    },
+    "GapCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "distance": {
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Distance",
+          "type": "integer"
+        },
+        "evidence_event_ids": {
+          "items": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+            "type": "string"
+          },
+          "maxItems": 300,
+          "minItems": 3,
+          "title": "Evidence Event Ids",
+          "type": "array"
+        },
+        "path": {
+          "items": {
+            "maxLength": 80,
+            "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+            "type": "string"
+          },
+          "maxItems": 4,
+          "minItems": 1,
+          "title": "Path",
+          "type": "array"
+        },
+        "reason": {
+          "enum": [
+            "supported_target_weakness",
+            "supported_upstream_weakness"
+          ],
+          "title": "Reason",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "target",
+            "upstream"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "score": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Score",
+          "type": "number"
+        }
+      },
+      "required": [
+        "concept_id",
+        "relation",
+        "distance",
+        "path",
+        "score",
+        "evidence_event_ids",
+        "reason"
+      ],
+      "title": "GapCandidate",
+      "type": "object"
+    },
+    "GradedEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "activity_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Activity Id",
+          "type": "string"
+        },
+        "activity_version": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Activity Version",
+          "type": "integer"
+        },
+        "attempt_number": {
+          "maximum": 300,
+          "minimum": 0,
+          "title": "Attempt Number",
+          "type": "integer"
+        },
+        "catalog_role": {
+          "enum": [
+            "diagnostic",
+            "practice",
+            "reassessment",
+            "lesson"
+          ],
+          "title": "Catalog Role",
+          "type": "string"
+        },
+        "concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "eligibility_reason": {
+          "enum": [
+            "eligible",
+            "repeat_activity",
+            "hints_used",
+            "hints_unknown",
+            "lesson"
+          ],
+          "title": "Eligibility Reason",
+          "type": "string"
+        },
+        "eligible": {
+          "title": "Eligible",
+          "type": "boolean"
+        },
+        "event_id": {
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "explanation": {
+          "anyOf": [
+            {
+              "maxLength": 2000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Explanation"
+        },
+        "is_correct": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Is Correct"
+        },
+        "kind": {
+          "enum": [
+            "response",
+            "lesson_completed"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "occurred_at": {
+          "format": "date-time",
+          "maxLength": 29,
+          "minLength": 20,
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?(?:Z|[+-]\\d{2}:\\d{2})$",
+          "title": "Occurred At",
+          "type": "string"
+        },
+        "provenance": {
+          "enum": [
+            "canonical_seed",
+            "visitor_demo"
+          ],
+          "title": "Provenance",
+          "type": "string"
+        }
+      },
+      "required": [
+        "event_id",
+        "activity_id",
+        "activity_version",
+        "provenance",
+        "kind",
+        "concept_id",
+        "catalog_role",
+        "attempt_number",
+        "is_correct",
+        "eligible",
+        "eligibility_reason",
+        "occurred_at",
+        "explanation"
+      ],
+      "title": "GradedEvent",
+      "type": "object"
+    },
+    "HealthResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "service": {
+          "const": "learngraph-ai-api",
+          "title": "Service",
+          "type": "string"
+        },
+        "stage": {
+          "pattern": "^phase[0-7]$",
+          "title": "Stage",
+          "type": "string"
+        },
+        "status": {
+          "const": "ok",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "service",
+        "stage"
+      ],
+      "title": "HealthResponse",
+      "type": "object"
+    },
+    "LessonEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "activity_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Activity Id",
+          "type": "string"
+        },
+        "activity_version": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Activity Version",
+          "type": "integer"
+        },
+        "assessment_run_id": {
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+          "title": "Assessment Run Id",
+          "type": "string"
+        },
+        "event_id": {
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "kind": {
+          "const": "lesson_completed",
+          "title": "Kind",
+          "type": "string"
+        },
+        "occurred_at": {
+          "format": "date-time",
+          "maxLength": 29,
+          "minLength": 20,
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?(?:Z|[+-]\\d{2}:\\d{2})$",
+          "title": "Occurred At",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "sequence_number": {
+          "maximum": 300,
+          "minimum": 1,
+          "title": "Sequence Number",
+          "type": "integer"
+        },
+        "time_spent_seconds": {
+          "anyOf": [
+            {
+              "maximum": 86400,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Time Spent Seconds"
+        }
+      },
+      "required": [
+        "schema_version",
+        "event_id",
+        "sequence_number",
+        "activity_id",
+        "activity_version",
+        "assessment_run_id",
+        "occurred_at",
+        "kind"
+      ],
+      "title": "LessonEvent",
+      "type": "object"
+    },
+    "OptionResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "option_id": {
+          "pattern": "^[a-z0-9_-]{1,8}$",
+          "title": "Option Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "option_id"
+      ],
+      "title": "OptionResponse",
+      "type": "object"
+    },
+    "PendingSubmission": {
+      "additionalProperties": false,
+      "properties": {
+        "event": {
+          "discriminator": {
+            "mapping": {
+              "lesson_completed": "#/$defs/LessonEvent",
+              "response": "#/$defs/ResponseEvent"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ResponseEvent"
+            },
+            {
+              "$ref": "#/$defs/LessonEvent"
+            }
+          ],
+          "title": "Event"
+        },
+        "focus_concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Focus Concept Id",
+          "type": "string"
+        },
+        "request_revision": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Request Revision",
+          "type": "integer"
+        },
+        "trigger_event_id": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Trigger Event Id"
+        }
+      },
+      "required": [
+        "event",
+        "focus_concept_id",
+        "trigger_event_id",
+        "request_revision"
+      ],
+      "title": "PendingSubmission",
+      "type": "object"
+    },
+    "Plan": {
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/$defs/PlanItem"
+          },
+          "maxItems": 5,
+          "title": "Items",
+          "type": "array"
+        },
+        "mode": {
+          "enum": [
+            "remediation",
+            "assessment",
+            "practice",
+            "none"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "ready",
+            "blocked",
+            "catalog_exhausted",
+            "no_suitable_activity"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "mode",
+        "status",
+        "items"
+      ],
+      "title": "Plan",
+      "type": "object"
+    },
+    "PlanItem": {
+      "additionalProperties": false,
+      "properties": {
+        "activity_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Activity Id",
+          "type": "string"
+        },
+        "activity_version": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Activity Version",
+          "type": "integer"
+        },
+        "blocked_by_concept_ids": {
+          "items": {
+            "maxLength": 80,
+            "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+            "type": "string"
+          },
+          "maxItems": 12,
+          "title": "Blocked By Concept Ids",
+          "type": "array"
+        },
+        "concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Concept Id",
+          "type": "string"
+        },
+        "depends_on_activity_ids": {
+          "items": {
+            "maxLength": 80,
+            "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+            "type": "string"
+          },
+          "maxItems": 4,
+          "title": "Depends On Activity Ids",
+          "type": "array"
+        },
+        "readiness": {
+          "enum": [
+            "ready",
+            "locked"
+          ],
+          "title": "Readiness",
+          "type": "string"
+        },
+        "reason": {
+          "enum": [
+            "gap_practice",
+            "gather_evidence",
+            "reassessment",
+            "lesson_support",
+            "further_practice"
+          ],
+          "title": "Reason",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "diagnostic",
+            "practice",
+            "reassessment",
+            "lesson"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "score": {
+          "maximum": 1,
+          "minimum": -0.5,
+          "title": "Score",
+          "type": "number"
+        }
+      },
+      "required": [
+        "activity_id",
+        "activity_version",
+        "concept_id",
+        "role",
+        "readiness",
+        "blocked_by_concept_ids",
+        "depends_on_activity_ids",
+        "reason",
+        "score"
+      ],
+      "title": "PlanItem",
+      "type": "object"
+    },
+    "PredictionSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "baseline": {
+          "enum": [
+            "global_rate",
+            "concept_smoothed"
+          ],
+          "title": "Baseline",
+          "type": "string"
+        },
+        "brier": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Brier",
+          "type": "number"
+        },
+        "eligible_predictions": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Eligible Predictions",
+          "type": "integer"
+        },
+        "excluded_events": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Excluded Events",
+          "type": "integer"
+        },
+        "log_loss": {
+          "maximum": 40,
+          "minimum": 0,
+          "title": "Log Loss",
+          "type": "number"
+        },
+        "negative_outcomes": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Negative Outcomes",
+          "type": "integer"
+        },
+        "positive_outcomes": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Positive Outcomes",
+          "type": "integer"
+        },
+        "pr_auc": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Pr Auc"
+        },
+        "roc_auc": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Roc Auc"
+        }
+      },
+      "required": [
+        "baseline",
+        "eligible_predictions",
+        "positive_outcomes",
+        "negative_outcomes",
+        "excluded_events",
+        "log_loss",
+        "brier",
+        "roc_auc",
+        "pr_auc"
+      ],
+      "title": "PredictionSummary",
+      "type": "object"
+    },
+    "ProfileInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "archetype": {
+          "enum": [
+            "upstream_gap",
+            "target_gap",
+            "sparse",
+            "ambiguous"
+          ],
+          "title": "Archetype",
+          "type": "string"
+        },
+        "focus_concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Focus Concept Id",
+          "type": "string"
+        },
+        "id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "summary": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Summary",
+          "type": "string"
+        },
+        "synthetic": {
+          "const": true,
+          "title": "Synthetic",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "synthetic",
+        "archetype",
+        "summary",
+        "focus_concept_id"
+      ],
+      "title": "ProfileInfo",
+      "type": "object"
+    },
+    "ProfileSeed": {
+      "additionalProperties": false,
+      "properties": {
+        "archetype": {
+          "enum": [
+            "upstream_gap",
+            "target_gap",
+            "sparse",
+            "ambiguous"
+          ],
+          "title": "Archetype",
+          "type": "string"
+        },
+        "events": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "lesson_completed": "#/$defs/LessonEvent",
+                "response": "#/$defs/ResponseEvent"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ResponseEvent"
+              },
+              {
+                "$ref": "#/$defs/LessonEvent"
+              }
+            ]
+          },
+          "maxItems": 100,
+          "title": "Events",
+          "type": "array"
+        },
+        "focus_concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Focus Concept Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "profile_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Profile Id",
+          "type": "string"
+        },
+        "seed_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Seed Id",
+          "type": "string"
+        },
+        "seed_version": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Seed Version",
+          "type": "integer"
+        },
+        "summary": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Summary",
+          "type": "string"
+        },
+        "synthetic": {
+          "const": true,
+          "title": "Synthetic",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "seed_id",
+        "seed_version",
+        "profile_id",
+        "name",
+        "synthetic",
+        "archetype",
+        "summary",
+        "focus_concept_id",
+        "events"
+      ],
+      "title": "ProfileSeed",
+      "type": "object"
+    },
+    "ProfileSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "archetype": {
+          "enum": [
+            "upstream_gap",
+            "target_gap",
+            "sparse",
+            "ambiguous"
+          ],
+          "title": "Archetype",
+          "type": "string"
+        },
+        "focus_concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Focus Concept Id",
+          "type": "string"
+        },
+        "id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "summary": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Summary",
+          "type": "string"
+        },
+        "synthetic": {
+          "const": true,
+          "title": "Synthetic",
+          "type": "boolean"
+        },
+        "versions": {
+          "$ref": "#/$defs/Versions"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "synthetic",
+        "archetype",
+        "summary",
+        "focus_concept_id",
+        "versions"
+      ],
+      "title": "ProfileSummary",
+      "type": "object"
+    },
+    "ProfilesResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": 1,
+          "title": "Contract Version",
+          "type": "integer"
+        },
+        "profiles": {
+          "items": {
+            "$ref": "#/$defs/ProfileSummary"
+          },
+          "maxItems": 4,
+          "minItems": 1,
+          "title": "Profiles",
+          "type": "array"
+        }
+      },
+      "required": [
+        "contract_version",
+        "profiles"
+      ],
+      "title": "ProfilesResponse",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "attribution": {
+          "maxLength": 120,
+          "minLength": 1,
+          "title": "Attribution",
+          "type": "string"
+        },
+        "created_on": {
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "title": "Created On",
+          "type": "string"
+        },
+        "license_status": {
+          "const": "not_licensed",
+          "title": "License Status",
+          "type": "string"
+        },
+        "origin": {
+          "const": "original",
+          "title": "Origin",
+          "type": "string"
+        }
+      },
+      "required": [
+        "origin",
+        "attribution",
+        "created_on",
+        "license_status"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "PublicConcept": {
+      "additionalProperties": false,
+      "properties": {
+        "definition": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Definition",
+          "type": "string"
+        },
+        "group": {
+          "enum": [
+            "recursion",
+            "dynamic_programming"
+          ],
+          "title": "Group",
+          "type": "string"
+        },
+        "id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "definition",
+        "group"
+      ],
+      "title": "PublicConcept",
+      "type": "object"
+    },
+    "PublicEdge": {
+      "additionalProperties": false,
+      "properties": {
+        "dependent": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Dependent",
+          "type": "string"
+        },
+        "prerequisite": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Prerequisite",
+          "type": "string"
+        },
+        "type": {
+          "const": "prerequisite",
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "prerequisite",
+        "dependent",
+        "type"
+      ],
+      "title": "PublicEdge",
+      "type": "object"
+    },
+    "PublicLesson": {
+      "additionalProperties": false,
+      "properties": {
+        "active": {
+          "const": true,
+          "title": "Active",
+          "type": "boolean"
+        },
+        "body": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Body",
+          "type": "string"
+        },
+        "difficulty": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Difficulty",
+          "type": "number"
+        },
+        "foundational": {
+          "title": "Foundational",
+          "type": "boolean"
+        },
+        "id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "const": "lesson",
+          "title": "Kind",
+          "type": "string"
+        },
+        "primary_concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Primary Concept Id",
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "role": {
+          "const": "lesson",
+          "title": "Role",
+          "type": "string"
+        },
+        "secondary_concept_ids": {
+          "items": {
+            "maxLength": 80,
+            "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+            "type": "string"
+          },
+          "maxItems": 11,
+          "title": "Secondary Concept Ids",
+          "type": "array"
+        },
+        "title": {
+          "maxLength": 120,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "version": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "primary_concept_id",
+        "secondary_concept_ids",
+        "active",
+        "foundational",
+        "difficulty",
+        "provenance",
+        "kind",
+        "role",
+        "title",
+        "body"
+      ],
+      "title": "PublicLesson",
+      "type": "object"
+    },
+    "PublicOption": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z0-9_-]{1,8}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 500,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "text"
+      ],
+      "title": "PublicOption",
+      "type": "object"
+    },
+    "PublicQuestion": {
+      "additionalProperties": false,
+      "properties": {
+        "active": {
+          "const": true,
+          "title": "Active",
+          "type": "boolean"
+        },
+        "code": {
+          "anyOf": [
+            {
+              "maxLength": 4000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Code"
+        },
+        "difficulty": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Difficulty",
+          "type": "number"
+        },
+        "foundational": {
+          "title": "Foundational",
+          "type": "boolean"
+        },
+        "id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "const": "question",
+          "title": "Kind",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/PublicOption"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Options",
+          "type": "array"
+        },
+        "primary_concept_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Primary Concept Id",
+          "type": "string"
+        },
+        "prompt": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Prompt",
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "question_type": {
+          "enum": [
+            "multiple_choice",
+            "code_tracing",
+            "bug_identification"
+          ],
+          "title": "Question Type",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "diagnostic",
+            "practice",
+            "reassessment"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "secondary_concept_ids": {
+          "items": {
+            "maxLength": 80,
+            "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+            "type": "string"
+          },
+          "maxItems": 11,
+          "title": "Secondary Concept Ids",
+          "type": "array"
+        },
+        "version": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "primary_concept_id",
+        "secondary_concept_ids",
+        "active",
+        "foundational",
+        "difficulty",
+        "provenance",
+        "kind",
+        "role",
+        "question_type",
+        "prompt",
+        "code",
+        "options"
+      ],
+      "title": "PublicQuestion",
+      "type": "object"
+    },
+    "ReadyResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "release_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Release Id",
+          "type": "string"
+        },
+        "status": {
+          "const": "ready",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "release_id"
+      ],
+      "title": "ReadyResponse",
+      "type": "object"
+    },
+    "RecommendationSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "baseline": {
+          "enum": [
+            "random_eligible",
+            "lowest_estimate",
+            "prerequisite_aware"
+          ],
+          "title": "Baseline",
+          "type": "string"
+        },
+        "cases": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Cases",
+          "type": "integer"
+        },
+        "catalog_validity": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Catalog Validity"
+        },
+        "emitted_items": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Emitted Items",
+          "type": "integer"
+        },
+        "exhaustion_cases": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Exhaustion Cases",
+          "type": "integer"
+        },
+        "exhaustion_honesty": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Exhaustion Honesty"
+        },
+        "prerequisite_checks": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Prerequisite Checks",
+          "type": "integer"
+        },
+        "prerequisite_validity": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Prerequisite Validity"
+        },
+        "reassessment_distinctness": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reassessment Distinctness"
+        },
+        "reassessment_items": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Reassessment Items",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "baseline",
+        "cases",
+        "emitted_items",
+        "prerequisite_checks",
+        "reassessment_items",
+        "exhaustion_cases",
+        "catalog_validity",
+        "prerequisite_validity",
+        "reassessment_distinctness",
+        "exhaustion_honesty"
+      ],
+      "title": "RecommendationSummary",
+      "type": "object"
+    },
+    "ReleaseSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "catalog_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Catalog Version",
+          "type": "string"
+        },
+        "contract_version": {
+          "const": 1,
+          "title": "Contract Version",
+          "type": "integer"
+        },
+        "graph_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Graph Version",
+          "type": "string"
+        },
+        "model_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Model Version",
+          "type": "string"
+        },
+        "profiles_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Profiles Version",
+          "type": "string"
+        },
+        "release_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Release Hash",
+          "type": "string"
+        },
+        "release_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Release Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "contract_version",
+        "release_id",
+        "release_hash",
+        "graph_version",
+        "catalog_version",
+        "model_version",
+        "profiles_version"
+      ],
+      "title": "ReleaseSummary",
+      "type": "object"
+    },
+    "ResponseEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "activity_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Activity Id",
+          "type": "string"
+        },
+        "activity_version": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Activity Version",
+          "type": "integer"
+        },
+        "assessment_run_id": {
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+          "title": "Assessment Run Id",
+          "type": "string"
+        },
+        "event_id": {
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "hints_used": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Hints Used"
+        },
+        "kind": {
+          "const": "response",
+          "title": "Kind",
+          "type": "string"
+        },
+        "occurred_at": {
+          "format": "date-time",
+          "maxLength": 29,
+          "minLength": 20,
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?(?:Z|[+-]\\d{2}:\\d{2})$",
+          "title": "Occurred At",
+          "type": "string"
+        },
+        "response": {
+          "$ref": "#/$defs/OptionResponse"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "sequence_number": {
+          "maximum": 300,
+          "minimum": 1,
+          "title": "Sequence Number",
+          "type": "integer"
+        },
+        "time_spent_seconds": {
+          "anyOf": [
+            {
+              "maximum": 86400,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Time Spent Seconds"
+        }
+      },
+      "required": [
+        "schema_version",
+        "event_id",
+        "sequence_number",
+        "activity_id",
+        "activity_version",
+        "assessment_run_id",
+        "occurred_at",
+        "kind",
+        "response"
+      ],
+      "title": "ResponseEvent",
+      "type": "object"
+    },
+    "SandboxRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "acknowledged_events": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "lesson_completed": "#/$defs/LessonEvent",
+                "response": "#/$defs/ResponseEvent"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ResponseEvent"
+              },
+              {
+                "$ref": "#/$defs/LessonEvent"
+              }
+            ]
+          },
+          "maxItems": 200,
+          "title": "Acknowledged Events",
+          "type": "array"
+        },
+        "analysis_history_digest": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Analysis History Digest"
+        },
+        "analysis_input_revision": {
+          "anyOf": [
+            {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Analysis Input Revision"
+        },
+        "key": {
+          "maxLength": 1024,
+          "minLength": 1,
+          "title": "Key",
+          "type": "string"
+        },
+        "last_analysis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AnalysisBundle"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pending": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PendingSubmission"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "persistence": {
+          "enum": [
+            "indexeddb",
+            "session"
+          ],
+          "title": "Persistence",
+          "type": "string"
+        },
+        "profile_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Profile Id",
+          "type": "string"
+        },
+        "revision": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "title": "Revision",
+          "type": "integer"
+        },
+        "sandbox_id": {
+          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[45][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+          "title": "Sandbox Id",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "versions": {
+          "$ref": "#/$defs/Versions"
+        }
+      },
+      "required": [
+        "schema_version",
+        "key",
+        "versions",
+        "profile_id",
+        "sandbox_id",
+        "revision",
+        "persistence",
+        "acknowledged_events",
+        "pending",
+        "last_analysis",
+        "analysis_input_revision",
+        "analysis_history_digest"
+      ],
+      "title": "SandboxRecord",
+      "type": "object"
+    },
+    "SeedResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "activities": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "lesson": "#/$defs/PublicLesson",
+                "question": "#/$defs/PublicQuestion"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/PublicQuestion"
+              },
+              {
+                "$ref": "#/$defs/PublicLesson"
+              }
+            ]
+          },
+          "maxItems": 128,
+          "title": "Activities",
+          "type": "array"
+        },
+        "concepts": {
+          "items": {
+            "$ref": "#/$defs/PublicConcept"
+          },
+          "maxItems": 12,
+          "minItems": 12,
+          "title": "Concepts",
+          "type": "array"
+        },
+        "contract_version": {
+          "const": 1,
+          "title": "Contract Version",
+          "type": "integer"
+        },
+        "edges": {
+          "items": {
+            "$ref": "#/$defs/PublicEdge"
+          },
+          "maxItems": 132,
+          "title": "Edges",
+          "type": "array"
+        },
+        "profile": {
+          "$ref": "#/$defs/ProfileInfo"
+        },
+        "seed_events": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "lesson_completed": "#/$defs/LessonEvent",
+                "response": "#/$defs/ResponseEvent"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ResponseEvent"
+              },
+              {
+                "$ref": "#/$defs/LessonEvent"
+              }
+            ]
+          },
+          "maxItems": 100,
+          "title": "Seed Events",
+          "type": "array"
+        },
+        "versions": {
+          "$ref": "#/$defs/Versions"
+        }
+      },
+      "required": [
+        "contract_version",
+        "versions",
+        "profile",
+        "seed_events",
+        "concepts",
+        "edges",
+        "activities"
+      ],
+      "title": "SeedResponse",
+      "type": "object"
+    },
+    "Versions": {
+      "additionalProperties": false,
+      "properties": {
+        "catalog_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Catalog Version",
+          "type": "string"
+        },
+        "graph_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Graph Version",
+          "type": "string"
+        },
+        "model_version": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Model Version",
+          "type": "string"
+        },
+        "release_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Release Hash",
+          "type": "string"
+        },
+        "release_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Release Id",
+          "type": "string"
+        },
+        "seed_id": {
+          "maxLength": 80,
+          "pattern": "^[a-z][a-z0-9_-]{0,79}$",
+          "title": "Seed Id",
+          "type": "string"
+        },
+        "seed_version": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Seed Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "release_id",
+        "release_hash",
+        "seed_id",
+        "seed_version",
+        "graph_version",
+        "catalog_version",
+        "model_version"
+      ],
+      "title": "Versions",
+      "type": "object"
+    }
+  },
+  "$id": "urn:learngraph:protocol:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/ReleaseSummary"
+    },
+    {
+      "$ref": "#/$defs/AnalyzeRequest"
+    },
+    {
+      "$ref": "#/$defs/AnalysisBundle"
+    },
+    {
+      "$ref": "#/$defs/ProfilesResponse"
+    },
+    {
+      "$ref": "#/$defs/SeedResponse"
+    },
+    {
+      "$ref": "#/$defs/ErrorEnvelope"
+    },
+    {
+      "$ref": "#/$defs/SandboxRecord"
+    },
+    {
+      "$ref": "#/$defs/ProfileSeed"
+    },
+    {
+      "$ref": "#/$defs/HealthResponse"
+    },
+    {
+      "$ref": "#/$defs/ReadyResponse"
+    },
+    {
+      "$ref": "#/$defs/EvaluationSummary"
+    }
+  ],
+  "title": "LearnGraph offline reviewed protocol v1"
+}
