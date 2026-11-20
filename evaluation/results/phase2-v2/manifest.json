@@ -1,0 +1,57 @@
+{
+  "command": "python -m scripts.evaluate --output ../evaluation/results/phase2-v2 --split all",
+  "environment": {
+    "dependencies_added": [],
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pydantic": "2.14.4",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "fitting": "Training-only global rate; no policy tuned on audit output.",
+  "input_hashes": {
+    "backend/uv.lock": "2cf05a02eee45fc3abd0e88f8086a6426d5dfc2762464ddf4ddc7006a7e8693f",
+    "evaluation/manifest.v1.json": "4a873e6d2ae225c8765c8a8385e3b0609392c1e94e14e33970f1386579c440db",
+    "evaluation/scenarios.v1.json": "31ad1a2fac160d1679fa41879af40e583b3476a84990d69a97dd9f215d1cd2ba",
+    "evaluation/variants.v1.json": "2fe88e4eec6130efb1364a88e60d3c81672d24f2186a86e8f4b637b6943ac4df"
+  },
+  "measured_at": "2026-11-20T14:28:38.012Z",
+  "metric_definitions": "evaluation/readme.md and context/benchmark.md",
+  "output_hashes": {
+    "development.json": "c8d2a5c4f4c790b02078c2715296314b627bf32e0758d6195d527a9571912bbc",
+    "report.md": "55d5c495a1d5be65ce69b5593eb53bd3d99a96ad0a76de1e8b66c4b42346387e",
+    "test.json": "26837cfe6ba5d987b74205a73ae256b6b1983392f6edff2635bc3077a39fc5b1"
+  },
+  "random_baseline_seed": 761120,
+  "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+  "run_id": "phase2-v2",
+  "source_commit": "fc71e487c0e1261928dbe1217a32263f36c255b9",
+  "source_dirty": true,
+  "source_hashes_lf": {
+    "backend/app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend/app/analysis.py": "97edee46a9e394ce37829006fd74de7cbd22faee5138c1a1a1e4377b7fe48b55",
+    "backend/app/config.py": "2fa92860da3239277de75813cf2a4aca2902cb88da48d111d146ce1ad3bef6b9",
+    "backend/app/contracts.py": "77d0b919b4e6de100ffcda7a10b5bb6c9843fb20a5de6d2d99008e1a6371916a",
+    "backend/app/database.py": "8a654cc173a87403645102275913d261ad557d33c538f683df5e1b6c0f7f8b44",
+    "backend/app/diagnosis.py": "b201550c8914c1462b39a3cfb84d09e00c910bfb63590563ef45d08b89e90909",
+    "backend/app/explanation.py": "fc9d7195b36366f87aadd3b11bfedff21db48009c19af3d983088c409e8a2d06",
+    "backend/app/graph.py": "9c8ab49cfa9f49a7121d5b87fd5f5bb286a709e56f483195eb5e9ef2fb033ec3",
+    "backend/app/main.py": "c79fe3fddda696017ac1c046dc99f7f8262d2ab757c04925a27f68ab5ad36917",
+    "backend/app/recommendation.py": "99d02ec88149d77d7eab4ccca5c20fdb4662f1432420989e1274fd8e798b6d2e",
+    "backend/app/release.py": "6b548b2b2e7e4995be0020d258d1142e6038b6afd62b1955825e3201b8a69a34",
+    "backend/app/replay.py": "5f0ca18aafefdf3da95d373ba8f8d2ba6247cf6f50ebcc18996c61084e9955ad",
+    "backend/app/telemetry.py": "013863d8d33a1f2668b21fa7809fb856eb173c53b95a3a4d7e32a05d057bcde7",
+    "backend/app/validation.py": "2f8b76a3a304747ec4c7cbf9b4b527f80f79b49b883d144c1ef1879ae48431d8",
+    "backend/evaluation/__init__.py": "bb0cadd454d8d99c07e395aadadd4eb2a7004275d09df5deaed81da417c649fa",
+    "backend/evaluation/audit.py": "b4d87fe3fb5c4f1e4c20bbed1b704f89674dacf8c9f6691f782f7322cbd44b77",
+    "backend/evaluation/metrics.py": "5cea57dacc3c58d067ed3461518e86d97e517a64050fd5b9da893b2f6b634cf0",
+    "backend/evaluation/runner.py": "a168309bc8d1b8154ab124b6be69362d10d8820cb32cd09c36db0a3b0afb73df",
+    "backend/scripts/analyze.py": "2f135a15e03b1ac24c8b5528b036fa03771f6a981f58f2e732bae4ff96efde78",
+    "backend/scripts/check_phase0.py": "4bd8dd06791922580efb0c2a594f9f72286781812b793c37606a276f8ebc3230",
+    "backend/scripts/evaluate.py": "da11c6377f8ab2da6fcb38165f64bcd0a59dec4bd97a390497160509e8c7454e"
+  },
+  "split_manifest_hash": "4a873e6d2ae225c8765c8a8385e3b0609392c1e94e14e33970f1386579c440db",
+  "splits": [
+    "development",
+    "test"
+  ],
+  "test_exposure": "Public and visible during engineering review; never describe as blind or evidence of real-world generalization. Any output-guided tuning requires a newly versioned independent final audit."
+}

@@ -1,6 +1,6 @@
 # LearnGraph AI — Requirements
 
-**Revision:** 20 November 2026. **State:** Phase 0 engineering review and Phase 1 free deployment gates verified. Full P0 acceptance remains pending later phases.
+**Revision:** 20 November 2026. **State:** Phase 0 engineering review, Phase 1 free deployment and Phase 2 offline engine/evaluation gates verified. Full P0 acceptance remains pending later phases.
 
 This file translates [PROJECT.md](PROJECT.md) into testable requirements. IDs are stable references for implementation, tests, and reviews. Requirements are planned, not evidence that features already exist. User instructions take precedence; changes must be reconciled across the specification and relevant context files.
 
@@ -8,7 +8,7 @@ This file translates [PROJECT.md](PROJECT.md) into testable requirements. IDs ar
 
 Build a personal portfolio demo of **answer → observed-performance estimate → prerequisite-aware hypothesis/evidence request → practice → distinct reassessment**. A diagnosis may abstain. Do not claim latent mastery, causal proof, or actual learning gains from synthetic demonstrations.
 
-P0 uses 12 concepts, 72 distinct questions (one diagnostic, four practice, one reassessment per concept), short lessons, and four synthetic profiles. Phase 0 froze the reviewed graph, a 12-question/2-lesson slice, four profile definitions, protocol/storage contracts, initial policy configuration, and synthetic evaluation definitions. The remaining 60 questions, complete UI, and analysis/evaluation implementation are later work. Definitions/formulas remain in PROJECT Sections 6 and 8; [review decisions](curriculum/review.md) and [exact protocol](contracts/protocol.md) resolve the former open details.
+P0 uses 12 concepts, 72 distinct questions (one diagnostic, four practice, one reassessment per concept), short lessons, and four synthetic profiles. Phase 0 froze the reviewed graph, a 12-question/2-lesson slice, four profile definitions, protocol/storage contracts, initial policy configuration, and synthetic evaluation definitions. Phase 2 implements offline replay/diagnosis/plans and measured evaluation. The remaining 60 questions, complete UI, browser persistence and live analysis integration remain later work. Definitions/formulas remain in PROJECT Sections 6 and 8; [review decisions](curriculum/review.md) and [exact protocol](contracts/protocol.md) resolve the former open details.
 
 **Resolved design decision — OPEN-01:** Six questions per concept leave two fresh practices and a distinct reassessment after three seed observations. The reviewed slice verifies this availability and the manual 2/7→3/8→4/9→5/10 trace; it does not guarantee readiness or learning. Phase 0 review is complete; the full catalog and live learning loop remain pending.
 
@@ -82,3 +82,7 @@ P0 requires FR-01–FR-19 and NFR-01–NFR-13, plus the full checklist in PROJEC
 | Model/diagnosis/recommendation quality and leakage | [Benchmark](context/benchmark.md) |
 
 When completing a task, reference relevant IDs in tests/review notes and record the actual command/artifact and commit. Change versions deliberately when event semantics, grading, graph, or thresholds change.
+
+## Phase 2 implementation evidence
+
+FR-06–11/14 and the offline part of FR-18 are implemented in the pure engine, CLI and evaluator. FR-07 HTTP error mappings, FR-13/16/19 integration and all browser acceptance still require Phase 3. [Model card](evaluation/model_card.md) and [run manifest](evaluation/results/phase2-v1/manifest.json) identify measured source, hashes, per-case outputs, denominator definitions and limits. This bounded offline gate does not complete full P0 acceptance.

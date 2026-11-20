@@ -1,6 +1,6 @@
 # Protocol v1 freeze — 20 November 2026
 
-**State:** reviewed offline contract for Phase 2/3, not a deployed API upgrade. Python models in [contracts.py](../backend/app/contracts.py) and generated JSON Schemas in this directory define structural types; the semantic rules here remain mandatory. The active `phase1-v1` bootstrap release retains its existing shape and content. No visitor history is stored server-side.
+**State:** implemented by the Phase 2 offline engine and evaluator; HTTP activation remains Phase 3, not a deployed API upgrade. Python models in [contracts.py](../backend/app/contracts.py) and generated JSON Schemas in this directory define structural types; the semantic rules here remain mandatory. The active `phase1-v1` bootstrap release retains its existing shape and content. No visitor history is stored server-side.
 
 ## Compatible release and publication
 

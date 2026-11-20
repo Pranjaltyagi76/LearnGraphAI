@@ -1,6 +1,6 @@
 # Benchmark and model-quality protocol
 
-**State:** Phase 0 protocol and synthetic scenarios frozen; no prediction/diagnosis/recommendation evaluator or benchmark has run. **Baseline date:** 20 November 2026. **Owner requirements:** FR-08–12/18 and NFR-09 in [requirement.md](../requirement.md). Algorithms and initial thresholds remain in [PROJECT.md](../PROJECT.md), Section 8.
+**State:** Phase 2 deterministic engine and evaluator implemented; frozen development/public synthetic audit measured and reproducible. **Baseline date:** 20 November 2026. **Owner requirements:** FR-08–12/18 and NFR-09 in [requirement.md](../requirement.md). Algorithms and initial thresholds remain in [PROJECT.md](../PROJECT.md), Section 8.
 
 Benchmark quality here means prediction/diagnosis/recommendation behavior. Runtime latency/resource tests belong in [performance_review.md](performance_review.md). Neither procedure establishes real learning gains from synthetic outcomes.
 
@@ -99,7 +99,7 @@ Ranking relevance metrics require independent relevance labels. Do not infer rea
 
 ## 7. Reproducibility and uncertainty
 
-Proposed result artifacts (not existing files):
+The measured artifacts are under [evaluation/results/phase2-v2](../evaluation/results/phase2-v2/manifest.json); this is the general layout for future runs:
 
 ```text
 evaluation/manifests/<run_id>.json
@@ -112,7 +112,7 @@ Manifest fields must include commit, dirty/clean tree state, generator/scenario 
 
 Use repeated seeds or learner-level bootstrap intervals only where sample size supports them. State method, resampling unit, repeats, and confidence level. Do not bootstrap individual correlated events as if independent learners or imply certainty from tiny synthetic samples.
 
-Avoid committing raw large sequences or private records. Small aggregate metrics and authored independent fixtures are suitable. No benchmark runner/package command exists yet; add a verified command when implemented instead of publishing an imaginary runnable example.
+Avoid committing raw large sequences or private records. Small aggregate metrics and authored independent fixtures are suitable. From backend/, `python -m scripts.evaluate --check ../evaluation/results/phase2-v2` verifies the measured source/input hashes and reproduces exact outputs. Use --output with a new directory for a new immutable run.
 
 ## 8. Release policy
 
@@ -126,13 +126,21 @@ Avoid committing raw large sequences or private records. Small aggregate metrics
 
 | Evaluation | State | Result |
 | --- | --- | --- |
-| Prediction baselines | Not implemented/run | Not measured. |
-| Public synthetic diagnosis audit | 12 final-audit cases frozen, plus train/development definitions; not run | No measured result or blind-test claim. |
-| Recommendation comparisons | Not implemented/run | Not measured. |
+| Prediction baselines | Measured: 50 eligible public-audit responses | Concept/global log loss 0.640114/0.677044; Brier 0.223396/0.241975. |
+| Public synthetic diagnosis audit | Twelve public-audit cases measured separately from development | Both policies find 2/2 labeled gaps; coverage 2/12; no false diagnosis on four no-gap controls. Exposed, not blind. |
+| Recommendation comparisons | Three policies measured under identical hard constraints | Each: 25/25 catalog items, 12/12 prerequisite-valid plans, 3/3 distinct reassessments, 4/4 annotated exhaustion controls; aggregate tie. |
 | Fresh practice/reassessment feasibility | OPEN-01 budget resolved; authored-slice test passes | Full catalog/live-loop evidence pending. |
-| Contract/split integrity | Structural fixtures, disjoint memberships, hashes and strict boundary cases validated | Analysis-quality/behavioral robustness evaluation still not run. |
+| Contract/split integrity | Frozen hashes/splits validated; domain and independent metric/leakage tests pass | Four structural variants and explicit failures covered; HTTP/browser integration remains Phase 3. |
 | Real learning benefit | No study | No claim. |
 
 Future entries must link actual run artifacts/commits and record failed as well as passing results.
 
 The [evaluation packet](../evaluation/readme.md) specifies annotation groups, exact denominators, future blueprint prerequisites, and the prefix-only Phase 2 runner. `python -m scripts.check_phase0` validates the definitions from backend/; it does not fit or evaluate a model.
+
+## 10. Phase 2 measurement record
+
+[Manifest](../evaluation/results/phase2-v2/manifest.json), [report](../evaluation/results/phase2-v2/report.md), [per-case development](../evaluation/results/phase2-v2/development.json), [public final audit](../evaluation/results/phase2-v2/test.json), and [model card](../evaluation/model_card.md) contain actual measurements with implementation hashes matching commit fc71e487c0e1261928dbe1217a32263f36c255b9. The manifest records pending documentation/prior artifacts as a dirty delivery tree. Initial clean-tree v1 is retained; v2 is regression reproduction following a Windows CLI output fix, with unchanged policy/metrics and no new independent-trial claim. All eight development and twelve audit expected-state/invariant checks pass; no metric was tuned to obtain this result. Definitions in the frozen packet retain historical results=not_run; the run manifest is the measurement record.
+
+Training has 23 eligible responses (13 correct); smoothed global probability is 5/9. Audit predictions exclude thirteen events with explicit reasons; diagnosis counts separately cover two labeled-gap, four no-gap, four missing-evidence and two no-trigger cases. Prerequisite validity uses returned plans as the denominator (twelve); item checks and complete-plan invariants are separate. Exhaustion uses four explicitly annotated controls, rather than selecting a denominator after viewing model outputs. Average precision groups ties, and all null ratios have reasons.
+
+Four [fixture-only structural variants](../evaluation/variants.v1.json) exercise ties, depth/multiple paths, an independent shortcut and contextual tags. Their artificial question scaffolds are not curriculum additions or quality labels. Exact reproduction is a regression check of an exposed public audit. Both diagnosis policies and all three plan policies tie here; no confidence interval, causal explanation or learning effect is claimed. The authored slice remains too narrow for a broad ranking/generalization conclusion.

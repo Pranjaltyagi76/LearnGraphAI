@@ -10,7 +10,7 @@
 >
 > **Deployment goal:** A publicly accessible personal portfolio demo using only free plans, with a strict recurring service budget of **₹0 / $0**.
 >
-> **Status:** Phase 0 engineering review and Phase 1 free deployment gate are complete. The reviewed graph/catalog/contracts are frozen draft artifacts for Phase 2; the live preview still serves immutable phase1-v1. Diagnosis, saved progress, full content, and model-quality evaluation remain unimplemented/unmeasured. Parameters are initial policy hypotheses, not validated educational cutoffs.
+> **Status:** Phase 0 engineering review, Phase 1 free deployment and Phase 2 offline engine/evaluation gates are complete. The reviewed graph/catalog/contracts drive reproducible CLI analysis and a measured public synthetic audit; the live preview still serves immutable phase1-v1. Saved progress, full content and live analysis integration remain later work. Parameters are initial policy hypotheses, not validated educational cutoffs.
 >
 > **Last revised:** 20 November 2026.
 
@@ -282,7 +282,7 @@ Example client-submitted visitor event, appended to a request's bounded history:
 }
 ```
 
-The request envelope includes the full release/hash/seed/graph/catalog/model version tuple, profile/focus, sandbox UUID/revision, optional failed-trigger selector, and ordered visitor events. The server loads the seed itself; clients cannot replace it. [Protocol v1](contracts/protocol.md), [route index](contracts/index.json), generated JSON Schema, and golden fixtures freeze the data dictionary, normalization, errors and rollout compatibility. These contracts are offline artifacts until Phase 2 implements their routes.
+The request envelope includes the full release/hash/seed/graph/catalog/model version tuple, profile/focus, sandbox UUID/revision, optional failed-trigger selector, and ordered visitor events. The server loads the seed itself; clients cannot replace it. [Protocol v1](contracts/protocol.md), [route index](contracts/index.json), generated JSON Schema, and golden fixtures freeze the data dictionary, normalization, errors and rollout compatibility. The Phase 2 offline engine implements these contracts; Phase 3 will implement their HTTP routes.
 
 Rules:
 
@@ -726,7 +726,7 @@ This is a plan, not a claim that these files already exist. Create folders as th
 
 ## 18. Implementation roadmap
 
-Phase 0 review and Phase 1 deployment have passed their bounded gates; the [operational roadmap](context/phasewise_roadmap.md) records artifacts and checks. Remaining phases below are planned. Reviewed drafts do not imply deployed diagnosis, browser persistence, a complete catalog, or measured model quality.
+Phases 0, 1 and 2 have passed their bounded review, deployment and offline-analysis gates; the [operational roadmap](context/phasewise_roadmap.md) records artifacts and checks. Phases 3–7 below remain planned. The [measured synthetic audit](evaluation/model_card.md) does not imply deployed diagnosis, browser persistence, a complete catalog or real-world quality.
 
 ### Phase 0 — Freeze the focused product and data contracts
 
@@ -758,13 +758,13 @@ Phase 0 review and Phase 1 deployment have passed their bounded gates; the [oper
 
 ### Phase 2 — Build and evaluate the deterministic baseline locally
 
-- [ ] Implement server grading, strict event validation, replay/deduplication, and semantic input digests.
-- [ ] Implement first-response evidence rules, estimates, evidence states, and no-data display behavior.
-- [ ] Implement bounded graph traversal, target/prerequisite candidates, scoring, alternatives, and abstention.
-- [ ] Implement assessment/remediation modes, prerequisite readiness, ranking, and catalog-exhaustion handling.
-- [ ] Implement evaluators over the frozen scenario definitions and add separately versioned generator/graph variants where required.
-- [ ] Run prefix-based predictive evaluation and initial diagnosis/recommendation comparisons.
-- [ ] Test duplicate/conflicting events, unknown tags, cycles, hints/retries, sparse evidence, and deterministic outputs.
+- [x] Implement server grading, strict event validation, replay/deduplication, and semantic input digests.
+- [x] Implement first-response evidence rules, estimates, evidence states, and no-data display behavior.
+- [x] Implement bounded graph traversal, target/prerequisite candidates, scoring, alternatives, and abstention.
+- [x] Implement assessment/remediation modes, prerequisite readiness, ranking, and catalog-exhaustion handling.
+- [x] Implement evaluators over the frozen scenario definitions and add separately versioned generator/graph variants where required.
+- [x] Run prefix-based predictive evaluation and initial diagnosis/recommendation comparisons.
+- [x] Test duplicate/conflicting events, unknown tags, cycles, hints/retries, sparse evidence, and deterministic outputs.
 
 **Exit condition:** A CLI can reproduce baseline estimates, diagnoses, plans, and measured evaluation from versioned inputs. No BKT, LLM, or hosted training is required.
 

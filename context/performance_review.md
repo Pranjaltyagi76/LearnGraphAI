@@ -1,6 +1,6 @@
 # Performance review
 
-**State:** Phase 1 live deployment/resource checks passed; small descriptive samples are recorded below. Full analysis/model/learning-loop performance is not measured. **Date:** 20 November 2026.
+**State:** Phase 1 live deployment/resource checks passed; small descriptive samples are recorded below. Full-analysis deployment and learning-loop performance remain unmeasured; the separate offline quality audit is linked below. **Date:** 20 November 2026.
 
 This file covers latency, resources, reliability under bounded load, and the effect of free hosting. Model-quality evidence belongs in [benchmark.md](benchmark.md). Runtime constraints originate in PROJECT Sections 12–14 and [requirements](../requirement.md), especially NFR-03–06/10/13.
 
@@ -136,3 +136,7 @@ The earlier unconfigured API returned 503 and the actual browser preserved the e
 ## 10. Phase 0 engineering verification — 20 November 2026
 
 [Review evidence](evidence/phase0_review.json) records lint/format, artifact and split validation, 68 passing local tests, five locally skipped isolated SQL tests, and independent Node verification of nine canonical/hash/storage vectors plus five artifact hashes. These are contract/content checks, not analysis latency, a browser-store test, or model-quality measurements. The Phase 1 deployed performance observations above are unchanged. No new service, migration or deployment was needed for the reviewed draft.
+
+## 11. Phase 2 offline verification — 20 November 2026
+
+[Local review evidence](evidence/phase2_review.json) records 185 passing local tests, five skipped isolated SQL tests, the existing deprecation warning, lint/format, frozen-input checks, Node conformance and exact saved-result reproduction. [Measured benchmark/model card](../evaluation/model_card.md) covers prediction/diagnosis/plan behavior, not latency or learning benefit. The implementation uses only existing runtime packages and Python standard-library arithmetic/metrics. No new provider invocation, deployment/resource claim or load measurement is made. Phase 1 hosted measurements remain historical observations of bootstrap grading; they are not full-analysis timings.

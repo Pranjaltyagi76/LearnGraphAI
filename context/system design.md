@@ -1,6 +1,6 @@
 # System design
 
-**Status:** Phase 0 contracts/review and Phase 1 feasibility passed. Full analysis/browser-store behavior below is frozen design for Phase 2/3. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
+**Status:** Phase 0 contracts/review and Phase 1 feasibility passed. Pure analysis is implemented and evaluated offline in Phase 2; live full-analysis/browser-store behavior below remains Phase 3 design. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
 
 This document owns runtime behavior, data flow, consistency, and failure handling. Module layout and technology decisions belong in [architecture.md](architecture.md).
 
@@ -129,13 +129,17 @@ Exact DTOs, generated JSON Schema, data dictionary and safe errors are frozen in
 - [Browser storage](browser_storage.md): transactional pending/acknowledged history, stable keys, reset/new UUID, refresh recovery and cross-tab conflict handling.
 - [Evaluation definition](../evaluation/readme.md): 4 training/8 development/12 public audit cases with separate annotations; six additional blueprint scenarios. No blind-test/generalization or measured benchmark claim.
 
-Phase 1's NOLOGIN runtime group, shared atomic fixed-minute/daily guard, HMAC client signals and bounded cleanup remain verified. These definitions require no extra infrastructure. Phase 2 implements the pure analysis services and publication path; Phase 3 implements/tests the browser store.
+Phase 1's NOLOGIN runtime group, shared atomic fixed-minute/daily guard, HMAC client signals and bounded cleanup remain verified. These definitions require no extra infrastructure. Phase 2 implements the pure analysis services and compatible-package validation. Phase 3 publishes/activates that package, composes quota/HTTP routes and implements/tests the browser store.
 
 
 ## 10. Implemented Phase 1 subset — 20 November 2026
 
-The current API implements `/health`, `/ready`, profile/seed reads, and `POST /api/v1/bootstrap/answer`. The bootstrap route validates a response against database-owned question options, reserves the shared budget, grades the answer, and returns `persisted: false`. It is a feasibility endpoint, not the planned full-history `/api/v1/demo/analyze` contract. Complete replay, input digests, estimates, diagnosis, plans, local progress, and reassessment flow remain Phase 2/3 work.
+The current API implements `/health`, `/ready`, profile/seed reads, and `POST /api/v1/bootstrap/answer`. The bootstrap route validates a response against database-owned question options, reserves the shared budget, grades the answer, and returns `persisted: false`. It is a feasibility endpoint, not the planned full-history `/api/v1/demo/analyze` contract. Offline replay, input digests, estimates, diagnosis and plans are now implemented. Live route composition, local progress and the deployed reassessment flow remain Phase 3 work.
 
-The source contains one synthetic profile and 12 authored questions across two concepts, plus the proposed 12-node/17-edge graph. It does not claim all four profiles or the complete 72-question curriculum exist.
+The deployed Phase 1 payload contains one synthetic profile and twelve questions. The separate reviewed draft has four profiles, twelve revised questions/two lessons and a reviewed twelve-node/seventeen-edge graph, now exercised by the offline engine. The complete 72-question curriculum remains unfinished.
 
 Verified hosted boundary: public browser → FastAPI → TLS transaction-pooled Supabase → canonical question and atomic quota guard → real grading feedback. `/ready` returns 200; the browser displayed the correct server explanation after selecting `n`. Runtime canonical/quota writes and public-role access are denied; even the owner cannot update a published release. The initial unconfigured-dependency failure was also exercised before provisioning. Evidence is in [deployment](deployment.md) and [performance review](performance_review.md).
+
+## 11. Offline Phase 2 boundary
+
+The [CLI](../backend/scripts/analyze.py) loads a hash-verified release and emits one strict AnalysisBundle with authoritative feedback, null unknown estimates, evidence IDs, bounded candidates, assessment requests and constrained plan. An explicit received-at argument affects admission only. Pure response validation checks relationships beyond JSON Schema. Optional fixed explanations use structured evidence and limits, without an LLM. The [evaluator](../evaluation/readme.md) uses the same pure services with independent labels, preceding-prefix predictions and separate training-only fitting. No visitor state is persisted and no provider was changed for this milestone.

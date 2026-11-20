@@ -1,0 +1,5371 @@
+{
+  "cases": [
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [
+          "base_cases"
+        ],
+        "evaluation_group": "labeled_gap",
+        "expected_behavior": "supported_gap",
+        "expected_plan_state": null,
+        "notes": "Prerequisite support differs from the public target demo.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_target_four_prereq",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [
+            {
+              "concept_id": "base_cases",
+              "distance": 0,
+              "evidence_event_ids": [
+                "4748eeaa-1f96-55e0-982c-36c5aa6b485f",
+                "d2e3f6f3-a713-578d-84bc-14b04194b6c9",
+                "6dc2a233-f98f-5436-967a-763c2ae7080a"
+              ],
+              "path": [
+                "base_cases"
+              ],
+              "reason": "supported_target_weakness",
+              "relation": "target",
+              "score": 0.428571
+            }
+          ],
+          "evidence_requests": [],
+          "status": "supported_gap",
+          "trigger_event_id": "6dc2a233-f98f-5436-967a-763c2ae7080a"
+        },
+        "prerequisite_aware": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [
+            {
+              "concept_id": "base_cases",
+              "distance": 0,
+              "evidence_event_ids": [
+                "4748eeaa-1f96-55e0-982c-36c5aa6b485f",
+                "d2e3f6f3-a713-578d-84bc-14b04194b6c9",
+                "6dc2a233-f98f-5436-967a-763c2ae7080a"
+              ],
+              "path": [
+                "base_cases"
+              ],
+              "reason": "supported_target_weakness",
+              "relation": "target",
+              "score": 0.428571
+            }
+          ],
+          "evidence_requests": [],
+          "status": "supported_gap",
+          "trigger_event_id": "6dc2a233-f98f-5436-967a-763c2ae7080a"
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 3,
+          "eligible_count": 3,
+          "estimate": 0.285714,
+          "evidence_event_ids": [
+            "4748eeaa-1f96-55e0-982c-36c5aa6b485f",
+            "d2e3f6f3-a713-578d-84bc-14b04194b6c9",
+            "6dc2a233-f98f-5436-967a-763c2ae7080a"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T01:10:00.000Z",
+          "performance_state": "weak",
+          "recent_failures": 3,
+          "successes": 0,
+          "total_attempts": 3
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 4,
+          "eligible_count": 4,
+          "estimate": 0.75,
+          "evidence_event_ids": [
+            "2e794bee-20d6-5d63-b84b-c397a2835857",
+            "0b00eed4-14f3-511e-ba5d-e9698a657b86",
+            "b728707b-5574-5f50-944f-22604d90ea83",
+            "8e16981b-fb50-58c5-84ec-901c0cb6f3ae"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T00:40:00.000Z",
+          "performance_state": "ready",
+          "recent_failures": 0,
+          "successes": 4,
+          "total_attempts": 4
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_target_four_prereq",
+      "observed_completed_cycles": [],
+      "prediction": {
+        "exclusions": {},
+        "rows": [
+          {
+            "activity_id": "function_calls_diagnostic_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5,
+            "event_id": "2e794bee-20d6-5d63-b84b-c397a2835857",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 0,
+            "prefix_events": 0,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.6,
+            "event_id": "0b00eed4-14f3-511e-ba5d-e9698a657b86",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 1,
+            "prefix_events": 1,
+            "prefix_successes": 1
+          },
+          {
+            "activity_id": "function_calls_practice_02",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.6666666666666666,
+            "event_id": "b728707b-5574-5f50-944f-22604d90ea83",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 2,
+            "prefix_events": 2,
+            "prefix_successes": 2
+          },
+          {
+            "activity_id": "function_calls_practice_03",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.7142857142857143,
+            "event_id": "8e16981b-fb50-58c5-84ec-901c0cb6f3ae",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 3,
+            "prefix_events": 3,
+            "prefix_successes": 3
+          },
+          {
+            "activity_id": "base_cases_diagnostic_01",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.5,
+            "event_id": "4748eeaa-1f96-55e0-982c-36c5aa6b485f",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 0,
+            "prefix_events": 4,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "base_cases_practice_01",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.4,
+            "event_id": "d2e3f6f3-a713-578d-84bc-14b04194b6c9",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 1,
+            "prefix_events": 5,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "base_cases_practice_02",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.3333333333333333,
+            "event_id": "6dc2a233-f98f-5436-967a-763c2ae7080a",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 2,
+            "prefix_events": 6,
+            "prefix_successes": 0
+          }
+        ]
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 4,
+            "concept_topological_positions": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "covered_gaps": 1,
+            "difficulty_fits": [
+              0.9142857142857143,
+              0.8857142857142857,
+              0.8857142857142857,
+              0.8857142857142857
+            ],
+            "distinct_reassessment_items": 1,
+            "emitted_items": 4,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 1,
+            "prerequisite_checks": 4,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 1,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 4
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "base_cases_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.782857
+              },
+              {
+                "activity_id": "base_cases_practice_03",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gap_practice",
+                "role": "practice",
+                "score": 0.777143
+              },
+              {
+                "activity_id": "base_cases_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gap_practice",
+                "role": "practice",
+                "score": 0.777143
+              },
+              {
+                "activity_id": "base_cases_reassessment_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "reassessment",
+                "role": "reassessment",
+                "score": 0.777143
+              }
+            ],
+            "mode": "remediation",
+            "status": "ready"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 4,
+            "concept_topological_positions": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "covered_gaps": 1,
+            "difficulty_fits": [
+              0.9142857142857143,
+              0.8857142857142857,
+              0.8857142857142857,
+              0.8857142857142857
+            ],
+            "distinct_reassessment_items": 1,
+            "emitted_items": 4,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 1,
+            "prerequisite_checks": 4,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 1,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 4
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "base_cases_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.782857
+              },
+              {
+                "activity_id": "base_cases_practice_03",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gap_practice",
+                "role": "practice",
+                "score": 0.777143
+              },
+              {
+                "activity_id": "base_cases_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gap_practice",
+                "role": "practice",
+                "score": 0.777143
+              },
+              {
+                "activity_id": "base_cases_reassessment_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "reassessment",
+                "role": "reassessment",
+                "score": 0.777143
+              }
+            ],
+            "mode": "remediation",
+            "status": "ready"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 4,
+            "concept_topological_positions": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "covered_gaps": 1,
+            "difficulty_fits": [
+              0.9142857142857143,
+              0.8857142857142857,
+              0.8857142857142857,
+              0.8857142857142857
+            ],
+            "distinct_reassessment_items": 1,
+            "emitted_items": 4,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 1,
+            "prerequisite_checks": 4,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 1,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 4
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "base_cases_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.782857
+              },
+              {
+                "activity_id": "base_cases_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gap_practice",
+                "role": "practice",
+                "score": 0.777143
+              },
+              {
+                "activity_id": "base_cases_practice_03",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gap_practice",
+                "role": "practice",
+                "score": 0.777143
+              },
+              {
+                "activity_id": "base_cases_reassessment_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "reassessment",
+                "role": "reassessment",
+                "score": 0.777143
+              }
+            ],
+            "mode": "remediation",
+            "status": "ready"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [
+          "function_calls"
+        ],
+        "evaluation_group": "labeled_gap",
+        "expected_behavior": "supported_gap",
+        "expected_plan_state": null,
+        "notes": "Root evidence independent of mixed target.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_upstream_four",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch",
+            "mixed_evidence"
+          ],
+          "candidates": [
+            {
+              "concept_id": "function_calls",
+              "distance": 1,
+              "evidence_event_ids": [
+                "9ceb2f85-960f-5d31-b723-0e718b384243",
+                "337591a7-9db1-5016-ba08-b1121c4eda9e",
+                "29bba7ec-08bf-5f55-bc05-e614ba046012",
+                "dc2833b9-9b03-52ac-82e6-db73ae3a3a53"
+              ],
+              "path": [
+                "function_calls",
+                "base_cases"
+              ],
+              "reason": "supported_upstream_weakness",
+              "relation": "upstream",
+              "score": 0.3
+            }
+          ],
+          "evidence_requests": [],
+          "status": "supported_gap",
+          "trigger_event_id": "870e90b9-171e-5dce-8b66-b86e3f7d9599"
+        },
+        "prerequisite_aware": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch",
+            "mixed_evidence"
+          ],
+          "candidates": [
+            {
+              "concept_id": "function_calls",
+              "distance": 1,
+              "evidence_event_ids": [
+                "9ceb2f85-960f-5d31-b723-0e718b384243",
+                "337591a7-9db1-5016-ba08-b1121c4eda9e",
+                "29bba7ec-08bf-5f55-bc05-e614ba046012",
+                "dc2833b9-9b03-52ac-82e6-db73ae3a3a53"
+              ],
+              "path": [
+                "function_calls",
+                "base_cases"
+              ],
+              "reason": "supported_upstream_weakness",
+              "relation": "upstream",
+              "score": 0.3
+            }
+          ],
+          "evidence_requests": [],
+          "status": "supported_gap",
+          "trigger_event_id": "870e90b9-171e-5dce-8b66-b86e3f7d9599"
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 3,
+          "eligible_count": 3,
+          "estimate": 0.571429,
+          "evidence_event_ids": [
+            "8c2f056f-0726-5e80-b8b9-3229776d72b1",
+            "84832b58-aee6-5997-a6e3-83d99a081ae6",
+            "870e90b9-171e-5dce-8b66-b86e3f7d9599"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T01:10:00.000Z",
+          "performance_state": "developing",
+          "recent_failures": 1,
+          "successes": 2,
+          "total_attempts": 3
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 4,
+          "eligible_count": 4,
+          "estimate": 0.25,
+          "evidence_event_ids": [
+            "9ceb2f85-960f-5d31-b723-0e718b384243",
+            "337591a7-9db1-5016-ba08-b1121c4eda9e",
+            "29bba7ec-08bf-5f55-bc05-e614ba046012",
+            "dc2833b9-9b03-52ac-82e6-db73ae3a3a53"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T00:40:00.000Z",
+          "performance_state": "weak",
+          "recent_failures": 3,
+          "successes": 0,
+          "total_attempts": 4
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_upstream_four",
+      "observed_completed_cycles": [],
+      "prediction": {
+        "exclusions": {},
+        "rows": [
+          {
+            "activity_id": "function_calls_diagnostic_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5,
+            "event_id": "9ceb2f85-960f-5d31-b723-0e718b384243",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 0,
+            "prefix_events": 0,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.4,
+            "event_id": "337591a7-9db1-5016-ba08-b1121c4eda9e",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 1,
+            "prefix_events": 1,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_02",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.3333333333333333,
+            "event_id": "29bba7ec-08bf-5f55-bc05-e614ba046012",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 2,
+            "prefix_events": 2,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_03",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.2857142857142857,
+            "event_id": "dc2833b9-9b03-52ac-82e6-db73ae3a3a53",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 3,
+            "prefix_events": 3,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "base_cases_diagnostic_01",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.5,
+            "event_id": "8c2f056f-0726-5e80-b8b9-3229776d72b1",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 0,
+            "prefix_events": 4,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "base_cases_practice_01",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.6,
+            "event_id": "84832b58-aee6-5997-a6e3-83d99a081ae6",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 1,
+            "prefix_events": 5,
+            "prefix_successes": 1
+          },
+          {
+            "activity_id": "base_cases_practice_02",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.6666666666666666,
+            "event_id": "870e90b9-171e-5dce-8b66-b86e3f7d9599",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 2,
+            "prefix_events": 6,
+            "prefix_successes": 2
+          }
+        ]
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 3,
+            "concept_topological_positions": [
+              0,
+              0,
+              0
+            ],
+            "covered_gaps": 1,
+            "difficulty_fits": [
+              0.95,
+              0.85,
+              0.85
+            ],
+            "distinct_reassessment_items": 1,
+            "emitted_items": 3,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 1,
+            "prerequisite_checks": 3,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 1,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 3
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.99
+              },
+              {
+                "activity_id": "function_calls_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gap_practice",
+                "role": "practice",
+                "score": 0.97
+              },
+              {
+                "activity_id": "function_calls_reassessment_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "reassessment",
+                "role": "reassessment",
+                "score": 0.97
+              }
+            ],
+            "mode": "remediation",
+            "status": "ready"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 3,
+            "concept_topological_positions": [
+              0,
+              0,
+              0
+            ],
+            "covered_gaps": 1,
+            "difficulty_fits": [
+              0.95,
+              0.85,
+              0.85
+            ],
+            "distinct_reassessment_items": 1,
+            "emitted_items": 3,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 1,
+            "prerequisite_checks": 3,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 1,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 3
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.99
+              },
+              {
+                "activity_id": "function_calls_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gap_practice",
+                "role": "practice",
+                "score": 0.97
+              },
+              {
+                "activity_id": "function_calls_reassessment_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "reassessment",
+                "role": "reassessment",
+                "score": 0.97
+              }
+            ],
+            "mode": "remediation",
+            "status": "ready"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 3,
+            "concept_topological_positions": [
+              0,
+              0,
+              0
+            ],
+            "covered_gaps": 1,
+            "difficulty_fits": [
+              0.95,
+              0.85,
+              0.85
+            ],
+            "distinct_reassessment_items": 1,
+            "emitted_items": 3,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 1,
+            "prerequisite_checks": 3,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 1,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 3
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.99
+              },
+              {
+                "activity_id": "function_calls_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gap_practice",
+                "role": "practice",
+                "score": 0.97
+              },
+              {
+                "activity_id": "function_calls_reassessment_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "reassessment",
+                "role": "reassessment",
+                "score": 0.97
+              }
+            ],
+            "mode": "remediation",
+            "status": "ready"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "evaluation_group": "missing_evidence",
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": null,
+        "notes": "An unassessed prerequisite is not a weakness label.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_unassessed_parent",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [],
+          "evidence_requests": [
+            {
+              "concept_id": "function_calls",
+              "needed_observations": 3,
+              "reason": "not_assessed"
+            },
+            {
+              "concept_id": "base_cases",
+              "needed_observations": 2,
+              "reason": "early_estimate"
+            }
+          ],
+          "status": "insufficient_evidence",
+          "trigger_event_id": "4ab8cf5e-c7c0-5f2a-9c41-6e53d79b8b2f"
+        },
+        "prerequisite_aware": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [],
+          "evidence_requests": [
+            {
+              "concept_id": "function_calls",
+              "needed_observations": 3,
+              "reason": "not_assessed"
+            },
+            {
+              "concept_id": "base_cases",
+              "needed_observations": 2,
+              "reason": "early_estimate"
+            }
+          ],
+          "status": "insufficient_evidence",
+          "trigger_event_id": "4ab8cf5e-c7c0-5f2a-9c41-6e53d79b8b2f"
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 1,
+          "eligible_count": 1,
+          "estimate": 0.4,
+          "evidence_event_ids": [
+            "4ab8cf5e-c7c0-5f2a-9c41-6e53d79b8b2f"
+          ],
+          "evidence_state": "early_estimate",
+          "last_evidence_at": "2026-11-19T00:10:00.000Z",
+          "performance_state": "early",
+          "recent_failures": 1,
+          "successes": 0,
+          "total_attempts": 1
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_unassessed_parent",
+      "observed_completed_cycles": [],
+      "prediction": {
+        "exclusions": {},
+        "rows": [
+          {
+            "activity_id": "base_cases_diagnostic_01",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.5,
+            "event_id": "4ab8cf5e-c7c0-5f2a-9c41-6e53d79b8b2f",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 0,
+            "prefix_events": 0,
+            "prefix_successes": 0
+          }
+        ]
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 5,
+            "concept_topological_positions": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              1.0,
+              0.8,
+              0.8,
+              1.0,
+              1.0
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 5,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 5,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 5
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_diagnostic_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "diagnostic",
+                "score": 1.0
+              },
+              {
+                "activity_id": "function_calls_practice_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.96
+              },
+              {
+                "activity_id": "function_calls_practice_02",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.96
+              },
+              {
+                "activity_id": "base_cases_practice_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [
+                  "function_calls"
+                ],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "locked",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.8
+              },
+              {
+                "activity_id": "base_cases_practice_02",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [
+                  "function_calls"
+                ],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "locked",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.8
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 5,
+            "concept_topological_positions": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              1.0,
+              0.8,
+              0.8,
+              1.0,
+              1.0
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 5,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 5,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 5
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_diagnostic_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "diagnostic",
+                "score": 1.0
+              },
+              {
+                "activity_id": "function_calls_practice_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.96
+              },
+              {
+                "activity_id": "function_calls_practice_02",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.96
+              },
+              {
+                "activity_id": "base_cases_practice_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [
+                  "function_calls"
+                ],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "locked",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.8
+              },
+              {
+                "activity_id": "base_cases_practice_02",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [
+                  "function_calls"
+                ],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "locked",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.8
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 5,
+            "concept_topological_positions": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              1.0,
+              0.8,
+              0.8,
+              1.0,
+              1.0
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 5,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 5,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 5
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_diagnostic_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "diagnostic",
+                "score": 1.0
+              },
+              {
+                "activity_id": "function_calls_practice_02",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.96
+              },
+              {
+                "activity_id": "function_calls_practice_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.96
+              },
+              {
+                "activity_id": "base_cases_practice_03",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [
+                  "function_calls"
+                ],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "locked",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.8
+              },
+              {
+                "activity_id": "base_cases_practice_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [
+                  "function_calls"
+                ],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "locked",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.8
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "evaluation_group": "missing_evidence",
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": null,
+        "notes": "All four first responses have unknown hints.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_unknown_hint_failures",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [],
+          "evidence_requests": [
+            {
+              "concept_id": "function_calls",
+              "needed_observations": 3,
+              "reason": "not_assessed"
+            }
+          ],
+          "status": "insufficient_evidence",
+          "trigger_event_id": "6646ff2e-e592-5faf-9471-62862366ad3c"
+        },
+        "prerequisite_aware": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [],
+          "evidence_requests": [
+            {
+              "concept_id": "function_calls",
+              "needed_observations": 3,
+              "reason": "not_assessed"
+            }
+          ],
+          "status": "insufficient_evidence",
+          "trigger_event_id": "6646ff2e-e592-5faf-9471-62862366ad3c"
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 4,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 4
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_unknown_hint_failures",
+      "observed_completed_cycles": [],
+      "prediction": {
+        "exclusions": {
+          "hints_unknown": 4
+        },
+        "rows": []
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.8
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.76
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.8
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.76
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.8
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.76
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "evaluation_group": "missing_evidence",
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": null,
+        "notes": "The unhinted retry cannot rescue the first item; two other observations remain early.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_hint_then_retry",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [],
+          "evidence_requests": [
+            {
+              "concept_id": "function_calls",
+              "needed_observations": 1,
+              "reason": "early_estimate"
+            }
+          ],
+          "status": "insufficient_evidence",
+          "trigger_event_id": "8e531e76-d153-5e55-8f3f-a22ed531a59c"
+        },
+        "prerequisite_aware": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [],
+          "evidence_requests": [
+            {
+              "concept_id": "function_calls",
+              "needed_observations": 1,
+              "reason": "early_estimate"
+            }
+          ],
+          "status": "insufficient_evidence",
+          "trigger_event_id": "8e531e76-d153-5e55-8f3f-a22ed531a59c"
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 3,
+          "eligible_count": 2,
+          "estimate": 0.666667,
+          "evidence_event_ids": [
+            "d4c0dad4-3d46-57dd-9b9e-fc2140282ac9",
+            "71c27b4b-7cbf-550d-940f-592eeebf0b23"
+          ],
+          "evidence_state": "early_estimate",
+          "last_evidence_at": "2026-11-19T00:40:00.000Z",
+          "performance_state": "early",
+          "recent_failures": 0,
+          "successes": 2,
+          "total_attempts": 4
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_hint_then_retry",
+      "observed_completed_cycles": [],
+      "prediction": {
+        "exclusions": {
+          "hints_used": 1,
+          "repeat_activity": 1
+        },
+        "rows": [
+          {
+            "activity_id": "function_calls_practice_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5,
+            "event_id": "d4c0dad4-3d46-57dd-9b9e-fc2140282ac9",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 0,
+            "prefix_events": 2,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_02",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.6,
+            "event_id": "71c27b4b-7cbf-550d-940f-592eeebf0b23",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 1,
+            "prefix_events": 3,
+            "prefix_successes": 1
+          }
+        ]
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.7333333333333333
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_practice_03",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.746667
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.7333333333333333
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_practice_03",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.746667
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.7333333333333333
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.746667
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "evaluation_group": "no_gap_control",
+        "expected_behavior": "ambiguous",
+        "expected_plan_state": null,
+        "notes": "Mixed evidence must not be relabeled weak merely because the last answer failed.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_balanced_six",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch",
+            "mixed_evidence"
+          ],
+          "candidates": [],
+          "evidence_requests": [],
+          "status": "ambiguous",
+          "trigger_event_id": "ce3cb024-b888-53cb-aa97-b58dda835a31"
+        },
+        "prerequisite_aware": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch",
+            "mixed_evidence"
+          ],
+          "candidates": [],
+          "evidence_requests": [],
+          "status": "ambiguous",
+          "trigger_event_id": "ce3cb024-b888-53cb-aa97-b58dda835a31"
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 6,
+          "eligible_count": 6,
+          "estimate": 0.5,
+          "evidence_event_ids": [
+            "1b8ba587-cc95-5444-af5f-68d85f31b689",
+            "a0c35e40-7e36-56ca-b71e-7422243ed55e",
+            "2cd12c21-c759-563c-87f4-6a5bb2ab4de1",
+            "774da23a-c243-58fc-877c-c07a44f366e0",
+            "b1fc9f97-b80a-5954-bc6c-b3687b4db457",
+            "ce3cb024-b888-53cb-aa97-b58dda835a31"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T01:00:00.000Z",
+          "performance_state": "developing",
+          "recent_failures": 2,
+          "successes": 3,
+          "total_attempts": 6
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_balanced_six",
+      "observed_completed_cycles": [
+        {
+          "anchor_event_id": "1b8ba587-cc95-5444-af5f-68d85f31b689",
+          "concept_id": "function_calls",
+          "practice_activity_ids": [
+            "function_calls_practice_01",
+            "function_calls_practice_02",
+            "function_calls_practice_03",
+            "function_calls_practice_04"
+          ],
+          "reassessment_event_id": "ce3cb024-b888-53cb-aa97-b58dda835a31"
+        }
+      ],
+      "prediction": {
+        "exclusions": {},
+        "rows": [
+          {
+            "activity_id": "function_calls_diagnostic_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5,
+            "event_id": "1b8ba587-cc95-5444-af5f-68d85f31b689",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 0,
+            "prefix_events": 0,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.6,
+            "event_id": "a0c35e40-7e36-56ca-b71e-7422243ed55e",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 1,
+            "prefix_events": 1,
+            "prefix_successes": 1
+          },
+          {
+            "activity_id": "function_calls_practice_02",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5,
+            "event_id": "2cd12c21-c759-563c-87f4-6a5bb2ab4de1",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 2,
+            "prefix_events": 2,
+            "prefix_successes": 1
+          },
+          {
+            "activity_id": "function_calls_practice_03",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5714285714285714,
+            "event_id": "774da23a-c243-58fc-877c-c07a44f366e0",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 3,
+            "prefix_events": 3,
+            "prefix_successes": 2
+          },
+          {
+            "activity_id": "function_calls_practice_04",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5,
+            "event_id": "b1fc9f97-b80a-5954-bc6c-b3687b4db457",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 4,
+            "prefix_events": 4,
+            "prefix_successes": 2
+          },
+          {
+            "activity_id": "function_calls_reassessment_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5555555555555556,
+            "event_id": "ce3cb024-b888-53cb-aa97-b58dda835a31",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 5,
+            "prefix_events": 5,
+            "prefix_successes": 3
+          }
+        ]
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.7
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.74
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.7
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.74
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.7
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.74
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "evaluation_group": "no_gap_control",
+        "expected_behavior": "no_supported_gap",
+        "expected_plan_state": "catalog_exhausted",
+        "notes": "A single slip after five successes is not supported weakness.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_ready_slip",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [],
+          "evidence_requests": [],
+          "status": "no_supported_gap",
+          "trigger_event_id": "128290fa-5f96-50e1-bb3d-880208fb56b1"
+        },
+        "prerequisite_aware": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [],
+          "evidence_requests": [],
+          "status": "no_supported_gap",
+          "trigger_event_id": "128290fa-5f96-50e1-bb3d-880208fb56b1"
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 6,
+          "eligible_count": 6,
+          "estimate": 0.7,
+          "evidence_event_ids": [
+            "3e6b0a3c-c1cb-5cae-a78d-80aa2b0102fb",
+            "a2acce9a-3774-5823-a497-3582779d0710",
+            "251e4843-7a03-5016-b990-53711fbdac6b",
+            "e3067aad-d57c-5dc8-90fc-a60257166088",
+            "f1038394-31ba-598b-b09e-bb91c9f8f387",
+            "128290fa-5f96-50e1-bb3d-880208fb56b1"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T01:00:00.000Z",
+          "performance_state": "ready",
+          "recent_failures": 1,
+          "successes": 5,
+          "total_attempts": 6
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_ready_slip",
+      "observed_completed_cycles": [
+        {
+          "anchor_event_id": "3e6b0a3c-c1cb-5cae-a78d-80aa2b0102fb",
+          "concept_id": "function_calls",
+          "practice_activity_ids": [
+            "function_calls_practice_01",
+            "function_calls_practice_02",
+            "function_calls_practice_03",
+            "function_calls_practice_04"
+          ],
+          "reassessment_event_id": "128290fa-5f96-50e1-bb3d-880208fb56b1"
+        }
+      ],
+      "prediction": {
+        "exclusions": {},
+        "rows": [
+          {
+            "activity_id": "function_calls_diagnostic_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5,
+            "event_id": "3e6b0a3c-c1cb-5cae-a78d-80aa2b0102fb",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 0,
+            "prefix_events": 0,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.6,
+            "event_id": "a2acce9a-3774-5823-a497-3582779d0710",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 1,
+            "prefix_events": 1,
+            "prefix_successes": 1
+          },
+          {
+            "activity_id": "function_calls_practice_02",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.6666666666666666,
+            "event_id": "251e4843-7a03-5016-b990-53711fbdac6b",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 2,
+            "prefix_events": 2,
+            "prefix_successes": 2
+          },
+          {
+            "activity_id": "function_calls_practice_03",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.7142857142857143,
+            "event_id": "e3067aad-d57c-5dc8-90fc-a60257166088",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 3,
+            "prefix_events": 3,
+            "prefix_successes": 3
+          },
+          {
+            "activity_id": "function_calls_practice_04",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.75,
+            "event_id": "f1038394-31ba-598b-b09e-bb91c9f8f387",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 4,
+            "prefix_events": 4,
+            "prefix_successes": 4
+          },
+          {
+            "activity_id": "function_calls_reassessment_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.7777777777777778,
+            "event_id": "128290fa-5f96-50e1-bb3d-880208fb56b1",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 5,
+            "prefix_events": 5,
+            "prefix_successes": 5
+          }
+        ]
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.5
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.7
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.5
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.7
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.5
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.7
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "evaluation_group": "no_gap_control",
+        "expected_behavior": "ambiguous",
+        "expected_plan_state": "catalog_exhausted",
+        "notes": "Weak cumulative estimate but only one failure in the latest three eligible responses.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_weak_recent_recovery",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch",
+            "mixed_evidence"
+          ],
+          "candidates": [],
+          "evidence_requests": [],
+          "status": "ambiguous",
+          "trigger_event_id": "df06f428-1a2d-52b7-b45a-d76eb1d5ee8b"
+        },
+        "prerequisite_aware": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch",
+            "mixed_evidence"
+          ],
+          "candidates": [],
+          "evidence_requests": [],
+          "status": "ambiguous",
+          "trigger_event_id": "df06f428-1a2d-52b7-b45a-d76eb1d5ee8b"
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 6,
+          "eligible_count": 6,
+          "estimate": 0.4,
+          "evidence_event_ids": [
+            "09320010-4571-563c-ba4c-caf25cfdeed5",
+            "a9078f38-7321-50d8-b66e-4adb97e8bf1e",
+            "69f12bbc-d518-5422-90de-db4e282c0d76",
+            "376dcb16-be97-5659-8b63-34097b377b53",
+            "119b520a-539c-5932-af8e-e0ff8e3c4d88",
+            "df06f428-1a2d-52b7-b45a-d76eb1d5ee8b"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T01:00:00.000Z",
+          "performance_state": "weak",
+          "recent_failures": 1,
+          "successes": 2,
+          "total_attempts": 6
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_weak_recent_recovery",
+      "observed_completed_cycles": [
+        {
+          "anchor_event_id": "09320010-4571-563c-ba4c-caf25cfdeed5",
+          "concept_id": "function_calls",
+          "practice_activity_ids": [
+            "function_calls_practice_01",
+            "function_calls_practice_02",
+            "function_calls_practice_03",
+            "function_calls_practice_04"
+          ],
+          "reassessment_event_id": "df06f428-1a2d-52b7-b45a-d76eb1d5ee8b"
+        }
+      ],
+      "prediction": {
+        "exclusions": {},
+        "rows": [
+          {
+            "activity_id": "function_calls_diagnostic_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5,
+            "event_id": "09320010-4571-563c-ba4c-caf25cfdeed5",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 0,
+            "prefix_events": 0,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.4,
+            "event_id": "a9078f38-7321-50d8-b66e-4adb97e8bf1e",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 1,
+            "prefix_events": 1,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_02",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.3333333333333333,
+            "event_id": "69f12bbc-d518-5422-90de-db4e282c0d76",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 2,
+            "prefix_events": 2,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_03",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.2857142857142857,
+            "event_id": "376dcb16-be97-5659-8b63-34097b377b53",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 3,
+            "prefix_events": 3,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_04",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.375,
+            "event_id": "119b520a-539c-5932-af8e-e0ff8e3c4d88",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 4,
+            "prefix_events": 4,
+            "prefix_successes": 1
+          },
+          {
+            "activity_id": "function_calls_reassessment_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.4444444444444444,
+            "event_id": "df06f428-1a2d-52b7-b45a-d76eb1d5ee8b",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 5,
+            "prefix_events": 5,
+            "prefix_successes": 2
+          }
+        ]
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.8
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.76
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.8
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.76
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.8
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.76
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "evaluation_group": "no_gap_control",
+        "expected_behavior": "ambiguous",
+        "expected_plan_state": "catalog_exhausted",
+        "notes": "Two fresh practices and a distinct reassessment yield developing evidence, not readiness.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_fresh_loop",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch",
+            "mixed_evidence"
+          ],
+          "candidates": [],
+          "evidence_requests": [],
+          "status": "ambiguous",
+          "trigger_event_id": "54b87c1c-28ad-5ca1-9916-9daba688e425"
+        },
+        "prerequisite_aware": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch",
+            "mixed_evidence"
+          ],
+          "candidates": [],
+          "evidence_requests": [],
+          "status": "ambiguous",
+          "trigger_event_id": "54b87c1c-28ad-5ca1-9916-9daba688e425"
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 6,
+          "eligible_count": 6,
+          "estimate": 0.5,
+          "evidence_event_ids": [
+            "aa6abc72-0839-5220-9945-eb6f32cfc3ea",
+            "4875f927-d654-5a3c-8b60-28b3f77f6d90",
+            "54b87c1c-28ad-5ca1-9916-9daba688e425",
+            "807ee1f9-80ac-5df5-b0a2-ba377fb95205",
+            "5bac5f42-2148-5504-8ab1-620dacafa097",
+            "46f17266-b3af-5681-8140-1baa42b0def7"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T01:30:00.000Z",
+          "performance_state": "developing",
+          "recent_failures": 0,
+          "successes": 3,
+          "total_attempts": 6
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 3,
+          "eligible_count": 3,
+          "estimate": 0.714286,
+          "evidence_event_ids": [
+            "762390ae-078e-5a2e-95ee-503d5648b8f3",
+            "3d106202-0e3f-56a8-aea4-b35d101b580f",
+            "1b615952-17bd-5531-a9b9-ebfc9c63f29f"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T00:30:00.000Z",
+          "performance_state": "ready",
+          "recent_failures": 0,
+          "successes": 3,
+          "total_attempts": 3
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_fresh_loop",
+      "observed_completed_cycles": [
+        {
+          "anchor_event_id": "aa6abc72-0839-5220-9945-eb6f32cfc3ea",
+          "concept_id": "base_cases",
+          "practice_activity_ids": [
+            "base_cases_practice_01",
+            "base_cases_practice_02",
+            "base_cases_practice_03",
+            "base_cases_practice_04"
+          ],
+          "reassessment_event_id": "46f17266-b3af-5681-8140-1baa42b0def7"
+        }
+      ],
+      "prediction": {
+        "exclusions": {},
+        "rows": [
+          {
+            "activity_id": "function_calls_diagnostic_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5,
+            "event_id": "762390ae-078e-5a2e-95ee-503d5648b8f3",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 0,
+            "prefix_events": 0,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.6,
+            "event_id": "3d106202-0e3f-56a8-aea4-b35d101b580f",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 1,
+            "prefix_events": 1,
+            "prefix_successes": 1
+          },
+          {
+            "activity_id": "function_calls_practice_02",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.6666666666666666,
+            "event_id": "1b615952-17bd-5531-a9b9-ebfc9c63f29f",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 2,
+            "prefix_events": 2,
+            "prefix_successes": 2
+          },
+          {
+            "activity_id": "base_cases_diagnostic_01",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.5,
+            "event_id": "aa6abc72-0839-5220-9945-eb6f32cfc3ea",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 0,
+            "prefix_events": 3,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "base_cases_practice_01",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.4,
+            "event_id": "4875f927-d654-5a3c-8b60-28b3f77f6d90",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 1,
+            "prefix_events": 4,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "base_cases_practice_02",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.3333333333333333,
+            "event_id": "54b87c1c-28ad-5ca1-9916-9daba688e425",
+            "global_rate": 0.5555555555555556,
+            "outcome": 0,
+            "prefix_eligible_count": 2,
+            "prefix_events": 5,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "base_cases_practice_03",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.2857142857142857,
+            "event_id": "807ee1f9-80ac-5df5-b0a2-ba377fb95205",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 3,
+            "prefix_events": 6,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "base_cases_practice_04",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.375,
+            "event_id": "5bac5f42-2148-5504-8ab1-620dacafa097",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 4,
+            "prefix_events": 7,
+            "prefix_successes": 1
+          },
+          {
+            "activity_id": "base_cases_reassessment_01",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.4444444444444444,
+            "event_id": "46f17266-b3af-5681-8140-1baa42b0def7",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 5,
+            "prefix_events": 8,
+            "prefix_successes": 2
+          }
+        ]
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              1
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.7
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "base_cases_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.74
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              1
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.7
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "base_cases_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.74
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 1,
+            "concept_topological_positions": [
+              1
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.7
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 1,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 1,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 1
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "base_cases_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.74
+              }
+            ],
+            "mode": "practice",
+            "status": "catalog_exhausted"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "evaluation_group": "missing_evidence",
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": "catalog_exhausted",
+        "notes": "All first-response slots consumed with hints; do not manufacture fresh evidence.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_exhausted_hinted",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [],
+          "evidence_requests": [
+            {
+              "concept_id": "function_calls",
+              "needed_observations": 3,
+              "reason": "not_assessed"
+            }
+          ],
+          "status": "insufficient_evidence",
+          "trigger_event_id": "daba492e-b643-56d7-8683-44f10b822009"
+        },
+        "prerequisite_aware": {
+          "alternatives": [
+            "item_difficulty",
+            "response_error",
+            "tag_mismatch"
+          ],
+          "candidates": [],
+          "evidence_requests": [
+            {
+              "concept_id": "function_calls",
+              "needed_observations": 3,
+              "reason": "not_assessed"
+            }
+          ],
+          "status": "insufficient_evidence",
+          "trigger_event_id": "daba492e-b643-56d7-8683-44f10b822009"
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 6,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 6
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_exhausted_hinted",
+      "observed_completed_cycles": [
+        {
+          "anchor_event_id": "2a52b3e9-7033-5e0d-a86c-f47eb81c1a42",
+          "concept_id": "function_calls",
+          "practice_activity_ids": [
+            "function_calls_practice_01",
+            "function_calls_practice_02",
+            "function_calls_practice_03",
+            "function_calls_practice_04"
+          ],
+          "reassessment_event_id": "daba492e-b643-56d7-8683-44f10b822009"
+        }
+      ],
+      "prediction": {
+        "exclusions": {
+          "hints_used": 6
+        },
+        "rows": []
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 0,
+            "concept_topological_positions": [],
+            "covered_gaps": 0,
+            "difficulty_fits": [],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 0,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 0,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 0
+          },
+          "plan": {
+            "items": [],
+            "mode": "assessment",
+            "status": "catalog_exhausted"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 0,
+            "concept_topological_positions": [],
+            "covered_gaps": 0,
+            "difficulty_fits": [],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 0,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 0,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 0
+          },
+          "plan": {
+            "items": [],
+            "mode": "assessment",
+            "status": "catalog_exhausted"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 0,
+            "concept_topological_positions": [],
+            "covered_gaps": 0,
+            "difficulty_fits": [],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 0,
+            "exhaustion_applicable": true,
+            "exhaustion_correct": true,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 0,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 0
+          },
+          "plan": {
+            "items": [],
+            "mode": "assessment",
+            "status": "catalog_exhausted"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "evaluation_group": "no_trigger_control",
+        "expected_behavior": "no_failed_trigger",
+        "expected_plan_state": null,
+        "notes": "Lesson completion creates zero correctness observations.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_lesson_only",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [],
+          "candidates": [],
+          "evidence_requests": [
+            {
+              "concept_id": "function_calls",
+              "needed_observations": 3,
+              "reason": "not_assessed"
+            }
+          ],
+          "status": "no_failed_trigger",
+          "trigger_event_id": null
+        },
+        "prerequisite_aware": {
+          "alternatives": [],
+          "candidates": [],
+          "evidence_requests": [
+            {
+              "concept_id": "function_calls",
+              "needed_observations": 3,
+              "reason": "not_assessed"
+            }
+          ],
+          "status": "no_failed_trigger",
+          "trigger_event_id": null
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_lesson_only",
+      "observed_completed_cycles": [],
+      "prediction": {
+        "exclusions": {
+          "lesson": 1
+        },
+        "rows": []
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 3,
+            "concept_topological_positions": [
+              0,
+              0,
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              1.0,
+              0.8,
+              0.8
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 3,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 3,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 3
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_diagnostic_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "diagnostic",
+                "score": 0.8
+              },
+              {
+                "activity_id": "function_calls_practice_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.76
+              },
+              {
+                "activity_id": "function_calls_practice_02",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.76
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 3,
+            "concept_topological_positions": [
+              0,
+              0,
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              1.0,
+              0.8,
+              0.8
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 3,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 3,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 3
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_diagnostic_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "diagnostic",
+                "score": 0.8
+              },
+              {
+                "activity_id": "function_calls_practice_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.76
+              },
+              {
+                "activity_id": "function_calls_practice_02",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.76
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 3,
+            "concept_topological_positions": [
+              0,
+              0,
+              0
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              1.0,
+              0.8,
+              0.8
+            ],
+            "distinct_reassessment_items": 0,
+            "emitted_items": 3,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 3,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 0,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 3
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "function_calls_diagnostic_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "diagnostic",
+                "score": 0.8
+              },
+              {
+                "activity_id": "function_calls_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.76
+              },
+              {
+                "activity_id": "function_calls_practice_02",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "function_calls",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "gather_evidence",
+                "role": "practice",
+                "score": 0.76
+              }
+            ],
+            "mode": "assessment",
+            "status": "ready"
+          }
+        }
+      },
+      "split": "test"
+    },
+    {
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "evaluation_group": "no_trigger_control",
+        "expected_behavior": "no_failed_trigger",
+        "expected_plan_state": null,
+        "notes": "Do not invent a failed trigger when both assessed concepts are ready.",
+        "source": "hand-authored scenario assumption before production diagnosis exists"
+      },
+      "case_id": "test_no_failure",
+      "diagnosis": {
+        "lowest_estimate": {
+          "alternatives": [],
+          "candidates": [],
+          "evidence_requests": [],
+          "status": "no_failed_trigger",
+          "trigger_event_id": null
+        },
+        "prerequisite_aware": {
+          "alternatives": [],
+          "candidates": [],
+          "evidence_requests": [],
+          "status": "no_failed_trigger",
+          "trigger_event_id": null
+        }
+      },
+      "estimates": [
+        {
+          "concept_id": "base_cases",
+          "distinct_questions": 3,
+          "eligible_count": 3,
+          "estimate": 0.714286,
+          "evidence_event_ids": [
+            "93de400e-250f-58d5-a4b2-f7125d727ce7",
+            "066b399a-8375-58c1-8b06-bad0d692e846",
+            "d6455938-8ea4-5a6a-a7f3-bcde2bcf86e1"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T01:00:00.000Z",
+          "performance_state": "ready",
+          "recent_failures": 0,
+          "successes": 3,
+          "total_attempts": 3
+        },
+        {
+          "concept_id": "call_stack",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "dp_base_cases",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "function_calls",
+          "distinct_questions": 3,
+          "eligible_count": 3,
+          "estimate": 0.714286,
+          "evidence_event_ids": [
+            "36ba3fe0-9d31-58ac-9bee-a4b041661ead",
+            "8a80ac3a-25db-54ad-8820-be691bbde2be",
+            "98778856-42da-5624-ad53-50dac84ccabd"
+          ],
+          "evidence_state": "supported_estimate",
+          "last_evidence_at": "2026-11-19T00:30:00.000Z",
+          "performance_state": "ready",
+          "recent_failures": 0,
+          "successes": 3,
+          "total_attempts": 3
+        },
+        {
+          "concept_id": "memoization",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "overlapping_subproblems",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recurrence_relations",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_progress",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "recursive_tracing",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_definition",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "state_transitions",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        },
+        {
+          "concept_id": "tabulation",
+          "distinct_questions": 0,
+          "eligible_count": 0,
+          "estimate": null,
+          "evidence_event_ids": [],
+          "evidence_state": "not_assessed",
+          "last_evidence_at": null,
+          "performance_state": "unknown",
+          "recent_failures": 0,
+          "successes": 0,
+          "total_attempts": 0
+        }
+      ],
+      "learner_id": "eval_test_no_failure",
+      "observed_completed_cycles": [],
+      "prediction": {
+        "exclusions": {},
+        "rows": [
+          {
+            "activity_id": "function_calls_diagnostic_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.5,
+            "event_id": "36ba3fe0-9d31-58ac-9bee-a4b041661ead",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 0,
+            "prefix_events": 0,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "function_calls_practice_01",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.6,
+            "event_id": "8a80ac3a-25db-54ad-8820-be691bbde2be",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 1,
+            "prefix_events": 1,
+            "prefix_successes": 1
+          },
+          {
+            "activity_id": "function_calls_practice_02",
+            "concept_id": "function_calls",
+            "concept_smoothed": 0.6666666666666666,
+            "event_id": "98778856-42da-5624-ad53-50dac84ccabd",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 2,
+            "prefix_events": 2,
+            "prefix_successes": 2
+          },
+          {
+            "activity_id": "base_cases_diagnostic_01",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.5,
+            "event_id": "93de400e-250f-58d5-a4b2-f7125d727ce7",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 0,
+            "prefix_events": 3,
+            "prefix_successes": 0
+          },
+          {
+            "activity_id": "base_cases_practice_01",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.6,
+            "event_id": "066b399a-8375-58c1-8b06-bad0d692e846",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 1,
+            "prefix_events": 4,
+            "prefix_successes": 1
+          },
+          {
+            "activity_id": "base_cases_practice_02",
+            "concept_id": "base_cases",
+            "concept_smoothed": 0.6666666666666666,
+            "event_id": "d6455938-8ea4-5a6a-a7f3-bcde2bcf86e1",
+            "global_rate": 0.5555555555555556,
+            "outcome": 1,
+            "prefix_eligible_count": 2,
+            "prefix_events": 5,
+            "prefix_successes": 2
+          }
+        ]
+      },
+      "recommendation": {
+        "lowest_estimate": {
+          "audit": {
+            "catalog_valid_items": 4,
+            "concept_topological_positions": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.4857142857142857,
+              0.6857142857142857,
+              0.6857142857142857,
+              0.6857142857142857
+            ],
+            "distinct_reassessment_items": 1,
+            "emitted_items": 4,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 4,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 1,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 4
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "base_cases_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.697143
+              },
+              {
+                "activity_id": "base_cases_practice_03",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "further_practice",
+                "role": "practice",
+                "score": 0.737143
+              },
+              {
+                "activity_id": "base_cases_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "further_practice",
+                "role": "practice",
+                "score": 0.737143
+              },
+              {
+                "activity_id": "base_cases_reassessment_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "reassessment",
+                "role": "reassessment",
+                "score": 0.737143
+              }
+            ],
+            "mode": "practice",
+            "status": "ready"
+          }
+        },
+        "prerequisite_aware": {
+          "audit": {
+            "catalog_valid_items": 4,
+            "concept_topological_positions": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.4857142857142857,
+              0.6857142857142857,
+              0.6857142857142857,
+              0.6857142857142857
+            ],
+            "distinct_reassessment_items": 1,
+            "emitted_items": 4,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 4,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 1,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 4
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "base_cases_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.697143
+              },
+              {
+                "activity_id": "base_cases_practice_03",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "further_practice",
+                "role": "practice",
+                "score": 0.737143
+              },
+              {
+                "activity_id": "base_cases_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "further_practice",
+                "role": "practice",
+                "score": 0.737143
+              },
+              {
+                "activity_id": "base_cases_reassessment_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "reassessment",
+                "role": "reassessment",
+                "score": 0.737143
+              }
+            ],
+            "mode": "practice",
+            "status": "ready"
+          }
+        },
+        "random_eligible": {
+          "audit": {
+            "catalog_valid_items": 4,
+            "concept_topological_positions": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "covered_gaps": 0,
+            "difficulty_fits": [
+              0.4857142857142857,
+              0.6857142857142857,
+              0.6857142857142857,
+              0.6857142857142857
+            ],
+            "distinct_reassessment_items": 1,
+            "emitted_items": 4,
+            "exhaustion_applicable": false,
+            "exhaustion_correct": null,
+            "issues": [],
+            "labeled_gaps": 0,
+            "prerequisite_checks": 4,
+            "prerequisite_plan_valid": true,
+            "reassessment_items": 1,
+            "repeated_questions": 0,
+            "valid_prerequisite_checks": 4
+          },
+          "plan": {
+            "items": [
+              {
+                "activity_id": "base_cases_lesson_01",
+                "activity_version": 1,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "lesson_support",
+                "role": "lesson",
+                "score": 0.697143
+              },
+              {
+                "activity_id": "base_cases_practice_03",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "further_practice",
+                "role": "practice",
+                "score": 0.737143
+              },
+              {
+                "activity_id": "base_cases_practice_04",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "further_practice",
+                "role": "practice",
+                "score": 0.737143
+              },
+              {
+                "activity_id": "base_cases_reassessment_01",
+                "activity_version": 2,
+                "blocked_by_concept_ids": [],
+                "concept_id": "base_cases",
+                "depends_on_activity_ids": [],
+                "readiness": "ready",
+                "reason": "reassessment",
+                "role": "reassessment",
+                "score": 0.737143
+              }
+            ],
+            "mode": "practice",
+            "status": "ready"
+          }
+        }
+      },
+      "split": "test"
+    }
+  ],
+  "extra_metrics": {
+    "diagnosis.lowest_estimate": {
+      "abstention_rate": 0.8333333333333334,
+      "answered_cases_excluding_no_trigger": 2,
+      "single_gap_cases": 2,
+      "single_gap_top_1": 1.0,
+      "top_1_error_among_answered": 0.0
+    },
+    "diagnosis.prerequisite_aware": {
+      "abstention_rate": 0.8333333333333334,
+      "answered_cases_excluding_no_trigger": 2,
+      "single_gap_cases": 2,
+      "single_gap_top_1": 1.0,
+      "top_1_error_among_answered": 0.0
+    },
+    "recommendation.lowest_estimate": {
+      "gap_coverage": 1.0,
+      "labeled_gap_denominator": 2,
+      "mean_authored_difficulty_fit": 0.8079047619047618,
+      "plans_checked": 12,
+      "plans_passing_all_invariants": 12,
+      "prerequisite_item_checks": 25,
+      "prerequisite_item_validity": 1.0,
+      "repeated_questions": 0
+    },
+    "recommendation.prerequisite_aware": {
+      "gap_coverage": 1.0,
+      "labeled_gap_denominator": 2,
+      "mean_authored_difficulty_fit": 0.8079047619047618,
+      "plans_checked": 12,
+      "plans_passing_all_invariants": 12,
+      "prerequisite_item_checks": 25,
+      "prerequisite_item_validity": 1.0,
+      "repeated_questions": 0
+    },
+    "recommendation.random_eligible": {
+      "gap_coverage": 1.0,
+      "labeled_gap_denominator": 2,
+      "mean_authored_difficulty_fit": 0.8079047619047618,
+      "plans_checked": 12,
+      "plans_passing_all_invariants": 12,
+      "prerequisite_item_checks": 25,
+      "prerequisite_item_validity": 1.0,
+      "repeated_questions": 0
+    }
+  },
+  "failures": [],
+  "split": "test",
+  "summary": {
+    "catalog_version": "catalog-slice-v1",
+    "contract_version": 1,
+    "diagnosis": [
+      {
+        "all_cases": 12,
+        "baseline": "lowest_estimate",
+        "coverage": 0.16666666666666666,
+        "false_diagnosis_rate": 0.0,
+        "labeled_gap_cases": 2,
+        "missing_evidence_cases": 4,
+        "mrr": 1.0,
+        "no_gap_cases": 4,
+        "no_trigger_cases": 2,
+        "precision_at_1": 1.0,
+        "precision_at_3": 1.0,
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0
+      },
+      {
+        "all_cases": 12,
+        "baseline": "prerequisite_aware",
+        "coverage": 0.16666666666666666,
+        "false_diagnosis_rate": 0.0,
+        "labeled_gap_cases": 2,
+        "missing_evidence_cases": 4,
+        "mrr": 1.0,
+        "no_gap_cases": 4,
+        "no_trigger_cases": 2,
+        "precision_at_1": 1.0,
+        "precision_at_3": 1.0,
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0
+      }
+    ],
+    "evaluation_version": "evaluation-v1",
+    "graph_version": "graph-v1",
+    "limitations": [
+      "Public exposed synthetic audit; not blind or evidence of real-world generalization.",
+      "Only two concepts have questions; items/families recur across learner splits.",
+      "Gap labels are scenario assumptions, not causal truth; no measured learning benefit.",
+      "The small audit does not support uncertainty intervals or calibrated mastery claims.",
+      "Prerequisite validity counts returned plans with correct ordering/readiness/locks."
+    ],
+    "measured_at": "2026-11-20T14:28:38.012Z",
+    "model_version": "baseline-v1",
+    "prediction": [
+      {
+        "baseline": "global_rate",
+        "brier": 0.2419753086419753,
+        "eligible_predictions": 50,
+        "excluded_events": 13,
+        "log_loss": 0.6770440854278028,
+        "negative_outcomes": 20,
+        "positive_outcomes": 30,
+        "pr_auc": 0.6,
+        "roc_auc": 0.5
+      },
+      {
+        "baseline": "concept_smoothed",
+        "brier": 0.2233956853111615,
+        "eligible_predictions": 50,
+        "excluded_events": 13,
+        "log_loss": 0.6401136828633738,
+        "negative_outcomes": 20,
+        "positive_outcomes": 30,
+        "pr_auc": 0.7393739586762842,
+        "roc_auc": 0.6958333333333333
+      }
+    ],
+    "recommendation": [
+      {
+        "baseline": "random_eligible",
+        "cases": 12,
+        "catalog_validity": 1.0,
+        "emitted_items": 25,
+        "exhaustion_cases": 4,
+        "exhaustion_honesty": 1.0,
+        "prerequisite_checks": 12,
+        "prerequisite_validity": 1.0,
+        "reassessment_distinctness": 1.0,
+        "reassessment_items": 3
+      },
+      {
+        "baseline": "lowest_estimate",
+        "cases": 12,
+        "catalog_validity": 1.0,
+        "emitted_items": 25,
+        "exhaustion_cases": 4,
+        "exhaustion_honesty": 1.0,
+        "prerequisite_checks": 12,
+        "prerequisite_validity": 1.0,
+        "reassessment_distinctness": 1.0,
+        "reassessment_items": 3
+      },
+      {
+        "baseline": "prerequisite_aware",
+        "cases": 12,
+        "catalog_validity": 1.0,
+        "emitted_items": 25,
+        "exhaustion_cases": 4,
+        "exhaustion_honesty": 1.0,
+        "prerequisite_checks": 12,
+        "prerequisite_validity": 1.0,
+        "reassessment_distinctness": 1.0,
+        "reassessment_items": 3
+      }
+    ],
+    "scenario_version": "scenarios-v1",
+    "source_commit": "fc71e487c0e1261928dbe1217a32263f36c255b9",
+    "split_manifest_hash": "4a873e6d2ae225c8765c8a8385e3b0609392c1e94e14e33970f1386579c440db",
+    "synthetic_only": true
+  },
+  "training_fit": {
+    "eligible_events": 23,
+    "probability_denominator": 9,
+    "probability_numerator": 5,
+    "successes": 13
+  },
+  "undefined_metric_reasons": {}
+}

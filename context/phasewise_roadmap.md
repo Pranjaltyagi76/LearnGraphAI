@@ -1,6 +1,6 @@
 # Phasewise roadmap
 
-**Updated:** 20 November 2026. **Current stage:** Phase 0 engineering review and Phase 1 complete; Phase 2 is next. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
+**Updated:** 20 November 2026. **Current stage:** Phases 0, 1 and 2 complete at their bounded gates; Phase 3 is next. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
 
 This is the operational handoff/status document. Check an item only after its stated artifact or verification exists. Drafting this context does not create the application, validate a model, provision a service, or pass a release gate.
 
@@ -10,11 +10,11 @@ This is the operational handoff/status document. Check an item only after its st
 | --- | --- |
 | Git | Local `main`, origin points to the owner's LearnGraphAI repository; configured owner author/committer identity. Delivery evidence is Git history and the remote branch, not an invented hash here. |
 | Specification | PROJECT/requirements reconciled with frozen protocol, storage and curriculum review decisions. |
-| Code/dependencies | Offline strict contract/normalization/hash/storage-record models and conformance checks added; full diagnosis/replay remains Phase 2. |
+| Code/dependencies | Pure authoritative replay, exact estimates, bounded diagnosis, constrained plans, explanations and hash-verified release loading implemented; live full-analysis integration remains Phase 3. |
 | Curriculum | Reviewed draft: 12 concepts/17 scoped edges, 12 version-2 questions/2 lessons and 4 synthetic seed definitions. Published Phase 1 slice remains immutable; 60 questions remain. |
 | Services | Two Vercel Hobby projects and a Healthy Supabase Free Nano project. Migration/seed/runtime login configured; public readiness 200 and actual browser grading passed. |
-| Benchmarks/performance | Local checks and source CI pass. Hosted privilege/quota checks, eleven-request smoke, browser grading, artifact/memory and cold/hot provider metrics recorded. No model-quality benchmark. |
-| Next action | Implement Phase 2 pure replay/estimation/diagnosis/plan services and evaluators, reusing frozen contracts/assets; publish only a compatible new release. |
+| Benchmarks/performance | Local checks and source CI pass. Hosted privilege/quota checks, eleven-request smoke, browser grading, artifact/memory and cold/hot provider metrics recorded. Measured public synthetic prediction/diagnosis/plan audit now exists; no real-world or learning-benefit claim. |
+| Next action | Phase 3: publish/activate the compatible analysis release, compose bounded HTTP/quota routes, implement browser sandbox and verify one live loop. |
 
 ## 2. Resolved content-budget decision — OPEN-01
 
@@ -78,14 +78,16 @@ Requirements: FR-19, NFR-01–06/08/10/11.
 
 Requirements: FR-06–11/14/18, NFR-03/09/10.
 
-- [ ] Implement grading, deduplication, ordering validation, semantic digests, and evidence eligibility.
-- [ ] Implement smoothed estimates/evidence states and bounded graph candidate traversal.
-- [ ] Implement evidence-gated diagnosis/abstention, assessment requests, and constrained plan ranking.
-- [ ] Implement evaluation over the frozen synthetic packet and author separately versioned variants/final audits when required; do not describe the public audit as blind.
-- [ ] Evaluate predictions before outcomes; compare the required P0 baselines and report actual metrics.
-- [ ] Test retries/conflicts, hints/missing data, sparse/no-gap/ambiguous cases, ties, exhaustion, and graph errors.
+- [x] Implement grading, deduplication, ordering validation, semantic digests, and evidence eligibility.
+- [x] Implement smoothed estimates/evidence states and bounded graph candidate traversal.
+- [x] Implement evidence-gated diagnosis/abstention, assessment requests, and constrained plan ranking.
+- [x] Implement evaluation over the frozen synthetic packet and author separately versioned variants/final audits when required; do not describe the public audit as blind.
+- [x] Evaluate predictions before outcomes; compare the required P0 baselines and report actual metrics.
+- [x] Test retries/conflicts, hints/missing data, sparse/no-gap/ambiguous cases, ties, exhaustion, and graph errors.
 
 **Gate:** CLI analysis and evaluation are reproducible from versioned inputs. No BKT or LLM is needed.
+
+**Passed, 20 November 2026:** CLI analysis and saved development/public-audit evaluation reproduce from frozen versioned inputs. Source/result hashes and limitations are recorded below. This offline gate does not publish a new live release.
 
 ### Phase 3 — One complete deployed learning loop
 
@@ -182,3 +184,13 @@ Before a future batch, read [AGENTS.md](../AGENTS.md), inspect working-tree/remo
 - Actual local verification: lint/format, schema/manifest, graph/catalog/profile/split checks passed; 68 tests passed and 5 isolated SQL checks skipped locally. Node independently passed nine canonical/hash/storage vectors and five release hashes. [Review evidence](evidence/phase0_review.json). CI now runs the new checks with real isolated PostgreSQL and existing browser regressions.
 - Original-content license remains unselected; educator validation is not claimed. No new infrastructure, billing, production migration or activation was performed.
 - Next: Phase 2 pure replay/eligibility/estimation/diagnosis/plan services, versioned publication, and real offline evaluator. Reuse frozen DTOs/fixtures; do not mark route integration, saved progress or measured model quality complete.
+
+### Phase 2 completion — 20 November 2026
+
+- **Passed offline gate:** pure release validation, grading/replay, dedup/order/clock/catalog checks, semantic identity, first-response eligibility, exact rational estimates, bounded DAG paths/candidate ranking, abstention/evidence requests, constrained plans, exhaustion and fixed evidence templates. The CLI emits a validated AnalysisBundle; new HTTP routes are not yet activated.
+- **Source:** fc71e487c0e1261928dbe1217a32263f36c255b9 contains the final measured implementation. Its source-file hashes match committed bytes after LF normalization; the v2 manifest records pending documentation/prior-run artifacts as a dirty delivery tree. The initial clean-tree v1 remains archived; v2 repeats the exposed audit after a Windows CLI encoding correction without policy tuning. [Run manifest](../evaluation/results/phase2-v2/manifest.json) records environment, source/input/output hashes, fixed seeds and exposure. No frozen curriculum/config/schema or legacy Phase 1 payload changed.
+- **Evaluation:** 4 training cases fit the global rate (13/23 eligible correct, smoothed 5/9); eight development and twelve public final-audit cases measured separately. Final audit: 50 predictions, 30 correct/20 incorrect, thirteen excluded events; concept log loss/Brier 0.640114/0.223396 versus global 0.677044/0.241975. Both diagnosis methods find the same two labeled gaps, answer 2/12 cases and make zero false diagnoses on four no-gap controls. Three plan comparators each emit 25 valid items across twelve valid plans, three distinct reassessments and correct exhaustion on four annotated controls. No comparator diagnosis/plan superiority or real learning gain is claimed. [Model card](../evaluation/model_card.md).
+- **Robustness:** independent arithmetic/metric oracles, 64 six-question outcome patterns, replay/conflict/reference/clock failures, no-hint rescue, secondary tags, supported thresholds, seed-anchored failed practice, reassessment freshness/runs, graph errors/ties/depth and outside-radius parent locks. Four separately versioned fixture-only graph/tag variants do not expand reviewed curriculum or metric denominators. Browser/HTTP chunked full-analysis behavior remains Phase 3.
+- **Actual checks:** 185 local tests passed, five isolated SQL checks skipped locally, one pre-existing Starlette/httpx deprecation warning. Ruff/format, frozen artifacts/content/splits and Node hash conformance pass. The saved benchmark recomputes byte-for-byte with zero retained state/invariant failures. CI runs isolated PostgreSQL/browser regressions plus saved-result reproduction. [Local evidence](evidence/phase2_review.json).
+- **Boundary:** the compatible byte-package constructor is ready for a canonical repository adapter; publication, analysis-release pointer/HTTP admission/quota wiring, browser storage and live activation are Phase 3 integration work. No provider migration, service, payment, dependency, deployment or visitor persistence was introduced. Runtime Phase 1 behavior remains compatible.
+- **Next:** implement the first three Phase 3 tasks together: publish a new immutable compatible release while retaining legacy routes, expose full-analysis metadata/replay with bounded admission and shared quotas, then build/test the IndexedDB pending/acknowledged loop and deploy it on the existing free topology.

@@ -1,0 +1,51 @@
+{
+  "benchmark": {
+    "audit_eligible_predictions": 50,
+    "audit_excluded_events": 13,
+    "development_cases": 8,
+    "development_failures": 0,
+    "policy_tuning_on_audit": false,
+    "public_audit_cases": 12,
+    "public_audit_failures": 0,
+    "regression_rerun_reason": "Windows JSON-output encoding correction; initial exposed audit retained, no model-policy changes.",
+    "train_cases": 4
+  },
+  "benchmark_manifest": "evaluation/results/phase2-v2/manifest.json",
+  "billing_changes": false,
+  "checks": {
+    "cli_profiles_with_templates": 4,
+    "curriculum_splits_legacy": true,
+    "format": true,
+    "frozen_schema_manifest": true,
+    "local_document_links": true,
+    "lockfile_bytes_match_commit": true,
+    "measured_implementation_matches_committed_lf_bytes": true,
+    "node_hash_vectors_and_release_artifacts": true,
+    "private_values_absent_from_delivery": true,
+    "ruff": true,
+    "saved_benchmark_exact_reproduction": true,
+    "valid_json_utf8_lf": true
+  },
+  "delivery_tree_note": "Pending documentation and prior results; every measured implementation file matches the source commit.",
+  "measured_source_commit": "fc71e487c0e1261928dbe1217a32263f36c255b9",
+  "measurement_source_dirty": true,
+  "new_dependencies": [],
+  "not_claimed": [
+    "Full-analysis HTTP/browser implementation",
+    "Full 72-item curriculum",
+    "New production deployment or database publication",
+    "Runtime latency/resource improvement",
+    "Blind audit, real-world generalization, educator validation or learning benefit"
+  ],
+  "phase": "phase2",
+  "provider_mutations": false,
+  "pytest": {
+    "passed": 185,
+    "skip_reason": "No isolated local TEST_DATABASE_URL",
+    "skipped": 5,
+    "warnings": [
+      "Existing Starlette/httpx TestClient deprecation"
+    ]
+  },
+  "recorded_at": "2026-11-20T14:30:11.031+00:00"
+}
