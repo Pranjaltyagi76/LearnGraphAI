@@ -1,0 +1,79 @@
+{
+  "analysis_release_id": "learngraph-review-v1",
+  "api": {
+    "build_ms": 17190,
+    "framework": "fastapi",
+    "id": "dpl_7BHbv5GpXZY8fXBpbUmyXm4iCw7J",
+    "status": "READY",
+    "target": "production",
+    "url": "https://learngraph-ai-api.vercel.app"
+  },
+  "ci": {
+    "backend": "success",
+    "frontend": "success",
+    "id": 44759575477,
+    "isolated_postgres": true,
+    "url": "https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44759575477"
+  },
+  "database_bytes": 11302579,
+  "deployed_source": "24826440aa9e2eab076b93a39beede64d6525001",
+  "frontend": {
+    "build_ms": 18671,
+    "framework": "nextjs",
+    "id": "dpl_6Sj1MYrhVL7d9MLu7XpcvdeDwQSM",
+    "status": "READY",
+    "target": "production",
+    "url": "https://learngraph-ai-web.vercel.app/learn"
+  },
+  "legacy_content_hash": "ae54153b27c8193429f7b704ae592cb4c5d23f86dec5cc551b018974db5522dd",
+  "legacy_release_id": "phase1-v1",
+  "legacy_unchanged": true,
+  "limitations": [
+    "Only twelve questions across two concepts, sixty remaining",
+    "Exposed synthetic regression, not independent quality or real learning benefit",
+    "Full release/rollback/failure and accessibility audit remain later gates"
+  ],
+  "local_checks": {
+    "backend_passed": 192,
+    "browser_passed": 23,
+    "frozen_and_generated_artifacts": true,
+    "lint_format_typecheck_build": true,
+    "regression_reproduced": true,
+    "sql_skipped_locally": 6
+  },
+  "new_service_or_plan": false,
+  "observability": {
+    "api_drains": 0,
+    "api_error_scan": "No error-level logs matched this deployment in the provider window ending 2026-11-20T15:14:52.596Z",
+    "frontend_drains": 0,
+    "frontend_error_scan": "No error-level logs matched this deployment in the provider window ending 2026-11-20T15:14:53.819Z",
+    "monitoring": "Provider runtime logs and bounded request metrics; no paid monitoring added"
+  },
+  "observed_at": "2026-11-20T15:14:51.838+00:00",
+  "package_bytes_json": 135186,
+  "package_hash": "edfb6e59ca36d9d6d57af5ba3b35602e7addb5f086a4aa05d364516d78b4f76b",
+  "project_id": "qnboukxsaczidpwtnadl",
+  "project_status": "ACTIVE_HEALTHY",
+  "public_activities": 14,
+  "public_profiles": 4,
+  "publication": "new immutable row; repeated source/stored verification passed",
+  "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+  "runtime_can_read_analysis_package": true,
+  "runtime_checks": {
+    "runtime_grants": true,
+    "separate_owner_and_hardened_guard": true,
+    "source_matches_published_release": true,
+    "unprivileged_role": true
+  },
+  "schema_migration": false,
+  "supabase_plan": "free",
+  "tls": false,
+  "vercel_plan": "Hobby, owner-confirmed earlier in this session; connector does not expose billing plan",
+  "verification": {
+    "desktop": "phase3_live_desktop.png",
+    "mobile": "phase3_live_desktop_mobile.png",
+    "real_browser_report": "phase3_live.json",
+    "visual_inspection": "desktop/mobile screenshots inspected; no clipping or overflow observed"
+  },
+  "visitor_events_persisted": false
+}

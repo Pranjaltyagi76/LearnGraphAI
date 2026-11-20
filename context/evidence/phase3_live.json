@@ -1,0 +1,164 @@
+{
+  "observed_at": "2026-11-20T15:12:41.455Z",
+  "frontend": "https://learngraph-ai-web.vercel.app",
+  "api": "https://learngraph-ai-api.vercel.app",
+  "method": "Fresh Chromium browser → public production API → canonical Supabase release; no mocks or automatic POST retries.",
+  "synthetic_only": true,
+  "checks": {
+    "metadata_versions_projection_cors": true,
+    "real_practice_distinct_reassessment": true,
+    "mobile_overflow": false,
+    "refresh_restores_acknowledged_history": true,
+    "two_independent_browsers": true,
+    "reset_is_local": true,
+    "no_browser_exceptions": true
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "elapsed_ms": 362,
+      "request_id": "72bf3022-23ae-4d2c-91bb-5d7f250d2f3f",
+      "server_timing": "api;dur=0.47"
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "status": 200,
+      "elapsed_ms": 272,
+      "request_id": "6b74c827-49a5-4cf4-8ce4-f95699081739",
+      "server_timing": "api;dur=21.32"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/demo/release",
+      "status": 200,
+      "elapsed_ms": 551,
+      "request_id": "3ae01f1f-def4-41ab-a842-3ebd64d3e9dc",
+      "server_timing": "api;dur=0.48"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/releases/learngraph-review-v1/profiles",
+      "status": 200,
+      "elapsed_ms": 269,
+      "request_id": "4afe6888-bcdb-42de-8d03-aafbb22db07d",
+      "server_timing": "api;dur=1.17"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/releases/learngraph-review-v1/profiles/demo_base_cases/seed",
+      "status": 200,
+      "elapsed_ms": 265,
+      "request_id": "8ec6b08a-8b90-4074-918b-20df332c0ea0",
+      "server_timing": "api;dur=1.62"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/analytics/evaluation",
+      "status": 200,
+      "elapsed_ms": 258,
+      "request_id": "fc12d871-7db2-429c-b60f-b2aa40581614",
+      "server_timing": "api;dur=0.71"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/demo/analyze",
+      "status": 200,
+      "elapsed_ms": 649,
+      "request_id": "7cab7666-1679-467a-8eee-ce116d4a8a33",
+      "accepted_visitor_events": 0,
+      "history_digest": "8349f517a62ab348942ff23a3e4f0ca8138e06c7c3e885cff5b57a9700447c8a",
+      "diagnosis": "supported_gap",
+      "plan_status": "ready"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/demo/analyze",
+      "status": 200,
+      "elapsed_ms": 572,
+      "request_id": "12b00eca-0612-4659-bd1d-09c8ffefb8c9",
+      "accepted_visitor_events": 1,
+      "history_digest": "b510cbd19958d6ffb16b87acf6754a3228d865d295dbc22ae3dabcdffb14165e",
+      "diagnosis": "supported_gap",
+      "plan_status": "ready"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/demo/analyze",
+      "status": 200,
+      "elapsed_ms": 568,
+      "request_id": "51ec6dd0-4827-42e7-a7fa-99e7105eebc0",
+      "accepted_visitor_events": 2,
+      "history_digest": "b14d03dc1e06127d1e5d4446e2b754c8077692c3e7eb19d2bf296db0f8409486",
+      "diagnosis": "ambiguous",
+      "plan_status": "ready"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/demo/analyze",
+      "status": 200,
+      "elapsed_ms": 605,
+      "request_id": "a40815c2-1088-4a9c-bcec-a92cf05a26e2",
+      "accepted_visitor_events": 3,
+      "history_digest": "d202eca8e70d9461b73f1a5da2b4ab742d89489ed58995e8cfda4c7df15851db",
+      "diagnosis": "ambiguous",
+      "plan_status": "catalog_exhausted"
+    }
+  ],
+  "browser_errors": [],
+  "release": {
+    "contract_version": 1,
+    "release_id": "learngraph-review-v1",
+    "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+    "graph_version": "graph-v1",
+    "catalog_version": "catalog-slice-v1",
+    "model_version": "baseline-v1",
+    "profiles_version": "demo-profiles-v1"
+  },
+  "before": {
+    "concept_id": "base_cases",
+    "eligible_count": 3,
+    "successes": 0,
+    "total_attempts": 3,
+    "distinct_questions": 3,
+    "estimate": 0.285714,
+    "evidence_state": "supported_estimate",
+    "performance_state": "weak",
+    "recent_failures": 3,
+    "last_evidence_at": "2026-11-19T02:00:00.000Z",
+    "evidence_event_ids": [
+      "dd6a1bb3-f620-5e3e-a48a-08f796cd82df",
+      "a198c637-c186-592c-9eda-312c7c9085ce",
+      "41188b16-698c-5de1-97d8-ca0c4baaab54"
+    ]
+  },
+  "after": {
+    "concept_id": "base_cases",
+    "eligible_count": 6,
+    "successes": 3,
+    "total_attempts": 6,
+    "distinct_questions": 6,
+    "estimate": 0.5,
+    "evidence_state": "supported_estimate",
+    "performance_state": "developing",
+    "recent_failures": 0,
+    "last_evidence_at": "2026-11-20T15:12:51.869Z",
+    "evidence_event_ids": [
+      "dd6a1bb3-f620-5e3e-a48a-08f796cd82df",
+      "a198c637-c186-592c-9eda-312c7c9085ce",
+      "41188b16-698c-5de1-97d8-ca0c4baaab54",
+      "f54979c3-0414-48c6-8a78-f83b852cd7be",
+      "17b80c68-eb02-4b05-88a9-a15115095e4d",
+      "95942020-cdf1-4258-9999-40c3cda82d07"
+    ]
+  },
+  "independent_browser": {
+    "status": 200,
+    "visitor_events": 0,
+    "history_digest": "8349f517a62ab348942ff23a3e4f0ca8138e06c7c3e885cff5b57a9700447c8a",
+    "distinct_sandbox": true
+  },
+  "passed": true
+}
