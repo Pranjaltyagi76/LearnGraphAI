@@ -12,9 +12,9 @@ This is the operational handoff/status document. Check an item only after its st
 | Specification | Revised PROJECT.md plus requirements and context references. |
 | Code/dependencies | Next.js/FastAPI scaffold and pinned lockfiles exist; full diagnosis/replay remains Phase 2. |
 | Curriculum | Proposed 12 concepts/17 edges and an authored two-concept, 12-question feasibility slice; complete 72-item catalog pending. |
-| Services | Frontend/API deployed and READY on Vercel Hobby; public health and CORS verified. Supabase installation/connection is pending; `/ready` is honestly 503. |
+| Services | Frontend/API deployed and READY on Vercel Hobby. Supabase account connected; Free Nano project `qnboukxsaczidpwtnadl` is Healthy in `us-east-1`. Private owner connection, migration/seeding, runtime provisioning, and live readiness remain pending. |
 | Benchmarks/performance | Ten local API tests and four local browser tests pass; remote frontend/backend CI jobs pass, including isolated PostgreSQL. No model-quality benchmark or hosted DB timing. |
-| Next action | Complete remaining Phase 0 contract/content review; finish Phase 1 infrastructure verification when Supabase is connected. |
+| Next action | Finish Phase 1 using the private owner connection, then verify the real deployed database path. Remaining Phase 0 contract/content review is still open. |
 
 ## 2. Resolved content-budget decision — OPEN-01
 
@@ -162,3 +162,12 @@ Before a future batch, read [AGENTS.md](../AGENTS.md), inspect working-tree/remo
 - User confirmed no paid billing; Vercel's deployment-context tool independently returned `plan: hobby`. No paid resource was enabled, no database secret supplied, and no Supabase migration was run.
 - **Remaining gate:** install/connect Supabase, select/create a verified free project, apply/verify migration and seed, configure a separate runtime login and hash secret, redeploy API, then prove browser → API → Supabase → grading response. Record DB/cold/warm/resource/recovery evidence afterward. Phase 1 is **not complete** until this succeeds.
 - Vercel deployments were requested explicitly from the exact Git SHA. Automatic Git push-to-deploy linkage is not configured/verified; do not assume a later Git push redeploys these projects automatically.
+
+### Phase 1 continuation — Supabase project provisioned, runtime connection pending
+
+- Verified Supabase's connected Primary account and the owner's Free organization. The user created `learngraph-ai`, project `qnboukxsaczidpwtnadl`; dashboard shows Healthy Nano in `us-east-1`. Data API was disabled and automatic RLS enabled on the creation form. No paid billing/add-on was configured.
+- Verified session/transaction pooler host and ports in the dashboard; free shared host has IPv4 DNS records. No authenticated connection or migration has run yet.
+- Added a read-only runtime/TLS/content audit and a one-time restricted-login helper. Both commits use the owner's author/committer. [CI run 44715705552](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44715705552) passed backend/frontend, including the new isolated PostgreSQL audit.
+- Added bounded deployment smoke tooling and safe production timing/process-memory logging. Local lint/format and ten API tests pass; five PostgreSQL checks skip locally. These prepared hooks are not deployed or measured hosted results.
+- The owner password is requested only in ignored `backend/.env.local` as temporary `SUPABASE_OWNER_PASSWORD`; no password/token should be sent in chat. At the last check that value and `MIGRATION_DATABASE_URL` were empty. The file is excluded by Git.
+- **Resume:** prepare the TLS session-pooler owner DSN privately and remove the temporary password field; migrate/seed/verify; provision runtime; run the read-only runtime audit; set only `DATABASE_URL`/`CLIENT_ID_HASH_SECRET` in API production secrets; deploy the exact pushed source; exercise the real browser round trip and bounded smoke report; record measured evidence. Phase 1 remains incomplete until the gate passes.

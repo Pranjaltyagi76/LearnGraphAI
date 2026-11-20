@@ -4,11 +4,11 @@
 
 LearnGraph AI is a planned explainable learning-diagnostics portfolio application. It combines a prerequisite graph, transparent estimates of observed performance, and targeted practice to help explain where a learner may need support.
 
-**Status:** Phase 1 scaffold is implemented: a Next.js preview, FastAPI question/grading slice, versioned 12-question source, migration/seed scripts, and verification suites. The full 72-question curriculum, diagnosis/replay engine, saved progress, and reassessment UI remain later work. Supabase is not connected/provisioned yet, so the real live database gate is pending; no completion of Phase 1 is claimed.
+**Status:** Phase 1 scaffold is implemented: a Next.js preview, FastAPI question/grading slice, versioned 12-question source, migration/seed scripts, and verification suites. A Supabase account is connected and a verified Free Nano database project is healthy. Private database credentials, migration/seeding, and the live deployment gate remain pending; Phase 1 is not complete. The full 72-question curriculum, diagnosis/replay engine, saved progress, and reassessment UI remain later work.
 
 [Hosted infrastructure preview](https://learngraph-ai-web.vercel.app) · [API liveness](https://learngraph-ai-api.vercel.app/health) · [Passing source CI run](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44700160117)
 
-The public page currently shows a labeled prerecorded example. Live grading remains unavailable until Supabase is connected, provisioned, migrated/seeded, and configured with its runtime role/secret. `/ready` correctly reports `503 not_configured`. This is not a completed Phase 1 live database gate.
+The public page currently shows a labeled prerecorded example. Live grading remains unavailable until Supabase is migrated/seeded and configured with its restricted runtime login and API secrets. The last deployed API reports `503 not_configured`. This is not a completed Phase 1 live database gate.
 
 **Service budget:** ₹0 / $0. The project uses verified free plans and may temporarily stop live analysis when quotas or dependencies are unavailable. It does not require a paid AI API or a purchased domain.
 

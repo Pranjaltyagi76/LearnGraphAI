@@ -1,6 +1,6 @@
 # Free deployment and recovery
 
-**State:** Frontend/API deployed on verified Vercel Hobby; Supabase provisioning and live database verification pending. **Date:** 20 November 2026. **Requirements:** NFR-01–08/10/11/13 and FR-16/17/19 in [requirement.md](../requirement.md).
+**State:** Frontend/API deployed on verified Vercel Hobby; Supabase Free Nano project created and Healthy. Private credentials, migrations, and live verification pending. **Date:** 20 November 2026. **Requirements:** NFR-01–08/10/11/13 and FR-16/17/19 in [requirement.md](../requirement.md).
 
 This runbook is for Phase 1 feasibility and Phase 5 release. The user authorized Phase 1 implementation and confirmed Hobby/no paid billing. Observed hosting state is recorded below; a successful build does not prove database readiness. Tested local entrypoints are in the root README and backend migration README.
 
@@ -19,7 +19,7 @@ This runbook is for Phase 1 feasibility and Phase 5 release. The user authorized
 | Git source | Owner's LearnGraphAI repository, `main` | [Repository](https://github.com/Pranjaltyagi76/LearnGraphAI); branch delivery verified separately through Git. |
 | Frontend | Vercel Hobby project, root `frontend/` | `prj_xN0EgVf3CJdn1TyTEbjZehtJK9Wf`; [public preview](https://learngraph-ai-web.vercel.app), READY. |
 | API | Separate Vercel Hobby project, root `backend/` | `prj_K3hvjn2d1vKQDzJBTm7DJ14XC0iA`; [public health](https://learngraph-ai-api.vercel.app/health), READY. |
-| Database | Supabase Free | Not provisioned; no project/region chosen. |
+| Database | Supabase Free | `qnboukxsaczidpwtnadl`, `learngraph-ai`, `us-east-1`; Healthy Nano project in verified Free organization `ijxtakdqmtyzsqljeifc`. Migration/runtime credentials pending. |
 | Alternative API | Render Free only if required by measured failure | Not provisioned. |
 | CI | Public GitHub repository, standard runners | `.github/workflows/ci.yml`; frontend/backend jobs passed with real isolated PostgreSQL 17. |
 
@@ -27,7 +27,7 @@ Confirm the actual provider account/team, repository, project roots, environment
 
 ## 3. Provider checks
 
-The values below come from the 20 November 2026 planning snapshot recorded in PROJECT Section 14. They have not been revalidated against a provisioned account. Recheck official docs/account allowance at provisioning and release; record date, observed limits, and eligibility.
+The values below originate in the 20 November 2026 planning snapshot recorded in PROJECT Section 14. Vercel Hobby and Supabase Free eligibility have since been observed on the selected accounts; the dated evidence below distinguishes account checks from unmeasured remaining usage. Recheck official docs/account allowance at release.
 
 | Provider | Snapshot / consequence | Official reference |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ Use GitHub/Vercel Git integration where possible to avoid unnecessary deployment
 10. Measure bundle/memory/connection and warm/cold behavior using the performance-review protocol. Test 413/422/429/503, dependency failure, and labeled fallback.
 11. Record actual URLs, versions, project IDs (nonsecrets), date, commands, and results. Pass the gate only if the free live round trip works.
 
-No exact `npm`, migration, or deploy command is claimed as runnable yet. Fill in commands after the corresponding package/scripts exist and have been checked.
+Local npm/API entrypoints have been verified and are documented in the root README. Database commands exist in the migration README; hosted execution remains pending private connection setup.
 
 ## 6. Release procedure — Phase 5
 
@@ -115,7 +115,7 @@ Quota cleanup must run through a bounded supported path chosen in Phase 1 (for e
 | Field | Current value |
 | --- | --- |
 | Commit/environment/project IDs | Production source `daef1171bdf2608911dba09ea6d658a5f19c5dfb`; team `team_mRdCuSvoFHIrkEm4K3UAPs7P` (`pranjal-tyagi-ai`). |
-| Verified provider terms date/account limits | 20 November 2026: context tool reports `hobby`; owner confirms no paid billing. Remaining allowance/memory telemetry and Supabase eligibility not measured. |
+| Verified provider terms date/account limits | 20 November 2026: Vercel context reports `hobby`; owner confirms no paid billing. Supabase organization shows Free, project Healthy Nano. Remaining usage and workload memory are not measured. |
 | Frontend/API URLs and region | Public primary aliases above; region `iad1`. Team/deployment aliases may be protected; use the observed public primary aliases rather than disabling protection. |
 | Runtime/package versions and bundle | Node 24.x, Next 16.4.6, React 19.3.1, TS 6.0.3; API builder uses Python 3.12 and uv.lock. Both builds succeed; exact uncompressed runtime bundle/peak memory not measured. |
 | Migration/manifest versions | `001_bootstrap.sql`, `phase1-v1` source implemented/tested in isolated CI; not applied to Supabase. |
@@ -133,4 +133,13 @@ Add concrete evidence and failed results here when available. Never paste creden
 - Vercel local project IDs are stored in ignored service-local `.vercel/project.json` files. The connector verified target team/project; a local CLI login was not needed for the explicit source deployments.
 - API build logs confirm Python 3.12, installation from `uv.lock`, bytecode compilation, and completed output build in 3 seconds. The reported 9.29 MB value is **build cache size**, not a measured uncompressed runtime bundle.
 - Deployments were triggered explicitly from the exact Git SHA. Project automatic Git linkage was not established; future pushes must not be assumed to deploy automatically. Configure the intended repo/roots through a supported authenticated path when available.
-- **External prerequisite:** Supabase is still not installed/connected in this session. Complete that connection, verify a free project/account, configure migration and least-privilege runtime access privately, run migrate/seed/verify, set the runtime secrets, redeploy, and repeat the actual grading round trip. Do not use a fixture or paid alternative to mark the gate passed.
+- **Current external prerequisite:** Save the owner database password privately in ignored `backend/.env.local` as `SUPABASE_OWNER_PASSWORD` (temporary setup input), or configure `MIGRATION_DATABASE_URL` directly. Never put it in chat or Git. Once the owner connection is prepared, remove the temporary password field, run migrate/seed/verify and runtime provisioning/audit, configure Vercel secrets, redeploy, and repeat the real grading round trip. Do not use a fixture or paid alternative to mark the gate passed.
+
+### Supabase provisioning observation — 20 November 2026
+
+- Dashboard account `Pranjaltyagi76`; connected account displayed as **Pranjal's Supabase account**, Primary. Organization **Pranjaltyagi76's Org** displays **Free Plan**. The plugin is installed/enabled, but this chat exposes no Supabase tools; dashboard computer control was used instead.
+- The user created project `learngraph-ai` after entering its database password themselves. Project `qnboukxsaczidpwtnadl` reached **Healthy**, **Nano**, **East US (North Virginia)**. No payment setup or paid add-on was performed.
+- Creation form: Data API disabled; automatic RLS on new public tables enabled. Application access is planned through the private SQL schema and restricted API login.
+- Dashboard confirmed shared pooler `aws-0-us-east-1.pooler.supabase.com`, session port **5432**, transaction port **6543**, owner user `postgres.qnboukxsaczidpwtnadl`. DNS resolved the shared hostname to IPv4 addresses without enabling an IPv4 add-on. Actual authenticated TLS/pooling verification remains pending.
+- Supabase pricing rechecked: Free has a 500 MB database allowance, 5 GB egress, two active projects, and pauses after one inactive week. [Official pricing](https://supabase.com/pricing). No inactivity keepalive will be added.
+- Runtime setup and audit helpers are in `backend/scripts/`; the added audit passed isolated PostgreSQL CI in [run 44715705552](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44715705552). This is not hosted Supabase verification.
