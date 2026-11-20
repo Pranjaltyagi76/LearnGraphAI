@@ -1,6 +1,6 @@
 # Performance review
 
-**State:** Review procedure and proposed budgets only. **Date:** 20 November 2026. **Actual measurements:** None; application code and deployments do not exist.
+**State:** Initial scaffold/build/failure-path review recorded; live database performance unmeasured. **Date:** 20 November 2026. Proposed targets remain distinct from the small observations below.
 
 This file covers latency, resources, reliability under bounded load, and the effect of free hosting. Model-quality evidence belongs in [benchmark.md](benchmark.md). Runtime constraints originate in PROJECT Sections 12–14 and [requirements](../requirement.md), especially NFR-03–06/10/13.
 
@@ -8,11 +8,11 @@ This file covers latency, resources, reliability under bounded load, and the eff
 
 | Measure | Initial requirement/target | Classification | Current result |
 | --- | --- | --- | --- |
-| Request body | Maximum 256 KiB, enforced while counting bytes | Application hard bound | Not implemented/tested. |
+| Request body | Maximum 256 KiB, enforced while counting bytes | Application hard bound | Implemented; chunked oversized-body contract test passes. |
 | History | At most 200 visitor events plus 100 server seed events | Application hard bound | Not implemented/tested. |
 | Search/plan | Prerequisite depth ≤3; ≤3 diagnoses; ≤5 plan items | Application hard bound | Not implemented/tested. |
 | Analysis work | Ten-second application time budget with tighter DB/operation deadlines | Agreed initial budget; cold behavior must be measured | Not measured. |
-| Shared quota | Ten analyses/minute/client identifier; 1,000/day globally | Initial operational guard, not provider entitlement | Not implemented/tested. |
+| Shared quota | Ten analyses/minute/client identifier; 1,000/day globally | Initial operational guard, not provider entitlement | Atomic SQL implemented; isolated PostgreSQL CI passes. Hosted Supabase not configured. |
 | Quota retention | Expiry within 48 hours; bounded cleanup | Application retention bound | Not implemented/tested. |
 | Warm API response | Proposed p95 ≤2 seconds end-to-end at the defined low-volume workload | Engineering target to review in Phase 1 | Not measured; not a promise. |
 | Pure analysis compute | Proposed p95 ≤100 ms for the maximum valid fixture on the declared local machine | Profiling target; excludes DB/network/cold boot | Not measured. |
@@ -98,8 +98,18 @@ Keep attempted/failed runs visible. A change in machine, region, fixture, or met
 | Review | Evidence | Outcome |
 | --- | --- | --- |
 | Documentation foundation, 2026-11-20 | Requirements/budget/protocol design only | No performance pass/fail; nothing measured. |
-| Phase 1 deployment viability | Not run | Pending code, hosting, and actual measurements. |
+| Phase 1 deployment viability | Both Vercel builds READY; health/CORS and unavailable readiness observed | Hosted database gate still pending; no inference latency claim. |
 | Phase 3 complete learning loop | Not run | Pending full learning-loop implementation. |
 | Phase 5 release review | Not run | Release not ready. |
 
 Future reviewers must update this ledger from real execution. Do not replace `not measured` with guessed production numbers or promise always-on free hosting.
+
+## 9. Observed Phase 1 checks — 20 November 2026
+
+- Source commit `daef1171bdf2608911dba09ea6d658a5f19c5dfb`; local Windows, Node 24.18.0, Python 3.12.10. Local API suite: ten passed; four PostgreSQL checks skipped locally. The remote backend job with isolated PostgreSQL 17 and frontend job both succeeded: [CI run](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44700160117).
+- Frontend lint/typecheck/production build pass. Four local Chromium tests pass: recorded labeling, unavailable API, 390 px layout overflow check, and connected grading contract via an explicitly intercepted fixture. The last case does not verify Supabase.
+- Initial scaffold attempts exposed unsupported TypeScript 7 lint parsing and Windows sandbox worker/cache limitations. The compatible TypeScript 6.0.3 toolchain is pinned; the production build and tests succeeded outside the restrictive process sandbox. No provider security setting was weakened.
+- Two public API smoke requests after deployment/environment correction: `/health` 200 JSON in 809 ms, `/ready` 503 `not_configured` in 525 ms, including client network time. These are two descriptive observations, not p95 measurements, cold/warm classification, or successful database latency.
+- Production CORS returns the exact frontend origin. An actual browser click displays the unavailable notice and preserves the prerecorded example; no accepted response is fabricated.
+- API builder logs: Python 3.12, runtime install from uv.lock, output build 3 seconds. Build cache 9.29 MB is not runtime bundle size. Both Vercel deployments are READY in `iad1`; runtime memory/bundle size, database connections, cold starts, and complete analysis latency remain unmeasured.
+- Shared limiter concurrency/global-budget and least-privilege/immutability checks are present in the passing isolated PostgreSQL CI job; they still require selected Supabase verification. No load test or model-quality benchmark was run.

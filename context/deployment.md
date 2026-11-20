@@ -1,8 +1,8 @@
 # Free deployment and recovery
 
-**State:** Planned runbook, no resource provisioned or deployment executed. **Date:** 20 November 2026. **Requirements:** NFR-01–08/10/11/13 and FR-16/17/19 in [requirement.md](../requirement.md).
+**State:** Frontend/API deployed on verified Vercel Hobby; Supabase provisioning and live database verification pending. **Date:** 20 November 2026. **Requirements:** NFR-01–08/10/11/13 and FR-16/17/19 in [requirement.md](../requirement.md).
 
-This runbook is for Phase 1 feasibility and Phase 5 release. The user authorized documentation and Git delivery; writing this file is not authorization/evidence that hosting setup has already occurred. Commands must be filled in only after real scaffolds, versions, and selected project IDs exist.
+This runbook is for Phase 1 feasibility and Phase 5 release. The user authorized Phase 1 implementation and confirmed Hobby/no paid billing. Observed hosting state is recorded below; a successful build does not prove database readiness. Tested local entrypoints are in the root README and backend migration README.
 
 ## 1. Zero-cost policy
 
@@ -17,11 +17,11 @@ This runbook is for Phase 1 feasibility and Phase 5 release. The user authorized
 | Resource | Intended setup | Actual ID/URL/state |
 | --- | --- | --- |
 | Git source | Owner's LearnGraphAI repository, `main` | [Repository](https://github.com/Pranjaltyagi76/LearnGraphAI); branch delivery verified separately through Git. |
-| Frontend | Vercel Hobby project, root `frontend/` | Not provisioned; no deployment URL. |
-| API | Separate Vercel Hobby project, root `backend/` | Not provisioned; no deployment URL. |
+| Frontend | Vercel Hobby project, root `frontend/` | `prj_xN0EgVf3CJdn1TyTEbjZehtJK9Wf`; [public preview](https://learngraph-ai-web.vercel.app), READY. |
+| API | Separate Vercel Hobby project, root `backend/` | `prj_K3hvjn2d1vKQDzJBTm7DJ14XC0iA`; [public health](https://learngraph-ai-api.vercel.app/health), READY. |
 | Database | Supabase Free | Not provisioned; no project/region chosen. |
 | Alternative API | Render Free only if required by measured failure | Not provisioned. |
-| CI | Public GitHub repository, standard runners | No workflow exists yet. |
+| CI | Public GitHub repository, standard runners | `.github/workflows/ci.yml`; frontend/backend jobs passed with real isolated PostgreSQL 17. |
 
 Confirm the actual provider account/team, repository, project roots, environment, and release commit before mutation. Do not accidentally deploy this project into an unrelated paid team.
 
@@ -114,13 +114,23 @@ Quota cleanup must run through a bounded supported path chosen in Phase 1 (for e
 
 | Field | Current value |
 | --- | --- |
-| Commit/environment/project IDs | Not deployed; populate after setup. |
-| Verified provider terms date/account limits | Planning snapshot only; live-account verification pending. |
-| Frontend/API URLs and region | Not provisioned. |
-| Runtime/package versions and bundle | Not selected/measured. |
-| Migration/manifest versions | Not implemented. |
-| Browser/API/database checks | Not run. |
+| Commit/environment/project IDs | Production source `daef1171bdf2608911dba09ea6d658a5f19c5dfb`; team `team_mRdCuSvoFHIrkEm4K3UAPs7P` (`pranjal-tyagi-ai`). |
+| Verified provider terms date/account limits | 20 November 2026: context tool reports `hobby`; owner confirms no paid billing. Remaining allowance/memory telemetry and Supabase eligibility not measured. |
+| Frontend/API URLs and region | Public primary aliases above; region `iad1`. Team/deployment aliases may be protected; use the observed public primary aliases rather than disabling protection. |
+| Runtime/package versions and bundle | Node 24.x, Next 16.4.6, React 19.3.1, TS 6.0.3; API builder uses Python 3.12 and uv.lock. Both builds succeed; exact uncompressed runtime bundle/peak memory not measured. |
+| Migration/manifest versions | `001_bootstrap.sql`, `phase1-v1` source implemented/tested in isolated CI; not applied to Supabase. |
+| Browser/API/database checks | Browser renders and handles actual readiness failure. Health 200 JSON; readiness 503 `not_configured`; production CORS passes. Hosted DB round trip pending. |
 | Restore/rollback exercise | Not run. |
-| Cost/settings check | Not run against provisioned resources. |
+| Cost/settings check | Existing Hobby team selected; owner confirms no paid billing; no paid resource/payment setup performed. Detailed remaining usage not measured. |
 
 Add concrete evidence and failed results here when available. Never paste credentials or claim successful deployment from a planned runbook.
+
+### Current deployment IDs and next action
+
+- Frontend: `dpl_Csccn2itaDGyh8JvmQp8fT9CW1By` (READY).
+- API: `dpl_CtHfd2DRvoeyhJyJeqqkKfAkgQ7j` (READY).
+- Frontend production `NEXT_PUBLIC_API_BASE_URL` is `https://learngraph-ai-api.vercel.app`; API allows `https://learngraph-ai-web.vercel.app` and the observed team alias. No production database URL or hash secret has been supplied.
+- Vercel local project IDs are stored in ignored service-local `.vercel/project.json` files. The connector verified target team/project; a local CLI login was not needed for the explicit source deployments.
+- API build logs confirm Python 3.12, installation from `uv.lock`, bytecode compilation, and completed output build in 3 seconds. The reported 9.29 MB value is **build cache size**, not a measured uncompressed runtime bundle.
+- Deployments were triggered explicitly from the exact Git SHA. Project automatic Git linkage was not established; future pushes must not be assumed to deploy automatically. Configure the intended repo/roots through a supported authenticated path when available.
+- **External prerequisite:** Supabase is still not installed/connected in this session. Complete that connection, verify a free project/account, configure migration and least-privilege runtime access privately, run migrate/seed/verify, set the runtime secrets, redeploy, and repeat the actual grading round trip. Do not use a fixture or paid alternative to mark the gate passed.

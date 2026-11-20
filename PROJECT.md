@@ -10,7 +10,7 @@
 >
 > **Deployment goal:** A publicly accessible personal portfolio demo using only free plans, with a strict recurring service budget of **₹0 / $0**.
 >
-> **Status:** Revised implementation roadmap; implementation has not started. Algorithm parameters and curriculum edges below are initial design choices to validate, not measured results.
+> **Status:** Phase 1 scaffold and hosted preview implemented; live Supabase verification remains pending. Algorithm parameters and curriculum edges below are initial design choices to validate, not measured results.
 >
 > **Last revised:** 20 November 2026.
 

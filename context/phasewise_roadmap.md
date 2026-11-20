@@ -12,8 +12,8 @@ This is the operational handoff/status document. Check an item only after its st
 | Specification | Revised PROJECT.md plus requirements and context references. |
 | Code/dependencies | Next.js/FastAPI scaffold and pinned lockfiles exist; full diagnosis/replay remains Phase 2. |
 | Curriculum | Proposed 12 concepts/17 edges and an authored two-concept, 12-question feasibility slice; complete 72-item catalog pending. |
-| Services | Two Vercel projects created in the user-confirmed Hobby team; Supabase installation/connection is pending. Live database gate remains open. |
-| Benchmarks/performance | Ten API contract/content tests pass; frontend lint/typecheck/build pass. No model-quality benchmark or live database timing yet. |
+| Services | Frontend/API deployed and READY on Vercel Hobby; public health and CORS verified. Supabase installation/connection is pending; `/ready` is honestly 503. |
+| Benchmarks/performance | Ten local API tests and four local browser tests pass; remote frontend/backend CI jobs pass, including isolated PostgreSQL. No model-quality benchmark or hosted DB timing. |
 | Next action | Complete remaining Phase 0 contract/content review; finish Phase 1 infrastructure verification when Supabase is connected. |
 
 ## 2. Resolved content-budget decision — OPEN-01
@@ -62,7 +62,7 @@ Requirements: FR-19, NFR-01–06/08/10/11.
 - [x] Add verified local setup commands and placeholder-only environment documentation.
 - [ ] Configure two Vercel Hobby projects and Supabase Free without paid billing, using correct repository roots.
 - [ ] Apply minimal canonical/quota migrations; verify least-privilege reads and atomic guard behavior.
-- [ ] Verify FastAPI entrypoint, shared source packaging, transaction pooling/TLS, CORS, and production environment ownership.
+- [ ] Finish live database pooling/TLS and runtime ownership verification; FastAPI packaging, public aliases, project ownership, and production CORS are verified.
 - [ ] Exercise browser → API → database → response; measure bundle/cold/warm behavior.
 - [x] Implement health/readiness and clear unavailable/example states; hosted database readiness still pending.
 - [ ] Record actual runtime/limits/URLs/checks in deployment and performance documents.
@@ -91,7 +91,7 @@ Requirements: FR-01/04/05/12–17/19, NFR-02/07/12.
 - [ ] Add anonymous local sandbox with pending/acknowledged states, refresh, reset, and stale-response protection.
 - [ ] Ship a feasible question → supported gap/evidence request → fresh practice → different reassessment path.
 - [ ] Show evidence counts, alternatives, and before/after results without inventing improvement.
-- [ ] Test independent browsers and concurrent tabs, no LLM credentials, and dependency failure.
+- [ ] Test independent browsers and concurrent tabs in the completed loop; Phase 1 recorded/dependency failure and grading-contract cases already pass.
 
 **Gate:** The actual live loop completes without developer intervention and without modifying another sandbox/canonical seed.
 
@@ -150,3 +150,15 @@ At meaningful milestones record: date, phase/task IDs, changed behavior, commit 
 | 2026-11-20 | Specification and development context foundation | Documentation only; Git history records delivery. OPEN-01 identified; no runtime/benchmark evidence. | Complete Phase 0 review and the Phase 1 live database gate. |
 
 Before a future batch, read [AGENTS.md](../AGENTS.md), inspect working-tree/remote state, and select a coherent slice. Preserve user changes. Deliver authorized work in 4–6 meaningful commits where the scope supports it, using the owner's configured author/committer and no assistant co-author trailers.
+
+
+### Phase 1 delivery evidence — 20 November 2026
+
+- Source/verification commit: `daef1171bdf2608911dba09ea6d658a5f19c5dfb`; final documentation-only delivery records these observations.
+- [Frontend preview](https://learngraph-ai-web.vercel.app) and [API health](https://learngraph-ai-api.vercel.app/health) are public. Vercel reports both deployments READY; deployment IDs and environments are in deployment.md.
+- Local: ten API contract/content tests passed; four SQL tests skipped because no local PostgreSQL was configured. Four production-build browser tests passed, including mobile, recorded, unavailable, and grading-contract behavior. Lint/typecheck/build and content/DAG validation pass.
+- [Remote CI](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44700160117): frontend and backend jobs succeeded. Backend is configured with real isolated PostgreSQL 17 and runs the SQL suite. Public raw-log download required authentication, so this report does not invent a separate hosted CI test-count transcript.
+- Public API response: `/health` = 200 JSON; `/ready` = 503 `not_configured`, with the production frontend origin allowed. The actual browser shows the explicit unavailable notice and retains the recorded example.
+- User confirmed no paid billing; Vercel's deployment-context tool independently returned `plan: hobby`. No paid resource was enabled, no database secret supplied, and no Supabase migration was run.
+- **Remaining gate:** install/connect Supabase, select/create a verified free project, apply/verify migration and seed, configure a separate runtime login and hash secret, redeploy API, then prove browser → API → Supabase → grading response. Record DB/cold/warm/resource/recovery evidence afterward. Phase 1 is **not complete** until this succeeds.
+- Vercel deployments were requested explicitly from the exact Git SHA. Automatic Git push-to-deploy linkage is not configured/verified; do not assume a later Git push redeploys these projects automatically.

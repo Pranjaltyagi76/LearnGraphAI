@@ -1,6 +1,6 @@
 # Benchmark and model-quality protocol
 
-**State:** Protocol only; no dataset artifacts or measurements exist. **Baseline date:** 20 November 2026. **Owner requirements:** FR-08–12/18 and NFR-09 in [requirement.md](../requirement.md). Algorithms and initial thresholds remain in [PROJECT.md](../PROJECT.md), Section 8.
+**State:** Model-quality protocol only; the authored Phase 1 content fixture exists, but no prediction/diagnosis/recommendation benchmark has run. **Baseline date:** 20 November 2026. **Owner requirements:** FR-08–12/18 and NFR-09 in [requirement.md](../requirement.md). Algorithms and initial thresholds remain in [PROJECT.md](../PROJECT.md), Section 8.
 
 Benchmark quality here means prediction/diagnosis/recommendation behavior. Runtime latency/resource tests belong in [performance_review.md](performance_review.md). Neither procedure establishes real learning gains from synthetic outcomes.
 

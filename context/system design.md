@@ -1,6 +1,6 @@
 # System design
 
-**Status:** Planned P0 design; no service or API is implemented. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
+**Status:** P0 target design with an implemented Phase 1 feasibility subset; hosted database readiness remains pending. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
 
 This document owns runtime behavior, data flow, consistency, and failure handling. Module layout and technology decisions belong in [architecture.md](architecture.md).
 
@@ -129,3 +129,12 @@ Errors follow `{code, message, request_id, details}` with bounded safe details. 
 - Reviewed curriculum edges, content slice, and independent scenario labels.
 
 These are Phase 0/1 deliverables, not reasons to provision extra services. Record the implemented choices here when evidence exists.
+
+
+## 10. Implemented Phase 1 subset — 20 November 2026
+
+The current API implements `/health`, `/ready`, profile/seed reads, and `POST /api/v1/bootstrap/answer`. The bootstrap route validates a response against database-owned question options, reserves the shared budget, grades the answer, and returns `persisted: false`. It is a feasibility endpoint, not the planned full-history `/api/v1/demo/analyze` contract. Complete replay, input digests, estimates, diagnosis, plans, local progress, and reassessment flow remain Phase 2/3 work.
+
+The source contains one synthetic profile and 12 authored questions across two concepts, plus the proposed 12-node/17-edge graph. It does not claim all four profiles or the complete 72-question curriculum exist.
+
+Observed hosted boundary: public browser → public API `/ready` → `503 not_configured`; the UI preserves the explicitly prerecorded state and says no response was accepted. The actual Supabase path is blocked because its integration is not installed/connected. Isolated PostgreSQL CI passed, but that does not substitute for hosted verification.

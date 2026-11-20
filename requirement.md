@@ -1,6 +1,6 @@
 # LearnGraph AI — Requirements
 
-**Revision:** 20 November 2026. **State:** P0 requirement baseline; implementation and validation pending.
+**Revision:** 20 November 2026. **State:** P0 requirement baseline; Phase 1 scaffold/contract verification implemented, hosted database gate pending.
 
 This file translates [PROJECT.md](PROJECT.md) into testable requirements. IDs are stable references for implementation, tests, and reviews. Requirements are planned, not evidence that features already exist. User instructions take precedence; changes must be reconciled across the specification and relevant context files.
 
