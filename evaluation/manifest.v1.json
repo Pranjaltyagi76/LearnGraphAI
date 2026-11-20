@@ -1,0 +1,48 @@
+{
+  "evaluation_protocol_version": "evaluation-v1",
+  "scenario_version": "scenarios-v1",
+  "random_baseline_seed": 761120,
+  "split_unit": "learner_and_scenario_group",
+  "split_counts": {
+    "train": 4,
+    "development": 8,
+    "test": 12
+  },
+  "splits": {
+    "train": [
+      "eval_train_steady_correct",
+      "eval_train_steady_incorrect",
+      "eval_train_alternating",
+      "eval_train_short_mixed"
+    ],
+    "development": [
+      "eval_development_empty",
+      "eval_development_target",
+      "eval_development_upstream",
+      "eval_development_mixed",
+      "eval_development_early",
+      "eval_development_unknown_hints",
+      "eval_development_repeated_item",
+      "eval_development_primary_only"
+    ],
+    "test": [
+      "eval_test_target_four_prereq",
+      "eval_test_upstream_four",
+      "eval_test_unassessed_parent",
+      "eval_test_unknown_hint_failures",
+      "eval_test_hint_then_retry",
+      "eval_test_balanced_six",
+      "eval_test_ready_slip",
+      "eval_test_weak_recent_recovery",
+      "eval_test_fresh_loop",
+      "eval_test_exhausted_hinted",
+      "eval_test_lesson_only",
+      "eval_test_no_failure"
+    ]
+  },
+  "source_hash": "31ad1a2fac160d1679fa41879af40e583b3476a84990d69a97dd9f215d1cd2ba",
+  "catalog_hash": "1abdd8f4eac51800e9cf2605241bd0427ae6785c3dd6f84a9a81a4c4d5b87f70",
+  "model_config_hash": "068b6fc04154f53d48948ad295edd8dd031890e57059cdeb1ecedb5b7127a6fd",
+  "test_exposure": "Public and visible during engineering review; never describe as blind or evidence of real-world generalization. Any output-guided tuning requires a newly versioned independent final audit.",
+  "results": "not_run"
+}

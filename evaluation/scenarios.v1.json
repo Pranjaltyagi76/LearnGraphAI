@@ -1,0 +1,2186 @@
+{
+  "scenario_version": "scenarios-v1",
+  "status": "frozen_public_synthetic_audit_not_blind",
+  "label_independence": "No production diagnosis/recommendation implementation or outputs were used to create annotations. Scenario assumptions are not causal ground truth.",
+  "item_reuse": "Same twelve reviewed questions across disjoint synthetic learner IDs; no item-held-out or unseen-family claim.",
+  "cases": [
+    {
+      "id": "train_steady_correct",
+      "learner_id": "eval_train_steady_correct",
+      "scenario_group": "train_steady_correct",
+      "split": "train",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "718f2cb5-5454-56fc-af05-d644262c396a",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "ce852467-c276-59b5-b20f-a9feb6b4af5d",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "c835a0e3-0b8f-5548-8be6-80df9f28dd10",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "ce852467-c276-59b5-b20f-a9feb6b4af5d",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "b29ca193-addc-54a7-a759-e64678279f58",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "ce852467-c276-59b5-b20f-a9feb6b4af5d",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "b4da7089-7129-5c25-ab78-707cf92568d0",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "ce852467-c276-59b5-b20f-a9feb6b4af5d",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "979cfe85-b8a5-548f-a034-3a263ee3068f",
+          "sequence_number": 5,
+          "activity_id": "function_calls_practice_04",
+          "activity_version": 2,
+          "assessment_run_id": "ce852467-c276-59b5-b20f-a9feb6b4af5d",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "b6a2dae5-1b59-5c9a-b368-9d5e51a845a4",
+          "sequence_number": 6,
+          "activity_id": "function_calls_reassessment_01",
+          "activity_version": 2,
+          "assessment_run_id": "ce852467-c276-59b5-b20f-a9feb6b4af5d",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "no_failed_trigger",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Training-only global-rate observations.",
+        "evaluation_group": "no_trigger_control"
+      }
+    },
+    {
+      "id": "train_steady_incorrect",
+      "learner_id": "eval_train_steady_incorrect",
+      "scenario_group": "train_steady_incorrect",
+      "split": "train",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "f6bf0147-1f43-514f-afb8-b7342e855434",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "9e8db7fc-d223-562d-b232-b8c373b817cc",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "52d4aaea-f9f9-5702-a4af-72a7994ff151",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "9e8db7fc-d223-562d-b232-b8c373b817cc",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "04987f11-151a-5ae2-ab30-1343f23795c2",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "9e8db7fc-d223-562d-b232-b8c373b817cc",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "6ef3117e-a2c4-53ec-a489-6c27eee9cb57",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "9e8db7fc-d223-562d-b232-b8c373b817cc",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "40d8daf2-d108-5b89-b244-f75652c9d672",
+          "sequence_number": 5,
+          "activity_id": "function_calls_practice_04",
+          "activity_version": 2,
+          "assessment_run_id": "9e8db7fc-d223-562d-b232-b8c373b817cc",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "1423afcc-dd97-50f9-8f0e-57df4b9f98ca",
+          "sequence_number": 6,
+          "activity_id": "function_calls_reassessment_01",
+          "activity_version": 2,
+          "assessment_run_id": "9e8db7fc-d223-562d-b232-b8c373b817cc",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [
+          "function_calls"
+        ],
+        "expected_behavior": "supported_gap",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Training-only failures; no parameters fit yet.",
+        "evaluation_group": "labeled_gap"
+      }
+    },
+    {
+      "id": "train_alternating",
+      "learner_id": "eval_train_alternating",
+      "scenario_group": "train_alternating",
+      "split": "train",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "566e9929-f164-581c-9129-6edf74aab4a7",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "96fa65f1-f31f-526b-bfd8-aeb0ffc8be7a",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "ec476a95-48d3-5bfe-86f7-f5dcffc4c4ea",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "96fa65f1-f31f-526b-bfd8-aeb0ffc8be7a",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "12bedc78-c3c9-5c39-94ac-ab13399a8838",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "96fa65f1-f31f-526b-bfd8-aeb0ffc8be7a",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "c732d8ac-b675-57ac-9997-d82d43714161",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "96fa65f1-f31f-526b-bfd8-aeb0ffc8be7a",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "644437af-685d-5028-a536-ae22a85370ba",
+          "sequence_number": 5,
+          "activity_id": "function_calls_practice_04",
+          "activity_version": 2,
+          "assessment_run_id": "96fa65f1-f31f-526b-bfd8-aeb0ffc8be7a",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "ca019bc8-eed4-554b-b349-500b470fad61",
+          "sequence_number": 6,
+          "activity_id": "function_calls_reassessment_01",
+          "activity_version": 2,
+          "assessment_run_id": "96fa65f1-f31f-526b-bfd8-aeb0ffc8be7a",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "ambiguous",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Training contains both response classes.",
+        "evaluation_group": "no_gap_control"
+      }
+    },
+    {
+      "id": "train_short_mixed",
+      "learner_id": "eval_train_short_mixed",
+      "scenario_group": "train_short_mixed",
+      "split": "train",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "16f25323-ec3d-5160-b840-5afd9b56ac94",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "2a1e2efe-083a-572e-bcff-2ed07736d6fe",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "a9111aed-c254-5c56-be37-742ebce1cf06",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "2a1e2efe-083a-572e-bcff-2ed07736d6fe",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "1eaeaa2a-9108-5506-b23d-b549f7b97a85",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "2a1e2efe-083a-572e-bcff-2ed07736d6fe",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "d367777a-b421-5103-bf88-a4f19b5716fd",
+          "sequence_number": 4,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "2a1e2efe-083a-572e-bcff-2ed07736d6fe",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "35b84a8d-60d2-5045-adcb-7e65fc793d4f",
+          "sequence_number": 5,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "2a1e2efe-083a-572e-bcff-2ed07736d6fe",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Only two target observations.",
+        "evaluation_group": "missing_evidence"
+      }
+    },
+    {
+      "id": "development_empty",
+      "learner_id": "eval_development_empty",
+      "scenario_group": "development_empty",
+      "split": "development",
+      "focus_concept_id": "base_cases",
+      "events": [],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "no_failed_trigger",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "No evidence; request assessment.",
+        "evaluation_group": "no_trigger_control"
+      }
+    },
+    {
+      "id": "development_target",
+      "learner_id": "eval_development_target",
+      "scenario_group": "development_target",
+      "split": "development",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "bb592e1f-dfae-5d2a-9c01-87f8fb32a4b0",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "085a90b8-7ee3-5c15-b805-159e948b60db",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "7ecb516f-dd24-5521-b060-792112ec2b3f",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "085a90b8-7ee3-5c15-b805-159e948b60db",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "978931b4-13fc-5cc6-aaf1-ea01640c02e4",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "085a90b8-7ee3-5c15-b805-159e948b60db",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "9bcd4d10-b10a-5e94-9f42-ac4c08d53041",
+          "sequence_number": 4,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "085a90b8-7ee3-5c15-b805-159e948b60db",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "2d115c92-f0f0-5799-86a1-f4d585bf9524",
+          "sequence_number": 5,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "085a90b8-7ee3-5c15-b805-159e948b60db",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "99689f1e-aa3b-5d3e-8243-98fd9b0debbd",
+          "sequence_number": 6,
+          "activity_id": "base_cases_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "085a90b8-7ee3-5c15-b805-159e948b60db",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [
+          "base_cases"
+        ],
+        "expected_behavior": "supported_gap",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Target weakness with independently assessed secure function calls.",
+        "evaluation_group": "labeled_gap"
+      }
+    },
+    {
+      "id": "development_upstream",
+      "learner_id": "eval_development_upstream",
+      "scenario_group": "development_upstream",
+      "split": "development",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "7ffb210f-f4b4-5ac3-86b9-89660eeeca4b",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "3b147b00-6e94-5d0b-91ea-518b7715ee87",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "630625c4-df2b-5204-a8a7-a0133af18744",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "3b147b00-6e94-5d0b-91ea-518b7715ee87",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "16dc984f-1bdc-5a96-a71b-535f4cb3dcf6",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "3b147b00-6e94-5d0b-91ea-518b7715ee87",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "1faefe1c-202b-5f4c-bda7-eba2bfbacb8e",
+          "sequence_number": 4,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "3b147b00-6e94-5d0b-91ea-518b7715ee87",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "ac0740a7-468e-5a9d-b865-04bd1c1193b0",
+          "sequence_number": 5,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "3b147b00-6e94-5d0b-91ea-518b7715ee87",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "f4d4e97a-5557-5068-95e6-e287d885fe2f",
+          "sequence_number": 6,
+          "activity_id": "base_cases_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "3b147b00-6e94-5d0b-91ea-518b7715ee87",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [
+          "function_calls"
+        ],
+        "expected_behavior": "supported_gap",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Mixed target does not itself justify a supported target gap.",
+        "evaluation_group": "labeled_gap"
+      }
+    },
+    {
+      "id": "development_mixed",
+      "learner_id": "eval_development_mixed",
+      "scenario_group": "development_mixed",
+      "split": "development",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "5c38e3c4-9956-53d7-9b3c-f54e4f8fbad1",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "a762df94-1895-571c-8199-4d1be715a60f",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "48ebf848-1ab3-53cd-8d3e-fae64554f60c",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "a762df94-1895-571c-8199-4d1be715a60f",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "c6747201-9ce0-55c6-8295-13813dee9f62",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "a762df94-1895-571c-8199-4d1be715a60f",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "a8348815-f727-58a7-8c32-ec89f09a5f40",
+          "sequence_number": 4,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "a762df94-1895-571c-8199-4d1be715a60f",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "83123a6a-62f9-5fd6-9d3c-e33c3ad9477a",
+          "sequence_number": 5,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "a762df94-1895-571c-8199-4d1be715a60f",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "3f5ddb85-1fb8-578a-9b83-dc3fdb352dc0",
+          "sequence_number": 6,
+          "activity_id": "base_cases_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "a762df94-1895-571c-8199-4d1be715a60f",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "ambiguous",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Ordinary target error with mixed supported observations.",
+        "evaluation_group": "no_gap_control"
+      }
+    },
+    {
+      "id": "development_early",
+      "learner_id": "eval_development_early",
+      "scenario_group": "development_early",
+      "split": "development",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "7828fcec-3c5f-516e-ac9b-90026b453a11",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "5c6ad273-13e5-5d7c-b175-c3817d170bcb",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "e95d4d1e-da33-5909-ad85-dcc5e3f43ba5",
+          "sequence_number": 2,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "5c6ad273-13e5-5d7c-b175-c3817d170bcb",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Neither skill has three distinct observations.",
+        "evaluation_group": "missing_evidence"
+      }
+    },
+    {
+      "id": "development_unknown_hints",
+      "learner_id": "eval_development_unknown_hints",
+      "scenario_group": "development_unknown_hints",
+      "split": "development",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "e406ebf3-e74f-58cc-99f0-a04c2304b14e",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "91cda358-52ac-59be-953c-cea035672fa0",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "b38c9ac1-540f-5dcc-87c9-8629cf3b62c9",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "91cda358-52ac-59be-953c-cea035672fa0",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "0245be29-7815-5623-80c3-246718151a30",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "91cda358-52ac-59be-953c-cea035672fa0",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": null
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Missing hints do not mean zero.",
+        "evaluation_group": "missing_evidence"
+      }
+    },
+    {
+      "id": "development_repeated_item",
+      "learner_id": "eval_development_repeated_item",
+      "scenario_group": "development_repeated_item",
+      "split": "development",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "a3786af5-96e9-540b-8477-ae4409d79585",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "8cf32414-a816-5390-9968-bf57f05be28d",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "9f8f09ea-891c-54cf-919e-2bb76ebac3b5",
+          "sequence_number": 2,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "8cf32414-a816-5390-9968-bf57f05be28d",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "a8b4928f-eecc-55da-88cc-dbc74fac8771",
+          "sequence_number": 3,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "8cf32414-a816-5390-9968-bf57f05be28d",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Three submissions to one item yield one observation.",
+        "evaluation_group": "missing_evidence"
+      }
+    },
+    {
+      "id": "development_primary_only",
+      "learner_id": "eval_development_primary_only",
+      "scenario_group": "development_primary_only",
+      "split": "development",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "d6bd6abb-aea6-5027-8d39-f3b657c15363",
+          "sequence_number": 1,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "3dfb54a5-f735-5a0e-aa80-ff141a358e57",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "875ebc0d-5fb4-56ec-9f3e-d8cec4b19573",
+          "sequence_number": 2,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "3dfb54a5-f735-5a0e-aa80-ff141a358e57",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "750360c2-e39c-5aa7-9aff-1e46b4fcd237",
+          "sequence_number": 3,
+          "activity_id": "base_cases_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "3dfb54a5-f735-5a0e-aa80-ff141a358e57",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [
+          "base_cases"
+        ],
+        "expected_behavior": "supported_gap",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "No primary function-call evidence. Secondary tags on three base-case failures must not create a function-call weakness; request that missing evidence separately.",
+        "evaluation_group": "labeled_gap"
+      }
+    },
+    {
+      "id": "test_target_four_prereq",
+      "learner_id": "eval_test_target_four_prereq",
+      "scenario_group": "test_target_four_prereq",
+      "split": "test",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "2e794bee-20d6-5d63-b84b-c397a2835857",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "ccc2f642-fadd-5888-953f-86bbc304f93e",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "0b00eed4-14f3-511e-ba5d-e9698a657b86",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "ccc2f642-fadd-5888-953f-86bbc304f93e",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "b728707b-5574-5f50-944f-22604d90ea83",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "ccc2f642-fadd-5888-953f-86bbc304f93e",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "8e16981b-fb50-58c5-84ec-901c0cb6f3ae",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "ccc2f642-fadd-5888-953f-86bbc304f93e",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "4748eeaa-1f96-55e0-982c-36c5aa6b485f",
+          "sequence_number": 5,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "ccc2f642-fadd-5888-953f-86bbc304f93e",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "d2e3f6f3-a713-578d-84bc-14b04194b6c9",
+          "sequence_number": 6,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "ccc2f642-fadd-5888-953f-86bbc304f93e",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "6dc2a233-f98f-5436-967a-763c2ae7080a",
+          "sequence_number": 7,
+          "activity_id": "base_cases_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "ccc2f642-fadd-5888-953f-86bbc304f93e",
+          "occurred_at": "2026-11-19T01:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [
+          "base_cases"
+        ],
+        "expected_behavior": "supported_gap",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Prerequisite support differs from the public target demo.",
+        "evaluation_group": "labeled_gap"
+      }
+    },
+    {
+      "id": "test_upstream_four",
+      "learner_id": "eval_test_upstream_four",
+      "scenario_group": "test_upstream_four",
+      "split": "test",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "9ceb2f85-960f-5d31-b723-0e718b384243",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "5284c153-74d1-523b-95e0-e550333d260d",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "337591a7-9db1-5016-ba08-b1121c4eda9e",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "5284c153-74d1-523b-95e0-e550333d260d",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "29bba7ec-08bf-5f55-bc05-e614ba046012",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "5284c153-74d1-523b-95e0-e550333d260d",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "dc2833b9-9b03-52ac-82e6-db73ae3a3a53",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "5284c153-74d1-523b-95e0-e550333d260d",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "8c2f056f-0726-5e80-b8b9-3229776d72b1",
+          "sequence_number": 5,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "5284c153-74d1-523b-95e0-e550333d260d",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "84832b58-aee6-5997-a6e3-83d99a081ae6",
+          "sequence_number": 6,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "5284c153-74d1-523b-95e0-e550333d260d",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "870e90b9-171e-5dce-8b66-b86e3f7d9599",
+          "sequence_number": 7,
+          "activity_id": "base_cases_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "5284c153-74d1-523b-95e0-e550333d260d",
+          "occurred_at": "2026-11-19T01:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [
+          "function_calls"
+        ],
+        "expected_behavior": "supported_gap",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Root evidence independent of mixed target.",
+        "evaluation_group": "labeled_gap"
+      }
+    },
+    {
+      "id": "test_unassessed_parent",
+      "learner_id": "eval_test_unassessed_parent",
+      "scenario_group": "test_unassessed_parent",
+      "split": "test",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "4ab8cf5e-c7c0-5f2a-9c41-6e53d79b8b2f",
+          "sequence_number": 1,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "ec601d58-9fab-5b0b-a366-3ac7e2dab247",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "An unassessed prerequisite is not a weakness label.",
+        "evaluation_group": "missing_evidence"
+      }
+    },
+    {
+      "id": "test_unknown_hint_failures",
+      "learner_id": "eval_test_unknown_hint_failures",
+      "scenario_group": "test_unknown_hint_failures",
+      "split": "test",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "7757da16-54b3-5041-94ab-5d42acb6b5c0",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "8583e859-6514-55be-a2eb-064b42c5b092",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "3bcffb64-df18-55e0-8714-237952f75f82",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "8583e859-6514-55be-a2eb-064b42c5b092",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "d7070e8c-aa9c-5083-a05b-bd40361a66da",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "8583e859-6514-55be-a2eb-064b42c5b092",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "6646ff2e-e592-5faf-9471-62862366ad3c",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "8583e859-6514-55be-a2eb-064b42c5b092",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": null
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "All four first responses have unknown hints.",
+        "evaluation_group": "missing_evidence"
+      }
+    },
+    {
+      "id": "test_hint_then_retry",
+      "learner_id": "eval_test_hint_then_retry",
+      "scenario_group": "test_hint_then_retry",
+      "split": "test",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "8e531e76-d153-5e55-8f3f-a22ed531a59c",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "6efdbba1-e559-5c97-89f8-13c758f4ab68",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 1
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "fb842e5c-0911-558a-b886-03108f4a0fee",
+          "sequence_number": 2,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "6efdbba1-e559-5c97-89f8-13c758f4ab68",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "d4c0dad4-3d46-57dd-9b9e-fc2140282ac9",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "6efdbba1-e559-5c97-89f8-13c758f4ab68",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "71c27b4b-7cbf-550d-940f-592eeebf0b23",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "6efdbba1-e559-5c97-89f8-13c758f4ab68",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "The unhinted retry cannot rescue the first item; two other observations remain early.",
+        "evaluation_group": "missing_evidence"
+      }
+    },
+    {
+      "id": "test_balanced_six",
+      "learner_id": "eval_test_balanced_six",
+      "scenario_group": "test_balanced_six",
+      "split": "test",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "1b8ba587-cc95-5444-af5f-68d85f31b689",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "1a366f1c-c0e5-592f-b003-20bb43f0c027",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "a0c35e40-7e36-56ca-b71e-7422243ed55e",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "1a366f1c-c0e5-592f-b003-20bb43f0c027",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "2cd12c21-c759-563c-87f4-6a5bb2ab4de1",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "1a366f1c-c0e5-592f-b003-20bb43f0c027",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "774da23a-c243-58fc-877c-c07a44f366e0",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "1a366f1c-c0e5-592f-b003-20bb43f0c027",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "b1fc9f97-b80a-5954-bc6c-b3687b4db457",
+          "sequence_number": 5,
+          "activity_id": "function_calls_practice_04",
+          "activity_version": 2,
+          "assessment_run_id": "1a366f1c-c0e5-592f-b003-20bb43f0c027",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "ce3cb024-b888-53cb-aa97-b58dda835a31",
+          "sequence_number": 6,
+          "activity_id": "function_calls_reassessment_01",
+          "activity_version": 2,
+          "assessment_run_id": "1a366f1c-c0e5-592f-b003-20bb43f0c027",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "ambiguous",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Mixed evidence must not be relabeled weak merely because the last answer failed.",
+        "evaluation_group": "no_gap_control"
+      }
+    },
+    {
+      "id": "test_ready_slip",
+      "learner_id": "eval_test_ready_slip",
+      "scenario_group": "test_ready_slip",
+      "split": "test",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "3e6b0a3c-c1cb-5cae-a78d-80aa2b0102fb",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "16fabe81-3bc9-5a79-8b55-3f73f13bb6e1",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "a2acce9a-3774-5823-a497-3582779d0710",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "16fabe81-3bc9-5a79-8b55-3f73f13bb6e1",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "251e4843-7a03-5016-b990-53711fbdac6b",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "16fabe81-3bc9-5a79-8b55-3f73f13bb6e1",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "e3067aad-d57c-5dc8-90fc-a60257166088",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "16fabe81-3bc9-5a79-8b55-3f73f13bb6e1",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "f1038394-31ba-598b-b09e-bb91c9f8f387",
+          "sequence_number": 5,
+          "activity_id": "function_calls_practice_04",
+          "activity_version": 2,
+          "assessment_run_id": "16fabe81-3bc9-5a79-8b55-3f73f13bb6e1",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "128290fa-5f96-50e1-bb3d-880208fb56b1",
+          "sequence_number": 6,
+          "activity_id": "function_calls_reassessment_01",
+          "activity_version": 2,
+          "assessment_run_id": "16fabe81-3bc9-5a79-8b55-3f73f13bb6e1",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "no_supported_gap",
+        "expected_plan_state": "catalog_exhausted",
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "A single slip after five successes is not supported weakness.",
+        "evaluation_group": "no_gap_control"
+      }
+    },
+    {
+      "id": "test_weak_recent_recovery",
+      "learner_id": "eval_test_weak_recent_recovery",
+      "scenario_group": "test_weak_recent_recovery",
+      "split": "test",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "09320010-4571-563c-ba4c-caf25cfdeed5",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "1e1dc5eb-0189-5dad-ba4c-e17807c88260",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "a9078f38-7321-50d8-b66e-4adb97e8bf1e",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "1e1dc5eb-0189-5dad-ba4c-e17807c88260",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "69f12bbc-d518-5422-90de-db4e282c0d76",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "1e1dc5eb-0189-5dad-ba4c-e17807c88260",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "376dcb16-be97-5659-8b63-34097b377b53",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "1e1dc5eb-0189-5dad-ba4c-e17807c88260",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "119b520a-539c-5932-af8e-e0ff8e3c4d88",
+          "sequence_number": 5,
+          "activity_id": "function_calls_practice_04",
+          "activity_version": 2,
+          "assessment_run_id": "1e1dc5eb-0189-5dad-ba4c-e17807c88260",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "df06f428-1a2d-52b7-b45a-d76eb1d5ee8b",
+          "sequence_number": 6,
+          "activity_id": "function_calls_reassessment_01",
+          "activity_version": 2,
+          "assessment_run_id": "1e1dc5eb-0189-5dad-ba4c-e17807c88260",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "ambiguous",
+        "expected_plan_state": "catalog_exhausted",
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Weak cumulative estimate but only one failure in the latest three eligible responses.",
+        "evaluation_group": "no_gap_control"
+      }
+    },
+    {
+      "id": "test_fresh_loop",
+      "learner_id": "eval_test_fresh_loop",
+      "scenario_group": "test_fresh_loop",
+      "split": "test",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "762390ae-078e-5a2e-95ee-503d5648b8f3",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "989144a3-1d18-510b-9ed8-e709121b50d2",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "3d106202-0e3f-56a8-aea4-b35d101b580f",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "989144a3-1d18-510b-9ed8-e709121b50d2",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "1b615952-17bd-5531-a9b9-ebfc9c63f29f",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "989144a3-1d18-510b-9ed8-e709121b50d2",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "aa6abc72-0839-5220-9945-eb6f32cfc3ea",
+          "sequence_number": 4,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "989144a3-1d18-510b-9ed8-e709121b50d2",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "4875f927-d654-5a3c-8b60-28b3f77f6d90",
+          "sequence_number": 5,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "989144a3-1d18-510b-9ed8-e709121b50d2",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "54b87c1c-28ad-5ca1-9916-9daba688e425",
+          "sequence_number": 6,
+          "activity_id": "base_cases_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "989144a3-1d18-510b-9ed8-e709121b50d2",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "807ee1f9-80ac-5df5-b0a2-ba377fb95205",
+          "sequence_number": 7,
+          "activity_id": "base_cases_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "989144a3-1d18-510b-9ed8-e709121b50d2",
+          "occurred_at": "2026-11-19T01:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "5bac5f42-2148-5504-8ab1-620dacafa097",
+          "sequence_number": 8,
+          "activity_id": "base_cases_practice_04",
+          "activity_version": 2,
+          "assessment_run_id": "989144a3-1d18-510b-9ed8-e709121b50d2",
+          "occurred_at": "2026-11-19T01:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "46f17266-b3af-5681-8140-1baa42b0def7",
+          "sequence_number": 9,
+          "activity_id": "base_cases_reassessment_01",
+          "activity_version": 2,
+          "assessment_run_id": "989144a3-1d18-510b-9ed8-e709121b50d2",
+          "occurred_at": "2026-11-19T01:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "ambiguous",
+        "expected_plan_state": "catalog_exhausted",
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Two fresh practices and a distinct reassessment yield developing evidence, not readiness.",
+        "evaluation_group": "no_gap_control"
+      }
+    },
+    {
+      "id": "test_exhausted_hinted",
+      "learner_id": "eval_test_exhausted_hinted",
+      "scenario_group": "test_exhausted_hinted",
+      "split": "test",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "2a52b3e9-7033-5e0d-a86c-f47eb81c1a42",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "4c98a045-4ef6-592b-9118-1ea116c528d5",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 2
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "69753d85-0dd6-5925-a3ea-05b5ce41b673",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "4c98a045-4ef6-592b-9118-1ea116c528d5",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 2
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "6733d509-3e02-510f-bd2b-6850c4472f95",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "4c98a045-4ef6-592b-9118-1ea116c528d5",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 2
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "860c263d-9e97-5729-9d2e-def3749bf0fa",
+          "sequence_number": 4,
+          "activity_id": "function_calls_practice_03",
+          "activity_version": 2,
+          "assessment_run_id": "4c98a045-4ef6-592b-9118-1ea116c528d5",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 2
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "ddab4708-5332-5f02-b49d-791c0c29f6ca",
+          "sequence_number": 5,
+          "activity_id": "function_calls_practice_04",
+          "activity_version": 2,
+          "assessment_run_id": "4c98a045-4ef6-592b-9118-1ea116c528d5",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 2
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "daba492e-b643-56d7-8683-44f10b822009",
+          "sequence_number": 6,
+          "activity_id": "function_calls_reassessment_01",
+          "activity_version": 2,
+          "assessment_run_id": "4c98a045-4ef6-592b-9118-1ea116c528d5",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 2
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "insufficient_evidence",
+        "expected_plan_state": "catalog_exhausted",
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "All first-response slots consumed with hints; do not manufacture fresh evidence.",
+        "evaluation_group": "missing_evidence"
+      }
+    },
+    {
+      "id": "test_lesson_only",
+      "learner_id": "eval_test_lesson_only",
+      "scenario_group": "test_lesson_only",
+      "split": "test",
+      "focus_concept_id": "function_calls",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "lesson_completed",
+          "event_id": "b50a2958-6488-5fdb-965a-695865af7372",
+          "sequence_number": 1,
+          "activity_id": "function_calls_lesson_01",
+          "activity_version": 1,
+          "assessment_run_id": "aa986ce9-5436-5c49-b091-9e11289b2895",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "no_failed_trigger",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Lesson completion creates zero correctness observations.",
+        "evaluation_group": "no_trigger_control"
+      }
+    },
+    {
+      "id": "test_no_failure",
+      "learner_id": "eval_test_no_failure",
+      "scenario_group": "test_no_failure",
+      "split": "test",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "36ba3fe0-9d31-58ac-9bee-a4b041661ead",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "197b3ee5-dcd8-543e-a52f-a19c6e2815a3",
+          "occurred_at": "2026-11-19T00:10:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "8a80ac3a-25db-54ad-8820-be691bbde2be",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "197b3ee5-dcd8-543e-a52f-a19c6e2815a3",
+          "occurred_at": "2026-11-19T00:20:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "98778856-42da-5624-ad53-50dac84ccabd",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "197b3ee5-dcd8-543e-a52f-a19c6e2815a3",
+          "occurred_at": "2026-11-19T00:30:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "93de400e-250f-58d5-a4b2-f7125d727ce7",
+          "sequence_number": 4,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "197b3ee5-dcd8-543e-a52f-a19c6e2815a3",
+          "occurred_at": "2026-11-19T00:40:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "066b399a-8375-58c1-8b06-bad0d692e846",
+          "sequence_number": 5,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "197b3ee5-dcd8-543e-a52f-a19c6e2815a3",
+          "occurred_at": "2026-11-19T00:50:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "d6455938-8ea4-5a6a-a7f3-bcde2bcf86e1",
+          "sequence_number": 6,
+          "activity_id": "base_cases_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "197b3ee5-dcd8-543e-a52f-a19c6e2815a3",
+          "occurred_at": "2026-11-19T01:00:00.000Z",
+          "time_spent_seconds": null,
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0
+        }
+      ],
+      "annotation": {
+        "acceptable_gap_concept_ids": [],
+        "expected_behavior": "no_failed_trigger",
+        "expected_plan_state": null,
+        "source": "hand-authored scenario assumption before production diagnosis exists",
+        "notes": "Do not invent a failed trigger when both assessed concepts are ready.",
+        "evaluation_group": "no_trigger_control"
+      }
+    }
+  ],
+  "future_catalog_blueprints": [
+    {
+      "id": "equal_rank_branches",
+      "requires": "at least three distinct questions each for call_stack and base_cases",
+      "setup": "Failed recursive_tracing; equally weak supported call_stack/base_cases at distance one.",
+      "expected": "Equal exact factors sort by concept ID; at most three candidates."
+    },
+    {
+      "id": "multiple_shortest_paths",
+      "requires": "authored recursive_tracing/recursive_progress responses",
+      "setup": "One ancestor reaches target along two equal-length paths.",
+      "expected": "Shortest distance, then lexicographic complete path; actual directed edges only."
+    },
+    {
+      "id": "depth_boundary",
+      "requires": "separately versioned fixture-only DAG with a shortest ancestor path of four edges and matching authored fixture activities",
+      "setup": "Evidence at distances three and four from memoization.",
+      "expected": "Only depth at most three enters candidate universe."
+    },
+    {
+      "id": "tag_perturbation",
+      "requires": "separately versioned fixture-only catalog variant",
+      "setup": "Change contextual tags independently while primary tags and responses remain fixed.",
+      "expected": "No secondary evidence update; disclose variant and grading changes."
+    },
+    {
+      "id": "graph_perturbation",
+      "requires": "separately versioned DAG variant",
+      "setup": "Remove/add an instructional prerequisite without using diagnosis output as a label.",
+      "expected": "Paths/ranking reflect only the selected graph; publish per-variant results."
+    },
+    {
+      "id": "payload_boundaries",
+      "requires": "contract ingestion fixture suite, not training learners",
+      "setup": "200/201 events, oversized UTF-8/chunked body, invalid references and conflicting UUIDs.",
+      "expected": "Reject with frozen 413/409/422 mapping; no silent truncation."
+    }
+  ]
+}
