@@ -1,0 +1,97 @@
+{
+  "model_version": "baseline-v1",
+  "status": "frozen_initial_policy_not_empirically_validated",
+  "prior": {
+    "successes": 2,
+    "failures": 2
+  },
+  "evidence": {
+    "supported_minimum": 3,
+    "weak_below": {
+      "numerator": 45,
+      "denominator": 100
+    },
+    "ready_at_least": {
+      "numerator": 65,
+      "denominator": 100
+    },
+    "first_response_only": true,
+    "known_zero_hints_only": true,
+    "primary_concept_only": true,
+    "lesson_observations": 0
+  },
+  "diagnosis": {
+    "maximum_depth": 3,
+    "maximum_candidates": 3,
+    "evidence_strength_saturation": 5,
+    "recent_window": 3,
+    "minimum_recent_failures": 2,
+    "recurrence_saturation": 2,
+    "tie_break": [
+      "score_desc_exact_rational",
+      "distance_asc",
+      "concept_id_asc"
+    ],
+    "shortest_path_tie_break": "lexicographic_full_path"
+  },
+  "plan": {
+    "maximum_items": 5,
+    "maximum_gaps_to_address": 3,
+    "desired_difficulty_unknown": {
+      "numerator": 1,
+      "denominator": 5
+    },
+    "difficulty_clip_min": {
+      "numerator": 1,
+      "denominator": 5
+    },
+    "difficulty_clip_max": {
+      "numerator": 4,
+      "denominator": 5
+    },
+    "weights": {
+      "gap_match": {
+        "numerator": 5,
+        "denominator": 10
+      },
+      "prerequisite_coverage": {
+        "numerator": 2,
+        "denominator": 10
+      },
+      "difficulty_fit": {
+        "numerator": 2,
+        "denominator": 10
+      },
+      "novelty": {
+        "numerator": 1,
+        "denominator": 10
+      },
+      "recent_repeat": {
+        "numerator": -5,
+        "denominator": 10
+      }
+    },
+    "recent_repeat_window": 5,
+    "recompute_after_each_answer": true,
+    "lesson_completion_unlocks_readiness": false,
+    "reassessment_requires_own_skill_ready": false
+  },
+  "limits": {
+    "request_bytes": 262144,
+    "visitor_events_raw": 200,
+    "seed_events": 100,
+    "api_seconds": 10,
+    "future_skew_seconds": 300,
+    "client_deadline_seconds": 15,
+    "automatic_post_retries": 0
+  },
+  "prediction": {
+    "log_loss_clip_epsilon": "1e-15",
+    "global_rate_prior_successes": 2,
+    "global_rate_prior_failures": 2,
+    "accuracy_threshold": {
+      "numerator": 1,
+      "denominator": 2
+    }
+  }
+}

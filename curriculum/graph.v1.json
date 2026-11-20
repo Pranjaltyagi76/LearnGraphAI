@@ -1,0 +1,226 @@
+{
+  "graph_version": "graph-v1",
+  "status": "reviewed_draft",
+  "reviewed_on": "2026-11-20",
+  "review_method": "Engineering content review; no educator or psychometric validation claimed.",
+  "edge_direction": "prerequisite_to_dependent",
+  "scope": "Introductory Python recursion and DP instructional track; not universal or causal dependencies.",
+  "entry_assumptions": [
+    "basic Python variables, conditionals, loops, list indexing, and integer arithmetic",
+    "functions and recursive reasoning are assessed, not assumed secure",
+    "problem-specific mathematical boundary definitions are stated in each question",
+    "topic groups are navigation metadata, never prerequisite edges"
+  ],
+  "concepts": [
+    {
+      "id": "function_calls",
+      "definition": "Follow arguments, return values, and execution across function calls.",
+      "group": "recursion",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "call_stack",
+      "definition": "Track active calls and how returns unwind them.",
+      "group": "recursion",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "base_cases",
+      "definition": "Identify stopping conditions and boundary behavior in recursion.",
+      "group": "recursion",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "recursive_progress",
+      "definition": "Verify that recursive calls move toward a stopping condition.",
+      "group": "recursion",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "recursive_tracing",
+      "definition": "Trace a recursive computation using calls, progress, and base cases.",
+      "group": "recursion",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "recurrence_relations",
+      "definition": "Express a problem in terms of smaller instances and boundary conditions.",
+      "group": "dynamic_programming",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "overlapping_subproblems",
+      "definition": "Recognize repeated equivalent subproblems.",
+      "group": "dynamic_programming",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "state_definition",
+      "definition": "Define the information needed to identify a subproblem.",
+      "group": "dynamic_programming",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "state_transitions",
+      "definition": "Relate a state to the states used to compute it.",
+      "group": "dynamic_programming",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "dp_base_cases",
+      "definition": "Initialize valid boundary states in a DP formulation.",
+      "group": "dynamic_programming",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "memoization",
+      "definition": "Cache results using a correct state key in top-down evaluation.",
+      "group": "dynamic_programming",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "id": "tabulation",
+      "definition": "Evaluate DP states in an order that makes dependencies available.",
+      "group": "dynamic_programming",
+      "review_status": "reviewed_for_track"
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite": "function_calls",
+      "dependent": "call_stack",
+      "type": "prerequisite",
+      "rationale": "Active frames are meaningful after arguments and returns are understood.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "function_calls",
+      "dependent": "base_cases",
+      "type": "prerequisite",
+      "rationale": "A stopping branch returns a result to its caller.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "base_cases",
+      "dependent": "recursive_progress",
+      "type": "prerequisite",
+      "rationale": "Progress is measured against the stopping condition.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "call_stack",
+      "dependent": "recursive_tracing",
+      "type": "prerequisite",
+      "rationale": "Tracing includes outstanding calls and return destinations.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "base_cases",
+      "dependent": "recursive_tracing",
+      "type": "prerequisite",
+      "rationale": "Tracing must identify where expansion stops.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "recursive_progress",
+      "dependent": "recursive_tracing",
+      "type": "prerequisite",
+      "rationale": "Tracing must follow how each input gets smaller.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "recursive_tracing",
+      "dependent": "overlapping_subproblems",
+      "type": "prerequisite",
+      "rationale": "This track introduces repeated subproblems using a recursive call tree. This edge is scoped to that presentation.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "state_definition",
+      "dependent": "recurrence_relations",
+      "type": "prerequisite",
+      "rationale": "A recurrence must identify what quantity each state denotes. No recursion-code skill is required.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "recurrence_relations",
+      "dependent": "state_transitions",
+      "type": "prerequisite",
+      "rationale": "Transitions implement the relation among already defined states.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "recurrence_relations",
+      "dependent": "dp_base_cases",
+      "type": "prerequisite",
+      "rationale": "Boundary values close the recurrence where dependencies stop.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "state_definition",
+      "dependent": "dp_base_cases",
+      "type": "prerequisite",
+      "rationale": "Boundary states must refer to the same defined state space.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "overlapping_subproblems",
+      "dependent": "memoization",
+      "type": "prerequisite",
+      "rationale": "The cache is motivated by repeated equivalent states.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "recursive_tracing",
+      "dependent": "memoization",
+      "type": "prerequisite",
+      "rationale": "Top-down caching in this track preserves recursive control flow.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "state_transitions",
+      "dependent": "memoization",
+      "type": "prerequisite",
+      "rationale": "A cached state still needs the correct dependency computation.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "dp_base_cases",
+      "dependent": "memoization",
+      "type": "prerequisite",
+      "rationale": "Top-down recurrence evaluation needs correct boundary values.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "state_transitions",
+      "dependent": "tabulation",
+      "type": "prerequisite",
+      "rationale": "The iteration order must satisfy state dependencies.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    },
+    {
+      "prerequisite": "dp_base_cases",
+      "dependent": "tabulation",
+      "type": "prerequisite",
+      "rationale": "Bottom-up computation begins with valid boundary states.",
+      "source": "original instructional design",
+      "review_status": "reviewed_for_track"
+    }
+  ]
+}

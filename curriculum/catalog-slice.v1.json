@@ -1,0 +1,545 @@
+{
+  "catalog_version": "catalog-slice-v1",
+  "status": "reviewed_draft",
+  "target_question_count": 72,
+  "covered_concept_ids": [
+    "function_calls",
+    "base_cases"
+  ],
+  "question_count": 12,
+  "lesson_count": 2,
+  "activities": [
+    {
+      "id": "function_calls_diagnostic_01",
+      "version": 2,
+      "role": "diagnostic",
+      "difficulty": 0.2,
+      "prompt": "What does this program print?",
+      "code": "def double(n):\n    return n * 2\n\nprint(double(3))",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "6"
+        },
+        {
+          "id": "c",
+          "text": "9"
+        },
+        {
+          "id": "d",
+          "text": "Nothing"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The argument 3 becomes n; double returns 6, which print displays.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_practice_01",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "Which value is returned?",
+      "code": "def add_one(n):\n    return n + 1\n\nadd_one(4)",
+      "options": [
+        {
+          "id": "a",
+          "text": "4"
+        },
+        {
+          "id": "b",
+          "text": "None"
+        },
+        {
+          "id": "c",
+          "text": "5"
+        },
+        {
+          "id": "d",
+          "text": "1"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The function returns 4 + 1 = 5; returning and printing are different actions.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_practice_02",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "What is printed after the nested calls return?",
+      "code": "def double(n):\n    return n * 2\n\nprint(double(double(2)))",
+      "options": [
+        {
+          "id": "a",
+          "text": "4"
+        },
+        {
+          "id": "b",
+          "text": "6"
+        },
+        {
+          "id": "c",
+          "text": "2"
+        },
+        {
+          "id": "d",
+          "text": "8"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "The inner call returns 4, and the outer call doubles it to 8.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_practice_03",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "In what order does output appear?",
+      "code": "def mark():\n    print(\"A\")\n    return 7\n\nprint(mark())",
+      "options": [
+        {
+          "id": "a",
+          "text": "A, then 7"
+        },
+        {
+          "id": "b",
+          "text": "7, then A"
+        },
+        {
+          "id": "c",
+          "text": "Only A"
+        },
+        {
+          "id": "d",
+          "text": "Only 7"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "mark prints A before it returns 7 to the outer print.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_practice_04",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "What value is assigned to value?",
+      "code": "def show(n):\n    print(n)\n\nvalue = show(3)",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "None"
+        },
+        {
+          "id": "c",
+          "text": "0"
+        },
+        {
+          "id": "d",
+          "text": "An empty string"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "Without an explicit return, a Python function returns None even if it prints output.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_reassessment_01",
+      "version": 2,
+      "role": "reassessment",
+      "difficulty": 0.4,
+      "prompt": "What value is assigned to result? Follow argument positions, not variable names.",
+      "code": "def difference(first, second):\n    return first - second\n\nleft = 8\nright = 3\nresult = difference(right, left)",
+      "options": [
+        {
+          "id": "a",
+          "text": "5"
+        },
+        {
+          "id": "b",
+          "text": "11"
+        },
+        {
+          "id": "c",
+          "text": "-5"
+        },
+        {
+          "id": "d",
+          "text": "None"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The call passes 3 as first and 8 as second, so it returns 3 - 8 = -5.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_diagnostic_01",
+      "version": 2,
+      "role": "diagnostic",
+      "difficulty": 0.2,
+      "prompt": "For nonnegative integer n, which condition represents the empty prefix when summing integers 1 through n?",
+      "code": "def total(n):\n    if CONDITION:\n        return 0\n    return n + total(n - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "n == 0"
+        },
+        {
+          "id": "b",
+          "text": "n > 0"
+        },
+        {
+          "id": "c",
+          "text": "n == -1"
+        },
+        {
+          "id": "d",
+          "text": "n == 2"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "At n == 0, no positive integers remain to add. Returning 0 stops recursion.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_practice_01",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "For nonnegative integer n, what does the stopping branch return when n is 0?",
+      "code": "def count(n):\n    if n == 0:\n        return 0\n    return 1 + count(n - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "0"
+        },
+        {
+          "id": "d",
+          "text": "4"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "At n == 0 the stopping branch immediately returns 0; no recursive call is evaluated.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_practice_02",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "For nonnegative integer n and 0! defined as 1, which value belongs in the stopping branch?",
+      "code": "def factorial(n):\n    if n == 0:\n        return RESULT\n    return n * factorial(n - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "n - 1"
+        },
+        {
+          "id": "d",
+          "text": "None"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The product of no factors is 1; returning 0 would erase every recursive product.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_practice_03",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "For nonnegative integer n, Fibonacci is defined by fib(0) = 0 and fib(1) = 1. Which return value handles both boundary inputs?",
+      "code": "def fib(n):\n    if n <= 1:\n        return RESULT\n    return fib(n - 1) + fib(n - 2)",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "n"
+        },
+        {
+          "id": "d",
+          "text": "n + 1"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "Returning n gives fib(0) = 0 and fib(1) = 1 without another call.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_practice_04",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "items is a list; items[1:] means all elements except the first. Which condition represents the empty-list stopping state?",
+      "code": "def length(items):\n    if CONDITION:\n        return 0\n    return 1 + length(items[1:])",
+      "options": [
+        {
+          "id": "a",
+          "text": "len(items) == 1"
+        },
+        {
+          "id": "b",
+          "text": "len(items) > 0"
+        },
+        {
+          "id": "c",
+          "text": "items is None"
+        },
+        {
+          "id": "d",
+          "text": "len(items) == 0"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "An empty list has length 0 and is the state reached after removing all elements.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_reassessment_01",
+      "version": 2,
+      "role": "reassessment",
+      "difficulty": 0.4,
+      "prompt": "For a nonzero integer base and nonnegative integer exponent, what should power(base, 0) return?",
+      "code": "def power(base, exponent):\n    if exponent == 0:\n        return RESULT\n    return base * power(base, exponent - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "base"
+        },
+        {
+          "id": "b",
+          "text": "0"
+        },
+        {
+          "id": "c",
+          "text": "1"
+        },
+        {
+          "id": "d",
+          "text": "exponent - 1"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "For a nonzero base, exponent zero contributes the multiplicative identity 1 and stops recursion.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_lesson_01",
+      "version": 1,
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "role": "lesson",
+      "active": true,
+      "foundational": true,
+      "difficulty": 0.2,
+      "title": "Arguments and return values",
+      "body": "Match each argument to its parameter position. Evaluate a call before using its returned value. Printing produces output; returning passes a value back to the caller. A Python function without an explicit return produces None.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "kind": "lesson"
+    },
+    {
+      "id": "base_cases_lesson_01",
+      "version": 1,
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "role": "lesson",
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "title": "Stop at a defined boundary",
+      "body": "State the permitted input domain first. Identify the smallest valid state and its defined result. The stopping branch returns directly without a recursive call. Different problems have different boundary values; completing this lesson adds no correctness evidence.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "kind": "lesson"
+    }
+  ]
+}
