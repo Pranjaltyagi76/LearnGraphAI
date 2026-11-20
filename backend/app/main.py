@@ -16,6 +16,7 @@ from starlette.exceptions import HTTPException
 
 from app.config import Settings
 from app.database import Database
+from app.telemetry import emit_request_metrics
 
 MAX_BODY = 256 * 1024
 
@@ -95,11 +96,14 @@ def create_app(settings: Settings | None = None, database=None) -> FastAPI:
         await db.close()
 
     application = FastAPI(title="LearnGraph AI", version="0.1.0", lifespan=lifespan)
+    application.state.request_count = 0
 
     @application.middleware("http")
     async def request_context(request: Request, call_next):
         request.state.request_id = str(uuid4())
         started = time.perf_counter()
+        first = application.state.request_count == 0
+        application.state.request_count += 1
         try:
             async with asyncio.timeout(10):
                 response = await call_next(request)
@@ -119,8 +123,11 @@ def create_app(settings: Settings | None = None, database=None) -> FastAPI:
                 request.state.request_id,
             )
         response.headers["X-Request-ID"] = request.state.request_id
-        response.headers["Server-Timing"] = f"api;dur={(time.perf_counter() - started) * 1000:.2f}"
+        elapsed_ms = (time.perf_counter() - started) * 1000
+        response.headers["Server-Timing"] = f"api;dur={elapsed_ms:.2f}"
         response.headers["Cache-Control"] = "no-store"
+        if config.environment == "production":
+            emit_request_metrics(request.state.request_id, response.status_code, elapsed_ms, first)
         return response
 
     @application.exception_handler(APIError)
