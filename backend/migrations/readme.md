@@ -1,6 +1,6 @@
 # Phase 1 database setup
 
-Run only against the explicitly selected free project, after linking and environment verification. No migration has been applied to Supabase yet.
+Run only against the explicitly selected free project, after account/plan and environment verification. The roadmap records the actual migration and live verification status.
 
 The owner connection must have schema/role/function creation privileges. `001_bootstrap.sql` creates a private `learngraph` schema, immutable versioned release payloads, a NOLOGIN runtime group, and a SECURITY DEFINER quota reservation restricted to that group. Public/anon browser access to this private schema is not required.
 
@@ -12,9 +12,15 @@ Verified command entrypoints, from `backend/` after installing locked dependenci
 uv run python scripts/manage_db.py migrate
 uv run python scripts/manage_db.py seed
 uv run python scripts/manage_db.py verify
+uv run python scripts/provision_runtime.py
+uv run python scripts/verify_runtime.py
 ```
 
 Set `MIGRATION_DATABASE_URL` privately in `backend/.env.local`; do not paste values into Git or public logs. Use the provider-supported session-compatible route for migrations and shared transaction pooler for runtime, with TLS and prepared statements disabled in the client. Runtime and migration secrets have different owners/purposes.
+
+The one-time provisioning helper requires the selected shared session-pooler owner connection on port 5432. It creates a fresh `learngraph_api` login with a ten-connection role limit, grants only the runtime group, and saves the transaction-pooler connection (port 6543) plus a random hash secret in the ignored local environment. It refuses an existing role or runtime URL instead of resetting credentials. Run it only after migrate/seed; never deploy the owner URL. If provisioning fails, inspect the role and private environment before retrying, because a local file and a database commit cannot be updated atomically.
+
+The read-only runtime audit requires TLS and checks effective grants, owner separation, hardened quota-function configuration, and both the stored and recomputed canonical content hash. A working `SELECT` alone does not pass this audit. It prints only boolean checks and exits unsuccessfully if any check fails. CI exercises the audit against the migration owner, a permitted runtime role, and mismatched content. TLS and hosted pooling still require the actual selected Supabase connection.
 
 Seeding refuses changed content under an existing release ID. Publish a new ID and verify the compatible manifest instead of overwriting old content. The current `phase1-v1` payload contains 12 authored questions across two concepts, one synthetic profile, six canonical initial responses, and the proposed full graph; it is not the completed 72-item P0 catalog or the Phase 2 diagnosis engine.
 
