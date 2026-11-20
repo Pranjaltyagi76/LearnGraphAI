@@ -1,0 +1,33 @@
+{
+  "variant_version": "domain-variants-v1",
+  "scope": "fixture_only_structural_robustness_not_curriculum_or_quality_labels",
+  "provenance": "Hand-authored topology and arithmetic expectations, independent of engine output.",
+  "variants": [
+    {
+      "id": "equal_rank_branches_v1",
+      "nodes": ["a", "b", "c", "t"],
+      "edges": [["a", "t"], ["b", "t"], ["c", "t"]],
+      "observations": "Three distinct zero-hint failures per node; cloned question scaffolds are fixture-only.",
+      "expected_candidate_ids": ["t", "a", "b"]
+    },
+    {
+      "id": "depth_and_multiple_paths_v1",
+      "nodes": ["a", "b", "c", "d", "e", "f", "t"],
+      "edges": [["a", "b"], ["b", "c"], ["c", "d"], ["d", "t"], ["e", "c"], ["e", "f"], ["f", "d"]],
+      "expected_paths": {"b": ["b", "c", "d", "t"], "e": ["e", "c", "d", "t"]},
+      "excluded_depth_four": "a"
+    },
+    {
+      "id": "graph_shortcut_v1",
+      "base_variant": "depth_and_multiple_paths_v1",
+      "added_edge": ["e", "t"],
+      "expected_path": ["e", "t"]
+    },
+    {
+      "id": "secondary_tag_change_v1",
+      "source_catalog": "catalog-slice-v1",
+      "operation": "Replace secondary tags with call_stack while preserving primary/grades/events.",
+      "expected": "Identical primary estimates; no evidence for the contextual tag."
+    }
+  ]
+}
