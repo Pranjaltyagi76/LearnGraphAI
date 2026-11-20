@@ -1,0 +1,35 @@
+{
+  "identity": {
+    "artifacts": [
+      {
+        "path": "curriculum/graph.v1.json",
+        "sha256": "3dda665ca9c2b0e9af5a0df1e9c8074932b3bf3314e437d9e6a78e522cc05e83"
+      },
+      {
+        "path": "curriculum/catalog-slice.v1.json",
+        "sha256": "1abdd8f4eac51800e9cf2605241bd0427ae6785c3dd6f84a9a81a4c4d5b87f70"
+      },
+      {
+        "path": "curriculum/model-config.v1.json",
+        "sha256": "068b6fc04154f53d48948ad295edd8dd031890e57059cdeb1ecedb5b7127a6fd"
+      },
+      {
+        "path": "curriculum/profiles.v1.json",
+        "sha256": "f89ae3457681f01c75a2a376d4388c0784c198e066704c60c8de3ad471e108d1"
+      },
+      {
+        "path": "contracts/protocol-v1.schema.json",
+        "sha256": "4aacf8a0eaa2b2aa2bf73d17bf7fd5224f8002ecb449b670ba42393b88a56aef"
+      }
+    ],
+    "catalog_version": "catalog-slice-v1",
+    "contract_version": 1,
+    "graph_version": "graph-v1",
+    "model_version": "baseline-v1",
+    "profiles_version": "demo-profiles-v1",
+    "release_id": "learngraph-review-v1",
+    "scope": "two_concept_review_slice"
+  },
+  "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+  "status": "reviewed_draft_not_published"
+}

@@ -1,0 +1,402 @@
+{
+  "canonicalization": "lg-c14n-v1",
+  "vectors": [
+    {
+      "id": "base",
+      "request": {
+        "contract_version": 1,
+        "versions": {
+          "release_id": "learngraph-review-v1",
+          "graph_version": "graph-v1",
+          "catalog_version": "catalog-slice-v1",
+          "model_version": "baseline-v1",
+          "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+          "seed_id": "demo_base_cases_seed",
+          "seed_version": 1
+        },
+        "profile_id": "demo_base_cases",
+        "sandbox_id": "45db2dd4-73e8-5c97-8cc5-59ed346c941e",
+        "local_revision": 1,
+        "focus_concept_id": "base_cases",
+        "trigger_event_id": null,
+        "events": [
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90fc8dd0-c870-50e8-bdba-07635b10b204",
+            "sequence_number": 1,
+            "activity_id": "base_cases_practice_03",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T07:00:00Z",
+            "response": {
+              "option_id": "c"
+            },
+            "hints_used": 0,
+            "time_spent_seconds": 75
+          }
+        ]
+      },
+      "same_semantics_as": null,
+      "canonical_utf8": "{\"contract_version\":1,\"events\":[{\"activity_id\":\"base_cases_practice_03\",\"activity_version\":2,\"assessment_run_id\":\"574d0bf7-7165-5aa1-a050-83cb23f30374\",\"event_id\":\"90fc8dd0-c870-50e8-bdba-07635b10b204\",\"hints_used\":0,\"kind\":\"response\",\"occurred_at\":\"2026-11-20T07:00:00.000Z\",\"response\":{\"option_id\":\"c\"},\"schema_version\":1,\"sequence_number\":1,\"time_spent_seconds\":75}],\"focus_concept_id\":\"base_cases\",\"profile_id\":\"demo_base_cases\",\"trigger_event_id\":null,\"versions\":{\"catalog_version\":\"catalog-slice-v1\",\"graph_version\":\"graph-v1\",\"model_version\":\"baseline-v1\",\"release_hash\":\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"release_id\":\"learngraph-review-v1\",\"seed_id\":\"demo_base_cases_seed\",\"seed_version\":1}}",
+      "sha256": "ae9a8c78d74d801ef27c929ac312ad173ebfe5202b492e7fec9772f69757ddea",
+      "storage_key": "learngraph:v1:[\"demo_base_cases\",\"learngraph-review-v1\",\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"demo_base_cases_seed\",1,\"graph-v1\",\"catalog-slice-v1\",\"baseline-v1\"]"
+    },
+    {
+      "id": "timezone_uuid",
+      "request": {
+        "contract_version": 1,
+        "versions": {
+          "release_id": "learngraph-review-v1",
+          "graph_version": "graph-v1",
+          "catalog_version": "catalog-slice-v1",
+          "model_version": "baseline-v1",
+          "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+          "seed_id": "demo_base_cases_seed",
+          "seed_version": 1
+        },
+        "profile_id": "demo_base_cases",
+        "sandbox_id": "45db2dd4-73e8-5c97-8cc5-59ed346c941e",
+        "local_revision": 1,
+        "focus_concept_id": "base_cases",
+        "trigger_event_id": null,
+        "events": [
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90FC8DD0-C870-50E8-BDBA-07635B10B204",
+            "sequence_number": 1,
+            "activity_id": "base_cases_practice_03",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T12:30:00.000+05:30",
+            "response": {
+              "option_id": "c"
+            },
+            "hints_used": 0,
+            "time_spent_seconds": 75
+          }
+        ]
+      },
+      "same_semantics_as": "base",
+      "canonical_utf8": "{\"contract_version\":1,\"events\":[{\"activity_id\":\"base_cases_practice_03\",\"activity_version\":2,\"assessment_run_id\":\"574d0bf7-7165-5aa1-a050-83cb23f30374\",\"event_id\":\"90fc8dd0-c870-50e8-bdba-07635b10b204\",\"hints_used\":0,\"kind\":\"response\",\"occurred_at\":\"2026-11-20T07:00:00.000Z\",\"response\":{\"option_id\":\"c\"},\"schema_version\":1,\"sequence_number\":1,\"time_spent_seconds\":75}],\"focus_concept_id\":\"base_cases\",\"profile_id\":\"demo_base_cases\",\"trigger_event_id\":null,\"versions\":{\"catalog_version\":\"catalog-slice-v1\",\"graph_version\":\"graph-v1\",\"model_version\":\"baseline-v1\",\"release_hash\":\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"release_id\":\"learngraph-review-v1\",\"seed_id\":\"demo_base_cases_seed\",\"seed_version\":1}}",
+      "sha256": "ae9a8c78d74d801ef27c929ac312ad173ebfe5202b492e7fec9772f69757ddea",
+      "storage_key": "learngraph:v1:[\"demo_base_cases\",\"learngraph-review-v1\",\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"demo_base_cases_seed\",1,\"graph-v1\",\"catalog-slice-v1\",\"baseline-v1\"]"
+    },
+    {
+      "id": "duplicate_identical",
+      "request": {
+        "contract_version": 1,
+        "versions": {
+          "release_id": "learngraph-review-v1",
+          "graph_version": "graph-v1",
+          "catalog_version": "catalog-slice-v1",
+          "model_version": "baseline-v1",
+          "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+          "seed_id": "demo_base_cases_seed",
+          "seed_version": 1
+        },
+        "profile_id": "demo_base_cases",
+        "sandbox_id": "45db2dd4-73e8-5c97-8cc5-59ed346c941e",
+        "local_revision": 1,
+        "focus_concept_id": "base_cases",
+        "trigger_event_id": null,
+        "events": [
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90fc8dd0-c870-50e8-bdba-07635b10b204",
+            "sequence_number": 1,
+            "activity_id": "base_cases_practice_03",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T07:00:00Z",
+            "response": {
+              "option_id": "c"
+            },
+            "hints_used": 0,
+            "time_spent_seconds": 75
+          },
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90fc8dd0-c870-50e8-bdba-07635b10b204",
+            "sequence_number": 1,
+            "activity_id": "base_cases_practice_03",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T07:00:00Z",
+            "response": {
+              "option_id": "c"
+            },
+            "hints_used": 0,
+            "time_spent_seconds": 75
+          }
+        ]
+      },
+      "same_semantics_as": "base",
+      "canonical_utf8": "{\"contract_version\":1,\"events\":[{\"activity_id\":\"base_cases_practice_03\",\"activity_version\":2,\"assessment_run_id\":\"574d0bf7-7165-5aa1-a050-83cb23f30374\",\"event_id\":\"90fc8dd0-c870-50e8-bdba-07635b10b204\",\"hints_used\":0,\"kind\":\"response\",\"occurred_at\":\"2026-11-20T07:00:00.000Z\",\"response\":{\"option_id\":\"c\"},\"schema_version\":1,\"sequence_number\":1,\"time_spent_seconds\":75}],\"focus_concept_id\":\"base_cases\",\"profile_id\":\"demo_base_cases\",\"trigger_event_id\":null,\"versions\":{\"catalog_version\":\"catalog-slice-v1\",\"graph_version\":\"graph-v1\",\"model_version\":\"baseline-v1\",\"release_hash\":\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"release_id\":\"learngraph-review-v1\",\"seed_id\":\"demo_base_cases_seed\",\"seed_version\":1}}",
+      "sha256": "ae9a8c78d74d801ef27c929ac312ad173ebfe5202b492e7fec9772f69757ddea",
+      "storage_key": "learngraph:v1:[\"demo_base_cases\",\"learngraph-review-v1\",\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"demo_base_cases_seed\",1,\"graph-v1\",\"catalog-slice-v1\",\"baseline-v1\"]"
+    },
+    {
+      "id": "transport_only",
+      "request": {
+        "contract_version": 1,
+        "versions": {
+          "release_id": "learngraph-review-v1",
+          "graph_version": "graph-v1",
+          "catalog_version": "catalog-slice-v1",
+          "model_version": "baseline-v1",
+          "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+          "seed_id": "demo_base_cases_seed",
+          "seed_version": 1
+        },
+        "profile_id": "demo_base_cases",
+        "sandbox_id": "69491e08-b3dd-58d6-9aa8-f18c6234ac46",
+        "local_revision": 42,
+        "focus_concept_id": "base_cases",
+        "trigger_event_id": null,
+        "events": [
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90fc8dd0-c870-50e8-bdba-07635b10b204",
+            "sequence_number": 1,
+            "activity_id": "base_cases_practice_03",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T07:00:00Z",
+            "response": {
+              "option_id": "c"
+            },
+            "hints_used": 0,
+            "time_spent_seconds": 75
+          }
+        ]
+      },
+      "same_semantics_as": "base",
+      "canonical_utf8": "{\"contract_version\":1,\"events\":[{\"activity_id\":\"base_cases_practice_03\",\"activity_version\":2,\"assessment_run_id\":\"574d0bf7-7165-5aa1-a050-83cb23f30374\",\"event_id\":\"90fc8dd0-c870-50e8-bdba-07635b10b204\",\"hints_used\":0,\"kind\":\"response\",\"occurred_at\":\"2026-11-20T07:00:00.000Z\",\"response\":{\"option_id\":\"c\"},\"schema_version\":1,\"sequence_number\":1,\"time_spent_seconds\":75}],\"focus_concept_id\":\"base_cases\",\"profile_id\":\"demo_base_cases\",\"trigger_event_id\":null,\"versions\":{\"catalog_version\":\"catalog-slice-v1\",\"graph_version\":\"graph-v1\",\"model_version\":\"baseline-v1\",\"release_hash\":\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"release_id\":\"learngraph-review-v1\",\"seed_id\":\"demo_base_cases_seed\",\"seed_version\":1}}",
+      "sha256": "ae9a8c78d74d801ef27c929ac312ad173ebfe5202b492e7fec9772f69757ddea",
+      "storage_key": "learngraph:v1:[\"demo_base_cases\",\"learngraph-review-v1\",\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"demo_base_cases_seed\",1,\"graph-v1\",\"catalog-slice-v1\",\"baseline-v1\"]"
+    },
+    {
+      "id": "missing_metadata",
+      "request": {
+        "contract_version": 1,
+        "versions": {
+          "release_id": "learngraph-review-v1",
+          "graph_version": "graph-v1",
+          "catalog_version": "catalog-slice-v1",
+          "model_version": "baseline-v1",
+          "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+          "seed_id": "demo_base_cases_seed",
+          "seed_version": 1
+        },
+        "profile_id": "demo_base_cases",
+        "sandbox_id": "45db2dd4-73e8-5c97-8cc5-59ed346c941e",
+        "local_revision": 1,
+        "focus_concept_id": "base_cases",
+        "trigger_event_id": null,
+        "events": [
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90fc8dd0-c870-50e8-bdba-07635b10b204",
+            "sequence_number": 1,
+            "activity_id": "base_cases_practice_03",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T07:00:00Z",
+            "response": {
+              "option_id": "c"
+            }
+          }
+        ]
+      },
+      "same_semantics_as": null,
+      "canonical_utf8": "{\"contract_version\":1,\"events\":[{\"activity_id\":\"base_cases_practice_03\",\"activity_version\":2,\"assessment_run_id\":\"574d0bf7-7165-5aa1-a050-83cb23f30374\",\"event_id\":\"90fc8dd0-c870-50e8-bdba-07635b10b204\",\"hints_used\":null,\"kind\":\"response\",\"occurred_at\":\"2026-11-20T07:00:00.000Z\",\"response\":{\"option_id\":\"c\"},\"schema_version\":1,\"sequence_number\":1,\"time_spent_seconds\":null}],\"focus_concept_id\":\"base_cases\",\"profile_id\":\"demo_base_cases\",\"trigger_event_id\":null,\"versions\":{\"catalog_version\":\"catalog-slice-v1\",\"graph_version\":\"graph-v1\",\"model_version\":\"baseline-v1\",\"release_hash\":\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"release_id\":\"learngraph-review-v1\",\"seed_id\":\"demo_base_cases_seed\",\"seed_version\":1}}",
+      "sha256": "3e031c482d3ae0674b5cc9e5c6a349aeccd320ece60ff2f0351eab5b5649e86f",
+      "storage_key": "learngraph:v1:[\"demo_base_cases\",\"learngraph-review-v1\",\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"demo_base_cases_seed\",1,\"graph-v1\",\"catalog-slice-v1\",\"baseline-v1\"]"
+    },
+    {
+      "id": "null_metadata",
+      "request": {
+        "contract_version": 1,
+        "versions": {
+          "release_id": "learngraph-review-v1",
+          "graph_version": "graph-v1",
+          "catalog_version": "catalog-slice-v1",
+          "model_version": "baseline-v1",
+          "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+          "seed_id": "demo_base_cases_seed",
+          "seed_version": 1
+        },
+        "profile_id": "demo_base_cases",
+        "sandbox_id": "45db2dd4-73e8-5c97-8cc5-59ed346c941e",
+        "local_revision": 1,
+        "focus_concept_id": "base_cases",
+        "trigger_event_id": null,
+        "events": [
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90fc8dd0-c870-50e8-bdba-07635b10b204",
+            "sequence_number": 1,
+            "activity_id": "base_cases_practice_03",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T07:00:00Z",
+            "response": {
+              "option_id": "c"
+            },
+            "hints_used": null,
+            "time_spent_seconds": null
+          }
+        ]
+      },
+      "same_semantics_as": "missing_metadata",
+      "canonical_utf8": "{\"contract_version\":1,\"events\":[{\"activity_id\":\"base_cases_practice_03\",\"activity_version\":2,\"assessment_run_id\":\"574d0bf7-7165-5aa1-a050-83cb23f30374\",\"event_id\":\"90fc8dd0-c870-50e8-bdba-07635b10b204\",\"hints_used\":null,\"kind\":\"response\",\"occurred_at\":\"2026-11-20T07:00:00.000Z\",\"response\":{\"option_id\":\"c\"},\"schema_version\":1,\"sequence_number\":1,\"time_spent_seconds\":null}],\"focus_concept_id\":\"base_cases\",\"profile_id\":\"demo_base_cases\",\"trigger_event_id\":null,\"versions\":{\"catalog_version\":\"catalog-slice-v1\",\"graph_version\":\"graph-v1\",\"model_version\":\"baseline-v1\",\"release_hash\":\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"release_id\":\"learngraph-review-v1\",\"seed_id\":\"demo_base_cases_seed\",\"seed_version\":1}}",
+      "sha256": "3e031c482d3ae0674b5cc9e5c6a349aeccd320ece60ff2f0351eab5b5649e86f",
+      "storage_key": "learngraph:v1:[\"demo_base_cases\",\"learngraph-review-v1\",\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"demo_base_cases_seed\",1,\"graph-v1\",\"catalog-slice-v1\",\"baseline-v1\"]"
+    },
+    {
+      "id": "changed_option",
+      "request": {
+        "contract_version": 1,
+        "versions": {
+          "release_id": "learngraph-review-v1",
+          "graph_version": "graph-v1",
+          "catalog_version": "catalog-slice-v1",
+          "model_version": "baseline-v1",
+          "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+          "seed_id": "demo_base_cases_seed",
+          "seed_version": 1
+        },
+        "profile_id": "demo_base_cases",
+        "sandbox_id": "45db2dd4-73e8-5c97-8cc5-59ed346c941e",
+        "local_revision": 1,
+        "focus_concept_id": "base_cases",
+        "trigger_event_id": null,
+        "events": [
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90fc8dd0-c870-50e8-bdba-07635b10b204",
+            "sequence_number": 1,
+            "activity_id": "base_cases_practice_03",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T07:00:00Z",
+            "response": {
+              "option_id": "a"
+            },
+            "hints_used": 0,
+            "time_spent_seconds": 75
+          }
+        ]
+      },
+      "same_semantics_as": null,
+      "canonical_utf8": "{\"contract_version\":1,\"events\":[{\"activity_id\":\"base_cases_practice_03\",\"activity_version\":2,\"assessment_run_id\":\"574d0bf7-7165-5aa1-a050-83cb23f30374\",\"event_id\":\"90fc8dd0-c870-50e8-bdba-07635b10b204\",\"hints_used\":0,\"kind\":\"response\",\"occurred_at\":\"2026-11-20T07:00:00.000Z\",\"response\":{\"option_id\":\"a\"},\"schema_version\":1,\"sequence_number\":1,\"time_spent_seconds\":75}],\"focus_concept_id\":\"base_cases\",\"profile_id\":\"demo_base_cases\",\"trigger_event_id\":null,\"versions\":{\"catalog_version\":\"catalog-slice-v1\",\"graph_version\":\"graph-v1\",\"model_version\":\"baseline-v1\",\"release_hash\":\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"release_id\":\"learngraph-review-v1\",\"seed_id\":\"demo_base_cases_seed\",\"seed_version\":1}}",
+      "sha256": "d8bd406a636c932a8d246e029bffa8cc92f5db53312475844da756fa1f23b610",
+      "storage_key": "learngraph:v1:[\"demo_base_cases\",\"learngraph-review-v1\",\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"demo_base_cases_seed\",1,\"graph-v1\",\"catalog-slice-v1\",\"baseline-v1\"]"
+    },
+    {
+      "id": "explicit_trigger",
+      "request": {
+        "contract_version": 1,
+        "versions": {
+          "release_id": "learngraph-review-v1",
+          "graph_version": "graph-v1",
+          "catalog_version": "catalog-slice-v1",
+          "model_version": "baseline-v1",
+          "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+          "seed_id": "demo_base_cases_seed",
+          "seed_version": 1
+        },
+        "profile_id": "demo_base_cases",
+        "sandbox_id": "45db2dd4-73e8-5c97-8cc5-59ed346c941e",
+        "local_revision": 1,
+        "focus_concept_id": "base_cases",
+        "trigger_event_id": "90fc8dd0-c870-50e8-bdba-07635b10b204",
+        "events": [
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90fc8dd0-c870-50e8-bdba-07635b10b204",
+            "sequence_number": 1,
+            "activity_id": "base_cases_practice_03",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T07:00:00Z",
+            "response": {
+              "option_id": "a"
+            },
+            "hints_used": 0,
+            "time_spent_seconds": 75
+          }
+        ]
+      },
+      "same_semantics_as": null,
+      "canonical_utf8": "{\"contract_version\":1,\"events\":[{\"activity_id\":\"base_cases_practice_03\",\"activity_version\":2,\"assessment_run_id\":\"574d0bf7-7165-5aa1-a050-83cb23f30374\",\"event_id\":\"90fc8dd0-c870-50e8-bdba-07635b10b204\",\"hints_used\":0,\"kind\":\"response\",\"occurred_at\":\"2026-11-20T07:00:00.000Z\",\"response\":{\"option_id\":\"a\"},\"schema_version\":1,\"sequence_number\":1,\"time_spent_seconds\":75}],\"focus_concept_id\":\"base_cases\",\"profile_id\":\"demo_base_cases\",\"trigger_event_id\":\"90fc8dd0-c870-50e8-bdba-07635b10b204\",\"versions\":{\"catalog_version\":\"catalog-slice-v1\",\"graph_version\":\"graph-v1\",\"model_version\":\"baseline-v1\",\"release_hash\":\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"release_id\":\"learngraph-review-v1\",\"seed_id\":\"demo_base_cases_seed\",\"seed_version\":1}}",
+      "sha256": "5bdbcc5152d55d8392ad18fc49b9a96ceaa2f7dec22909aa3dc002e1ad5784b6",
+      "storage_key": "learngraph:v1:[\"demo_base_cases\",\"learngraph-review-v1\",\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"demo_base_cases_seed\",1,\"graph-v1\",\"catalog-slice-v1\",\"baseline-v1\"]"
+    },
+    {
+      "id": "two_events",
+      "request": {
+        "contract_version": 1,
+        "versions": {
+          "release_id": "learngraph-review-v1",
+          "graph_version": "graph-v1",
+          "catalog_version": "catalog-slice-v1",
+          "model_version": "baseline-v1",
+          "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+          "seed_id": "demo_base_cases_seed",
+          "seed_version": 1
+        },
+        "profile_id": "demo_base_cases",
+        "sandbox_id": "45db2dd4-73e8-5c97-8cc5-59ed346c941e",
+        "local_revision": 1,
+        "focus_concept_id": "base_cases",
+        "trigger_event_id": null,
+        "events": [
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90fc8dd0-c870-50e8-bdba-07635b10b204",
+            "sequence_number": 1,
+            "activity_id": "base_cases_practice_03",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T07:00:00Z",
+            "response": {
+              "option_id": "c"
+            },
+            "hints_used": 0,
+            "time_spent_seconds": 75
+          },
+          {
+            "schema_version": 1,
+            "kind": "response",
+            "event_id": "90976e4b-1f3f-54e3-b543-44e48783c4b0",
+            "sequence_number": 2,
+            "activity_id": "base_cases_practice_04",
+            "activity_version": 2,
+            "assessment_run_id": "574d0bf7-7165-5aa1-a050-83cb23f30374",
+            "occurred_at": "2026-11-20T07:01:00Z",
+            "response": {
+              "option_id": "d"
+            },
+            "hints_used": 0,
+            "time_spent_seconds": null
+          }
+        ]
+      },
+      "same_semantics_as": null,
+      "canonical_utf8": "{\"contract_version\":1,\"events\":[{\"activity_id\":\"base_cases_practice_03\",\"activity_version\":2,\"assessment_run_id\":\"574d0bf7-7165-5aa1-a050-83cb23f30374\",\"event_id\":\"90fc8dd0-c870-50e8-bdba-07635b10b204\",\"hints_used\":0,\"kind\":\"response\",\"occurred_at\":\"2026-11-20T07:00:00.000Z\",\"response\":{\"option_id\":\"c\"},\"schema_version\":1,\"sequence_number\":1,\"time_spent_seconds\":75},{\"activity_id\":\"base_cases_practice_04\",\"activity_version\":2,\"assessment_run_id\":\"574d0bf7-7165-5aa1-a050-83cb23f30374\",\"event_id\":\"90976e4b-1f3f-54e3-b543-44e48783c4b0\",\"hints_used\":0,\"kind\":\"response\",\"occurred_at\":\"2026-11-20T07:01:00.000Z\",\"response\":{\"option_id\":\"d\"},\"schema_version\":1,\"sequence_number\":2,\"time_spent_seconds\":null}],\"focus_concept_id\":\"base_cases\",\"profile_id\":\"demo_base_cases\",\"trigger_event_id\":null,\"versions\":{\"catalog_version\":\"catalog-slice-v1\",\"graph_version\":\"graph-v1\",\"model_version\":\"baseline-v1\",\"release_hash\":\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"release_id\":\"learngraph-review-v1\",\"seed_id\":\"demo_base_cases_seed\",\"seed_version\":1}}",
+      "sha256": "ee0aa149ec7dba4f72a941a46f551c90b06f442b0a05ec041fa1f44208da5370",
+      "storage_key": "learngraph:v1:[\"demo_base_cases\",\"learngraph-review-v1\",\"ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80\",\"demo_base_cases_seed\",1,\"graph-v1\",\"catalog-slice-v1\",\"baseline-v1\"]"
+    }
+  ]
+}

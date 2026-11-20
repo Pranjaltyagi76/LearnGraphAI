@@ -1,0 +1,380 @@
+{
+  "status": "hand_calculated_contract_fixture_not_runtime_output",
+  "request": {
+    "contract_version": 1,
+    "versions": {
+      "release_id": "learngraph-review-v1",
+      "graph_version": "graph-v1",
+      "catalog_version": "catalog-slice-v1",
+      "model_version": "baseline-v1",
+      "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+      "seed_id": "demo_base_cases_seed",
+      "seed_version": 1
+    },
+    "profile_id": "demo_base_cases",
+    "sandbox_id": "45db2dd4-73e8-5c97-8cc5-59ed346c941e",
+    "local_revision": 0,
+    "focus_concept_id": "base_cases",
+    "trigger_event_id": null,
+    "events": []
+  },
+  "bundle": {
+    "contract_version": 1,
+    "versions": {
+      "release_id": "learngraph-review-v1",
+      "graph_version": "graph-v1",
+      "catalog_version": "catalog-slice-v1",
+      "model_version": "baseline-v1",
+      "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+      "seed_id": "demo_base_cases_seed",
+      "seed_version": 1
+    },
+    "profile_id": "demo_base_cases",
+    "sandbox_id": "45db2dd4-73e8-5c97-8cc5-59ed346c941e",
+    "local_revision": 0,
+    "focus_concept_id": "base_cases",
+    "requested_trigger_event_id": null,
+    "digest_algorithm": "sha256-lg-c14n-v1",
+    "history_digest": "8349f517a62ab348942ff23a3e4f0ca8138e06c7c3e885cff5b57a9700447c8a",
+    "persisted": false,
+    "accepted_visitor_events": 0,
+    "graded_events": [
+      {
+        "event_id": "4da61edf-efba-548d-b060-8048040722f7",
+        "activity_id": "function_calls_diagnostic_01",
+        "activity_version": 2,
+        "provenance": "canonical_seed",
+        "kind": "response",
+        "concept_id": "function_calls",
+        "catalog_role": "diagnostic",
+        "attempt_number": 1,
+        "is_correct": true,
+        "eligible": true,
+        "eligibility_reason": "eligible",
+        "occurred_at": "2026-11-19T00:20:00.000Z",
+        "explanation": "The argument 3 becomes n; double returns 6, which print displays."
+      },
+      {
+        "event_id": "add58e7b-a145-5180-bf4a-8097bedc142d",
+        "activity_id": "function_calls_practice_01",
+        "activity_version": 2,
+        "provenance": "canonical_seed",
+        "kind": "response",
+        "concept_id": "function_calls",
+        "catalog_role": "practice",
+        "attempt_number": 1,
+        "is_correct": true,
+        "eligible": true,
+        "eligibility_reason": "eligible",
+        "occurred_at": "2026-11-19T00:40:00.000Z",
+        "explanation": "The function returns 4 + 1 = 5; returning and printing are different actions."
+      },
+      {
+        "event_id": "ff16d654-edd6-540e-984f-53356f849641",
+        "activity_id": "function_calls_practice_02",
+        "activity_version": 2,
+        "provenance": "canonical_seed",
+        "kind": "response",
+        "concept_id": "function_calls",
+        "catalog_role": "practice",
+        "attempt_number": 1,
+        "is_correct": true,
+        "eligible": true,
+        "eligibility_reason": "eligible",
+        "occurred_at": "2026-11-19T01:00:00.000Z",
+        "explanation": "The inner call returns 4, and the outer call doubles it to 8."
+      },
+      {
+        "event_id": "dd6a1bb3-f620-5e3e-a48a-08f796cd82df",
+        "activity_id": "base_cases_diagnostic_01",
+        "activity_version": 2,
+        "provenance": "canonical_seed",
+        "kind": "response",
+        "concept_id": "base_cases",
+        "catalog_role": "diagnostic",
+        "attempt_number": 1,
+        "is_correct": false,
+        "eligible": true,
+        "eligibility_reason": "eligible",
+        "occurred_at": "2026-11-19T01:20:00.000Z",
+        "explanation": "At n == 0, no positive integers remain to add. Returning 0 stops recursion."
+      },
+      {
+        "event_id": "a198c637-c186-592c-9eda-312c7c9085ce",
+        "activity_id": "base_cases_practice_01",
+        "activity_version": 2,
+        "provenance": "canonical_seed",
+        "kind": "response",
+        "concept_id": "base_cases",
+        "catalog_role": "practice",
+        "attempt_number": 1,
+        "is_correct": false,
+        "eligible": true,
+        "eligibility_reason": "eligible",
+        "occurred_at": "2026-11-19T01:40:00.000Z",
+        "explanation": "At n == 0 the stopping branch immediately returns 0; no recursive call is evaluated."
+      },
+      {
+        "event_id": "41188b16-698c-5de1-97d8-ca0c4baaab54",
+        "activity_id": "base_cases_practice_02",
+        "activity_version": 2,
+        "provenance": "canonical_seed",
+        "kind": "response",
+        "concept_id": "base_cases",
+        "catalog_role": "practice",
+        "attempt_number": 1,
+        "is_correct": false,
+        "eligible": true,
+        "eligibility_reason": "eligible",
+        "occurred_at": "2026-11-19T02:00:00.000Z",
+        "explanation": "The product of no factors is 1; returning 0 would erase every recursive product."
+      }
+    ],
+    "estimates": [
+      {
+        "concept_id": "base_cases",
+        "eligible_count": 3,
+        "successes": 0,
+        "total_attempts": 3,
+        "distinct_questions": 3,
+        "estimate": 0.285714,
+        "evidence_state": "supported_estimate",
+        "performance_state": "weak",
+        "recent_failures": 3,
+        "last_evidence_at": "2026-11-19T02:00:00.000Z",
+        "evidence_event_ids": [
+          "dd6a1bb3-f620-5e3e-a48a-08f796cd82df",
+          "a198c637-c186-592c-9eda-312c7c9085ce",
+          "41188b16-698c-5de1-97d8-ca0c4baaab54"
+        ]
+      },
+      {
+        "concept_id": "call_stack",
+        "eligible_count": 0,
+        "successes": 0,
+        "total_attempts": 0,
+        "distinct_questions": 0,
+        "estimate": null,
+        "evidence_state": "not_assessed",
+        "performance_state": "unknown",
+        "recent_failures": 0,
+        "last_evidence_at": null,
+        "evidence_event_ids": []
+      },
+      {
+        "concept_id": "dp_base_cases",
+        "eligible_count": 0,
+        "successes": 0,
+        "total_attempts": 0,
+        "distinct_questions": 0,
+        "estimate": null,
+        "evidence_state": "not_assessed",
+        "performance_state": "unknown",
+        "recent_failures": 0,
+        "last_evidence_at": null,
+        "evidence_event_ids": []
+      },
+      {
+        "concept_id": "function_calls",
+        "eligible_count": 3,
+        "successes": 3,
+        "total_attempts": 3,
+        "distinct_questions": 3,
+        "estimate": 0.714286,
+        "evidence_state": "supported_estimate",
+        "performance_state": "ready",
+        "recent_failures": 0,
+        "last_evidence_at": "2026-11-19T01:00:00.000Z",
+        "evidence_event_ids": [
+          "4da61edf-efba-548d-b060-8048040722f7",
+          "add58e7b-a145-5180-bf4a-8097bedc142d",
+          "ff16d654-edd6-540e-984f-53356f849641"
+        ]
+      },
+      {
+        "concept_id": "memoization",
+        "eligible_count": 0,
+        "successes": 0,
+        "total_attempts": 0,
+        "distinct_questions": 0,
+        "estimate": null,
+        "evidence_state": "not_assessed",
+        "performance_state": "unknown",
+        "recent_failures": 0,
+        "last_evidence_at": null,
+        "evidence_event_ids": []
+      },
+      {
+        "concept_id": "overlapping_subproblems",
+        "eligible_count": 0,
+        "successes": 0,
+        "total_attempts": 0,
+        "distinct_questions": 0,
+        "estimate": null,
+        "evidence_state": "not_assessed",
+        "performance_state": "unknown",
+        "recent_failures": 0,
+        "last_evidence_at": null,
+        "evidence_event_ids": []
+      },
+      {
+        "concept_id": "recurrence_relations",
+        "eligible_count": 0,
+        "successes": 0,
+        "total_attempts": 0,
+        "distinct_questions": 0,
+        "estimate": null,
+        "evidence_state": "not_assessed",
+        "performance_state": "unknown",
+        "recent_failures": 0,
+        "last_evidence_at": null,
+        "evidence_event_ids": []
+      },
+      {
+        "concept_id": "recursive_progress",
+        "eligible_count": 0,
+        "successes": 0,
+        "total_attempts": 0,
+        "distinct_questions": 0,
+        "estimate": null,
+        "evidence_state": "not_assessed",
+        "performance_state": "unknown",
+        "recent_failures": 0,
+        "last_evidence_at": null,
+        "evidence_event_ids": []
+      },
+      {
+        "concept_id": "recursive_tracing",
+        "eligible_count": 0,
+        "successes": 0,
+        "total_attempts": 0,
+        "distinct_questions": 0,
+        "estimate": null,
+        "evidence_state": "not_assessed",
+        "performance_state": "unknown",
+        "recent_failures": 0,
+        "last_evidence_at": null,
+        "evidence_event_ids": []
+      },
+      {
+        "concept_id": "state_definition",
+        "eligible_count": 0,
+        "successes": 0,
+        "total_attempts": 0,
+        "distinct_questions": 0,
+        "estimate": null,
+        "evidence_state": "not_assessed",
+        "performance_state": "unknown",
+        "recent_failures": 0,
+        "last_evidence_at": null,
+        "evidence_event_ids": []
+      },
+      {
+        "concept_id": "state_transitions",
+        "eligible_count": 0,
+        "successes": 0,
+        "total_attempts": 0,
+        "distinct_questions": 0,
+        "estimate": null,
+        "evidence_state": "not_assessed",
+        "performance_state": "unknown",
+        "recent_failures": 0,
+        "last_evidence_at": null,
+        "evidence_event_ids": []
+      },
+      {
+        "concept_id": "tabulation",
+        "eligible_count": 0,
+        "successes": 0,
+        "total_attempts": 0,
+        "distinct_questions": 0,
+        "estimate": null,
+        "evidence_state": "not_assessed",
+        "performance_state": "unknown",
+        "recent_failures": 0,
+        "last_evidence_at": null,
+        "evidence_event_ids": []
+      }
+    ],
+    "diagnosis": {
+      "status": "supported_gap",
+      "trigger_event_id": "41188b16-698c-5de1-97d8-ca0c4baaab54",
+      "candidates": [
+        {
+          "concept_id": "base_cases",
+          "relation": "target",
+          "distance": 0,
+          "path": [
+            "base_cases"
+          ],
+          "score": 0.428571,
+          "evidence_event_ids": [
+            "dd6a1bb3-f620-5e3e-a48a-08f796cd82df",
+            "a198c637-c186-592c-9eda-312c7c9085ce",
+            "41188b16-698c-5de1-97d8-ca0c4baaab54"
+          ],
+          "reason": "supported_target_weakness"
+        }
+      ],
+      "evidence_requests": [],
+      "alternatives": [
+        "item_difficulty",
+        "response_error",
+        "tag_mismatch"
+      ]
+    },
+    "plan": {
+      "mode": "remediation",
+      "status": "ready",
+      "items": [
+        {
+          "activity_id": "base_cases_lesson_01",
+          "activity_version": 1,
+          "concept_id": "base_cases",
+          "role": "lesson",
+          "readiness": "ready",
+          "blocked_by_concept_ids": [],
+          "depends_on_activity_ids": [],
+          "reason": "lesson_support",
+          "score": 0.782857
+        },
+        {
+          "activity_id": "base_cases_practice_03",
+          "activity_version": 2,
+          "concept_id": "base_cases",
+          "role": "practice",
+          "readiness": "ready",
+          "blocked_by_concept_ids": [],
+          "depends_on_activity_ids": [],
+          "reason": "gap_practice",
+          "score": 0.777143
+        },
+        {
+          "activity_id": "base_cases_practice_04",
+          "activity_version": 2,
+          "concept_id": "base_cases",
+          "role": "practice",
+          "readiness": "ready",
+          "blocked_by_concept_ids": [],
+          "depends_on_activity_ids": [],
+          "reason": "gap_practice",
+          "score": 0.777143
+        },
+        {
+          "activity_id": "base_cases_reassessment_01",
+          "activity_version": 2,
+          "concept_id": "base_cases",
+          "role": "reassessment",
+          "readiness": "locked",
+          "blocked_by_concept_ids": [],
+          "depends_on_activity_ids": [
+            "base_cases_practice_03"
+          ],
+          "reason": "reassessment",
+          "score": 0.777143
+        }
+      ]
+    }
+  },
+  "method": "Mira seed counts and PROJECT rational formulas; no diagnosis service or benchmark executed."
+}
