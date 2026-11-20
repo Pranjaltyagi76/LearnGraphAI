@@ -45,7 +45,7 @@ jobs:
       - run: uv run --frozen python -m scripts.freeze_phase0
       - run: uv run --frozen python -m scripts.check_phase0
       - run: uv run --frozen pytest -q
-      - run: uv run --frozen python -m scripts.evaluate --check ../evaluation/results/phase2-v1
+      - run: uv run --frozen python -m scripts.evaluate --check ../evaluation/results/phase2-v2
 
   frontend:
     runs-on: ubuntu-latest

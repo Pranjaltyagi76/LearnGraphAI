@@ -3,6 +3,9 @@
 import copy
 import itertools
 import json
+import os
+import subprocess
+import sys
 from datetime import UTC, datetime
 from fractions import Fraction
 from pathlib import Path
@@ -420,6 +423,22 @@ def test_response_semantic_validation_rejects_forged_score(release):
             release.activities,
             state,
         )
+
+
+@pytest.mark.parametrize(
+    "profile", ["demo_base_cases", "demo_upstream", "demo_sparse", "demo_ambiguous"]
+)
+def test_cli_profile_templates_work_with_windows_legacy_stream_encoding(profile):
+    env = {**os.environ, "PYTHONIOENCODING": "cp1252"}
+    raw = subprocess.check_output(
+        [sys.executable, "-m", "scripts.analyze", "--profile", profile, "--explain"],
+        cwd=ROOT / "backend",
+        env=env,
+    )
+    result = json.loads(raw)
+    assert len(result["analysis"]["estimates"]) == 12
+    assert result["analysis"]["profile_id"] == profile
+    assert result["explanation"]
 
 
 @pytest.mark.parametrize("edge", [("a", "a"), ("x", "a"), ("b", "a"), ("a", "b")])

@@ -43,7 +43,8 @@ def main():
     output = bundle.model_dump(mode="json")
     if args.explain:
         output = {"analysis": output, "explanation": explain(bundle)}
-    print(json.dumps(output, ensure_ascii=False, sort_keys=True, indent=2))
+    # ASCII JSON escapes preserve Unicode text on Windows cp1252 pipes as well as UTF-8.
+    print(json.dumps(output, ensure_ascii=True, sort_keys=True, indent=2))
 
 
 if __name__ == "__main__":
