@@ -112,6 +112,11 @@ for (const mobile of [false, true]) {
     await page.emulateMedia({ reducedMotion: "reduce" });
     for (const url of ["/learn", "/examples", "/examples/demo_upstream", "/methodology"]) {
       if (url === "/learn") await enter(page); else await page.goto(url);
+      if (url === "/learn") {
+        const code = page.getByRole("region", { name: "Question code", exact: true });
+        await code.focus(); await expect(code).toBeFocused();
+        await expect(code).toHaveAttribute("tabindex", "0");
+      }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       expect(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior)).toBe("auto");
       await page.addScriptTag({ content: axe.source });

@@ -8,4 +8,5 @@
   "new_runtime_dependencies": [],
   "new_direct_dev_dependencies": ["axe-core==4.14.1 (already present transitively in lockfile)"],
   "learning_or_full_catalog_prediction_quality_claim": false
+  ,"initial_ci_failure": {"run": 44872297556, "backend": "passed including PostgreSQL", "frontend": "31 browser tests passed; Linux mobile scrollable-region focus failed", "fix": "Question code is an explicitly named keyboard-focusable region; regression asserts actual focus", "local_recheck": "Production rebuild and all 32 browser tests passed"}
 }

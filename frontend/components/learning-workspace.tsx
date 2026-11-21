@@ -265,7 +265,7 @@ export function LearningWorkspace() {
             <div className="panel-kicker">03 / A FRESH RESPONSE</div>
             <h2 id="practice-title">{item ? label(item.role) : label(bundle.plan.status)}</h2>
             {activity?.kind === "question" && <form onSubmit={(e) => { e.preventDefault(); if (selected) void submit(activity.id, selected); }}>
-              <p className="question-prompt">{activity.prompt}</p>{activity.code && <pre className="question-code"><code>{activity.code}</code></pre>}
+              <p className="question-prompt">{activity.prompt}</p>{activity.code && <pre className="question-code" tabIndex={0} role="region" aria-label="Question code"><code>{activity.code}</code></pre>}
               <fieldset disabled={busy || !live || !!record.pending}><legend>Choose one answer</legend><div className="options">
                 {activity.options.map((o) => <label className={selected === o.id ? "option selected" : "option"} key={activity.id + o.id}>
                   <input type="radio" name={activity.id} value={o.id} checked={selected === o.id} onChange={() => setSelected(o.id)} />
