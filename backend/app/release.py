@@ -25,6 +25,31 @@ from app.replay import replay
 
 SUPPORTED_POLICY_HASH = "068b6fc04154f53d48948ad295edd8dd031890e57059cdeb1ecedb5b7127a6fd"
 SUPPORTED_SCHEMA_HASH = "4aacf8a0eaa2b2aa2bf73d17bf7fd5224f8002ecb449b670ba42393b88a56aef"
+RELEASE_FILES = {
+    "learngraph-review-v1": (
+        "contracts/release-manifest.json",
+        "curriculum/catalog-slice.v1.json",
+        "curriculum/profiles.v1.json",
+    ),
+    "learngraph-full-v1": (
+        "contracts/releases/full-v1.json",
+        "curriculum/catalog-full.v1.json",
+        "curriculum/profiles-full.v1.json",
+    ),
+}
+
+
+def artifact_paths(release_id: str) -> tuple[str, ...]:
+    if release_id not in RELEASE_FILES:
+        raise ValueError("Unsupported release identity")
+    _, catalog, profiles = RELEASE_FILES[release_id]
+    return (
+        "curriculum/graph.v1.json",
+        catalog,
+        "curriculum/model-config.v1.json",
+        profiles,
+        "contracts/protocol-v1.schema.json",
+    )
 
 
 class Question(PublicQuestion):
@@ -39,13 +64,7 @@ class Release:
         if hashlib.sha256(canonical_json(identity)).hexdigest() != manifest["release_hash"]:
             raise ValueError("Release identity hash mismatch")
         expected = {entry["path"]: entry["sha256"] for entry in identity["artifacts"]}
-        paths = {
-            "curriculum/graph.v1.json",
-            "curriculum/catalog-slice.v1.json",
-            "curriculum/model-config.v1.json",
-            "curriculum/profiles.v1.json",
-            "contracts/protocol-v1.schema.json",
-        }
+        paths = set(artifact_paths(identity["release_id"]))
         if set(expected) != paths or set(artifacts) != paths or len(identity["artifacts"]) != 5:
             raise ValueError("Incomplete compatible release")
         for path, digest in expected.items():
@@ -53,8 +72,9 @@ class Release:
                 raise ValueError("Release artifact hash mismatch")
         values = {path: json.loads(data) for path, data in artifacts.items()}
         graph = values["curriculum/graph.v1.json"]
-        catalog = values["curriculum/catalog-slice.v1.json"]
-        profiles = values["curriculum/profiles.v1.json"]
+        _, catalog_path, profiles_path = RELEASE_FILES[identity["release_id"]]
+        catalog = values[catalog_path]
+        profiles = values[profiles_path]
         self.config = values["curriculum/model-config.v1.json"]
         for field, source in (
             ("graph_version", graph),
@@ -135,14 +155,10 @@ class Release:
         )
 
 
-def load_release(root: Path) -> Release:
-    manifest = json.loads((root / "contracts/release-manifest.json").read_bytes())
+def load_release(root: Path, release_id: str = "learngraph-review-v1") -> Release:
+    paths = artifact_paths(release_id)
+    manifest = json.loads((root / RELEASE_FILES[release_id][0]).read_bytes())
+    if manifest["identity"]["release_id"] != release_id:
+        raise ValueError("Release registry identity mismatch")
     # Use fixed paths; never follow file paths from an unverified external manifest.
-    paths = (
-        "curriculum/graph.v1.json",
-        "curriculum/catalog-slice.v1.json",
-        "curriculum/model-config.v1.json",
-        "curriculum/profiles.v1.json",
-        "contracts/protocol-v1.schema.json",
-    )
     return Release(manifest, {path: (root / path).read_bytes() for path in paths})

@@ -18,8 +18,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("check", "publish", "verify"))
     parser.add_argument("--evaluation", type=Path)
+    parser.add_argument("--release", default="learngraph-review-v1")
     args = parser.parse_args()
-    payload = publication_input(ROOT, args.evaluation)
+    payload = publication_input(ROOT, args.evaluation, args.release)
     digest = payload_hash(payload)
     release_id = payload["manifest"]["identity"]["release_id"]
     if args.action != "check":

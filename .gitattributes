@@ -3,3 +3,4 @@ curriculum/** text eol=lf
 contracts/** text eol=lf
 evaluation/** text eol=lf
 frontend/lib/generated/** text eol=lf
+context/evidence/*.json text eol=lf

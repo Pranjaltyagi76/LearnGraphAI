@@ -17,11 +17,12 @@ ROOT = Path(__file__).resolve().parents[2]
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--profile", default="demo_base_cases")
+    parser.add_argument("--release", default="learngraph-review-v1")
     parser.add_argument("--request", type=Path, help="Complete AnalyzeRequest JSON")
     parser.add_argument("--received-at", default="2026-11-20T00:00:00+00:00")
     parser.add_argument("--explain", action="store_true", help="Include fixed evidence templates")
     args = parser.parse_args()
-    release = load_release(ROOT)
+    release = load_release(ROOT, args.release)
     if args.request:
         with args.request.open("rb") as stream:
             raw = stream.read(release.config["limits"]["request_bytes"] + 1)

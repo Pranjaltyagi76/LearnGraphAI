@@ -190,9 +190,16 @@ def create_app(settings: Settings | None = None, database=None) -> FastAPI:
         require_config()
         if not config.analysis_release_id:
             raise APIError(503, "not_configured", "Full analysis is not configured.")
-        if release_id is not None and release_id != config.analysis_release_id:
+        if release_id is not None and release_id not in (
+            config.analysis_release_id,
+            *config.retained_analysis_release_ids,
+        ):
             raise APIError(409, "version_mismatch", "This analysis release is not supported.")
-        return await db.analysis_release()
+        return (
+            await db.analysis_release()
+            if release_id in (None, config.analysis_release_id)
+            else await db.analysis_release(release_id)
+        )
 
     async def guard(request: Request):
         require_config()
@@ -214,7 +221,11 @@ def create_app(settings: Settings | None = None, database=None) -> FastAPI:
         return {
             "status": "ok",
             "service": "learngraph-ai-api",
-            "stage": "phase3" if config.analysis_release_id else "phase1",
+            "stage": "phase4"
+            if config.analysis_release_id == "learngraph-full-v1"
+            else "phase3"
+            if config.analysis_release_id
+            else "phase1",
         }
 
     @application.get("/ready")

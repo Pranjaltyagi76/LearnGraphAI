@@ -10,6 +10,7 @@ class Settings:
     origins: tuple[str, ...] = ("http://127.0.0.1:3000", "http://localhost:3000")
     release_id: str = "phase1-v1"
     analysis_release_id: str = ""
+    retained_analysis_release_ids: tuple[str, ...] = ()
     quota_namespace: str = "development"
     on_vercel: bool = False
 
@@ -32,6 +33,13 @@ class Settings:
             ),
             release_id=os.getenv("RELEASE_ID", "phase1-v1"),
             analysis_release_id=os.getenv("ANALYSIS_RELEASE_ID", ""),
+            retained_analysis_release_ids=tuple(
+                dict.fromkeys(
+                    x.strip()
+                    for x in os.getenv("RETAINED_ANALYSIS_RELEASE_IDS", "").split(",")
+                    if x.strip()
+                )
+            ),
             quota_namespace=os.getenv("QUOTA_NAMESPACE", "development"),
             on_vercel=os.getenv("VERCEL") == "1",
         )

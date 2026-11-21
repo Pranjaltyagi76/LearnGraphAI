@@ -115,8 +115,10 @@ def unpack(payload: dict, stored_hash: str) -> PublishedRelease:
     )
 
 
-def publication_input(root: Path, evaluation_path: Path | None = None) -> dict:
-    release = load_release(root)
+def publication_input(
+    root: Path, evaluation_path: Path | None = None, release_id: str = "learngraph-review-v1"
+) -> dict:
+    release = load_release(root, release_id)
     payload = {
         "package_version": 1,
         "manifest": release.manifest,

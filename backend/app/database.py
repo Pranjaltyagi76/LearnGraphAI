@@ -12,7 +12,7 @@ class Database:
     def __init__(self, settings: Settings):
         self.settings = settings
         self.pool: AsyncConnectionPool | None = None
-        self.analysis_cache: PublishedRelease | None = None
+        self.analysis_cache: dict[str, PublishedRelease] = {}
 
     async def open(self) -> None:
         if self.settings.database_url:
@@ -61,19 +61,25 @@ class Database:
                 raise ConnectionError("Published release integrity failure")
             return row
 
-    async def analysis_release(self) -> PublishedRelease:
-        if self.analysis_cache is None:
-            row = await self.fetch_release(self.settings.analysis_release_id)
+    async def analysis_release(self, release_id: str | None = None) -> PublishedRelease:
+        release_id = release_id or self.settings.analysis_release_id
+        allowed = (self.settings.analysis_release_id, *self.settings.retained_analysis_release_ids)
+        if release_id not in allowed or len(set(allowed)) > 2:
+            raise ConnectionError("Unsupported analysis release configuration")
+        if release_id not in self.analysis_cache:
+            row = await self.fetch_release(release_id)
             published = unpack(row["payload"], row["content_hash"])
-            if published.summary().release_id != self.settings.analysis_release_id:
+            if published.summary().release_id != release_id:
                 raise ConnectionError("Analysis publication identity failure")
-            self.analysis_cache = published
-        return self.analysis_cache
+            self.analysis_cache[release_id] = published
+        return self.analysis_cache[release_id]
 
     async def ready(self) -> None:
         await self.release()
         if self.settings.analysis_release_id:
             await self.analysis_release()
+            for release_id in self.settings.retained_analysis_release_ids:
+                await self.analysis_release(release_id)
         async with self.connection() as conn:
             row = await (
                 await conn.execute(

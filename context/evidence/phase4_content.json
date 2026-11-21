@@ -1,0 +1,167 @@
+{
+  "checked_new_output_traces": [
+    {
+      "actual_stdout": "9",
+      "concept": "call_stack",
+      "question_ordinal": 2
+    },
+    {
+      "actual_stdout": "[1, 2, 3]",
+      "concept": "call_stack",
+      "question_ordinal": 4
+    },
+    {
+      "actual_stdout": "4",
+      "concept": "recursive_progress",
+      "question_ordinal": 5
+    },
+    {
+      "actual_stdout": "6",
+      "concept": "recursive_tracing",
+      "question_ordinal": 1
+    },
+    {
+      "actual_stdout": "[2, 1, -1, -2]",
+      "concept": "recursive_tracing",
+      "question_ordinal": 2
+    },
+    {
+      "actual_stdout": "8",
+      "concept": "recursive_tracing",
+      "question_ordinal": 3
+    },
+    {
+      "actual_stdout": "12",
+      "concept": "recursive_tracing",
+      "question_ordinal": 4
+    },
+    {
+      "actual_stdout": "4",
+      "concept": "recursive_tracing",
+      "question_ordinal": 5
+    },
+    {
+      "actual_stdout": "5",
+      "concept": "recursive_tracing",
+      "question_ordinal": 6
+    },
+    {
+      "actual_stdout": "2",
+      "concept": "overlapping_subproblems",
+      "question_ordinal": 4
+    },
+    {
+      "actual_stdout": "[0, 2, 6, 7]",
+      "concept": "state_transitions",
+      "question_ordinal": 2
+    },
+    {
+      "actual_stdout": "1",
+      "concept": "memoization",
+      "question_ordinal": 3
+    },
+    {
+      "actual_stdout": "5",
+      "concept": "tabulation",
+      "question_ordinal": 2
+    }
+  ],
+  "coverage": [
+    {
+      "concept": "function_calls",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "base_cases",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "call_stack",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "recursive_progress",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "recursive_tracing",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "overlapping_subproblems",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "state_definition",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "recurrence_relations",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "dp_base_cases",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "state_transitions",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "memoization",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    },
+    {
+      "concept": "tabulation",
+      "fresh_reassessment": true,
+      "lessons": 1,
+      "questions": 6,
+      "remaining_practice_after_three": 2
+    }
+  ],
+  "package_bytes": 262450,
+  "preserved_slice_activities": 14,
+  "profile_event_counts": {
+    "demo_ambiguous": 15,
+    "demo_base_cases": 6,
+    "demo_sparse": 1,
+    "demo_upstream": 27
+  },
+  "recorded_at": "2026-11-21T00:00:00.000Z",
+  "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9",
+  "release_id": "learngraph-full-v1",
+  "scope": "Engineering content review; not educator validation or an independent quality benchmark"
+}
