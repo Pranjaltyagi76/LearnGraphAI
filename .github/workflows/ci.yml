@@ -49,6 +49,8 @@ jobs:
       - run: uv run --frozen python -m scripts.generate_browser_contracts --check
       - run: uv run --frozen pytest -q
       - run: uv run --frozen python -m scripts.evaluate --check ../evaluation/results/phase4-regression-v1
+      - run: uv run --frozen python -m scripts.freeze_full_audit
+      - run: uv run --frozen python -m scripts.evaluate_full --check ../evaluation/results/phase5-full-v1
 
   frontend:
     runs-on: ubuntu-latest

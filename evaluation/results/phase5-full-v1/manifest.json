@@ -1,0 +1,38 @@
+{
+  "environment": {
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "exposure": "Frozen before first evaluation; existing implementation known; no tuning",
+  "input_manifest_sha256": "8173fd9f522bb6cc4e3edfde71c64a9923424bb82131ab815f2df3edce576597",
+  "measured_at": "2026-11-21T14:28:59.557Z",
+  "output_hashes": {
+    "development.json": "a931034322822cbee9acb0c119b82e2d15a6a4aa36a94ee1dacaa38df18f594c",
+    "test.json": "d6922d7ac0c07d7dc7213fa506f4fc03911670e0f6381a81d721a2aee28c5fcb"
+  },
+  "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9",
+  "source_commit": "4b1ffe3d688f5aa5edaacfb8b7cd5fc179141292",
+  "source_dirty": true,
+  "source_hashes_lf": {
+    "backend/app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend/app/analysis.py": "97edee46a9e394ce37829006fd74de7cbd22faee5138c1a1a1e4377b7fe48b55",
+    "backend/app/config.py": "6e4e01f7d8ff44ff184d9a8a413c1c3f009b32221b26c0411f9f6dcbfc86f73c",
+    "backend/app/contracts.py": "77d0b919b4e6de100ffcda7a10b5bb6c9843fb20a5de6d2d99008e1a6371916a",
+    "backend/app/database.py": "438a23a537ecaa2383e282368853c8a382a76de38c72320b8e6856c8dcc50f7d",
+    "backend/app/diagnosis.py": "b201550c8914c1462b39a3cfb84d09e00c910bfb63590563ef45d08b89e90909",
+    "backend/app/explanation.py": "fc9d7195b36366f87aadd3b11bfedff21db48009c19af3d983088c409e8a2d06",
+    "backend/app/graph.py": "9c8ab49cfa9f49a7121d5b87fd5f5bb286a709e56f483195eb5e9ef2fb033ec3",
+    "backend/app/main.py": "04875ecd75929e112e6b29fd8a1ddb1a0bff66755e5508cf6cf839bdb1a6abe6",
+    "backend/app/published.py": "3d70c3b88be98735e99e3ad1454707d79221ab998243c68acadd8234674005b9",
+    "backend/app/recommendation.py": "99d02ec88149d77d7eab4ccca5c20fdb4662f1432420989e1274fd8e798b6d2e",
+    "backend/app/release.py": "6ffc9215db01c8a9041056b9a1417f10af3571e162fd6638985896135efbd5d4",
+    "backend/app/replay.py": "5f0ca18aafefdf3da95d373ba8f8d2ba6247cf6f50ebcc18996c61084e9955ad",
+    "backend/app/telemetry.py": "013863d8d33a1f2668b21fa7809fb856eb173c53b95a3a4d7e32a05d057bcde7",
+    "backend/app/validation.py": "2f8b76a3a304747ec4c7cbf9b4b527f80f79b49b883d144c1ef1879ae48431d8",
+    "backend/evaluation/__init__.py": "bb0cadd454d8d99c07e395aadadd4eb2a7004275d09df5deaed81da417c649fa",
+    "backend/evaluation/audit.py": "b4d87fe3fb5c4f1e4c20bbed1b704f89674dacf8c9f6691f782f7322cbd44b77",
+    "backend/evaluation/metrics.py": "5cea57dacc3c58d067ed3461518e86d97e517a64050fd5b9da893b2f6b634cf0",
+    "backend/evaluation/runner.py": "a168309bc8d1b8154ab124b6be69362d10d8820cb32cd09c36db0a3b0afb73df",
+    "backend/scripts/evaluate_full.py": "bb8086449776c55155ec07c451cbe06f5afc86534ef76ef9f4dc9f58a8acc5ea"
+  }
+}
