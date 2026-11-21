@@ -1,6 +1,6 @@
 # Phasewise roadmap
 
-**Updated:** 21 November 2026. **Current stage:** Phases 0–3 complete; Phase 4 content and UI implemented locally, production rollout pending. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
+**Updated:** 21 November 2026. **Current stage:** Phases 0–4 complete at their bounded gates; Phase 5 release/recovery verification is next. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
 
 This is the operational handoff/status document. Check an item only after its stated artifact or verification exists. Drafting this context does not create the application, validate a model, provision a service, or pass a release gate.
 
@@ -11,10 +11,10 @@ This is the operational handoff/status document. Check an item only after its st
 | Git | Local `main`, origin points to the owner's LearnGraphAI repository; configured owner author/committer identity. Delivery evidence is Git history and the remote branch, not an invented hash here. |
 | Specification | PROJECT/requirements reconciled with frozen protocol, storage and curriculum review decisions. |
 | Code/dependencies | Pure authoritative replay, exact estimates, bounded diagnosis, constrained plans, explanations and hash-verified release loading implemented; live full-analysis routes and the transactional browser loop are implemented and deployed. |
-| Curriculum | Reviewed draft: 12 concepts/17 scoped edges, 12 version-2 questions/2 lessons and 4 synthetic seed definitions. Both the legacy Phase 1 row and separate reviewed analysis package are immutable and live; 60 questions remain. |
+| Curriculum | Full-v1: 12 concepts/17 scoped edges, 72 questions/12 lessons and four expanded synthetic seeds. Three immutable published rows retain legacy routes and the separately supported reviewed slice. |
 | Services | Two Vercel Hobby projects and a Healthy Supabase Free Nano project. Migration/seed/runtime login configured; public readiness 200 and actual browser grading passed. |
 | Benchmarks/performance | Local checks and source CI pass. Hosted privilege/quota checks, eleven-request smoke, browser grading, artifact/memory and cold/hot provider metrics recorded. Measured public synthetic prediction/diagnosis/plan audit now exists; no real-world or learning-benefit claim. |
-| Next action | Phase 4: author/review the remaining 60 questions and complete the learner UI/accessibility coverage; preserve the verified Phase 3 loop. |
+| Next action | Phase 5: audit the full release candidate, failures/quotas, rollback/restore and free-plan recovery; define independent full-track quality scenarios without extending slice scores. |
 
 ## 2. Resolved content-budget decision — OPEN-01
 
@@ -23,7 +23,7 @@ On 20 November 2026 the accepted direction changed the target from 48 to **72 qu
 - [x] Record the budget decision consistently in PROJECT, requirements, and context.
 - [x] Author 12 questions across `function_calls` and `base_cases`, with three initial responses and three unused items per concept.
 - [x] Pass the catalog feasibility test in `backend/tests/test_api.py` proving two remaining practice questions and one reassessment per authored concept.
-- [ ] Author/review the complete 72-item catalog and demonstrate the complete learning loop in its implementation phase.
+- [x] Author/review the complete 72-item catalog and demonstrate the complete learning loop; see Phase 4 evidence below.
 
 This closes the item-budget conflict for the proposed design and authored slice, not the full Phase 0 gate, full curriculum, or diagnosis/reassessment implementation. More questions do not guarantee learning or readiness-threshold crossing.
 
@@ -107,13 +107,13 @@ Requirements: FR-01/04/05/12–17/19, NFR-02/07/12.
 
 Requirements: FR-01–05/09–17, NFR-12.
 
-In progress: separate full-v1 content, retained slice support, complete learner views and versioned examples exist. Twelve workflow fixtures and the content review pass. Final browser/source CI, immutable publication and production verification are still required before checking this gate. See [full content review](../curriculum/full-review.md).
+Completed: separate full-v1 content, retained slice support, complete learner views and versioned examples are deployed. Twelve workflow fixtures, content review, source CI and final production verification pass. See [full content review](../curriculum/full-review.md) and completion evidence below.
 
-- [ ] Complete the resolved content budget/roles from Phase 0 and all four contrasting profiles.
-- [ ] Build learner overview, graph/list, timeline, evidence detail, readiness locks, and reassessment display.
-- [ ] Cover not-assessed/early/ambiguous/no-gap/exhausted/invalid/unavailable states.
-- [ ] Verify mobile/desktop, keyboard/focus/contrast, non-color alternatives, and reduced motion.
-- [ ] Publish labeled versioned examples and methodology/limitations pages.
+- [x] Complete the resolved content budget/roles from Phase 0 and all four contrasting profiles.
+- [x] Build learner overview, graph/list, timeline, evidence detail, readiness locks, and reassessment display.
+- [x] Cover not-assessed/early/ambiguous/no-gap/exhausted/invalid/unavailable states.
+- [x] Verify mobile/desktop, keyboard/focus/contrast, non-color alternatives, and reduced motion.
+- [x] Publish labeled versioned examples and methodology/limitations pages.
 
 **Gate:** The complete P0 content/UI works honestly; no unresolved OPEN-01 assumption remains.
 
@@ -209,3 +209,14 @@ Before a future batch, read [AGENTS.md](../AGENTS.md), inspect working-tree/remo
 - **Deployment:** exact tested source 24826440aa9e2eab076b93a39beede64d6525001; API dpl_7BHbv5GpXZY8fXBpbUmyXm4iCw7J and web dpl_6Sj1MYrhVL7d9MLu7XpcvdeDwQSM are READY on the existing production aliases. API was verified before frontend release. No new package, plan, service, payment or paid monitoring was added. [Release evidence](evidence/phase3_release.json) records source/stored hashes, TLS/grants, versions, five public analysis reservations and verification scope. Provider deployment-specific error scans found no matching error logs; no drains are configured.
 - **Benchmark:** [phase3-regression-v1](../evaluation/results/phase3-regression-v1/manifest.json) binds the new API sources and reproduces unchanged baseline metrics. It is another exposed regression replay, not an independent final audit or policy change. Older Phase 2 runs remain archived and require their pinned implementation for strict hash checks.
 - **Next:** Phase 4 full content/UI. Four contrasting profiles and basic evidence/plan/timeline views are already delivered; the remaining sixty questions, full learner experience, comprehensive keyboard/contrast audit and later release/rollback/failure gates remain open.
+
+### Phase 4 completion — 21 November 2026
+
+- **Content gate:** [full review](../curriculum/full-review.md) and [actual checks](evidence/phase4_content.json) cover 72 original distinct questions, 12 lessons, all twelve concepts and four contrasting versioned seeds. The original fourteen slice activities are preserved. Thirteen new trusted output traces and all twelve two-practice/distinct-reassessment workflow fixtures pass. Engineering review is not independent educator validation.
+- **UI gate:** the deployed dashboard exposes graph/list, named unknown/early/ready states, diagnosis paths/event links, a provenance-filtered timeline, prerequisite locks and honest before/current reassessment. A changed focus blocks submission until reanalysis. Explicit old-release navigation reopens separate saved history without migration. Recorded examples are versioned, read only and API-independent; methodology discloses policy and limits.
+- **Checks:** [source CI 44873406511](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44873406511) passed 213 backend tests including six isolated SQL checks and all 32 Chromium tests. Local backend count was 207 with six SQL skips. Initial Linux code-scroll focus failure was fixed; manual review also fixed group semantics and mobile navigation. [CI evidence](evidence/phase4_ci.json), [local evidence](evidence/phase4_local.json).
+- **Actual production:** [final public proof](evidence/phase4_live_v2.json) passes metadata/projection/CORS, full coverage, retained slice, real practice/reassessment, refresh/reset and two independent browsers. Mira ends at 3/6 correct, 0.5/developing, with exhausted questions; no learning claim. [Final desktop](evidence/phase4_final_desktop.png), [mobile](evidence/phase4_final_desktop_mobile.png). The initial run/captures remain preserved.
+- **Accessibility:** eight final production scans across four routes/two sizes found no violations. The remaining SVG-background uncertainty was resolved with [actual rendered colors and keyboard list review](evidence/phase4_graph_accessibility.json): minimum text ratio 6.2749:1 and arrow ratio 3.7294:1. This is targeted engineering review, not complete assistive-technology conformance.
+- **Publication/deployment:** active full-v1 package hash `1945410f663981ced5151e4a1c95009d8295712a7c3578af12bfb1126b857475`; old rows unchanged. [Runtime TLS/grants/hash proof](evidence/phase4_database.json), [release record](evidence/phase4_release.json). Both final deployments are READY at source `489c38fd8636a7699fb4749843eb9dddfbc37565`: API `dpl_FpoNGHyQQKrxqbsKTXx3JwQdtSM4`, web `dpl_4VwzFqJtRUhJbq9oSXPChRdLF3ob`. API readiness/pointer passed before web release. Same two Hobby projects/Supabase Free, no payment/new service/runtime dependency. Ten analysis reservations total across initial/final five-request browser runs; no automatic POST retries.
+- **Measurement boundary:** [Phase 4 regression](../evaluation/results/phase4-regression-v1/manifest.json) reuses the original exposed two-concept audit with unchanged metrics. Full-v1 intentionally publishes no incompatible quality summary; the endpoint returns 404. Full release, quota/outage/cold/load, rollback/restore and broader independent quality checks remain Phase 5.
+- **Delivery:** source fixes are separate owner-authored commits; this final evidence/documentation handoff does not change runtime code. No force-push or assistant co-author.

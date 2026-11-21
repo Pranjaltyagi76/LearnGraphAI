@@ -101,3 +101,9 @@ Ordering: enforce raw body/schema bounds → reserve quota → validate release/
 - [Pydantic strict validation](https://docs.pydantic.dev/latest/concepts/strict_mode/) and [JSON Schema generation](https://docs.pydantic.dev/latest/concepts/json_schema/): structural schema, with semantic constraints documented above.
 - [Storage state machine](../context/browser_storage.md), [curriculum review](../curriculum/review.md), and [benchmark definition](../evaluation/readme.md).
 - Generated schemas and golden fixtures are checked in CI. They originally froze structure only. Phase 2/3 now provide the tested engine, actual benchmark, deployed endpoint and browser store; the current evidence is linked from the roadmap.
+
+## Phase 4 compatible release rollout
+
+Protocol/schema/policy remain unchanged. The separately frozen [full-v1 manifest](releases/full-v1.json) selects `catalog-full-v1` and `demo-profiles-full-v1` under `learngraph-full-v1`. It keeps every slice activity value/version unchanged. The runtime supports the active full release and explicitly retained `learngraph-review-v1`, with a two-package maximum and allowlisted artifact sets. Unsupported IDs still return 409. Browser keys isolate the release/hash/seed tuples; explicit old-release navigation never migrates history. Legacy `RELEASE_ID=phase1-v1` routes keep their original contracts.
+
+Full-v1 has no compatible full-catalog quality summary, so the active evaluation endpoint returns `404 evaluation_not_published`; no old slice score is relabeled. The actual original summary remains in the immutable reviewed package.

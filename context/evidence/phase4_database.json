@@ -1,0 +1,39 @@
+{
+  "observed_at": "2026-11-21T05:50:43.743217+00:00",
+  "method": "Restricted runtime TLS connection; read-only transaction; source/stored/hash and effective privileges",
+  "checks": {
+    "unprivileged_role": true,
+    "runtime_grants": true,
+    "separate_owner_and_hardened_guard": true,
+    "source_matches_published_release": true,
+    "tls": true,
+    "learngraph-full-v1_source_stored_hash": true,
+    "learngraph-review-v1_source_stored_hash": true,
+    "phase1-v1_source_stored_hash": true,
+    "only_three_immutable_releases": true
+  },
+  "releases": [
+    {
+      "id": "learngraph-full-v1",
+      "package_hash": "1945410f663981ced5151e4a1c95009d8295712a7c3578af12bfb1126b857475",
+      "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9"
+    },
+    {
+      "id": "learngraph-review-v1",
+      "package_hash": "edfb6e59ca36d9d6d57af5ba3b35602e7addb5f086a4aa05d364516d78b4f76b",
+      "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80"
+    },
+    {
+      "id": "phase1-v1",
+      "package_hash": "ae54153b27c8193429f7b704ae592cb4c5d23f86dec5cc551b018974db5522dd",
+      "release_hash": null
+    }
+  ],
+  "private_schema_tables": [
+    "quota_buckets",
+    "releases"
+  ],
+  "visitor_history_tables_added": false,
+  "retained_publication_evaluation_source": "evaluation/results/phase3-regression-v1/test.json",
+  "verification_note": "Initial checker mistakenly paired retained publication with Phase 2 v2 summary; corrected to actual published Phase 3 summary. Stored row was unchanged."
+}

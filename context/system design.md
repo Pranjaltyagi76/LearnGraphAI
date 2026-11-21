@@ -1,6 +1,6 @@
 # System design
 
-**Status:** Phase 0 contracts/review and Phase 1 feasibility passed. Pure analysis is implemented and evaluated offline in Phase 2; Phase 3 now implements and verifies the live full-analysis/browser-store behavior in the reviewed slice. **Baseline:** [PROJECT.md](../PROJECT.md), Sections 4, 7, 8, 11, and 12. **Requirements:** [requirement.md](../requirement.md).
+**Status:** Full twelve-concept content and learner UI are implemented in Phase 4; final production verification passed. The immutable reviewed slice and legacy routes remain available. **Baseline:** [PROJECT.md](../PROJECT.md). **Requirements:** [requirement.md](../requirement.md).
 
 This document owns runtime behavior, data flow, consistency, and failure handling. Module layout and technology decisions belong in [architecture.md](architecture.md).
 
@@ -134,7 +134,7 @@ Phase 1's NOLOGIN runtime group, shared atomic fixed-minute/daily guard, HMAC cl
 
 ## 10. Implemented Phase 1 subset — 20 November 2026
 
-The retained Phase 1 subset implements `/health`, `/ready`, legacy profile/seed reads and `POST /api/v1/bootstrap/answer`. The bootstrap route validates a response against database-owned question options, reserves the shared budget, grades the answer, and returns `persisted: false`. It is a feasibility endpoint, separate from the now-implemented full-history `/api/v1/demo/analyze` contract. Offline replay, input digests, estimates, diagnosis and plans are now implemented. Live route composition, browser-local progress and distinct reassessment are now verified; the full 72-question curriculum remains Phase 4 work.
+The retained Phase 1 subset implements `/health`, `/ready`, legacy profile/seed reads and `POST /api/v1/bootstrap/answer`. The bootstrap route validates a response against database-owned question options, reserves the shared budget, grades the answer, and returns `persisted: false`. It is a feasibility endpoint, separate from the now-implemented full-history `/api/v1/demo/analyze` contract. Offline replay, input digests, estimates, diagnosis and plans are now implemented. Live route composition, browser-local progress and distinct reassessment are now verified; the separate full-v1 72-question/12-lesson curriculum is now implemented; see the Phase 4 addition below.
 
 The deployed Phase 1 payload contains one synthetic profile and twelve questions. The separate reviewed draft has four profiles, twelve revised questions/two lessons and a reviewed twelve-node/seventeen-edge graph, now exercised by the offline engine. The complete 72-question curriculum remains unfinished.
 
@@ -149,3 +149,13 @@ The [CLI](../backend/scripts/analyze.py) loads a hash-verified release and emits
 The public /learn entry loads the analysis pointer and pinned profile/seed metadata, then opens the profile/version-specific IndexedDB record. An explicit analysis action reserves shared quota and returns the full bundle. New responses first commit pending state; only a response matching the complete snapshot/digest can atomically append an acknowledgement. Refresh restores pending input or labels the cached acknowledged result as saved until live reanalysis. Reset changes sandbox generation; profile changes, concurrent updates and late responses cannot repopulate newer history. No visitor event is written to the database.
 
 [Public browser evidence](evidence/phase3_live.json) records five analysis reservations: initial analysis plus two practices/a distinct reassessment in the first browser, and independent seed analysis in the second browser. The first ends at 0.5/developing, with no fabricated fresh items. Refresh/reset and an unchanged independent browser are verified. Local real-browser tests separately cover pending retry, failures, conflicts and version changes. Basic evidence/plan/timeline and a prerequisite list are delivered; the full learner experience and comprehensive release/accessibility audit remain Phase 4/5.
+
+## 13. Full-curriculum behavior — 21 November 2026
+
+The active full-v1 release contains six distinct questions and one lesson for every concept. The graph/list dashboard uses the server bundle's named evidence states; an unassessed concept stays unknown. A focus change explicitly invalidates live submission until reanalysis; displayed saved results retain their original focus label. Candidate event links lead to a provenance-filtered, inspectable canonical/local timeline. Plan locks offer prerequisite focus actions, while only the server determines readiness. Before/current evidence and reassessment/exhaustion remain observed outcomes, not learning gains.
+
+`/examples` and its four statically generated profile pages bundle actual offline outputs with a fixed reference clock, release/hash/seed versions and read-only labels. They make no analysis request and provide no answer form. `/methodology` explains the existing policy and measurement limitations. Native SVG arrows have a complete HTML concept/prerequisite list alternative; explicit code/graph scroll regions, keyboard controls and reduced motion support the responsive UI.
+
+`/learn?release=learngraph-review-v1` explicitly reopens the older supported slice. Versioned keys create separate sandboxes; no history is migrated. API support is activated before releasing new clients. Current full-v1 has no full-track quality summary; the original exposed two-concept audit remains a separately scoped regression.
+
+Final Phase 4 [release evidence](evidence/phase4_release.json), [public browser proof](evidence/phase4_live_v2.json) and [targeted accessibility review](evidence/phase4_graph_accessibility.json) bind actual source/deployments. The roadmap owns current phase status.

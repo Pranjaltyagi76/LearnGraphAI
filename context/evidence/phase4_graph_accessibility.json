@@ -1,0 +1,265 @@
+{
+  "observed_at": "2026-11-21T06:03:44.649Z",
+  "url": "https://learngraph-ai-web.vercel.app/examples/demo_upstream",
+  "axe_core": "4.14.1",
+  "texts": [
+    {
+      "text": "base",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "cases",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "ready",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    },
+    {
+      "text": "call",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "stack",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "ready",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    },
+    {
+      "text": "dp base",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "cases",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "unknown",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    },
+    {
+      "text": "function",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "calls",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "ready",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    },
+    {
+      "text": "memoization",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(228, 239, 220)",
+      "contrast_ratio": 12.361645258544675
+    },
+    {
+      "text": "developing · focus",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(228, 239, 220)",
+      "contrast_ratio": 6.2748717478708995
+    },
+    {
+      "text": "overlapping",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "subproblems",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "weak",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    },
+    {
+      "text": "recurrence",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "relations",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "ready",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    },
+    {
+      "text": "recursive",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "progress",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "ready",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    },
+    {
+      "text": "recursive",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "tracing",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "ready",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    },
+    {
+      "text": "state",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "definition",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "ready",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    },
+    {
+      "text": "state",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "transitions",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "unknown",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    },
+    {
+      "text": "tabulation",
+      "foreground": "rgb(23, 44, 42)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 14.68389793561718
+    },
+    {
+      "text": "unknown",
+      "foreground": "rgb(65, 91, 73)",
+      "background": "rgb(255, 255, 255)",
+      "contrast_ratio": 7.453666108169131
+    }
+  ],
+  "arrow": {
+    "foreground": "rgb(115, 133, 120)",
+    "background": "rgb(248, 250, 244)",
+    "contrast_ratio": 3.729439438138854
+  },
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "targets": [
+        "g[transform=\"translate(330,190)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(330,190)\"] > .graph-title[y=\"4\"]",
+        "g[transform=\"translate(330,190)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(330,70)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(330,70)\"] > .graph-title[y=\"4\"]",
+        "g[transform=\"translate(330,70)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(560,530)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(560,530)\"] > .graph-title[y=\"4\"]",
+        "g[transform=\"translate(560,530)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(100,70)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(100,70)\"] > .graph-title[y=\"4\"]",
+        "g[transform=\"translate(100,70)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(1020,290)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(1020,290)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(1020,70)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(1020,70)\"] > .graph-title[y=\"4\"]",
+        "g[transform=\"translate(1020,70)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(330,430)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(330,430)\"] > .graph-title[y=\"4\"]",
+        "g[transform=\"translate(330,430)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(560,190)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(560,190)\"] > .graph-title[y=\"4\"]",
+        "g[transform=\"translate(560,190)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(790,70)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(790,70)\"] > .graph-title[y=\"4\"]",
+        "g[transform=\"translate(790,70)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(100,430)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(100,430)\"] > .graph-title[y=\"4\"]",
+        "g[transform=\"translate(100,430)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(560,360)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(560,360)\"] > .graph-title[y=\"4\"]",
+        "g[transform=\"translate(560,360)\"] > .graph-state[y=\"25\"]",
+        "g[transform=\"translate(790,530)\"] > .graph-title[y=\"-12\"]",
+        "g[transform=\"translate(790,530)\"] > .graph-state[y=\"25\"]"
+      ],
+      "messages": [
+        "Element's background color could not be determined because it is overlapped by another element"
+      ]
+    }
+  ],
+  "named_control_group": true,
+  "keyboard_list_alternative": true,
+  "manual_render_review": "Actual desktop/mobile production captures inspected; text is inside opaque rect fills. HTML list repeats every named state/prerequisite.",
+  "limitation": "Targeted contrast/semantics review; not complete assistive-technology conformance"
+}

@@ -1,0 +1,11 @@
+{
+  "run_id": 44873406511,
+  "source_commit": "489c38fd8636a7699fb4749843eb9dddfbc37565",
+  "url": "https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44873406511",
+  "backend": "success",
+  "frontend": "success",
+  "backend_pytest_passed": 213,
+  "browser_passed": 32,
+  "isolated_sql": "Six locally skipped checks passed against PostgreSQL 17 in CI",
+  "method": "Actual completed job status and official archived job summaries; no credentials recorded"
+}

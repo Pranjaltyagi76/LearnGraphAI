@@ -1,6 +1,6 @@
 # Architecture
 
-**Status:** Phase 0 reviewed contracts/draft assets and Phase 1 live infrastructure are complete; Phase 2 pure replay/diagnosis/plans and measured offline evaluation are complete; Phase 3 browser persistence, HTTP activation and the real public learning loop are now verified. **Date:** 20 November 2026. Read [system design](system%20design.md) for runtime behavior and [PROJECT.md](../PROJECT.md) for full rationale and algorithms.
+**Status:** Phases 0–3 passed. Phase 4 implements the full content/UI release with explicit retained-slice support; final production verification passed. **Date:** 21 November 2026. See [full review](../curriculum/full-review.md) and [roadmap](phasewise_roadmap.md).
 
 ## 1. Architecture goals
 
@@ -147,3 +147,13 @@ Use [benchmark.md](benchmark.md), [performance_review.md](performance_review.md)
 `frontend/lib/generated/` comes from the frozen schema, not hand-maintained competing types. `protocol.ts` checks structures/references and canonical request identity; `sandbox.ts` owns IndexedDB transactions, complete observed-record comparisons, pending snapshot recovery, cache verification and explicit session fallback. All hashing/validation completes before write transactions. BroadcastChannel carries only hints; transaction checks and focus reads retain correctness without it. `learning-workspace.tsx` orchestrates one submission per tab and generation guards; `learning-evidence.tsx` renders server evidence without another diagnosis/grading model. The original connection preview remains available on the landing page; /learn exposes the completed bounded learning loop.
 
 [Live verification](evidence/phase3_live.json) proves browser → production API → canonical database → response rendering in two fresh browser processes; [release evidence](evidence/phase3_release.json) records exact source/deployments and runtime privileges. Twenty-three local browser checks cover transactional recovery; the CI API fixture is explicitly separate from hosted verification. The full curriculum, comprehensive UI/accessibility coverage and release/recovery gates remain later work.
+
+## 11. Implemented Phase 4 boundary
+
+`release.py` now has a fixed allowlist for the reviewed and full manifests/catalog/profile files. Offline selection is explicit; untrusted manifest paths are never followed. The database adapter's validated immutable cache is keyed by release ID and bounded to two configured releases: `ANALYSIS_RELEASE_ID` plus `RETAINED_ANALYSIS_RELEASE_IDS`. Readiness checks both. New content is inserted as a new immutable row, without changing schema, graph, scoring policy, frozen protocol, runtime dependencies or old package bytes. Production reads canonical bytes from SQL, independent of root-level curriculum files.
+
+`build_full_curriculum` deterministically builds original full-v1 inputs and refuses edits to an existing differing artifact. `check_full_curriculum` checks coverage, preserved slice values, trusted authored traces, contrasting seed outputs and reproducible examples. Domain tests independently exercise every concept's fresh practice/reassessment workflow. These are engineering checks; the existing quality runner still loads the original slice.
+
+`curriculum-overview.tsx` renders the native SVG and equivalent concept list from public metadata/server estimates. `evidence-timeline.tsx` presents server grades with their original event metadata. Neither implements grading or diagnosis. `/examples/[profile]` statically renders generated safe seed/bundle snapshots; no live controller or submission handler is present. The only new direct dependency is development-only axe-core, already transitive in the lockfile.
+
+Final Phase 4 [release evidence](evidence/phase4_release.json), [public browser proof](evidence/phase4_live_v2.json) and [targeted accessibility review](evidence/phase4_graph_accessibility.json) bind actual source/deployments. The roadmap owns current phase status.

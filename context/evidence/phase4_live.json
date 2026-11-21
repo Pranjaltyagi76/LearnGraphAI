@@ -1,0 +1,321 @@
+{
+  "observed_at": "2026-11-21T05:53:18.134Z",
+  "frontend": "https://learngraph-ai-web.vercel.app",
+  "api": "https://learngraph-ai-api.vercel.app",
+  "method": "Fresh Chromium browser → public production API → canonical Supabase release; no mocks or automatic POST retries.",
+  "synthetic_only": true,
+  "checks": {
+    "retained_slice_readable": true,
+    "no_mislabelled_full_catalog_quality_summary": true,
+    "metadata_versions_projection_cors": true,
+    "real_practice_distinct_reassessment": true,
+    "mobile_overflow": false,
+    "refresh_restores_acknowledged_history": true,
+    "two_independent_browsers": true,
+    "reset_is_local": true,
+    "graph_list_and_readonly_examples": true,
+    "no_browser_exceptions": true
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "elapsed_ms": 501,
+      "request_id": "412b5fb5-0f43-4b3c-ad9c-3568157e4908",
+      "server_timing": "api;dur=0.37"
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "status": 200,
+      "elapsed_ms": 490,
+      "request_id": "099d8b3a-61ee-489d-92b9-8ef15915681a",
+      "server_timing": "api;dur=19.56"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/demo/release",
+      "status": 200,
+      "elapsed_ms": 338,
+      "request_id": "c406b9eb-01a9-4f59-9aca-b97d7a6e6afc",
+      "server_timing": "api;dur=0.59"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/releases/learngraph-full-v1/profiles",
+      "status": 200,
+      "elapsed_ms": 313,
+      "request_id": "b816d1da-e3ee-4c61-92f5-103953ac5279",
+      "server_timing": "api;dur=0.68"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/releases/learngraph-full-v1/profiles/demo_base_cases/seed",
+      "status": 200,
+      "elapsed_ms": 506,
+      "request_id": "a8ad70ab-0d4e-4a34-9c6c-104ffce3f786",
+      "server_timing": "api;dur=3.62"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/releases/learngraph-full-v1/profiles/demo_ambiguous/seed",
+      "status": 200,
+      "elapsed_ms": 302,
+      "request_id": "74c3bb52-7e1a-466d-9f78-d980075ef92f",
+      "server_timing": "api;dur=2.82"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/releases/learngraph-full-v1/profiles/demo_sparse/seed",
+      "status": 200,
+      "elapsed_ms": 508,
+      "request_id": "cbfe5d5e-b7f7-41ba-ac09-32ec965bb45b",
+      "server_timing": "api;dur=2.79"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/releases/learngraph-full-v1/profiles/demo_upstream/seed",
+      "status": 200,
+      "elapsed_ms": 513,
+      "request_id": "ef5e9497-0957-493d-a2c5-af10e6260161",
+      "server_timing": "api;dur=3.06"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/releases/learngraph-review-v1/profiles/demo_base_cases/seed",
+      "status": 200,
+      "elapsed_ms": 304,
+      "request_id": "ac4ce337-f0df-4218-977b-b92d15908c7a",
+      "server_timing": "api;dur=1.10"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/demo/analyze",
+      "status": 200,
+      "elapsed_ms": 658,
+      "request_id": "bf90a11a-697a-4396-ab03-9fae8b4b5db4",
+      "accepted_visitor_events": 0,
+      "history_digest": "61c19aa56d5b2defb03925ba2c401b536879752f176a7f58dc05dcec2070cc36",
+      "diagnosis": "supported_gap",
+      "plan_status": "ready"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/demo/analyze",
+      "status": 200,
+      "elapsed_ms": 684,
+      "request_id": "39a58a13-c1f0-4d16-8bda-e32b8acc75ff",
+      "accepted_visitor_events": 1,
+      "history_digest": "fe48e82c584810913850f7a34700de213c101c77acc94f9f6a97a9d8a6bb7541",
+      "diagnosis": "supported_gap",
+      "plan_status": "ready"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/demo/analyze",
+      "status": 200,
+      "elapsed_ms": 730,
+      "request_id": "3a93cf7e-f113-4d01-9c0f-17831fad9bd9",
+      "accepted_visitor_events": 2,
+      "history_digest": "fce4c7458b42d765caf01afdb999bb8c827e570e9a5ee5c79560c13baed9cdf2",
+      "diagnosis": "ambiguous",
+      "plan_status": "ready"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/demo/analyze",
+      "status": 200,
+      "elapsed_ms": 651,
+      "request_id": "e75117c8-e26c-42d7-a574-10761b2f3acb",
+      "accepted_visitor_events": 3,
+      "history_digest": "e461a5f93a50128daafa7d7aa8f6439dbef7d8b29881299dc60b75482fa25bcf",
+      "diagnosis": "ambiguous",
+      "plan_status": "catalog_exhausted"
+    }
+  ],
+  "browser_errors": [],
+  "release": {
+    "contract_version": 1,
+    "release_id": "learngraph-full-v1",
+    "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9",
+    "graph_version": "graph-v1",
+    "catalog_version": "catalog-full-v1",
+    "model_version": "baseline-v1",
+    "profiles_version": "demo-profiles-full-v1"
+  },
+  "profiles": [
+    {
+      "id": "demo_ambiguous",
+      "focus": "tabulation",
+      "seed_events": 15,
+      "versions": {
+        "release_id": "learngraph-full-v1",
+        "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9",
+        "seed_id": "demo_ambiguous_full_seed",
+        "seed_version": 1,
+        "graph_version": "graph-v1",
+        "catalog_version": "catalog-full-v1",
+        "model_version": "baseline-v1"
+      }
+    },
+    {
+      "id": "demo_sparse",
+      "focus": "state_definition",
+      "seed_events": 1,
+      "versions": {
+        "release_id": "learngraph-full-v1",
+        "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9",
+        "seed_id": "demo_sparse_full_seed",
+        "seed_version": 1,
+        "graph_version": "graph-v1",
+        "catalog_version": "catalog-full-v1",
+        "model_version": "baseline-v1"
+      }
+    },
+    {
+      "id": "demo_upstream",
+      "focus": "memoization",
+      "seed_events": 27,
+      "versions": {
+        "release_id": "learngraph-full-v1",
+        "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9",
+        "seed_id": "demo_upstream_full_seed",
+        "seed_version": 1,
+        "graph_version": "graph-v1",
+        "catalog_version": "catalog-full-v1",
+        "model_version": "baseline-v1"
+      }
+    }
+  ],
+  "before": {
+    "concept_id": "base_cases",
+    "eligible_count": 3,
+    "successes": 0,
+    "total_attempts": 3,
+    "distinct_questions": 3,
+    "estimate": 0.285714,
+    "evidence_state": "supported_estimate",
+    "performance_state": "weak",
+    "recent_failures": 3,
+    "last_evidence_at": "2026-11-20T08:06:00.000Z",
+    "evidence_event_ids": [
+      "ab6f36cb-fb1e-52ec-a4dd-9f5505ff9041",
+      "9c374e0c-3d01-5b17-8d3c-d3aa27840ff1",
+      "9c7eaaba-7fd0-5e42-8d70-6e4d5cee5cef"
+    ]
+  },
+  "after": {
+    "concept_id": "base_cases",
+    "eligible_count": 6,
+    "successes": 3,
+    "total_attempts": 6,
+    "distinct_questions": 6,
+    "estimate": 0.5,
+    "evidence_state": "supported_estimate",
+    "performance_state": "developing",
+    "recent_failures": 0,
+    "last_evidence_at": "2026-11-21T05:53:40.299Z",
+    "evidence_event_ids": [
+      "ab6f36cb-fb1e-52ec-a4dd-9f5505ff9041",
+      "9c374e0c-3d01-5b17-8d3c-d3aa27840ff1",
+      "9c7eaaba-7fd0-5e42-8d70-6e4d5cee5cef",
+      "6aaa7e18-7802-4327-83dc-4eae6154c0f5",
+      "c92aeb76-0b10-455d-880b-84a100e09cf7",
+      "5beb4491-8cfb-4fc0-bdb8-6ce0b321d733"
+    ]
+  },
+  "independent_browser": {
+    "status": 200,
+    "visitor_events": 0,
+    "history_digest": "61c19aa56d5b2defb03925ba2c401b536879752f176a7f58dc05dcec2070cc36",
+    "distinct_sandbox": true
+  },
+  "accessibility": [
+    {
+      "path": "/learn",
+      "mobile": false,
+      "axe_version": "4.14.1",
+      "violations": [],
+      "incomplete_rules": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ],
+      "horizontal_overflow": false,
+      "reduced_motion_scroll": "auto"
+    },
+    {
+      "path": "/examples",
+      "mobile": false,
+      "axe_version": "4.14.1",
+      "violations": [],
+      "incomplete_rules": [],
+      "horizontal_overflow": false,
+      "reduced_motion_scroll": "auto"
+    },
+    {
+      "path": "/examples/demo_upstream",
+      "mobile": false,
+      "axe_version": "4.14.1",
+      "violations": [],
+      "incomplete_rules": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ],
+      "horizontal_overflow": false,
+      "reduced_motion_scroll": "auto"
+    },
+    {
+      "path": "/methodology",
+      "mobile": false,
+      "axe_version": "4.14.1",
+      "violations": [],
+      "incomplete_rules": [],
+      "horizontal_overflow": false,
+      "reduced_motion_scroll": "auto"
+    },
+    {
+      "path": "/learn",
+      "mobile": true,
+      "axe_version": "4.14.1",
+      "violations": [],
+      "incomplete_rules": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ],
+      "horizontal_overflow": false,
+      "reduced_motion_scroll": "auto"
+    },
+    {
+      "path": "/examples",
+      "mobile": true,
+      "axe_version": "4.14.1",
+      "violations": [],
+      "incomplete_rules": [],
+      "horizontal_overflow": false,
+      "reduced_motion_scroll": "auto"
+    },
+    {
+      "path": "/examples/demo_upstream",
+      "mobile": true,
+      "axe_version": "4.14.1",
+      "violations": [],
+      "incomplete_rules": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ],
+      "horizontal_overflow": false,
+      "reduced_motion_scroll": "auto"
+    },
+    {
+      "path": "/methodology",
+      "mobile": true,
+      "axe_version": "4.14.1",
+      "violations": [],
+      "incomplete_rules": [],
+      "horizontal_overflow": false,
+      "reduced_motion_scroll": "auto"
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,184 @@
+{
+  "observed_at": "2026-11-21T06:03:30.520Z",
+  "source_commit": "489c38fd8636a7699fb4749843eb9dddfbc37565",
+  "source_ci": {
+    "id": 44873406511,
+    "url": "https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44873406511",
+    "backend": "success",
+    "frontend": "success"
+  },
+  "initial_failed_ci": {
+    "id": 44872297556,
+    "reason": "Linux mobile code block was not keyboard-focusable; fixed and reverified"
+  },
+  "deployments": [
+    {
+      "id": "dpl_FpoNGHyQQKrxqbsKTXx3JwQdtSM4",
+      "project_id": "prj_K3hvjn2d1vKQDzJBTm7DJ14XC0iA",
+      "name": "learngraph-ai-api",
+      "framework": "fastapi",
+      "target": "production",
+      "state": "READY",
+      "source_commit": "489c38fd8636a7699fb4749843eb9dddfbc37565",
+      "production_alias": "https://learngraph-ai-api.vercel.app",
+      "building_at_ms": 1795240897894,
+      "ready_at_ms": 1795240909392,
+      "provider_building_to_ready_ms": 11498
+    },
+    {
+      "id": "dpl_4VwzFqJtRUhJbq9oSXPChRdLF3ob",
+      "project_id": "prj_xN0EgVf3CJdn1TyTEbjZehtJK9Wf",
+      "name": "learngraph-ai-web",
+      "framework": "nextjs",
+      "target": "production",
+      "state": "READY",
+      "source_commit": "489c38fd8636a7699fb4749843eb9dddfbc37565",
+      "production_alias": "https://learngraph-ai-web.vercel.app",
+      "building_at_ms": 1795240955199,
+      "ready_at_ms": 1795240968058,
+      "provider_building_to_ready_ms": 12859
+    }
+  ],
+  "free_boundary": {
+    "supabase_project": "qnboukxsaczidpwtnadl",
+    "supabase_org": "ijxtakdqmtyzsqljeifc",
+    "supabase_plan": "free",
+    "supabase_status": "ACTIVE_HEALTHY",
+    "vercel_team": "team_mRdCuSvoFHIrkEm4K3UAPs7P",
+    "vercel_plan_evidence": "Owner previously confirmed Hobby/free with no paid billing; project connector does not expose the plan",
+    "new_services": [],
+    "payments_or_paid_addons": [],
+    "runtime_dependencies_added": [],
+    "new_direct_dev_dependency": "axe-core==4.14.1"
+  },
+  "activation": {
+    "ANALYSIS_RELEASE_ID": "learngraph-full-v1",
+    "RETAINED_ANALYSIS_RELEASE_IDS": "learngraph-review-v1",
+    "RELEASE_ID": "phase1-v1",
+    "production_secrets": "Existing DATABASE_URL and CLIENT_ID_HASH_SECRET untouched; no values read back",
+    "ignored_local_activation": "Only the two non-secret release keys updated"
+  },
+  "database": {
+    "new_row": "learngraph-full-v1",
+    "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9",
+    "package_hash": "1945410f663981ced5151e4a1c95009d8295712a7c3578af12bfb1126b857475",
+    "owner_publish_and_verify": true,
+    "restricted_runtime_evidence": "phase4_database.json",
+    "older_rows_unchanged": true,
+    "schema_migrations": 0,
+    "visitor_history_persisted": false
+  },
+  "verification": {
+    "live_evidence": "phase4_live_v2.json",
+    "analysis_reservations": 5,
+    "automatic_post_retries": 0,
+    "primary_timed_samples": 13,
+    "independent_browser_analysis": "Separately recorded; not in the 13 timed samples",
+    "evaluation_endpoint": "404 evaluation_not_published rather than an incompatible full-track score",
+    "accessibility": "Eight final production scans, zero violations. SVG contrast uncertainty resolved by actual text/rect colors; named group and keyboard list passed.",
+    "screenshots": [
+      "phase4_final_desktop.png",
+      "phase4_final_desktop_mobile.png"
+    ],
+    "graph_accessibility_evidence": "phase4_graph_accessibility.json",
+    "session_analysis_reservations_total": 10,
+    "initial_and_final_runs": "Five in each independently recorded public proof; no automatic POST retries"
+  },
+  "observability": {
+    "error_log_filter": {
+      "level": [
+        "error"
+      ],
+      "limit": 20,
+      "deployments": [
+        "dpl_FpoNGHyQQKrxqbsKTXx3JwQdtSM4",
+        "dpl_4VwzFqJtRUhJbq9oSXPChRdLF3ob"
+      ],
+      "window": "2026-11-21T05:15:16Z to 2026-11-21T06:05:16Z"
+    },
+    "matching_error_logs": 0,
+    "configured_drains": []
+  },
+  "limitations": [
+    "Engineering curriculum review is not educator validation",
+    "Existing quality audit remains limited to the original two-concept slice",
+    "Build intervals are not application cold-start latency",
+    "Full release/rollback/outage/quota/restore drills and independent full-track quality scenarios remain Phase 5"
+  ],
+  "initial_rollout": {
+    "source_commit": "f245cdbb0d16cbd9643a5f92231d2b09e2cff09d",
+    "source_ci": {
+      "id": 44872675102,
+      "url": "https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44872675102",
+      "backend": "success",
+      "frontend": "success"
+    },
+    "deployments": [
+      {
+        "id": "dpl_DWZxHDQBNcPR5ufJztT213hkbTpv",
+        "project_id": "prj_K3hvjn2d1vKQDzJBTm7DJ14XC0iA",
+        "name": "learngraph-ai-api",
+        "framework": "fastapi",
+        "target": "production",
+        "state": "READY",
+        "source_commit": "f245cdbb0d16cbd9643a5f92231d2b09e2cff09d",
+        "production_alias": "https://learngraph-ai-api.vercel.app",
+        "building_at_ms": 1795240311009,
+        "ready_at_ms": 1795240322907,
+        "provider_building_to_ready_ms": 11898
+      },
+      {
+        "id": "dpl_HjcYRr4wnW9G4FGN35sfRDRKeWAG",
+        "project_id": "prj_xN0EgVf3CJdn1TyTEbjZehtJK9Wf",
+        "name": "learngraph-ai-web",
+        "framework": "nextjs",
+        "target": "production",
+        "state": "READY",
+        "source_commit": "f245cdbb0d16cbd9643a5f92231d2b09e2cff09d",
+        "production_alias": "https://learngraph-ai-web.vercel.app",
+        "building_at_ms": 1795240344779,
+        "ready_at_ms": 1795240361928,
+        "provider_building_to_ready_ms": 17149
+      }
+    ],
+    "verification": {
+      "live_evidence": "phase4_live.json",
+      "analysis_reservations": 5,
+      "automatic_post_retries": 0,
+      "primary_timed_samples": 13,
+      "independent_browser_analysis": "Separately recorded; not in the 13 timed samples",
+      "evaluation_endpoint": "404 evaluation_not_published rather than an incompatible full-track score",
+      "accessibility": "Eight production scans across four routes and two widths; no violations; incomplete checks retained for manual review",
+      "screenshots": [
+        "phase4_live_desktop.png",
+        "phase4_live_desktop_mobile.png"
+      ]
+    },
+    "observability": {
+      "error_log_filter": {
+        "level": [
+          "error"
+        ],
+        "limit": 20,
+        "deployments": [
+          "dpl_DWZxHDQBNcPR5ufJztT213hkbTpv",
+          "dpl_HjcYRr4wnW9G4FGN35sfRDRKeWAG"
+        ],
+        "window": "2026-11-21T05:05:23Z to 2026-11-21T05:55:23Z"
+      },
+      "matching_error_logs": 0,
+      "configured_drains": []
+    }
+  },
+  "manual_review_fixes": [
+    "Use a valid named group for graph/list controls",
+    "Scope compact landing navigation rules to preserve learner links on mobile",
+    "Measure SVG text/rect fill and arrow/background contrast directly"
+  ],
+  "graph_contrast": {
+    "minimum_text_ratio": 6.2748717478708995,
+    "arrow_ratio": 3.729439438138854,
+    "remaining_incomplete": "Only SVG background-detection color-contrast nodes; actual opaque fill contrast independently measured"
+  },
+  "documentation_delivery": "Subsequent evidence/documentation-only commit does not require a runtime redeploy; runtime code is pinned to the source above."
+}

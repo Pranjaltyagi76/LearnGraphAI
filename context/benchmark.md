@@ -147,6 +147,12 @@ Four [fixture-only structural variants](../evaluation/variants.v1.json) exercise
 
 ## 11. Phase 3 regression and live boundary
 
-[phase3-regression-v1](../evaluation/results/phase3-regression-v1/manifest.json) pins the newly composed API sources and reproduces unchanged predictions, diagnoses and plan metrics. The original exposed audit is reused without policy tuning; no new independent-test claim is made. Archive checks require their own source snapshots; the current verification command points to this new regression run. The measured compatible summary is now published in canonical storage and exposed by the live API.
+[phase3-regression-v1](../evaluation/results/phase3-regression-v1/manifest.json) pins the newly composed API sources and reproduces unchanged predictions, diagnoses and plan metrics. The original exposed audit is reused without policy tuning; no new independent-test claim is made. Archive checks require their own source snapshots; that phase used this new regression run. The measured compatible summary is now published in canonical storage and exposed by the live API.
 
 [Real browser verification](evidence/phase3_live.json) additionally demonstrates two fresh practices and a distinct reassessment, saved-history refresh, local reset and isolation in two independent browser processes. It is a functional deployment check, not another quality dataset or evidence of educational benefit. Basic live-loop feasibility is now verified; full-catalog and later release/failure audits remain open.
+
+## 12. Phase 4 coverage boundary — 21 November 2026
+
+[phase4-regression-v1](../evaluation/results/phase4-regression-v1/manifest.json) binds the current application/evaluator sources and reproduces unchanged exposed two-concept outputs with zero retained development/test failures. The manifest accurately records a dirty delivery tree and explicit source hashes. Current CI checks this run; earlier runs remain archived with their own source snapshots. No policy tuning or new independent-trial claim is made.
+
+Full-v1 content review verifies 72 questions/12 lessons, original activity preservation, 13 new trusted output traces, four contrasting seeds and fresh-item availability. Twelve workflow fixtures complete two practices and distinct reassessment under explicitly ready dependency evidence. These checks do not estimate full-catalog prediction quality, compare diagnosis policies across the new concepts or establish learning. The full product publishes no incompatible quality summary. Phase 5 should define independent full-track scenarios with competing gaps, varied dependency assumptions, noise and fresh exposure records before making broader quality claims.

@@ -10,7 +10,7 @@
 >
 > **Deployment goal:** A publicly accessible personal portfolio demo using only free plans, with a strict recurring service budget of **₹0 / $0**.
 >
-> **Status:** Phase 0 engineering review, Phase 1 free deployment and Phase 2 offline engine/evaluation and Phase 3 live-loop gates are complete. The reviewed graph/catalog/contracts drive reproducible CLI analysis and a measured public synthetic audit; the new immutable analysis package drives the live /learn loop alongside retained phase1-v1 routes. Browser-local progress, pending recovery and reassessment now work; full content, complete learner UI and release auditing remain later work. Parameters are initial policy hypotheses, not validated educational cutoffs.
+> **Status:** Phases 0–4 passed their bounded gates. Phase 4 completes the original full 72-question/12-lesson curriculum, learner graph/list/evidence/timeline and recorded examples; production verification passed; see the operational roadmap for evidence. The original reviewed slice remains immutable and supported separately. Full P0 release/recovery gates and independent full-track quality validation remain Phase 5 work. Parameters remain initial hypotheses, not validated educational cutoffs.
 >
 > **Last revised:** 20 November 2026.
 
@@ -221,7 +221,7 @@ Graph validation must reject unknown IDs, self-edges, duplicate edges, and prere
 - The public source repository may contain authored grading rules. This is an inspectable educational demo, not a secure examination system: withholding future answers from the normal API/UI is a teaching behavior, not a claim that a determined visitor cannot find them in source.
 - The 72-item catalog demonstrates a bounded loop; it is not enough to claim robust psychometric assessment. When unseen items are exhausted, say so and offer a clearly labeled review rather than fabricating fresh evidence.
 
-**Resolved budget decision (OPEN-01, 20 November 2026):** Increase the target to 72 questions, six per concept: one diagnostic, four practice, and one reassessment. Three initial eligible items can leave two fresh practice questions and a distinct reassessment. The authored two-concept Phase 1 fixture and its catalog test prove this item-availability trace; the full 72-item catalog still needs authoring/review. This budget does not guarantee threshold crossing, educational benefit, or unlimited fresh content. See [the operational roadmap](context/phasewise_roadmap.md).
+**Resolved budget decision (OPEN-01, 20 November 2026):** Increase the target to 72 questions, six per concept: one diagnostic, four practice, and one reassessment. Three initial eligible items can leave two fresh practice questions and a distinct reassessment. The authored two-concept Phase 1 fixture and its catalog test prove this item-availability trace; the separate [full 72-item catalog and engineering review](curriculum/full-review.md) now demonstrate this trace for all twelve concepts. This budget does not guarantee threshold crossing, educational benefit, or unlimited fresh content. See [the operational roadmap](context/phasewise_roadmap.md).
 
 ---
 
@@ -731,7 +731,7 @@ Phases 0, 1, 2 and 3 have passed their bounded review, deployment, offline-analy
 ### Phase 0 — Freeze the focused product and data contracts
 
 - [x] Review the 12 canonical concepts, entry assumptions, definitions, and proposed prerequisite edges.
-- [x] Resolve OPEN-01 with the 72-question decision and a tested two-concept fresh-item trace; full catalog authoring remains pending.
+- [x] Resolve OPEN-01 with the 72-question decision and a tested two-concept fresh-item trace; the separately versioned full catalog is now authored and engineering-reviewed.
 - [x] Validate IDs, edge direction, graph acyclicity, and topic-versus-skill separation.
 - [x] Define activity roles, authored grading, event/replay rules, and version/digest contracts.
 - [x] Review initial evidence thresholds, diagnosis factors, recommendation rules, and exhaustion behavior.
@@ -781,12 +781,12 @@ Phases 0, 1, 2 and 3 have passed their bounded review, deployment, offline-analy
 
 ### Phase 4 — Complete P0 content and learner experience
 
-- [ ] Finish and review all 72 distinct questions and linked lessons across 12 concepts.
-- [ ] Seed all four contrasting learner profiles and their versioned histories.
-- [ ] Add dashboard, prerequisite graph/list, diagnosis detail, plan locks, and reassessment view.
-- [ ] Cover unknown, early, ambiguous, no-supported-gap, no-suitable-item, and catalog-exhausted states.
-- [ ] Add mobile, keyboard, contrast, focus, loading, error, and reduced-motion handling.
-- [ ] Produce versioned prerecorded example views and public methodology/limitations pages.
+- [x] Finish and review all 72 distinct questions and linked lessons across 12 concepts.
+- [x] Seed all four contrasting learner profiles and their versioned histories.
+- [x] Add dashboard, prerequisite graph/list, diagnosis detail, plan locks, and reassessment view.
+- [x] Cover unknown, early, ambiguous, no-supported-gap, no-suitable-item, and catalog-exhausted states.
+- [x] Add mobile, keyboard, contrast, focus, loading, error, and reduced-motion handling.
+- [x] Produce versioned prerecorded example views and public methodology/limitations pages.
 
 **Exit condition:** All P0 features work across the full authored catalog; sparse/noisy profiles and accessibility states are represented honestly.
 
