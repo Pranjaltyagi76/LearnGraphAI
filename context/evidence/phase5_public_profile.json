@@ -1,0 +1,124 @@
+{
+  "observed_at": "2026-11-21T15:06:02.904Z",
+  "method": "Eight full-analysis calls, concurrency two; eight fresh browser contexts, unthrottled desktop hardware with desktop/mobile viewports. No automatic POST retry.",
+  "samples": [
+    {
+      "status": 200,
+      "ms": 392.0658000000001,
+      "server_timing": "api;dur=98.11",
+      "bytes": 8076
+    },
+    {
+      "status": 200,
+      "ms": 404.8728000000001,
+      "server_timing": "api;dur=83.68",
+      "bytes": 8076
+    },
+    {
+      "status": 200,
+      "ms": 279.10749999999985,
+      "server_timing": "api;dur=13.61",
+      "bytes": 8076
+    },
+    {
+      "status": 200,
+      "ms": 440.6468,
+      "server_timing": "api;dur=124.79",
+      "bytes": 8076
+    },
+    {
+      "status": 200,
+      "ms": 275.1897999999999,
+      "server_timing": "api;dur=16.27",
+      "bytes": 8076
+    },
+    {
+      "status": 200,
+      "ms": 289.77909999999997,
+      "server_timing": "api;dur=26.36",
+      "bytes": 8076
+    },
+    {
+      "status": 200,
+      "ms": 277.4809,
+      "server_timing": "api;dur=13.56",
+      "bytes": 8076
+    },
+    {
+      "status": 200,
+      "ms": 263.75289999999995,
+      "server_timing": "api;dur=15.88",
+      "bytes": 8076
+    }
+  ],
+  "pages": [
+    {
+      "viewport_width": 1365,
+      "usable_analysis_control_ms": 1749.6993000000002,
+      "dom_content_loaded_ms": 272.3999999985099,
+      "load_event_end_ms": 334.09999999403954,
+      "first_contentful_paint_ms": 280,
+      "overflow": false
+    },
+    {
+      "viewport_width": 1365,
+      "usable_analysis_control_ms": 1689.7145000000019,
+      "dom_content_loaded_ms": 206.19999999552965,
+      "load_event_end_ms": 300,
+      "first_contentful_paint_ms": 216,
+      "overflow": false
+    },
+    {
+      "viewport_width": 1365,
+      "usable_analysis_control_ms": 1667.7924999999996,
+      "dom_content_loaded_ms": 212.89999999850988,
+      "load_event_end_ms": 274.29999999701977,
+      "first_contentful_paint_ms": 232,
+      "overflow": false
+    },
+    {
+      "viewport_width": 1365,
+      "usable_analysis_control_ms": 1696.1542000000009,
+      "dom_content_loaded_ms": 215.10000000149012,
+      "load_event_end_ms": 287.69999999552965,
+      "first_contentful_paint_ms": 232,
+      "overflow": false
+    },
+    {
+      "viewport_width": 360,
+      "usable_analysis_control_ms": 1670.6144999999997,
+      "dom_content_loaded_ms": 226.89999999850988,
+      "load_event_end_ms": 278.79999999701977,
+      "first_contentful_paint_ms": 244,
+      "overflow": false
+    },
+    {
+      "viewport_width": 360,
+      "usable_analysis_control_ms": 1668.138500000001,
+      "dom_content_loaded_ms": 194.60000000149012,
+      "load_event_end_ms": 261.80000000447035,
+      "first_contentful_paint_ms": 220,
+      "overflow": false
+    },
+    {
+      "viewport_width": 360,
+      "usable_analysis_control_ms": 1640.0526000000027,
+      "dom_content_loaded_ms": 192.79999999701977,
+      "load_event_end_ms": 255.60000000149012,
+      "first_contentful_paint_ms": 208,
+      "overflow": false
+    },
+    {
+      "viewport_width": 360,
+      "usable_analysis_control_ms": 1774.468200000003,
+      "dom_content_loaded_ms": 223.20000000298023,
+      "load_event_end_ms": 338.8999999985099,
+      "first_contentful_paint_ms": 236,
+      "overflow": false
+    }
+  ],
+  "version_conflict_status": 409,
+  "oversized_status": 413,
+  "p95_ms": 440.6468,
+  "passed": true
+}

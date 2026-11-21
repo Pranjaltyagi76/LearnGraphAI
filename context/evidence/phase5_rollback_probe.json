@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "actual_public_post_count": 2,
+  "supported_releases": [
+    {
+      "release_id": "learngraph-full-v1",
+      "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9",
+      "activities": 84,
+      "accepted_events": 0,
+      "diagnosis": "supported_gap"
+    },
+    {
+      "release_id": "learngraph-review-v1",
+      "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+      "activities": 14,
+      "accepted_events": 0,
+      "diagnosis": "supported_gap"
+    }
+  ],
+  "meaning": "Previous compatible deployment; same frozen content and protocol. This is not a destructive content downgrade."
+}

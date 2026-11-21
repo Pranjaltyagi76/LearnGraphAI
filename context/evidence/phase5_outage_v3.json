@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-11-21T14:49:57.236Z",
+  "mode": "outage",
+  "synthetic_only": true,
+  "checks": {
+    "real_paused_database_readiness_503": true,
+    "paused_database_pending_refresh_and_readonly_example": true,
+    "exact_manual_retry_accepted_once": true
+  },
+  "requests": [],
+  "pause_readiness_code": "dependency_unavailable",
+  "final_history_digest": "7a8db53f22d47ce7d8807320ba5f64b6dabd3b0fc52a9394718f7d9b90e08a93",
+  "passed": true
+}

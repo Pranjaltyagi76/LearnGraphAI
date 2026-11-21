@@ -10,7 +10,7 @@
 >
 > **Deployment goal:** A publicly accessible personal portfolio demo using only free plans, with a strict recurring service budget of **₹0 / $0**.
 >
-> **Status:** Phases 0–4 passed their bounded gates. Phase 4 completes the original full 72-question/12-lesson curriculum, learner graph/list/evidence/timeline and recorded examples; production verification passed; see the operational roadmap for evidence. The original reviewed slice remains immutable and supported separately. Full P0 release/recovery gates and independent full-track quality validation remain Phase 5 work. Parameters remain initial hypotheses, not validated educational cutoffs.
+> **Status:** The bounded P0 synthetic portfolio release is accepted through Phase 5 under the owner-approved engineering-review scope; human content validation is deferred. Full content/UI, deterministic analysis, actual failure/recovery, clean source restore, compatible rollback and measured public synthetic audits now have evidence in the [acceptance mapping](context/release_acceptance.md). Defaults remain unvalidated educational hypotheses; no real-student benefit, calibrated mastery, broad generalization or always-on free hosting is claimed.
 >
 > **Last revised:** 20 November 2026.
 
@@ -792,14 +792,14 @@ Phases 0, 1, 2 and 3 have passed their bounded review, deployment, offline-analy
 
 ### Phase 5 — Release verification, evaluation, and cost recovery
 
-- [ ] Run the critical browser/API tests and backend/frontend CI checks on standard free runners.
-- [ ] Confirm immutable seeds, retry invariance, atomic quota behavior, bounded requests, and version-mismatch handling.
-- [ ] Test `429`, API failure, unavailable quota storage/database, cold start/restart, and static-example fallback.
-- [ ] Verify no credential leaks, premature answer disclosures in normal API/UI responses, privileged public writes, raw datasets, or research dependencies in runtime artifacts.
-- [ ] Re-run the frozen P0 evaluation; publish actual metrics, sample counts, split manifests, limitations, and model card.
-- [ ] Exercise restore/reseed from authored sources and verify version hashes; document manual backup/recovery.
-- [ ] Recheck provider terms, zero-payment settings, quotas shared across projects, storage retention, and live public URLs.
-- [ ] Run the entire deployed loop from a clean browser and complete the Section 19 release checklist.
+- [x] Run the critical browser/API tests and backend/frontend CI checks on standard free runners.
+- [x] Confirm immutable seeds, retry invariance, atomic quota behavior, bounded requests, and version-mismatch handling.
+- [x] Test `429`, API failure, unavailable quota storage/database, cold start/restart, and static-example fallback.
+- [x] Verify no credential leaks, premature answer disclosures in normal API/UI responses, privileged public writes, raw datasets, or research dependencies in runtime artifacts.
+- [x] Re-run the frozen P0 evaluation; publish actual metrics, sample counts, split manifests, limitations, and model card.
+- [x] Exercise restore/reseed from authored sources and verify version hashes; document manual backup/recovery.
+- [x] Recheck provider terms, zero-payment settings, quotas shared across projects, storage retention, and live public URLs.
+- [x] Run the entire deployed loop from a clean browser and complete the Section 19 release checklist.
 
 **Exit condition:** Every P0 release criterion passes, a viable free live demo exists, and dependency/quota failures degrade clearly without enabling charges.
 
@@ -830,46 +830,49 @@ Phases 0, 1, 2 and 3 have passed their bounded review, deployment, offline-analy
 
 ### Free public deployment
 
-- [ ] A clean browser can open the public frontend and reach the actual API/database path.
-- [ ] The setup uses free plans and included subdomains with no paid billing, purchased resources, or trial-credit dependency.
-- [ ] Runtime bundle/dependency limits and cold/warm behavior were measured and documented.
-- [ ] Quota/dependency exhaustion returns a controlled state without a paid fallback.
-- [ ] Labeled prerecorded examples remain accessible when live analysis is unavailable; they are never presented as live results.
+- [x] A clean browser can open the public frontend and reach the actual API/database path.
+- [x] The setup uses free plans and included subdomains with no paid billing, purchased resources, or trial-credit dependency.
+- [x] Runtime bundle/dependency limits and cold/warm behavior were measured and documented.
+- [x] Quota/dependency exhaustion returns a controlled state without a paid fallback.
+- [x] Labeled prerecorded examples remain accessible when live analysis is unavailable; they are never presented as live results.
 
 ### Content, isolation, and live loop
 
-- [ ] Four contrasting synthetic profiles and 12 canonical concepts are available.
-- [ ] The 72 authored questions have valid primary tags, roles, grading, and versions; lessons remain ungraded context.
-- [ ] Prerequisite edges reference known nodes, contain no cycles, and render in the correct direction.
-- [ ] Two separate browser contexts have independent progress; neither can modify canonical seeds.
-- [ ] Refresh restores local progress; reset restores only that local profile; unavailable storage produces a clear session-only notice.
-- [ ] The visitor can answer a question, inspect the result, practice, and take a different same-skill reassessment.
-- [ ] Dashboard history, estimates, diagnosis, and plan correspond to the same acknowledged input digest and versions.
-- [ ] Pending/failed requests never look accepted; late responses cannot overwrite newer analysis.
+- [x] Four contrasting synthetic profiles and 12 canonical concepts are available.
+- [x] The 72 authored questions have valid primary tags, roles, grading, and versions; lessons remain ungraded context.
+- [x] Prerequisite edges reference known nodes, contain no cycles, and render in the correct direction.
+- [x] Two separate browser contexts have independent progress; neither can modify canonical seeds.
+- [x] Refresh restores local progress; reset restores only that local profile; unavailable storage produces a clear session-only notice.
+- [x] The visitor can answer a question, inspect the result, practice, and take a different same-skill reassessment.
+- [x] Dashboard history, estimates, diagnosis, and plan correspond to the same acknowledged input digest and versions.
+- [x] Pending/failed requests never look accepted; late responses cannot overwrite newer analysis.
 
 ### Evidence and algorithms
 
-- [ ] A concept with no evidence shows `not_assessed`, not a 50% mastery claim.
-- [ ] Unknown prerequisites generate evidence requests; only qualifying evidence supports a weakness diagnosis.
-- [ ] Identical event/request retries do not add evidence; conflicting IDs and invalid ordering return documented errors.
-- [ ] Hinted responses, repeated questions, lessons, and secondary tags follow the declared evidence policy.
-- [ ] A diagnosis includes actual evidence IDs, paths, alternatives, versions, and a nonprobabilistic evidence-strength label.
-- [ ] Ambiguous/sparse cases can abstain; secure prerequisites do not get automatically blamed for a target failure.
-- [ ] Plans contain valid IDs, honor readiness and prerequisite order, and stop honestly when fresh activities are exhausted.
-- [ ] New distinct eligible evidence can update estimates; lesson completion and memorized retries do not invent improvement.
-- [ ] The complete application works with no LLM configuration.
+- [x] A concept with no evidence shows `not_assessed`, not a 50% mastery claim.
+- [x] Unknown prerequisites generate evidence requests; only qualifying evidence supports a weakness diagnosis.
+- [x] Identical event/request retries do not add evidence; conflicting IDs and invalid ordering return documented errors.
+- [x] Hinted responses, repeated questions, lessons, and secondary tags follow the declared evidence policy.
+- [x] A diagnosis includes actual evidence IDs, paths, alternatives, versions, and a nonprobabilistic evidence-strength label.
+- [x] Ambiguous/sparse cases can abstain; secure prerequisites do not get automatically blamed for a target failure.
+- [x] Plans contain valid IDs, honor readiness and prerequisite order, and stop honestly when fresh activities are exhausted.
+- [x] New distinct eligible evidence can update estimates; lesson completion and memorized retries do not invent improvement.
+- [x] The complete application works with no LLM configuration.
 
 ### Quality, evaluation, and recovery
 
-- [ ] Backend tests, frontend checks/build, and critical deployed browser-flow checks pass.
-- [ ] Cross-instance quota tests confirm atomic enforcement; oversized requests, `429`, and failed quota storage are handled.
-- [ ] Prefix-based evaluation uses no future answers or test-fitted parameters; independent holdout scenarios remain untouched by tuning.
-- [ ] Public baseline comparisons contain real metrics, counts, seeds, split/config versions, and limitations; BKT is not required.
-- [ ] No credentials, real student data, or large research data are publicly exposed; normal API/UI responses withhold answers until feedback is due. Public authored source is not treated as a secret examination bank.
-- [ ] Mobile and keyboard flows are usable and graph information has a non-color, non-pointer alternative.
-- [ ] Restore/reseed and version mismatch behavior are exercised; local setup and deployment documentation match the actual application.
+- [x] Backend tests, frontend checks/build, and critical deployed browser-flow checks pass.
+- [x] Cross-instance quota tests confirm atomic enforcement; oversized requests, `429`, and failed quota storage are handled.
+- [x] Prefix-based evaluation uses no future answers or test-fitted parameters; independent holdout scenarios remain untouched by tuning.
+- [x] Public baseline comparisons contain real metrics, counts, seeds, split/config versions, and limitations; BKT is not required.
+- [x] No credentials, real student data, or large research data are publicly exposed; normal API/UI responses withhold answers until feedback is due. Public authored source is not treated as a secret examination bank.
+- [x] Mobile and keyboard flows are usable and graph information has a non-color, non-pointer alternative.
+- [x] Restore/reseed and version mismatch behavior are exercised; local setup and deployment documentation match the actual application.
 
 ---
+
+
+Acceptance is scoped by [actual evidence and limits](context/release_acceptance.md). Provider cold groups are descriptive invocation samples; clean restore is source reconstruction in isolated PostgreSQL plus real remote resume, not a destructive production-loss drill. Full-track synthetic labels are untuned authored assumptions with known implementation exposure, not blind student validation.
 
 ## 20. Risks and mitigation
 
@@ -958,3 +961,7 @@ The demo is designed to operate at ₹0 within available free quotas. This is no
 ---
 
 **Project principle:** Prove the smallest complete diagnosis/practice/reassessment loop, evaluate it honestly, and deploy within the strict free-service budget before expanding scope.
+
+## Phase 5 scope decision — 21 November 2026
+
+The owner explicitly approved **engineering-reviewed synthetic-demo scope and deferred human content validation**, resolving the original FR-03 human-review release condition for this portfolio P0. [Acceptance mapping](context/release_acceptance.md) binds every engineering requirement to evidence. No human/educator review, real-student validation, calibrated mastery, causal diagnosis or learning benefit is claimed. Optional P1/P2 features remain outside this release.

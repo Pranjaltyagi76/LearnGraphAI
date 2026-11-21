@@ -1,6 +1,6 @@
 # Performance review
 
-**State:** Phase 1 live deployment/resource checks passed; small descriptive samples are recorded below. The separate offline quality audit and small Phase 3 public-loop samples are linked below; a full load/cold/resource profile remains unmeasured. **Date:** 20 November 2026.
+**State:** Phase 5 bounded compute, public workload/page, provider cold/hot/resource and actual recovery measurements recorded. These are descriptive engineering samples, not capacity or availability guarantees. **Date:** 21 November 2026.
 
 This file covers latency, resources, reliability under bounded load, and the effect of free hosting. Model-quality evidence belongs in [benchmark.md](benchmark.md). Runtime constraints originate in PROJECT Sections 12–14 and [requirements](../requirement.md), especially NFR-03–06/10/13.
 
@@ -9,15 +9,15 @@ This file covers latency, resources, reliability under bounded load, and the eff
 | Measure | Initial requirement/target | Classification | Current result |
 | --- | --- | --- | --- |
 | Request body | Maximum 256 KiB, enforced while counting bytes | Application hard bound | Implemented; chunked oversized-body contract test passes. |
-| History | At most 200 visitor events plus 100 server seed events | Application hard bound | Not implemented/tested. |
-| Search/plan | Prerequisite depth ≤3; ≤3 diagnoses; ≤5 plan items | Application hard bound | Not implemented/tested. |
-| Analysis work | Ten-second application time budget with tighter DB/operation deadlines | Agreed initial budget; cold behavior must be measured | Bootstrap middleware bound implemented. Observed smoke API durations 2.85–121.93 ms; full analysis not implemented. |
+| History | At most 200 visitor events plus 100 seed events | Hard bound | Implemented; schema boundary tests and 300-event maximum-history core fixture pass. |
+| Search/plan | Depth ≤3; ≤3 candidates; ≤5 items | Hard bound | Implemented and verified by direct, variant and full-audit plan checks. |
+| Analysis work | Ten-second route budget with tighter DB/receive deadlines | Initial budget | Full analysis deployed; maximum-history sequential p95 24.42 ms locally, separate network/provider samples below. |
 | Shared quota | Ten analyses/minute/client identifier; 1,000/day globally | Initial operational guard, not provider entitlement | Hosted concurrent client/global denial and counter atomicity passed; bootstrap grading uses this guard. |
 | Quota retention | Expiry within 48 hours; bounded cleanup | Application retention bound | Hosted logical-expiry check passed. Physical deletion is opportunistic, not guaranteed during idle periods. |
-| Warm API response | Proposed p95 ≤2 seconds end-to-end at the defined low-volume workload | Engineering target to review in Phase 1 | Five readiness samples: p50 584.48 ms, nearest-rank p95/max 695.60 ms; two grades 364.79/335.18 ms. Small smoke sample, not an SLO or full-analysis benchmark. |
-| Pure analysis compute | Proposed p95 ≤100 ms for the maximum valid fixture on the declared local machine | Profiling target; excludes DB/network/cold boot | Not measured. |
-| Initial learner page | Proposed usable primary content within 3 seconds under a stated device/network profile | UX target; report tool and conditions | Not measured. |
-| Bundle/memory/DB pool | Fit verified free provider limits with documented margin | Deployment gate, exact values observed in Phase 1 | Reported artifact 12,699,243 bytes; provider peak memory 210 MB versus 2,048 MiB allocation; one client connection/instance; hosted TLS/permissions audit passed. |
+| Warm API response | Proposed p95 ≤2 s at declared low volume | Target, not SLO | Eight public analyses at concurrency two: nearest-rank p95 440.65 ms. |
+| Pure analysis compute | Proposed p95 ≤100 ms on declared maximum-history fixture | Local target | 100 measured / five warmup samples: p95 24.42 ms on Windows/Python 3.12.10. |
+| Initial learner page | Proposed usable control within 3 s under stated conditions | UX target | Eight fresh unthrottled Chromium contexts; max 1,749.70/1,774.47 ms for desktop/mobile viewports. Not physical mobile or a network guarantee. |
+| Bundle/memory/DB pool | Fit verified free limits | Deployment gate | Reported API package 12.15 MB; observed peak 216 MB / allocation 2,048 MB; one SQL client connection per instance. |
 
 New proposed targets do not override hard constraints or become measured claims. Record changes with evidence if free-host cold starts or regional latency require a different UX target. Do not relax correctness/security or enable payment merely to improve timings.
 
@@ -99,8 +99,8 @@ Keep attempted/failed runs visible. A change in machine, region, fixture, or met
 | --- | --- | --- |
 | Documentation foundation, 2026-11-20 | Requirements/budget/protocol design only | No performance pass/fail; nothing measured. |
 | Phase 1 deployment viability | Live browser grading, hosted SQL checks, public smoke, cold/hot provider metrics, resource metadata, and reseeding passed | Free topology viable for the bounded feasibility slice; full product/inference gate remains later work. |
-| Phase 3 complete learning loop | Not run | Pending full learning-loop implementation. |
-| Phase 5 release review | Not run | Release not ready. |
+| Phase 3 complete learning loop | Actual live evidence retained | Bounded gate passed; expanded full release checked in Phase 4/5. |
+| Phase 5 release review | Compute, low-volume public/page, provider resource, real quota/pause recovery and rollback records | Engineering checks passed; owner-approved synthetic-demo scope accepted, human validation deferred. |
 
 Future reviewers must update this ledger from real execution. Do not replace `not measured` with guessed production numbers or promise always-on free hosting.
 
@@ -158,3 +158,15 @@ The [initial public measurement](evidence/phase4_live.json) records thirteen tim
 Desktop/mobile production captures were inspected. Automated accessibility scans cover four routes at two sizes; remaining SVG contrast uncertainty requires the targeted rendered-color review rather than claiming complete conformance from zero violations. The final follow-up proof and release record identify corrected source/deployments. Full-load, application cold-start, memory/bundle and disaster-recovery measurements were not repeated here and remain Phase 5 work. No learning or full-catalog quality improvement is claimed.
 
 The [final corrected-source proof](evidence/phase4_live_v2.json) repeats the same bounded flow, with primary UI/action response samples of 753, 630, 633, 765 ms. Both runs are retained, totaling ten analysis reservations. [Targeted graph review](evidence/phase4_graph_accessibility.json) measured minimum text/arrow contrast of 6.2749:1/3.7294:1 and verified the named group and keyboard list. These small samples retain the limits above.
+
+## 14. Phase 5 final release measurements
+
+[Maximum-history profile](evidence/phase5_compute_v2.json) uses a fixture-only 100 seed + 200 visitor events without changing canonical profiles. Request/bundle are 69,807/150,391 canonical bytes. One hundred sequential samples after five warmups measured p50 16.63 ms/p95 24.42 ms; twenty additional samples use four threads. Three fresh Python processes separately record import/fixture/analysis/start-to-exit costs. The manifest accurately records a dirty delivery tree, measured source commit and script hash. The initial unbound formatting-era measurement remains preserved; v2 is the source-bound record.
+
+[Public workload](evidence/phase5_public_profile.json) makes eight no-mutation full-analysis calls at concurrency two, followed by explicit 409/413 checks. All eight were 200 and repeated the same digest; p95/max 440.65 ms includes network. Eight fresh browser contexts at widths 1365/360 (unthrottled desktop hardware, not real mobile devices) measured usable analysis controls with maximum 1,749.70/1,774.47 ms. No production capacity, statistical confidence or high-load claim follows from eight samples.
+
+[Final deployment-specific provider metrics](evidence/phase5_provider_final.json) classify two cold invocations: mean duration 1,000 ms, max 1,122 ms, average TTFB 1,169.5 ms, peak memory 204 MB. Fifty-eight hot invocations have mean duration 17.22 ms/max 231 ms, average TTFB 26.07 ms, peak memory 216 MB. Allocation is 2,048 MB. Groups include provider probes/metadata and the declared production drills, not exclusively grading; they are not an isolated client cold-grading benchmark. Included twenty-minute queries were used after a historical query requested a paid feature; no paid feature was enabled. Earlier mixed-deployment observations remain separately recorded.
+
+[Release record](evidence/phase5_release.json) binds the 12.15 MB reported package (not asserted uncompressed), configured Python 3.12 / 15 s timeout, basic build machine and exclusions for owner/evaluation/migration/data/test/env inputs. Production dependencies are unchanged. [Hosted audit](evidence/phase5_hosted_final.json) records 11,433,651 database bytes, thirteen passing effective-access/hash/quota checks and actual-secret scans.
+
+Real pause/resume, pending refresh/manual retry, 429 recovery and public compatible rollback/promotion pass. The short coordination timeout, test-runner cleanup race, fixture row-format mismatch and initial post-restore quota-start 503 remain recorded; successful reruns do not erase them. Long-duration capacity, arbitrary failure combinations, student benefit and always-on free hosting are not established.

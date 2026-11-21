@@ -1,0 +1,118 @@
+{
+  "query": {
+    "metrics": {
+      "invocations": {
+        "metric": "vercel.function_invocation.count",
+        "aggregation": "count"
+      },
+      "duration_avg_ms": {
+        "metric": "vercel.function_invocation.function_duration_ms",
+        "aggregation": "avg"
+      },
+      "duration_max_ms": {
+        "metric": "vercel.function_invocation.function_duration_ms",
+        "aggregation": "max"
+      },
+      "ttfb_avg_ms": {
+        "metric": "vercel.function_invocation.ttfb_ms",
+        "aggregation": "avg"
+      },
+      "peak_memory_mb": {
+        "metric": "vercel.function_invocation.peak_memory_mb",
+        "aggregation": "max"
+      },
+      "allocated_memory_mb": {
+        "metric": "vercel.function_invocation.provisioned_memory_mb",
+        "aggregation": "max"
+      }
+    },
+    "outputs": [
+      "invocations",
+      "duration_avg_ms",
+      "duration_max_ms",
+      "ttfb_avg_ms",
+      "peak_memory_mb",
+      "allocated_memory_mb"
+    ],
+    "groupBy": [
+      "functionStartType"
+    ],
+    "filter": "deploymentId:dpl_Ej3GCtPc4Z1BFnJcEh6qjK5PEjct AND environment:production",
+    "scope": {
+      "ownerId": "team_mRdCuSvoFHIrkEm4K3UAPs7P",
+      "projectIds": [
+        "prj_K3hvjn2d1vKQDzJBTm7DJ14XC0iA"
+      ]
+    },
+    "timeRange": {
+      "start": "2026-11-21T14:45:45.000Z",
+      "end": "2026-11-21T15:05:46.000Z"
+    }
+  },
+  "summary": [
+    {
+      "functionStartType": "cold",
+      "invocations": 2,
+      "duration_avg_ms": 1000,
+      "duration_max_ms": 1122,
+      "ttfb_avg_ms": 1169.5,
+      "peak_memory_mb": 204,
+      "allocated_memory_mb": 2048
+    },
+    {
+      "functionStartType": "hot",
+      "invocations": 58,
+      "duration_avg_ms": 17.224137931034484,
+      "duration_max_ms": 231,
+      "ttfb_avg_ms": 26.06896551724138,
+      "peak_memory_mb": 216,
+      "allocated_memory_mb": 2048
+    }
+  ],
+  "data": [],
+  "queryId": "observability-api-a67e4d1b-277e-4367-8b20-c23c1770b496",
+  "meta": {
+    "outputs": {
+      "invocations": {
+        "kind": "metric",
+        "metric": "vercel.function_invocation.count",
+        "aggregation": "count",
+        "unit": "count"
+      },
+      "duration_avg_ms": {
+        "kind": "metric",
+        "metric": "vercel.function_invocation.function_duration_ms",
+        "aggregation": "avg",
+        "unit": "milliseconds"
+      },
+      "duration_max_ms": {
+        "kind": "metric",
+        "metric": "vercel.function_invocation.function_duration_ms",
+        "aggregation": "max",
+        "unit": "milliseconds"
+      },
+      "ttfb_avg_ms": {
+        "kind": "metric",
+        "metric": "vercel.function_invocation.ttfb_ms",
+        "aggregation": "avg",
+        "unit": "milliseconds"
+      },
+      "peak_memory_mb": {
+        "kind": "metric",
+        "metric": "vercel.function_invocation.peak_memory_mb",
+        "aggregation": "max",
+        "unit": "megabytes"
+      },
+      "allocated_memory_mb": {
+        "kind": "metric",
+        "metric": "vercel.function_invocation.provisioned_memory_mb",
+        "aggregation": "max",
+        "unit": "megabytes"
+      }
+    },
+    "effectiveTimeRange": {
+      "start": "2026-11-21T14:45:45.000Z",
+      "end": "2026-11-21T15:05:46.000Z"
+    }
+  }
+}

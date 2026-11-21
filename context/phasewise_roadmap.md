@@ -1,6 +1,6 @@
 # Phasewise roadmap
 
-**Updated:** 21 November 2026. **Current stage:** Phases 0–4 complete; Phase 5 release/recovery verification is in progress. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
+**Updated:** 21 November 2026. **Current stage:** Phases 0–5 complete for the owner-approved synthetic portfolio P0; optional Phase 6 presentation is next. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
 
 This is the operational handoff/status document. Check an item only after its stated artifact or verification exists. Drafting this context does not create the application, validate a model, provision a service, or pass a release gate.
 
@@ -14,7 +14,7 @@ This is the operational handoff/status document. Check an item only after its st
 | Curriculum | Full-v1: 12 concepts/17 scoped edges, 72 questions/12 lessons and four expanded synthetic seeds. Three immutable published rows retain legacy routes and the separately supported reviewed slice. |
 | Services | Two Vercel Hobby projects and a Healthy Supabase Free Nano project. Migration/seed/runtime login configured; public readiness 200 and actual browser grading passed. |
 | Benchmarks/performance | Local checks and source CI pass. Hosted privilege/quota checks, eleven-request smoke, browser grading, artifact/memory and cold/hot provider metrics recorded. Measured public synthetic prediction/diagnosis/plan audit now exists; no real-world or learning-benefit claim. |
-| Next action | Phase 5: audit the full release candidate, failures/quotas, rollback/restore and free-plan recovery; define independent full-track quality scenarios without extending slice scores. |
+| Next action | Optional Phase 6: portfolio walkthrough and presentation. Human/educator validation and any real-student/P1 work require separate scope; keep the ₹0 constraints. |
 
 ## 2. Resolved content-budget decision — OPEN-01
 
@@ -121,13 +121,13 @@ Completed: separate full-v1 content, retained slice support, complete learner vi
 
 Requirements: all P0 FR/NFR; PROJECT Section 19.
 
-- [ ] Run meaningful backend/frontend/browser checks on the actual release candidate.
-- [ ] Confirm atomic shared limits, bounded payload/work, retries, version conflicts, and concurrent behavior.
-- [ ] Test quota exhaustion, missing quota storage, paused database, cold/restarted API, and example fallback.
-- [ ] Review secrets, privileges, logs, bundle contents, browser response projection, and production dependencies.
-- [ ] Publish reproducible frozen-test metrics/model card and measured performance with sample counts.
-- [ ] Exercise restore/reseed and compatible-version rollback; recheck free terms/settings/allowances.
-- [ ] Verify public live URLs and the entire clean-browser loop; complete the acceptance checklist.
+- [x] Run meaningful backend/frontend/browser checks on the actual release candidate.
+- [x] Confirm atomic shared limits, bounded payload/work, retries, version conflicts, and concurrent behavior.
+- [x] Test quota exhaustion, missing quota storage, paused database, cold/restarted API, and example fallback.
+- [x] Review secrets, privileges, logs, bundle contents, browser response projection, and production dependencies.
+- [x] Publish reproducible frozen-test metrics/model card and measured performance with sample counts.
+- [x] Exercise restore/reseed and compatible-version rollback; recheck free terms/settings/allowances.
+- [x] Verify public live URLs and the entire clean-browser loop; complete the acceptance checklist.
 
 **Gate:** All required behavior passes; failed checks remain recorded and resolved. No paid dependency is introduced to make a gate pass.
 
@@ -224,3 +224,15 @@ Before a future batch, read [AGENTS.md](../AGENTS.md), inspect working-tree/remo
 ### Phase 5 in progress — 21 November 2026
 
 Full-track audit inputs frozen before first measurement (12/12/24 groups), measured and reproduced with unchanged policy; unfavorable test prediction losses retained. Maximum 100-seed/200-visitor local compute measured. Real pause drill confirmed 503, preserved pending/refresh and static examples; first coordination window expired before provider resume, so failed run retained and a longer observation rerun is underway. Real hosted hashes/permissions/atomic limits/secret scan passed. First new CI run passed 214 tests but caught the recovery fixture's tuple row factory; corrected to the production adapter's dict-row contract. Final CI, rollback/promotion, public quota recovery, resource review and acceptance mapping remain pending.
+
+### Phase 5 completion — 21 November 2026
+
+- **Accepted scope:** owner explicitly chose “Accept engineering-reviewed synthetic-demo scope; defer human content validation.” Requirements/PROJECT/acceptance record now reflect this bounded portfolio release, without inventing human review. [Requirement mapping](release_acceptance.md), [operator recovery runbook](recovery_runbook.md).
+- **Source/CI:** runtime candidate `0c56e86ba7ad63d43a8b8ed8b36abdf9601a7808`, [CI 44916553094](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44916553094): 215 backend tests including eight real PostgreSQL checks, 32 Chromium tests, frozen/gen inputs and both audit reproductions. Local: 207 passed/eight SQL skipped; initial tuple-row fixture failure retained and corrected to the real adapter contract.
+- **Quality:** separately committed input freeze `4b1ffe3` before first measurement; disjoint 12/12/24 learner groups, reused items/families and implementation exposure disclosed. [Full audit](../evaluation/results/phase5-full-v1/report.md): 659 eligible test predictions, six exclusions; concept proper losses worse than global. Diagnosis policies tie on sixteen constructed gap cases. No parameter tuning, learning gain, blind/student validation or superiority claim. Historical two-concept regression remains archived/reproducible.
+- **Actual failure recovery:** real Supabase pause produced controlled 503; pending response survived refresh and examples remained read only. [Successful recovery](evidence/phase5_outage_v3.json) retried the exact snapshot once after resume. Short coordination timeout and test-output cleanup race are retained as failed harness attempts; stable ignored coordination and a fifteen-minute window resolve them. [Real 429 recovery](evidence/phase5_http_quota_v2.json) passes after an initial post-restore 503 was preserved. No automatic POST retry or paid bypass.
+- **Database/security:** [post-resume hosted audit](evidence/phase5_hosted_final.json) passes thirteen checks: three immutable source/stored hashes, TLS/effective least privilege, exact ten admissions in twenty attempts across four connections, global denial without partial increments, removed temporary buckets and actual-secret scans. Clean empty-database reconstruction and missing-table 503/transactional recovery passed in isolated PostgreSQL 17; no production data/table was destroyed. Three real pause/resume cycles finished healthy. Expected INFO for absent private quota-table policies is intentional deny-by-default access, documented with its linter link.
+- **Rollback/release:** both public aliases moved to immediate previous compatible deployments; actual full/retained analyses passed, then candidate API/web were promoted back. [Rollback probe](evidence/phase5_rollback_probe.json), [release record](evidence/phase5_release.json). Final READY API `dpl_Ej3GCtPc4Z1BFnJcEh6qjK5PEjct` and web `dpl_59XirbEJKgS3ahbnnyB8X6YnXcCm` share the tested source. Production secrets/content/policy were unchanged. Git automatic deployment linkage remains unconfigured.
+- **Measured resources:** [maximum-history core profile](evidence/phase5_compute_v2.json): 100 seed/200 visitor events, p95 24.42 ms over 100 measured samples after five warmups. [Public low-volume profile](evidence/phase5_public_profile.json): eight analyses/concurrency two, p95 440.65 ms; eight fresh desktop/mobile-viewport pages max 1.75/1.77 s usable controls. [Provider cold/hot groups](evidence/phase5_provider_final.json) retain two cold/fifty-eight hot invocations and observed peak 216 MB of 2048 MB. Reported pruned API artifact 12.15 MB; owner/evaluation/migration/data/test/env inputs excluded, runtime dependencies unchanged. Small samples are not capacity/SLO/cold-grading guarantees.
+- **Final live gate:** [two-browser proof](evidence/phase5_live.json), [desktop](evidence/phase5_live_desktop.png), [mobile](evidence/phase5_live_desktop_mobile.png), [SVG contrast/keyboard review](evidence/phase5_graph_accessibility.json). Entire real practice/reassessment, refresh/reset, isolation, full/retained projections, eight public accessibility scans and actual static fallback pass.
+- **Free boundary:** CLI independently confirmed active Hobby; Supabase Free/Healthy. Same two projects/subdomains, 11.4 MB database. No paid feature/service/payment/trial credit/keepalive. Historical observability query requiring payment was not pursued; included recent metrics used. Remaining whole-account monthly allowances unavailable, never fabricated. P0 is a finite synthetic engineering release; real educational validation and optional P1/P2 are deferred.

@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-11-21T14:58:21.681Z",
+  "mode": "quota",
+  "synthetic_only": true,
+  "checks": {},
+  "requests": [],
+  "passed": false,
+  "failure": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 200\nReceived: 503"
+}

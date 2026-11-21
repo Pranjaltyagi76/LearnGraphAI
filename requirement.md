@@ -1,6 +1,6 @@
 # LearnGraph AI — Requirements
 
-**Revision:** 21 November 2026. **State:** Phases 0–4 bounded engineering, deployment, analysis and full-content/UI gates verified. Full P0 acceptance remains pending later phases.
+**Revision:** 21 November 2026. **State:** Phase 5 engineering checks and owner-approved synthetic-demo acceptance verified. Educational validation and optional P1/P2 work remain separate.
 
 This file translates [PROJECT.md](PROJECT.md) into testable requirements. IDs are stable references for implementation, tests, and reviews. Requirements are planned, not evidence that features already exist. User instructions take precedence; changes must be reconciled across the specification and relevant context files.
 
@@ -8,9 +8,9 @@ This file translates [PROJECT.md](PROJECT.md) into testable requirements. IDs ar
 
 Build a personal portfolio demo of **answer → observed-performance estimate → prerequisite-aware hypothesis/evidence request → practice → distinct reassessment**. A diagnosis may abstain. Do not claim latent mastery, causal proof, or actual learning gains from synthetic demonstrations.
 
-P0 uses 12 concepts, 72 distinct questions (one diagnostic, four practice, one reassessment per concept), short lessons, and four synthetic profiles. Phase 0 froze the reviewed graph, a 12-question/2-lesson slice, four profile definitions, protocol/storage contracts, initial policy configuration, and synthetic evaluation definitions. Phase 2 implements offline replay/diagnosis/plans and measured evaluation. Phase 3 publishes the reviewed slice, implements browser persistence and live analysis, and verifies distinct reassessment in fresh browsers. Phase 4 adds the separately versioned full 72-question/12-lesson catalog, complete learner views, accessible graph/list and labeled offline examples. Full release/recovery auditing and independent full-track quality validation remain Phase 5 work. Definitions/formulas remain in PROJECT Sections 6 and 8; [review decisions](curriculum/review.md) and [exact protocol](contracts/protocol.md) resolve the former open details.
+P0 uses 12 concepts, 72 distinct questions (one diagnostic, four practice, one reassessment per concept), short lessons, and four synthetic profiles. Phase 0 froze the reviewed graph, a 12-question/2-lesson slice, four profile definitions, protocol/storage contracts, initial policy configuration, and synthetic evaluation definitions. Phase 2 implements offline replay/diagnosis/plans and measured evaluation. Phase 3 publishes the reviewed slice, implements browser persistence and live analysis, and verifies distinct reassessment in fresh browsers. Phase 4 adds the separately versioned full 72-question/12-lesson catalog, complete learner views, accessible graph/list and labeled offline examples. Phase 5 exercises release/recovery and a separately frozen public full-track synthetic audit; independent educator/student validation is not claimed. Definitions/formulas remain in PROJECT Sections 6 and 8; [review decisions](curriculum/review.md) and [exact protocol](contracts/protocol.md) resolve the former open details.
 
-**Resolved design decision — OPEN-01:** Six questions per concept leave two fresh practices and a distinct reassessment after three seed observations. The reviewed slice verifies this availability and the manual 2/7→3/8→4/9→5/10 trace; it does not guarantee readiness or learning. Phase 0 review is complete; the full catalog and live learning loop remain pending.
+**Resolved design decision — OPEN-01:** Six questions per concept leave two fresh practices and a distinct reassessment after three seed observations. The reviewed slice verifies this availability and the manual 2/7→3/8→4/9→5/10 trace; it does not guarantee readiness or learning. Full catalog and the deployed loop now pass their engineering gates; see Phase 4/5 evidence below.
 
 ## 2. Functional requirements
 
@@ -18,7 +18,7 @@ P0 uses 12 concepts, 72 distinct questions (one diagnostic, four practice, one r
 | --- | --- | --- |
 | FR-01 | Enter a labeled synthetic demo without registration or personal information. | Clean-browser flow reaches each of four profiles. |
 | FR-02 | Publish a reviewed, versioned 12-node prerequisite DAG with stable IDs; separate topic membership from prerequisite edges. | Validator rejects unknown nodes, self/duplicate edges, and cycles; arrows match the defined direction. |
-| FR-03 | Author/version 72 distinct questions plus lessons with role, primary concept, contextual tags, difficulty, grading, and provenance. | Catalog validation and human content review; no repeated practice question disguised as reassessment. |
+| FR-03 | Author/version 72 distinct questions plus lessons with role, primary concept, contextual tags, difficulty, grading, and provenance. | Catalog validation and documented engineering content review for the owner-approved synthetic demo; human content validation deferred. No repeated question disguised as reassessment. |
 | FR-04 | Keep canonical seeds immutable; isolate each browser's visitor events by profile and published versions. | Independent browser contexts do not share mutations; no public seed update endpoint. |
 | FR-05 | Resume local progress after refresh, handle concurrent tabs, and reset only local changes. | Browser tests cover refresh, reset, stale writes, and unavailable storage with a session-only notice. |
 | FR-06 | Validate response events and derive grades/tags/difficulty/attempt counts from server-owned catalog data. | Malformed/forged metadata is rejected; correct and incorrect grading fixtures pass. |
@@ -96,3 +96,11 @@ FR-01/04/05/12/13/14/16/17/19 now have a working bounded live slice: four profil
 FR-01–05/09–17 and NFR-12 now have full-catalog engineering coverage: 72 questions/12 lessons, four contrasting seeds, graph/list dashboard, inspectable diagnosis/timeline, explicit locks and honest reassessment. [Content review](curriculum/full-review.md), [local checks](context/evidence/phase4_local.json) and [source CI](https://github.com/Pranjaltyagi76/LearnGraphAI/actions/runs/44873406511) record bounded checks. The initially failing Linux mobile code-scroll focus check was fixed and retained in evidence. Automated scans and selected keyboard flows do not prove complete assistive-technology conformance. Full P0 acceptance still requires the Phase 5 gate; content engineering checks do not extend the original two-concept quality-audit claims.
 
 The final production gate passes: [public proof](context/evidence/phase4_live_v2.json), [targeted contrast/keyboard review](context/evidence/phase4_graph_accessibility.json), and [213-backend/32-browser source CI](context/evidence/phase4_ci.json). Phase 5 remains required for full P0 acceptance.
+
+## Phase 5 acceptance
+
+[Requirement mapping](context/release_acceptance.md) covers FR-01–19 and NFR-01–13, bound to the final candidate, CI and actual operations. [Recovery runbook](context/recovery_runbook.md) distinguishes source reconstruction, private credentials and browser histories. Frozen full-track prediction/diagnosis/plan comparisons, real quota/dependency recovery, clean isolated PostgreSQL restore, compatible rollback/promotion, resource measurements and clean-browser proof pass. Initial failed harness/fixture attempts remain recorded with their fixes. These checks close the owner-approved P0 engineering gate; they create no guarantee of always-on hosting, calibrated mastery or educational benefit.
+
+### Owner-approved FR-03 release scope — 21 November 2026
+
+The owner explicitly selected: **“Accept engineering-reviewed synthetic-demo scope; defer human content validation.”** This supersedes the earlier human-review release prerequisite for this synthetic portfolio P0 only. It does not claim that AI review is human review, independent educator validation occurred, or the content is validated for students. Human content/educator validation remains deferred before any separately approved educational use. Other functional, privacy, correctness and ₹0 constraints remain in force.

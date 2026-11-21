@@ -159,3 +159,7 @@ The active full-v1 release contains six distinct questions and one lesson for ev
 `/learn?release=learngraph-review-v1` explicitly reopens the older supported slice. Versioned keys create separate sandboxes; no history is migrated. API support is activated before releasing new clients. Current full-v1 has no full-track quality summary; the original exposed two-concept audit remains a separately scoped regression.
 
 Final Phase 4 [release evidence](evidence/phase4_release.json), [public browser proof](evidence/phase4_live_v2.json) and [targeted accessibility review](evidence/phase4_graph_accessibility.json) bind actual source/deployments. The roadmap owns current phase status.
+
+## Phase 5 engineering release boundary
+
+All runtime contracts/policy/content hashes remain unchanged. Owner, evaluation, migration, data and test inputs are explicitly excluded from the deployed Python source package; dependencies remain pinned and lightweight. Actual clean isolated source restore, missing-quota 503/recovery, real remote pause/resume, exact pending retry, HTTP quota exhaustion and compatible alias rollback/promotion now have evidence in [acceptance](release_acceptance.md), [release record](evidence/phase5_release.json) and the [operator runbook](recovery_runbook.md). The full-track synthetic audit publishes unfavorable proper-loss results without tuning; it is not student/educator validation. Formal content-review scope is an explicit owner decision, not an inferred human sign-off.

@@ -1,6 +1,6 @@
 # Benchmark and model-quality protocol
 
-**State:** Phase 2 deterministic engine and evaluator implemented; frozen development/public synthetic audit measured and reproducible. **Baseline date:** 20 November 2026. **Owner requirements:** FR-08–12/18 and NFR-09 in [requirement.md](../requirement.md). Algorithms and initial thresholds remain in [PROJECT.md](../PROJECT.md), Section 8.
+**State:** Historical two-concept and new full-track public synthetic audits are frozen, measured and reproducible. No policy tuned on final-audit outputs; no student validation or causal/learning claim. **Date:** 21 November 2026.
 
 Benchmark quality here means prediction/diagnosis/recommendation behavior. Runtime latency/resource tests belong in [performance_review.md](performance_review.md). Neither procedure establishes real learning gains from synthetic outcomes.
 
@@ -156,3 +156,11 @@ Four [fixture-only structural variants](../evaluation/variants.v1.json) exercise
 [phase4-regression-v1](../evaluation/results/phase4-regression-v1/manifest.json) binds the current application/evaluator sources and reproduces unchanged exposed two-concept outputs with zero retained development/test failures. The manifest accurately records a dirty delivery tree and explicit source hashes. Current CI checks this run; earlier runs remain archived with their own source snapshots. No policy tuning or new independent-trial claim is made.
 
 Full-v1 content review verifies 72 questions/12 lessons, original activity preservation, 13 new trusted output traces, four contrasting seeds and fresh-item availability. Twelve workflow fixtures complete two practices and distinct reassessment under explicitly ready dependency evidence. These checks do not estimate full-catalog prediction quality, compare diagnosis policies across the new concepts or establish learning. The full product publishes no incompatible quality summary. Phase 5 should define independent full-track scenarios with competing gaps, varied dependency assumptions, noise and fresh exposure records before making broader quality claims.
+
+## 13. Phase 5 full-track result
+
+[Input freeze](../evaluation/full-manifest.v1.json) was committed at `4b1ffe3` before the first measurement. Disjoint 12/12/24 learner groups cover every concept, competing/upstream gaps, unknown/early/mixed controls, hints/retries and exhaustion. Existing implementation knowledge and reused items/families are explicit. Labels were not derived from production outputs; they remain authored assumptions rather than blind educator truth. No baseline parameter was changed after seeing results.
+
+[Report](../evaluation/results/phase5-full-v1/report.md) and source/input/output manifests retain all cases. Test: 659 eligible predictions (592 correct/67 incorrect), six exclusions. Global log loss/Brier 0.415177/0.119409 versus concept 0.540454/0.175670: concept smoothing is worse on proper losses despite better ranking metrics. Both diagnosis policies tie on sixteen labeled-gap cases; coverage 16/24, zero false diagnoses on three no-gap controls. Plan invariants pass, with actual counts and undefined reasons in JSON. Development is separate; no required accuracy threshold or superiority claim was invented.
+
+Reproduce with `python -m scripts.evaluate_full --check ../evaluation/results/phase5-full-v1`; CI also reproduces the historical Phase 4 regression. The new result does not overwrite the immutable full-v1 publication or its absent hosted summary. Public methodology/model-card links expose the actual metrics instead. Student/educator validation, robust population evidence and optional BKT/DKT research remain separate future work.

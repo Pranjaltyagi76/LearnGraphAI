@@ -1,0 +1,146 @@
+{
+  "observed_at": "2026-11-21 15:08:49 UTC",
+  "source_commit": "0c56e86ba7ad63d43a8b8ed8b36abdf9601a7808",
+  "source_ci": 44916553094,
+  "api": {
+    "id": "dpl_Ej3GCtPc4Z1BFnJcEh6qjK5PEjct",
+    "state": "READY",
+    "source": "0c56e86ba7ad63d43a8b8ed8b36abdf9601a7808",
+    "aliases": [
+      "learngraph-ai-api.vercel.app",
+      "learngraph-ai-api-pranjal-tyagi-ai.vercel.app",
+      "learngraph-ai-api-git-0c56e86ba7ad63d43-57a415-pranjal-tyagi-ai.vercel.app"
+    ]
+  },
+  "web": {
+    "id": "dpl_59XirbEJKgS3ahbnnyB8X6YnXcCm",
+    "state": "READY",
+    "source": "0c56e86ba7ad63d43a8b8ed8b36abdf9601a7808",
+    "aliases": [
+      "learngraph-ai-web.vercel.app",
+      "learngraph-ai-web-pranjal-tyagi-ai.vercel.app",
+      "learngraph-ai-web-git-0c56e86ba7ad63d43-cb58d9-pranjal-tyagi-ai.vercel.app"
+    ]
+  },
+  "rollback": {
+    "method": "Hobby-compatible immediate previous production deployments; same frozen content/protocol; not a destructive content downgrade",
+    "previous_api": "dpl_8J2F4N57ijVJGBukNjyXGdiWygCx",
+    "previous_web": "dpl_Dt7n3E4L5ZwgnmDhC6PVQuSCdB7q",
+    "operations": [
+      {
+        "action": "rollback_web",
+        "project_id": "prj_xN0EgVf3CJdn1TyTEbjZehtJK9Wf",
+        "deployment_id": "dpl_Dt7n3E4L5ZwgnmDhC6PVQuSCdB7q",
+        "provider_error": false
+      },
+      {
+        "action": "rollback_api",
+        "project_id": "prj_K3hvjn2d1vKQDzJBTm7DJ14XC0iA",
+        "deployment_id": "dpl_8J2F4N57ijVJGBukNjyXGdiWygCx",
+        "provider_error": false
+      },
+      {
+        "action": "promote_api",
+        "project_id": "prj_K3hvjn2d1vKQDzJBTm7DJ14XC0iA",
+        "deployment_id": "dpl_Ej3GCtPc4Z1BFnJcEh6qjK5PEjct",
+        "provider_error": false
+      },
+      {
+        "action": "promote_web",
+        "project_id": "prj_xN0EgVf3CJdn1TyTEbjZehtJK9Wf",
+        "deployment_id": "dpl_59XirbEJKgS3ahbnnyB8X6YnXcCm",
+        "provider_error": false
+      }
+    ],
+    "public_probe": "phase5_rollback_probe.json",
+    "final_aliases_reverified": true
+  },
+  "data": {
+    "active": "learngraph-full-v1",
+    "retained": "learngraph-review-v1",
+    "legacy": "phase1-v1",
+    "mutations_to_canonical_rows": 0,
+    "hosted_audit": "phase5_hosted_final.json"
+  },
+  "resources": {
+    "api_package": "12.15 MB as reported by Vercel CLI inspect; encoding/uncompressed size not asserted",
+    "prior_unpruned_candidate_package": "12.31 MB",
+    "runtime": "Python 3.12",
+    "timeout_seconds": 15,
+    "allocation_mb": 2048,
+    "provider_samples": "phase5_provider_final.json",
+    "local_history_profile": "phase5_compute_v2.json",
+    "public_profile": "phase5_public_profile.json",
+    "excluded_inputs": [
+      "scripts/",
+      "evaluation/",
+      "migrations/",
+      "data/",
+      "tests/",
+      ".env*",
+      ".venv/"
+    ],
+    "production_dependencies_added": []
+  },
+  "operations": {
+    "outage_success": "phase5_outage_v3.json",
+    "outage_failed_runs": [
+      "phase5_outage.json",
+      "phase5_outage_v2.json"
+    ],
+    "resolved_harness_causes": [
+      "Initial four-minute coordination window shorter than provider resume time",
+      "Playwright auto-cleaned test-results coordination file; moved to ignored .vercel directory"
+    ],
+    "http_quota_success": "phase5_http_quota_v2.json",
+    "http_quota_initial_failure": "phase5_http_quota.json (503 observed following restore; later stable run passed)",
+    "live_proof": "phase5_live.json",
+    "graph_accessibility": "phase5_graph_accessibility.json",
+    "automatic_post_retries": 0
+  },
+  "free_plan": {
+    "supabase": "Free organization; ACTIVE_HEALTHY after drill",
+    "vercel": "CLI independently returned active Hobby",
+    "new_services": [],
+    "paid_features_enabled": [],
+    "payment_setup": false,
+    "remaining_account_wide_allowance": "Not exposed by available billing response (costs_not_found); no remaining monthly allowance fabricated",
+    "historical_observability": "One-hour query required a paid plan and was not pursued; included twenty-minute window used",
+    "terms_checked": "2026-11-21; official Hobby, Supabase Free, rollback and pausing docs"
+  },
+  "quality": {
+    "inputs": "evaluation/full-manifest.v1.json",
+    "measured": "evaluation/results/phase5-full-v1/manifest.json",
+    "test_cases": 24,
+    "eligible_predictions": 659,
+    "policy_tuned": false,
+    "proper_prediction_losses": "Concept smoothing worse than training-only global; retained honestly",
+    "scope": "Public synthetic assumption audit, not student validation, generalization, causality or learning gains"
+  },
+  "handoff": "Subsequent acceptance/evidence/documentation commit does not change deployed runtime code.",
+  "owner_acceptance": {
+    "date": "2026-11-21",
+    "scope": "Accept engineering-reviewed synthetic-demo scope; defer human content validation",
+    "human_review_claimed": false,
+    "educational_validation": "Deferred; not part of this synthetic portfolio release"
+  },
+  "security_advisor": {
+    "level": "INFO",
+    "name": "rls_enabled_no_policy",
+    "table": "learngraph.quota_buckets",
+    "disposition": "Intentional deny-by-default private table; runtime/public direct access denied; hardened guard only",
+    "remediation_reference": "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy"
+  },
+  "post_drill_sql_summary": {
+    "database_bytes": 11433651,
+    "immutable_releases": 3,
+    "private_tables": 2,
+    "expiry_within_48h": true,
+    "logically_expired_buckets": 0
+  },
+  "final_error_filters": {
+    "api": "No matching error-level logs in the observed final-deployment window",
+    "web": "No matching error-level logs in the observed final-deployment window",
+    "limitation": "Bounded provider filters, not an absence-of-all-future-errors claim"
+  }
+}

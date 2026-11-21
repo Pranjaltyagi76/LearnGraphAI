@@ -1,0 +1,64 @@
+{
+  "observed_at": "2026-11-21T15:00:34.889Z",
+  "mode": "quota",
+  "synthetic_only": true,
+  "checks": {
+    "same_request_retries_add_no_evidence": true,
+    "real_quota_denial_preserved_exact_pending": true,
+    "exact_manual_retry_accepted_once": true
+  },
+  "requests": [
+    {
+      "status": 200,
+      "ms": 638.1738000000005,
+      "retry_after": null
+    },
+    {
+      "status": 200,
+      "ms": 307.488800000001,
+      "retry_after": null
+    },
+    {
+      "status": 200,
+      "ms": 527.6329999999998,
+      "retry_after": null
+    },
+    {
+      "status": 200,
+      "ms": 273.40100000000166,
+      "retry_after": null
+    },
+    {
+      "status": 200,
+      "ms": 274.22699999999895,
+      "retry_after": null
+    },
+    {
+      "status": 200,
+      "ms": 294.84419999999955,
+      "retry_after": null
+    },
+    {
+      "status": 200,
+      "ms": 295.28700000000026,
+      "retry_after": null
+    },
+    {
+      "status": 200,
+      "ms": 274.10549999999967,
+      "retry_after": null
+    },
+    {
+      "status": 200,
+      "ms": 541.1135999999988,
+      "retry_after": null
+    },
+    {
+      "status": 429,
+      "ms": 277.23209999999926,
+      "retry_after": "10"
+    }
+  ],
+  "final_history_digest": "a191483e58c442d766973831a8810ac7f476077c421fa1f7e54fbd0e4c50f4c8",
+  "passed": true
+}
