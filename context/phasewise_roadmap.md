@@ -1,6 +1,6 @@
 # Phasewise roadmap
 
-**Updated:** 20 November 2026. **Current stage:** Phases 0–3 complete at their bounded gates; Phase 4 is next. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
+**Updated:** 21 November 2026. **Current stage:** Phases 0–3 complete; Phase 4 content and UI implemented locally, production rollout pending. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
 
 This is the operational handoff/status document. Check an item only after its stated artifact or verification exists. Drafting this context does not create the application, validate a model, provision a service, or pass a release gate.
 
@@ -106,6 +106,8 @@ Requirements: FR-01/04/05/12–17/19, NFR-02/07/12.
 ### Phase 4 — Complete curriculum and learner UI
 
 Requirements: FR-01–05/09–17, NFR-12.
+
+In progress: separate full-v1 content, retained slice support, complete learner views and versioned examples exist. Twelve workflow fixtures and the content review pass. Final browser/source CI, immutable publication and production verification are still required before checking this gate. See [full content review](../curriculum/full-review.md).
 
 - [ ] Complete the resolved content budget/roles from Phase 0 and all four contrasting profiles.
 - [ ] Build learner overview, graph/list, timeline, evidence detail, readiness locks, and reassessment display.

@@ -110,8 +110,9 @@ def render_report(results: dict) -> bytes:
         "Reassessment distinctness does not assert that a learner completed the workflow.",
         "",
         "The frozen manifest retains results=not_run as historical definition metadata. "
-        "This run's manifest and outputs are the measurement record. Production activation, "
-        "browser storage and the full 72-item curriculum remain later work.",
+        "This run's manifest and outputs are the measurement record. Production activation "
+        "and browser storage are outside this audit. Full-catalog engineering checks do not "
+        "extend this two-concept quality audit's coverage.",
         "",
     ]
     return ("\n".join(lines)).encode()

@@ -1,0 +1,11 @@
+{
+  "checked_on": "2026-11-21",
+  "scope": "Local engineering verification, not hosted SQL or full-catalog quality validation",
+  "backend_pytest": {"passed": 207, "skipped": 6, "skip_reason": "Isolated PostgreSQL checks run in source CI", "warnings": ["Existing Starlette/httpx deprecation"]},
+  "browser_playwright": {"passed": 32, "failed": 0, "browser": "Chromium", "api": "Explicit loopback full-release fixture with retained slice"},
+  "accessibility": {"axe_core": "4.14.1", "routes": ["/learn", "/examples", "/examples/demo_upstream", "/methodology"], "widths_px": [360, 1440], "violations": 0, "reduced_motion_scroll": "auto", "page_horizontal_overflow": false, "keyboard_response_submission": "passed", "limitation": "Automated scans and selected keyboard flows do not establish complete assistive-technology conformance"},
+  "checks_passed": ["Ruff lint/format", "Frontend lint/typecheck/production build", "Frozen Phase 0 artifacts", "Browser generated contracts and hash conformance", "Full catalog generation and engineering review", "Twelve concept practice/reassessment fixtures", "Retained-release separation", "Existing two-concept exposed regression reproduction"],
+  "new_runtime_dependencies": [],
+  "new_direct_dev_dependencies": ["axe-core==4.14.1 (already present transitively in lockfile)"],
+  "learning_or_full_catalog_prediction_quality_claim": false
+}

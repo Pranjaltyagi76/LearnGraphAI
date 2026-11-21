@@ -1,0 +1,58 @@
+{
+  "command": "python -m scripts.evaluate --output ../evaluation/results/phase4-regression-v1 --split all",
+  "environment": {
+    "dependencies_added": [],
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pydantic": "2.14.4",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "fitting": "Training-only global rate; no policy tuned on audit output.",
+  "input_hashes": {
+    "backend/uv.lock": "2cf05a02eee45fc3abd0e88f8086a6426d5dfc2762464ddf4ddc7006a7e8693f",
+    "evaluation/manifest.v1.json": "4a873e6d2ae225c8765c8a8385e3b0609392c1e94e14e33970f1386579c440db",
+    "evaluation/scenarios.v1.json": "31ad1a2fac160d1679fa41879af40e583b3476a84990d69a97dd9f215d1cd2ba",
+    "evaluation/variants.v1.json": "2fe88e4eec6130efb1364a88e60d3c81672d24f2186a86e8f4b637b6943ac4df"
+  },
+  "measured_at": "2026-11-21T05:42:42.220Z",
+  "metric_definitions": "evaluation/readme.md and context/benchmark.md",
+  "output_hashes": {
+    "development.json": "002d207d49f9f50abba1570708879ce14876535ac2a08dabbe0f6d17d7a1139b",
+    "report.md": "fe239ee302a65a7900f39110caad59432da241d2fc98ececa90bf9cd101f8bc1",
+    "test.json": "89d701fae06272b51c469e65f50c03508ae515eea7a569f086c250dbc4270a24"
+  },
+  "random_baseline_seed": 761120,
+  "release_hash": "ebd81f72e1bf622e4787e69a5bb93d96f5a084cf1b0246895c50b5a780f7ba80",
+  "run_id": "phase4-regression-v1",
+  "source_commit": "85e2abb594aa51d407b84b041f1de42d5c0137ba",
+  "source_dirty": true,
+  "source_hashes_lf": {
+    "backend/app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend/app/analysis.py": "97edee46a9e394ce37829006fd74de7cbd22faee5138c1a1a1e4377b7fe48b55",
+    "backend/app/config.py": "6e4e01f7d8ff44ff184d9a8a413c1c3f009b32221b26c0411f9f6dcbfc86f73c",
+    "backend/app/contracts.py": "77d0b919b4e6de100ffcda7a10b5bb6c9843fb20a5de6d2d99008e1a6371916a",
+    "backend/app/database.py": "438a23a537ecaa2383e282368853c8a382a76de38c72320b8e6856c8dcc50f7d",
+    "backend/app/diagnosis.py": "b201550c8914c1462b39a3cfb84d09e00c910bfb63590563ef45d08b89e90909",
+    "backend/app/explanation.py": "fc9d7195b36366f87aadd3b11bfedff21db48009c19af3d983088c409e8a2d06",
+    "backend/app/graph.py": "9c8ab49cfa9f49a7121d5b87fd5f5bb286a709e56f483195eb5e9ef2fb033ec3",
+    "backend/app/main.py": "04875ecd75929e112e6b29fd8a1ddb1a0bff66755e5508cf6cf839bdb1a6abe6",
+    "backend/app/published.py": "3d70c3b88be98735e99e3ad1454707d79221ab998243c68acadd8234674005b9",
+    "backend/app/recommendation.py": "99d02ec88149d77d7eab4ccca5c20fdb4662f1432420989e1274fd8e798b6d2e",
+    "backend/app/release.py": "6ffc9215db01c8a9041056b9a1417f10af3571e162fd6638985896135efbd5d4",
+    "backend/app/replay.py": "5f0ca18aafefdf3da95d373ba8f8d2ba6247cf6f50ebcc18996c61084e9955ad",
+    "backend/app/telemetry.py": "013863d8d33a1f2668b21fa7809fb856eb173c53b95a3a4d7e32a05d057bcde7",
+    "backend/app/validation.py": "2f8b76a3a304747ec4c7cbf9b4b527f80f79b49b883d144c1ef1879ae48431d8",
+    "backend/evaluation/__init__.py": "bb0cadd454d8d99c07e395aadadd4eb2a7004275d09df5deaed81da417c649fa",
+    "backend/evaluation/audit.py": "b4d87fe3fb5c4f1e4c20bbed1b704f89674dacf8c9f6691f782f7322cbd44b77",
+    "backend/evaluation/metrics.py": "5cea57dacc3c58d067ed3461518e86d97e517a64050fd5b9da893b2f6b634cf0",
+    "backend/evaluation/runner.py": "a168309bc8d1b8154ab124b6be69362d10d8820cb32cd09c36db0a3b0afb73df",
+    "backend/scripts/analyze.py": "e505bcb03e7738aac4a194458f0939c090e07da1041d179e44f01ef0f3b70596",
+    "backend/scripts/check_phase0.py": "4bd8dd06791922580efb0c2a594f9f72286781812b793c37606a276f8ebc3230",
+    "backend/scripts/evaluate.py": "d5b622c6a5a4fcd7fdd40debb84cf7c91930b37ab70cfd1f3cf70016407ad9d2"
+  },
+  "split_manifest_hash": "4a873e6d2ae225c8765c8a8385e3b0609392c1e94e14e33970f1386579c440db",
+  "splits": [
+    "development",
+    "test"
+  ],
+  "test_exposure": "Public and visible during engineering review; never describe as blind or evidence of real-world generalization. Any output-guided tuning requires a newly versioned independent final audit."
+}
