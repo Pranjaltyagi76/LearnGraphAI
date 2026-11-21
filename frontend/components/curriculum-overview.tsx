@@ -21,7 +21,7 @@ export function CurriculumOverview({ seed, bundle, focus, onFocus, disabled = fa
   return <section className="learn-panel curriculum-panel" aria-labelledby="curriculum-title">
     <div className="curriculum-heading"><div><div className="panel-kicker">YOUR LEARNING LANDSCAPE</div>
       <h2 id="curriculum-title">Twelve concepts. Connected.</h2></div>
-      <div className="view-switch" aria-label="Curriculum view">
+      <div className="view-switch" role="group" aria-label="Curriculum view">
         <button aria-pressed={view === "graph"} onClick={() => setView("graph")}>Graph view</button>
         <button aria-pressed={view === "list"} onClick={() => setView("list")}>List view</button>
       </div></div>

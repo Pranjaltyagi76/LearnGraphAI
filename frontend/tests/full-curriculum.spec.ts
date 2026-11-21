@@ -112,7 +112,11 @@ for (const mobile of [false, true]) {
     await page.emulateMedia({ reducedMotion: "reduce" });
     for (const url of ["/learn", "/examples", "/examples/demo_upstream", "/methodology"]) {
       if (url === "/learn") await enter(page); else await page.goto(url);
+      for (const link of await page.getByRole("navigation", { name: "Learning navigation", exact: true }).getByRole("link").all()) {
+        await expect(link).toBeVisible();
+      }
       if (url === "/learn") {
+        await expect(page.getByRole("group", { name: "Curriculum view", exact: true })).toBeVisible();
         const code = page.getByRole("region", { name: "Question code", exact: true });
         await code.focus(); await expect(code).toBeFocused();
         await expect(code).toHaveAttribute("tabindex", "0");
