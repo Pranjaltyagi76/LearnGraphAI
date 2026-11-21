@@ -1,0 +1,12 @@
+{
+  "source_commit": "c6abd788f69745438f1b555c338f94c75df03b14",
+  "run_id": 44915640424,
+  "checks_passed": {
+    "backend": 215,
+    "browser": 32
+  },
+  "isolated_sql": "Eight real PostgreSQL checks including clean three-package restore and missing-quota-table 503/recovery",
+  "initial_failed_run": 44915310723,
+  "initial_failure": "Recovery fixture used tuple rows whereas production adapter requires dict rows; corrected without weakening assertions",
+  "baseline_policy_changed": false
+}

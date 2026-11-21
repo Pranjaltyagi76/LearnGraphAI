@@ -8,7 +8,9 @@ const { values } = parseArgs({ options: {
 } });
 if (!["outage", "quota"].includes(values.mode) || !values.output) throw Error("Use --mode outage|quota --output new-file.json");
 const base="https://learngraph-ai-web.vercel.app", api="https://learngraph-ai-api.vercel.app";
-const marker=resolve("test-results/phase5-control.json");
+// Playwright's test runner clears test-results on startup; coordination must
+// survive independent local/CI checks running at the same time.
+const marker=resolve(".vercel/phase5-control.json");
 const report={observed_at:new Date().toISOString(),mode:values.mode,synthetic_only:true,checks:{},requests:[]};
 const browser=await chromium.launch({headless:true});
 try {

@@ -1,0 +1,78 @@
+{
+  "query": {
+    "metrics": {
+      "invocations": {
+        "metric": "vercel.function_invocation.count",
+        "aggregation": "count"
+      },
+      "peak_memory_mb": {
+        "metric": "vercel.function_invocation.peak_memory_mb",
+        "aggregation": "max"
+      },
+      "allocated_memory_mb": {
+        "metric": "vercel.function_invocation.provisioned_memory_mb",
+        "aggregation": "max"
+      }
+    },
+    "outputs": [
+      "invocations",
+      "peak_memory_mb",
+      "allocated_memory_mb"
+    ],
+    "groupBy": [
+      "functionStartType"
+    ],
+    "scope": {
+      "ownerId": "team_mRdCuSvoFHIrkEm4K3UAPs7P",
+      "projectIds": [
+        "prj_K3hvjn2d1vKQDzJBTm7DJ14XC0iA"
+      ]
+    },
+    "timeRange": {
+      "start": "2026-11-21T14:26:32.000Z",
+      "end": "2026-11-21T14:46:33.000Z"
+    }
+  },
+  "summary": [
+    {
+      "functionStartType": "cold",
+      "invocations": 1,
+      "peak_memory_mb": 208,
+      "allocated_memory_mb": 2048
+    },
+    {
+      "functionStartType": "hot",
+      "invocations": 23,
+      "peak_memory_mb": 216,
+      "allocated_memory_mb": 2048
+    }
+  ],
+  "data": [],
+  "queryId": "observability-api-44bdc16e-aa71-4fea-a8ba-da940fe01868",
+  "meta": {
+    "outputs": {
+      "invocations": {
+        "kind": "metric",
+        "metric": "vercel.function_invocation.count",
+        "aggregation": "count",
+        "unit": "count"
+      },
+      "peak_memory_mb": {
+        "kind": "metric",
+        "metric": "vercel.function_invocation.peak_memory_mb",
+        "aggregation": "max",
+        "unit": "megabytes"
+      },
+      "allocated_memory_mb": {
+        "kind": "metric",
+        "metric": "vercel.function_invocation.provisioned_memory_mb",
+        "aggregation": "max",
+        "unit": "megabytes"
+      }
+    },
+    "effectiveTimeRange": {
+      "start": "2026-11-21T14:26:32.000Z",
+      "end": "2026-11-21T14:46:33.000Z"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-11-21T14:41:59.204724+00:00",
+  "checks": {
+    "unprivileged_role": true,
+    "runtime_grants": true,
+    "separate_owner_and_hardened_guard": true,
+    "source_matches_published_release": true,
+    "tls": true,
+    "learngraph-full-v1_source_hash": true,
+    "learngraph-review-v1_source_hash": true,
+    "phase1-v1_source_hash": true,
+    "concurrent_admission_exactly_ten": true,
+    "both_counters_equal_ten": true,
+    "global_denial": true,
+    "global_denial_no_partial_increment": true,
+    "public_roles_excluded": true
+  },
+  "releases": [
+    {
+      "id": "learngraph-full-v1",
+      "hash": "1945410f663981ced5151e4a1c95009d8295712a7c3578af12bfb1126b857475"
+    },
+    {
+      "id": "learngraph-review-v1",
+      "hash": "edfb6e59ca36d9d6d57af5ba3b35602e7addb5f086a4aa05d364516d78b4f76b"
+    },
+    {
+      "id": "phase1-v1",
+      "hash": "ae54153b27c8193429f7b704ae592cb4c5d23f86dec5cc551b018974db5522dd"
+    }
+  ],
+  "database_bytes": 11433651,
+  "quota_workers": 4,
+  "quota_attempts": 20,
+  "admitted": 10,
+  "temporary_buckets_removed": true,
+  "secret_scan_files": 181,
+  "secret_matches": [],
+  "limitation": "Canonical-source recovery only; no visitor data exists server-side. Provider egress allowance not inferred from database size."
+}

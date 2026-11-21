@@ -1,0 +1,47 @@
+{
+  "observed_at": "2026-11-21T14:42:03.634Z",
+  "mode": "outage",
+  "synthetic_only": true,
+  "checks": {
+    "real_paused_database_readiness_503": true,
+    "paused_database_pending_refresh_and_readonly_example": true
+  },
+  "requests": [],
+  "pause_readiness_code": "dependency_unavailable",
+  "pending_request": {
+    "contract_version": 1,
+    "versions": {
+      "release_id": "learngraph-full-v1",
+      "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9",
+      "seed_id": "demo_base_cases_full_seed",
+      "seed_version": 1,
+      "graph_version": "graph-v1",
+      "catalog_version": "catalog-full-v1",
+      "model_version": "baseline-v1"
+    },
+    "profile_id": "demo_base_cases",
+    "sandbox_id": "2cf3d4fa-f71f-449b-8fd6-710b6fdd8635",
+    "local_revision": 1,
+    "focus_concept_id": "base_cases",
+    "trigger_event_id": null,
+    "events": [
+      {
+        "schema_version": 1,
+        "event_id": "a7e40720-3f24-46cd-8d52-84ca555aee5f",
+        "sequence_number": 1,
+        "activity_id": "base_cases_practice_03",
+        "activity_version": 2,
+        "assessment_run_id": "5c26f37d-bf86-494a-9317-7acc05d26f20",
+        "occurred_at": "2026-11-21T14:44:26.037Z",
+        "time_spent_seconds": null,
+        "kind": "response",
+        "response": {
+          "option_id": "c"
+        },
+        "hints_used": 0
+      }
+    ]
+  },
+  "passed": false,
+  "failure": "Error: ENOENT: no such file or directory, open 'C:\\Users\\Pranjal Tyagi\\Documents\\LearnGraphAI\\frontend\\test-results\\phase5-control.json'"
+}

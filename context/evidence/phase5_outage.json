@@ -1,0 +1,47 @@
+{
+  "observed_at": "2026-11-21T14:33:31.563Z",
+  "mode": "outage",
+  "synthetic_only": true,
+  "checks": {
+    "real_paused_database_readiness_503": true,
+    "paused_database_pending_refresh_and_readonly_example": true
+  },
+  "requests": [],
+  "pause_readiness_code": "dependency_unavailable",
+  "pending_request": {
+    "contract_version": 1,
+    "versions": {
+      "release_id": "learngraph-full-v1",
+      "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9",
+      "seed_id": "demo_base_cases_full_seed",
+      "seed_version": 1,
+      "graph_version": "graph-v1",
+      "catalog_version": "catalog-full-v1",
+      "model_version": "baseline-v1"
+    },
+    "profile_id": "demo_base_cases",
+    "sandbox_id": "e0a3269f-e275-4a01-a074-73882f0e7e33",
+    "local_revision": 1,
+    "focus_concept_id": "base_cases",
+    "trigger_event_id": null,
+    "events": [
+      {
+        "schema_version": 1,
+        "event_id": "4df00c6a-0e38-4f70-85a7-e09e0677289b",
+        "sequence_number": 1,
+        "activity_id": "base_cases_practice_03",
+        "activity_version": 2,
+        "assessment_run_id": "918c0035-0598-443a-8973-10e163eda25f",
+        "occurred_at": "2026-11-21T14:36:11.155Z",
+        "time_spent_seconds": null,
+        "kind": "response",
+        "response": {
+          "option_id": "c"
+        },
+        "hints_used": 0
+      }
+    ]
+  },
+  "passed": false,
+  "failure": "Error: Drill coordination timed out: restored"
+}
