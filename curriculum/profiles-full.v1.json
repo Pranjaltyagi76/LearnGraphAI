@@ -1,0 +1,789 @@
+{
+  "profiles_version": "demo-profiles-full-v1",
+  "status": "synthetic_engineering_reviewed",
+  "profiles": [
+    {
+      "synthetic": true,
+      "profile_id": "demo_base_cases",
+      "seed_id": "demo_base_cases_full_seed",
+      "seed_version": 1,
+      "name": "Mira",
+      "archetype": "target_gap",
+      "summary": "Ready function calls with supported base-case weakness.",
+      "focus_concept_id": "base_cases",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "2ca7456d-56ed-51f5-b009-d7583d7657c8",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "44cacc23-8d0f-5c35-91b9-3e0bdc0c77b6",
+          "occurred_at": "2026-11-20T08:01:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "22a5d542-f692-5434-ae32-2ee2f7f5217f",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "44cacc23-8d0f-5c35-91b9-3e0bdc0c77b6",
+          "occurred_at": "2026-11-20T08:02:00.000Z",
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "ceed60a5-4eff-5420-9f1a-8fcbe70b869b",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "44cacc23-8d0f-5c35-91b9-3e0bdc0c77b6",
+          "occurred_at": "2026-11-20T08:03:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "ab6f36cb-fb1e-52ec-a4dd-9f5505ff9041",
+          "sequence_number": 4,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "44cacc23-8d0f-5c35-91b9-3e0bdc0c77b6",
+          "occurred_at": "2026-11-20T08:04:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "9c374e0c-3d01-5b17-8d3c-d3aa27840ff1",
+          "sequence_number": 5,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "44cacc23-8d0f-5c35-91b9-3e0bdc0c77b6",
+          "occurred_at": "2026-11-20T08:05:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "9c7eaaba-7fd0-5e42-8d70-6e4d5cee5cef",
+          "sequence_number": 6,
+          "activity_id": "base_cases_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "44cacc23-8d0f-5c35-91b9-3e0bdc0c77b6",
+          "occurred_at": "2026-11-20T08:06:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        }
+      ]
+    },
+    {
+      "synthetic": true,
+      "profile_id": "demo_upstream",
+      "seed_id": "demo_upstream_full_seed",
+      "seed_version": 1,
+      "name": "Arjun",
+      "archetype": "upstream_gap",
+      "summary": "Assessed DP dependencies with a supported overlapping-subproblems gap and mixed memoization evidence.",
+      "focus_concept_id": "memoization",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "5d58a7e4-ebef-5b69-a8bf-c17eb9dc5f84",
+          "sequence_number": 1,
+          "activity_id": "function_calls_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:01:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "d15d69da-08fb-53a3-ad86-3dfa03a6a652",
+          "sequence_number": 2,
+          "activity_id": "function_calls_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:02:00.000Z",
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "c29dc054-f2d6-5a97-a8fc-c2a081b5585e",
+          "sequence_number": 3,
+          "activity_id": "function_calls_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:03:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "1feb83da-2112-532d-8742-06be54829e5c",
+          "sequence_number": 4,
+          "activity_id": "call_stack_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:04:00.000Z",
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "facd347b-11c4-5376-88c4-848076eb24fb",
+          "sequence_number": 5,
+          "activity_id": "call_stack_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:05:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "450d375a-9027-5ddd-b989-c565975fccec",
+          "sequence_number": 6,
+          "activity_id": "call_stack_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:06:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "3e21108b-33e4-583c-9bca-061d2cdf8a8c",
+          "sequence_number": 7,
+          "activity_id": "base_cases_diagnostic_01",
+          "activity_version": 2,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:07:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "ae322f24-b06b-5bda-b22c-f04062e61817",
+          "sequence_number": 8,
+          "activity_id": "base_cases_practice_01",
+          "activity_version": 2,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:08:00.000Z",
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "048c307a-90c5-5814-ba44-2d1322648d29",
+          "sequence_number": 9,
+          "activity_id": "base_cases_practice_02",
+          "activity_version": 2,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:09:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "f02f8a32-c7be-5ac9-b99a-aa1c3e450aa1",
+          "sequence_number": 10,
+          "activity_id": "recursive_progress_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:10:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "c93ed37a-2534-57d4-b192-189bdfca80e1",
+          "sequence_number": 11,
+          "activity_id": "recursive_progress_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:11:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "be735b0b-571e-51e0-89de-710c10704429",
+          "sequence_number": 12,
+          "activity_id": "recursive_progress_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:12:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "dd258cb4-285b-53bd-bf35-b1b78aab2a1f",
+          "sequence_number": 13,
+          "activity_id": "recursive_tracing_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:13:00.000Z",
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "be573271-5937-5fe0-8bf6-c1686c45631f",
+          "sequence_number": 14,
+          "activity_id": "recursive_tracing_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:14:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "72282ec7-efc9-58ca-bd11-9f3a5be07fc8",
+          "sequence_number": 15,
+          "activity_id": "recursive_tracing_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:15:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "832653e3-36a3-5df1-9299-faa31443e87b",
+          "sequence_number": 16,
+          "activity_id": "state_definition_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:16:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "8495093a-68fb-5e46-907c-799ebbf9ec09",
+          "sequence_number": 17,
+          "activity_id": "state_definition_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:17:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "85a48053-63e8-5c2b-9ddb-398e5668afd8",
+          "sequence_number": 18,
+          "activity_id": "state_definition_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:18:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "bfc01e35-8068-5bae-b40f-9eb99dd9de22",
+          "sequence_number": 19,
+          "activity_id": "recurrence_relations_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:19:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "1aed7f79-f5d6-5908-84a1-e8f6b14e448e",
+          "sequence_number": 20,
+          "activity_id": "recurrence_relations_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:20:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "97e1077c-55a7-524c-891f-e30b454f8a75",
+          "sequence_number": 21,
+          "activity_id": "recurrence_relations_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:21:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "82f6ae36-e81e-5441-9796-a6fab48082d7",
+          "sequence_number": 22,
+          "activity_id": "overlapping_subproblems_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:22:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "bc5aec58-f897-5a66-a85f-c5ef90a7706c",
+          "sequence_number": 23,
+          "activity_id": "overlapping_subproblems_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:23:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "cdeae06a-14e7-5d57-9a82-11fc95674fec",
+          "sequence_number": 24,
+          "activity_id": "overlapping_subproblems_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:24:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "11216df9-782d-524d-a328-87f6c4d97b8a",
+          "sequence_number": 25,
+          "activity_id": "memoization_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:25:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "9ec08ae8-dd73-58e2-a731-1526cd716c77",
+          "sequence_number": 26,
+          "activity_id": "memoization_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:26:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "95bbea52-95ff-5af3-b01a-4ea80cf45234",
+          "sequence_number": 27,
+          "activity_id": "memoization_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "fb73af83-c363-5be9-940d-b64e58f1fa70",
+          "occurred_at": "2026-11-20T08:27:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        }
+      ]
+    },
+    {
+      "synthetic": true,
+      "profile_id": "demo_sparse",
+      "seed_id": "demo_sparse_full_seed",
+      "seed_version": 1,
+      "name": "Leena",
+      "archetype": "sparse",
+      "summary": "One early state-definition observation; further assessment is needed, not a weakness label.",
+      "focus_concept_id": "state_definition",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "46c7881c-2268-5433-99df-8b980d0b34ba",
+          "sequence_number": 1,
+          "activity_id": "state_definition_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "701f7fd0-ed55-59ac-9ac6-d31221520c6c",
+          "occurred_at": "2026-11-20T08:01:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        }
+      ]
+    },
+    {
+      "synthetic": true,
+      "profile_id": "demo_ambiguous",
+      "seed_id": "demo_ambiguous_full_seed",
+      "seed_version": 1,
+      "name": "Kabir",
+      "archetype": "ambiguous",
+      "summary": "Ready bottom-up dependencies with mixed tabulation evidence; no supported target gap.",
+      "focus_concept_id": "tabulation",
+      "events": [
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "f1043a2d-55db-5a7b-bf83-cddea3c3515b",
+          "sequence_number": 1,
+          "activity_id": "state_definition_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:01:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "afa9aac3-8ef8-5432-80e8-072706cf5356",
+          "sequence_number": 2,
+          "activity_id": "state_definition_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:02:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "d50c1e43-b74e-5ebf-a94d-ff3544e00de8",
+          "sequence_number": 3,
+          "activity_id": "state_definition_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:03:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "0adff4b6-b157-59bf-9b17-cec20b452e13",
+          "sequence_number": 4,
+          "activity_id": "recurrence_relations_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:04:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "3f0fdca6-cc45-5705-a10d-7d9446ca2932",
+          "sequence_number": 5,
+          "activity_id": "recurrence_relations_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:05:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "c7db704a-f59f-5599-a8e3-e13a2137e4d8",
+          "sequence_number": 6,
+          "activity_id": "recurrence_relations_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:06:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "a6b54af0-8393-5556-b0d9-d791c6eb6949",
+          "sequence_number": 7,
+          "activity_id": "state_transitions_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:07:00.000Z",
+          "response": {
+            "option_id": "b"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "11dffd48-191e-5372-9364-90d7797a5617",
+          "sequence_number": 8,
+          "activity_id": "state_transitions_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:08:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "c0c20985-50df-5686-b212-882a1afb56ee",
+          "sequence_number": 9,
+          "activity_id": "state_transitions_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:09:00.000Z",
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "4ce5e98a-cabe-56a3-8db5-51db575cb3ca",
+          "sequence_number": 10,
+          "activity_id": "dp_base_cases_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:10:00.000Z",
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "2664c5f7-4e68-5d25-9598-59d1aa85eea6",
+          "sequence_number": 11,
+          "activity_id": "dp_base_cases_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:11:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "c9cc1e75-cc42-5403-9495-e5914b514f46",
+          "sequence_number": 12,
+          "activity_id": "dp_base_cases_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:12:00.000Z",
+          "response": {
+            "option_id": "d"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "6f0cb3d2-761b-5dae-8182-1f8a4d73002a",
+          "sequence_number": 13,
+          "activity_id": "tabulation_diagnostic_01",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:13:00.000Z",
+          "response": {
+            "option_id": "c"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "feb06c7f-d2ce-507b-8abf-71639726a317",
+          "sequence_number": 14,
+          "activity_id": "tabulation_practice_01",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:14:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        },
+        {
+          "schema_version": 1,
+          "kind": "response",
+          "event_id": "cf001613-59c9-5b68-9c16-38961ce297c2",
+          "sequence_number": 15,
+          "activity_id": "tabulation_practice_02",
+          "activity_version": 1,
+          "assessment_run_id": "01b098b7-124c-502e-9a30-2dfef4875377",
+          "occurred_at": "2026-11-20T08:15:00.000Z",
+          "response": {
+            "option_id": "a"
+          },
+          "hints_used": 0,
+          "time_spent_seconds": null
+        }
+      ]
+    }
+  ]
+}

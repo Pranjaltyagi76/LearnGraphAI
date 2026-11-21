@@ -1,0 +1,35 @@
+{
+  "status": "reviewed_source_publication_is_separate",
+  "identity": {
+    "contract_version": 1,
+    "release_id": "learngraph-full-v1",
+    "graph_version": "graph-v1",
+    "catalog_version": "catalog-full-v1",
+    "model_version": "baseline-v1",
+    "profiles_version": "demo-profiles-full-v1",
+    "scope": "full_twelve_concept_curriculum",
+    "artifacts": [
+      {
+        "path": "curriculum/graph.v1.json",
+        "sha256": "3dda665ca9c2b0e9af5a0df1e9c8074932b3bf3314e437d9e6a78e522cc05e83"
+      },
+      {
+        "path": "curriculum/catalog-full.v1.json",
+        "sha256": "f5b37d52d7894df0d36d8dc5dc979a9c9fb40b080d2615ee200e0c88ab14bf21"
+      },
+      {
+        "path": "curriculum/model-config.v1.json",
+        "sha256": "068b6fc04154f53d48948ad295edd8dd031890e57059cdeb1ecedb5b7127a6fd"
+      },
+      {
+        "path": "curriculum/profiles-full.v1.json",
+        "sha256": "59aa6c9f7979e392742e86ba9975d5c9def1bf809476f6093c181cbe839645ad"
+      },
+      {
+        "path": "contracts/protocol-v1.schema.json",
+        "sha256": "4aacf8a0eaa2b2aa2bf73d17bf7fd5224f8002ecb449b670ba42393b88a56aef"
+      }
+    ]
+  },
+  "release_hash": "986e6a63148c592b1e0d8403194c96b21ed2090c14f096fe0aee1c47c006cee9"
+}

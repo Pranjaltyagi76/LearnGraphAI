@@ -1,0 +1,3145 @@
+{
+  "catalog_version": "catalog-full-v1",
+  "status": "engineering_reviewed_not_educator_validated",
+  "target_question_count": 72,
+  "question_count": 72,
+  "lesson_count": 12,
+  "covered_concept_ids": [
+    "base_cases",
+    "call_stack",
+    "dp_base_cases",
+    "function_calls",
+    "memoization",
+    "overlapping_subproblems",
+    "recurrence_relations",
+    "recursive_progress",
+    "recursive_tracing",
+    "state_definition",
+    "state_transitions",
+    "tabulation"
+  ],
+  "activities": [
+    {
+      "id": "function_calls_diagnostic_01",
+      "version": 2,
+      "role": "diagnostic",
+      "difficulty": 0.2,
+      "prompt": "What does this program print?",
+      "code": "def double(n):\n    return n * 2\n\nprint(double(3))",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "6"
+        },
+        {
+          "id": "c",
+          "text": "9"
+        },
+        {
+          "id": "d",
+          "text": "Nothing"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The argument 3 becomes n; double returns 6, which print displays.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_practice_01",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "Which value is returned?",
+      "code": "def add_one(n):\n    return n + 1\n\nadd_one(4)",
+      "options": [
+        {
+          "id": "a",
+          "text": "4"
+        },
+        {
+          "id": "b",
+          "text": "None"
+        },
+        {
+          "id": "c",
+          "text": "5"
+        },
+        {
+          "id": "d",
+          "text": "1"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The function returns 4 + 1 = 5; returning and printing are different actions.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_practice_02",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "What is printed after the nested calls return?",
+      "code": "def double(n):\n    return n * 2\n\nprint(double(double(2)))",
+      "options": [
+        {
+          "id": "a",
+          "text": "4"
+        },
+        {
+          "id": "b",
+          "text": "6"
+        },
+        {
+          "id": "c",
+          "text": "2"
+        },
+        {
+          "id": "d",
+          "text": "8"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "The inner call returns 4, and the outer call doubles it to 8.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_practice_03",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "In what order does output appear?",
+      "code": "def mark():\n    print(\"A\")\n    return 7\n\nprint(mark())",
+      "options": [
+        {
+          "id": "a",
+          "text": "A, then 7"
+        },
+        {
+          "id": "b",
+          "text": "7, then A"
+        },
+        {
+          "id": "c",
+          "text": "Only A"
+        },
+        {
+          "id": "d",
+          "text": "Only 7"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "mark prints A before it returns 7 to the outer print.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_practice_04",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "What value is assigned to value?",
+      "code": "def show(n):\n    print(n)\n\nvalue = show(3)",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "None"
+        },
+        {
+          "id": "c",
+          "text": "0"
+        },
+        {
+          "id": "d",
+          "text": "An empty string"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "Without an explicit return, a Python function returns None even if it prints output.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_reassessment_01",
+      "version": 2,
+      "role": "reassessment",
+      "difficulty": 0.4,
+      "prompt": "What value is assigned to result? Follow argument positions, not variable names.",
+      "code": "def difference(first, second):\n    return first - second\n\nleft = 8\nright = 3\nresult = difference(right, left)",
+      "options": [
+        {
+          "id": "a",
+          "text": "5"
+        },
+        {
+          "id": "b",
+          "text": "11"
+        },
+        {
+          "id": "c",
+          "text": "-5"
+        },
+        {
+          "id": "d",
+          "text": "None"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The call passes 3 as first and 8 as second, so it returns 3 - 8 = -5.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "foundational": true,
+      "question_type": "code_tracing",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_diagnostic_01",
+      "version": 2,
+      "role": "diagnostic",
+      "difficulty": 0.2,
+      "prompt": "For nonnegative integer n, which condition represents the empty prefix when summing integers 1 through n?",
+      "code": "def total(n):\n    if CONDITION:\n        return 0\n    return n + total(n - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "n == 0"
+        },
+        {
+          "id": "b",
+          "text": "n > 0"
+        },
+        {
+          "id": "c",
+          "text": "n == -1"
+        },
+        {
+          "id": "d",
+          "text": "n == 2"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "At n == 0, no positive integers remain to add. Returning 0 stops recursion.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_practice_01",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "For nonnegative integer n, what does the stopping branch return when n is 0?",
+      "code": "def count(n):\n    if n == 0:\n        return 0\n    return 1 + count(n - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "0"
+        },
+        {
+          "id": "d",
+          "text": "4"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "At n == 0 the stopping branch immediately returns 0; no recursive call is evaluated.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_practice_02",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "For nonnegative integer n and 0! defined as 1, which value belongs in the stopping branch?",
+      "code": "def factorial(n):\n    if n == 0:\n        return RESULT\n    return n * factorial(n - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "n - 1"
+        },
+        {
+          "id": "d",
+          "text": "None"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The product of no factors is 1; returning 0 would erase every recursive product.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_practice_03",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "For nonnegative integer n, Fibonacci is defined by fib(0) = 0 and fib(1) = 1. Which return value handles both boundary inputs?",
+      "code": "def fib(n):\n    if n <= 1:\n        return RESULT\n    return fib(n - 1) + fib(n - 2)",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "n"
+        },
+        {
+          "id": "d",
+          "text": "n + 1"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "Returning n gives fib(0) = 0 and fib(1) = 1 without another call.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_practice_04",
+      "version": 2,
+      "role": "practice",
+      "difficulty": 0.4,
+      "prompt": "items is a list; items[1:] means all elements except the first. Which condition represents the empty-list stopping state?",
+      "code": "def length(items):\n    if CONDITION:\n        return 0\n    return 1 + length(items[1:])",
+      "options": [
+        {
+          "id": "a",
+          "text": "len(items) == 1"
+        },
+        {
+          "id": "b",
+          "text": "len(items) > 0"
+        },
+        {
+          "id": "c",
+          "text": "items is None"
+        },
+        {
+          "id": "d",
+          "text": "len(items) == 0"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "An empty list has length 0 and is the state reached after removing all elements.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "base_cases_reassessment_01",
+      "version": 2,
+      "role": "reassessment",
+      "difficulty": 0.4,
+      "prompt": "For a nonzero integer base and nonnegative integer exponent, what should power(base, 0) return?",
+      "code": "def power(base, exponent):\n    if exponent == 0:\n        return RESULT\n    return base * power(base, exponent - 1)",
+      "options": [
+        {
+          "id": "a",
+          "text": "base"
+        },
+        {
+          "id": "b",
+          "text": "0"
+        },
+        {
+          "id": "c",
+          "text": "1"
+        },
+        {
+          "id": "d",
+          "text": "exponent - 1"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "For a nonzero base, exponent zero contributes the multiplicative identity 1 and stops recursion.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "foundational": false,
+      "question_type": "multiple_choice",
+      "active": true,
+      "kind": "question"
+    },
+    {
+      "id": "function_calls_lesson_01",
+      "version": 1,
+      "primary_concept_id": "function_calls",
+      "secondary_concept_ids": [],
+      "role": "lesson",
+      "active": true,
+      "foundational": true,
+      "difficulty": 0.2,
+      "title": "Arguments and return values",
+      "body": "Match each argument to its parameter position. Evaluate a call before using its returned value. Printing produces output; returning passes a value back to the caller. A Python function without an explicit return produces None.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "kind": "lesson"
+    },
+    {
+      "id": "base_cases_lesson_01",
+      "version": 1,
+      "primary_concept_id": "base_cases",
+      "secondary_concept_ids": [
+        "function_calls"
+      ],
+      "role": "lesson",
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "title": "Stop at a defined boundary",
+      "body": "State the permitted input domain first. Identify the smallest valid state and its defined result. The stopping branch returns directly without a recursive call. Different problems have different boundary values; completing this lesson adds no correctness evidence.",
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-20",
+        "license_status": "not_licensed"
+      },
+      "kind": "lesson"
+    },
+    {
+      "id": "call_stack_diagnostic_01",
+      "version": 1,
+      "kind": "question",
+      "role": "diagnostic",
+      "primary_concept_id": "call_stack",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "Immediately before leaf returns, which frame is the newest active frame?",
+      "code": "def leaf():\n    return 7\ndef middle():\n    return leaf()\ndef main():\n    return middle()\n\nmain()",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "main"
+        },
+        {
+          "id": "b",
+          "text": "middle"
+        },
+        {
+          "id": "c",
+          "text": "leaf"
+        },
+        {
+          "id": "d",
+          "text": "All three return together"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "main called middle, and middle called leaf. leaf is newest and returns before its suspended callers."
+    },
+    {
+      "id": "call_stack_practice_01",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "call_stack",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.35,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "What does the outer call print after the inner call returns?",
+      "code": "def show(n):\n    if n == 2:\n        return n * 2\n    show(2)\n    print(n)\n\nshow(9)",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "4"
+        },
+        {
+          "id": "b",
+          "text": "9"
+        },
+        {
+          "id": "c",
+          "text": "2"
+        },
+        {
+          "id": "d",
+          "text": "6"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The inner frame has n=2 and returns 4. Its local n does not replace the outer frame's n=9."
+    },
+    {
+      "id": "call_stack_practice_02",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "call_stack",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.45,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "Count only active frames of depth, including the initial call. What is the maximum number before any return?",
+      "code": "def depth(n):\n    if n == 0:\n        return\n    depth(n - 1)\n\ndepth(3)",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "1"
+        },
+        {
+          "id": "b",
+          "text": "2"
+        },
+        {
+          "id": "c",
+          "text": "3"
+        },
+        {
+          "id": "d",
+          "text": "4"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "depth(3), depth(2), depth(1) and depth(0) are simultaneously active at the boundary; that is four frames."
+    },
+    {
+      "id": "call_stack_practice_03",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "call_stack",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.5,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "Which order is printed as suspended calls resume?",
+      "code": "order = []\ndef unwind(n):\n    if n == 0:\n        return\n    unwind(n - 1)\n    order.append(n)\nunwind(3)\nprint(order)",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "[1, 2, 3]"
+        },
+        {
+          "id": "b",
+          "text": "[3, 2, 1]"
+        },
+        {
+          "id": "c",
+          "text": "[0, 1, 2, 3]"
+        },
+        {
+          "id": "d",
+          "text": "[3]"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "The boundary returns first. The frame for n=1 appends before n=2, which appends before n=3."
+    },
+    {
+      "id": "call_stack_practice_04",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "call_stack",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.6,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "When helper returns 5, where does execution resume in caller?",
+      "code": "def helper():\n    return 5\ndef caller():\n    x = helper()\n    y = x + 1\n    return y",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "At the start of caller with x reset"
+        },
+        {
+          "id": "b",
+          "text": "Inside a new helper frame"
+        },
+        {
+          "id": "c",
+          "text": "At y = x + 1 with caller's x equal to 5"
+        },
+        {
+          "id": "d",
+          "text": "At return y before assigning y"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The call expression receives the return value, assigns x=5, then caller proceeds to its next statement."
+    },
+    {
+      "id": "call_stack_reassessment_01",
+      "version": 1,
+      "kind": "question",
+      "role": "reassessment",
+      "primary_concept_id": "call_stack",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.55,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "How many recur frames remain active immediately after recur(0) returns to recur(1)? Count recur only.",
+      "code": "def recur(n):\n    if n == 0:\n        return 0\n    value = recur(n - 1)\n    return value + 1\n\nrecur(2)",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "2"
+        },
+        {
+          "id": "d",
+          "text": "3"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The frame recur(0) is removed. recur(1) and its suspended caller recur(2) remain, so two recur frames are active."
+    },
+    {
+      "id": "call_stack_lesson_01",
+      "version": 1,
+      "kind": "lesson",
+      "role": "lesson",
+      "primary_concept_id": "call_stack",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "title": "Keep each active call separate",
+      "body": "A call frame holds that call's parameters, local variables and return point. Calling another function suspends the caller. A return removes the newest active frame and resumes its caller. Draw frames from oldest to newest; count active frames separately from the total number of calls. This lesson provides context, not correctness evidence."
+    },
+    {
+      "id": "recursive_progress_diagnostic_01",
+      "version": 1,
+      "kind": "question",
+      "role": "diagnostic",
+      "primary_concept_id": "recursive_progress",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "For a positive integer n with stopping condition n == 0, which recursive argument reaches that boundary for every permitted n?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "n + 1"
+        },
+        {
+          "id": "b",
+          "text": "n - 1"
+        },
+        {
+          "id": "c",
+          "text": "n"
+        },
+        {
+          "id": "d",
+          "text": "n + 2"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "Subtracting one strictly decreases the nonnegative remaining count and eventually reaches zero."
+    },
+    {
+      "id": "recursive_progress_practice_01",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recursive_progress",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.35,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "For initial n=3, which change fixes progress while keeping the stated domain and n == 0 boundary?",
+      "code": "def walk(n):  # n is a nonnegative integer\n    if n == 0:\n        return\n    walk(n + 1)",
+      "question_type": "bug_identification",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use walk(n + 1)"
+        },
+        {
+          "id": "b",
+          "text": "Use walk(n)"
+        },
+        {
+          "id": "c",
+          "text": "Remove the if"
+        },
+        {
+          "id": "d",
+          "text": "Use walk(n - 1)"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "The current branch increases n away from zero. Subtracting one makes the boundary reachable."
+    },
+    {
+      "id": "recursive_progress_practice_02",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recursive_progress",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.45,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "The input may be any nonnegative integer. Why is n - 2 with only n == 0 an invalid termination argument?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Odd positive inputs pass from 1 to -1 and never reach zero"
+        },
+        {
+          "id": "b",
+          "text": "Even inputs never change"
+        },
+        {
+          "id": "c",
+          "text": "Subtracting two always increases n"
+        },
+        {
+          "id": "d",
+          "text": "Zero calls itself"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "Even inputs reach zero, but odd inputs skip it. A proof must cover the entire stated domain."
+    },
+    {
+      "id": "recursive_progress_practice_03",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recursive_progress",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.5,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "For each pair (left, right) below, the interval is nonempty. Which quantity strictly decreases in search(left + 1, right)?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "right + left"
+        },
+        {
+          "id": "b",
+          "text": "right"
+        },
+        {
+          "id": "c",
+          "text": "right - left + 1"
+        },
+        {
+          "id": "d",
+          "text": "The number of previous calls"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The inclusive interval length drops by one while right stays fixed. It can serve as a progress measure."
+    },
+    {
+      "id": "recursive_progress_practice_04",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recursive_progress",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.6,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "How many reductions does steps count from its initial positive integer argument before reaching zero?",
+      "code": "def steps(n):\n    if n == 0:\n        return 0\n    return 1 + steps(n // 2)\nprint(steps(9))",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "1"
+        },
+        {
+          "id": "b",
+          "text": "2"
+        },
+        {
+          "id": "c",
+          "text": "3"
+        },
+        {
+          "id": "d",
+          "text": "4"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "Integer halving follows 9 → 4 → 2 → 1 → 0, four strict reductions before the boundary returns zero."
+    },
+    {
+      "id": "recursive_progress_reassessment_01",
+      "version": 1,
+      "kind": "question",
+      "role": "reassessment",
+      "primary_concept_id": "recursive_progress",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.55,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "For n > 0, solve recurses on both n - 1 and n. With a boundary at n == 0, which branch violates progress?",
+      "code": "def solve(n):\n    if n == 0:\n        return 0\n    return solve(n - 1) + solve(n)",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only solve(n)"
+        },
+        {
+          "id": "b",
+          "text": "Only solve(n - 1)"
+        },
+        {
+          "id": "c",
+          "text": "Both always decrease n"
+        },
+        {
+          "id": "d",
+          "text": "Neither branch can run"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "solve(n) receives the unchanged positive state and can repeat forever. Each reachable branch needs its own decreasing measure."
+    },
+    {
+      "id": "recursive_progress_lesson_01",
+      "version": 1,
+      "kind": "lesson",
+      "role": "lesson",
+      "primary_concept_id": "recursive_progress",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "title": "Choose a measure that must decrease",
+      "body": "State the input domain and a nonnegative measure of remaining work. On every recursive branch that can run, the measure must strictly decrease toward a reachable stopping condition. Changing a value is not sufficient if it can cycle or skip the boundary. For multiple branches, check every branch. No readiness changes merely from reading this lesson."
+    },
+    {
+      "id": "recursive_tracing_diagnostic_01",
+      "version": 1,
+      "kind": "question",
+      "role": "diagnostic",
+      "primary_concept_id": "recursive_tracing",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "For nonnegative n, what does this program print?",
+      "code": "def add_down(n):\n    if n == 0:\n        return 0\n    return n + add_down(n - 1)\nprint(add_down(3))",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "3"
+        },
+        {
+          "id": "c",
+          "text": "6"
+        },
+        {
+          "id": "d",
+          "text": "9"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "add_down(0)=0; returns unwind as 1, then 3, then 6."
+    },
+    {
+      "id": "recursive_tracing_practice_01",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recursive_tracing",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.35,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "Which sequence is printed by work before and after the recursive call?",
+      "code": "seen = []\ndef visit(n):\n    if n == 0:\n        return\n    seen.append(n)\n    visit(n - 1)\n    seen.append(-n)\nvisit(2)\nprint(seen)",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "[2, 1, -1, -2]"
+        },
+        {
+          "id": "b",
+          "text": "[1, 2, -2, -1]"
+        },
+        {
+          "id": "c",
+          "text": "[-2, -1, 1, 2]"
+        },
+        {
+          "id": "d",
+          "text": "[2, -2, 1, -1]"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "Positive values are appended on descent (2,1). Negative values are appended on return (-1,-2)."
+    },
+    {
+      "id": "recursive_tracing_practice_02",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recursive_tracing",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.45,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "Only nonnegative n is allowed. What is printed?",
+      "code": "def grow(n):\n    if n == 0:\n        return 1\n    return 2 * grow(n - 1)\nprint(grow(3))",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "6"
+        },
+        {
+          "id": "c",
+          "text": "7"
+        },
+        {
+          "id": "d",
+          "text": "8"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "grow(0)=1, then doubling at each of three returning frames gives 2,4,8."
+    },
+    {
+      "id": "recursive_tracing_practice_03",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recursive_tracing",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.5,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "The empty product is defined as 1. What does product_from(1) print for the fixed list?",
+      "code": "values = [2, 3, 4]\ndef product_from(i):\n    if i == len(values):\n        return 1\n    return values[i] * product_from(i + 1)\nprint(product_from(1))",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "4"
+        },
+        {
+          "id": "b",
+          "text": "12"
+        },
+        {
+          "id": "c",
+          "text": "24"
+        },
+        {
+          "id": "d",
+          "text": "0"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The suffix starting at index 1 contains 3 and 4. The boundary returns 1, so the product is 3*4*1=12."
+    },
+    {
+      "id": "recursive_tracing_practice_04",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recursive_tracing",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.6,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "For n=2, what value is printed after both recursive branches return?",
+      "code": "def leaves(n):\n    if n == 0:\n        return 1\n    return leaves(n - 1) + leaves(n - 1)\nprint(leaves(2))",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "2"
+        },
+        {
+          "id": "b",
+          "text": "3"
+        },
+        {
+          "id": "c",
+          "text": "4"
+        },
+        {
+          "id": "d",
+          "text": "5"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "Each n=1 branch returns 1+1=2; the n=2 frame adds the two returned values to get 4."
+    },
+    {
+      "id": "recursive_tracing_reassessment_01",
+      "version": 1,
+      "kind": "question",
+      "role": "reassessment",
+      "primary_concept_id": "recursive_tracing",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.55,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "For nonnegative n, trace the code and choose the printed result.",
+      "code": "def mystery(n):\n    if n == 0:\n        return 2\n    return mystery(n - 1) + 1\nprint(mystery(3))",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "2"
+        },
+        {
+          "id": "b",
+          "text": "4"
+        },
+        {
+          "id": "c",
+          "text": "5"
+        },
+        {
+          "id": "d",
+          "text": "8"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "mystery(0)=2, then the three returning frames add 1 each: 3,4,5. It does not return the argument n."
+    },
+    {
+      "id": "recursive_tracing_lesson_01",
+      "version": 1,
+      "kind": "lesson",
+      "role": "lesson",
+      "primary_concept_id": "recursive_tracing",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "title": "Trace calls, then unwind returned values",
+      "body": "Write each argument on descent until a boundary returns a known result. Then substitute that result into the suspended caller, one frame at a time. Keep work before a recursive call distinct from work after it. In branching recursion, finish the first branch before adding the second according to the stated evaluation order. Trace the given code rather than assuming a familiar formula."
+    },
+    {
+      "id": "recurrence_relations_diagnostic_01",
+      "version": 1,
+      "kind": "question",
+      "role": "diagnostic",
+      "primary_concept_id": "recurrence_relations",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "S(n) is the sum 1+…+n for integer n≥0, and S(0)=0. Which recurrence matches this definition?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "S(n)=S(n-1)+n for n≥1"
+        },
+        {
+          "id": "b",
+          "text": "S(n)=S(n-1)*n for n≥1"
+        },
+        {
+          "id": "c",
+          "text": "S(n)=S(n+1)+n for n≥1"
+        },
+        {
+          "id": "d",
+          "text": "S(n)=n for every n"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "The terms up to n-1 contribute S(n-1); adding the final term n gives the required sum."
+    },
+    {
+      "id": "recurrence_relations_practice_01",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recurrence_relations",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.35,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "An empty string has one construction. A length-n string uses only symbols A or B. Which pair correctly counts all strings?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "C(0)=0; C(n)=2+C(n-1)"
+        },
+        {
+          "id": "b",
+          "text": "C(0)=1; C(n)=2*C(n-1)"
+        },
+        {
+          "id": "c",
+          "text": "C(0)=2; C(n)=C(n-1)"
+        },
+        {
+          "id": "d",
+          "text": "C(0)=1; C(n)=C(n-1)+1"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "Each shorter string has two possible final symbols; the empty string supplies the initial one construction."
+    },
+    {
+      "id": "recurrence_relations_practice_02",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recurrence_relations",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.45,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A sequence is defined by a(0)=1 and a(n)=a(n-1)+2 for n≥1. What is a(3)?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "5"
+        },
+        {
+          "id": "c",
+          "text": "6"
+        },
+        {
+          "id": "d",
+          "text": "7"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "Starting from 1, three increments of two produce 3,5,7."
+    },
+    {
+      "id": "recurrence_relations_practice_03",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recurrence_relations",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.5,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "ways(n) counts ordered paths climbing n stairs using steps of 1 or 2. ways(0)=1 and ways(1)=1. For n≥2, which recurrence separates paths by their final step?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "ways(n)=ways(n-1)*ways(n-2)"
+        },
+        {
+          "id": "b",
+          "text": "ways(n)=ways(n-1)+1"
+        },
+        {
+          "id": "c",
+          "text": "ways(n)=ways(n-1)+ways(n-2)"
+        },
+        {
+          "id": "d",
+          "text": "ways(n)=2*n"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "A final one-step comes from n-1 and a final two-step from n-2. These disjoint alternatives add."
+    },
+    {
+      "id": "recurrence_relations_practice_04",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "recurrence_relations",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.6,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "best(i) is the maximum score obtainable after choosing exactly one option at stage i; each choice adds its score to best(i-1). Option scores are 3 and 8. Which transition matches that definition?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "min(best(i-1)+3, best(i-1)+8)"
+        },
+        {
+          "id": "b",
+          "text": "max(best(i-1)+3, best(i-1)+8)"
+        },
+        {
+          "id": "c",
+          "text": "best(i-1)+3+8"
+        },
+        {
+          "id": "d",
+          "text": "best(i-1)*8"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "Exactly one option is chosen, and the objective is maximum total score. Adding both would violate the choice constraint."
+    },
+    {
+      "id": "recurrence_relations_reassessment_01",
+      "version": 1,
+      "kind": "question",
+      "role": "reassessment",
+      "primary_concept_id": "recurrence_relations",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.55,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "T(n) counts calls in a routine that makes one smaller call and performs one unit of additional work. T(0)=1. Which runtime recurrence matches n≥1?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "T(n)=T(n-1)+1"
+        },
+        {
+          "id": "b",
+          "text": "T(n)=n*T(n-1)"
+        },
+        {
+          "id": "c",
+          "text": "T(n)=2*T(n-1)+1"
+        },
+        {
+          "id": "d",
+          "text": "T(n)=T(n+1)-1"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "One smaller call contributes T(n-1), and the present call adds one. This models work, rather than a problem's numeric answer."
+    },
+    {
+      "id": "recurrence_relations_lesson_01",
+      "version": 1,
+      "kind": "lesson",
+      "role": "lesson",
+      "primary_concept_id": "recurrence_relations",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "title": "Give each smaller state a precise meaning",
+      "body": "A recurrence expresses a defined state's value through smaller states. Include both the recurrence's valid index range and its boundary values. Counting alternatives adds their counts; choosing a best alternative often uses min or max. Do not confuse a recurrence for the answer with one for runtime. Verify a small example independently."
+    },
+    {
+      "id": "overlapping_subproblems_diagnostic_01",
+      "version": 1,
+      "kind": "question",
+      "role": "diagnostic",
+      "primary_concept_id": "overlapping_subproblems",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "f(4) expands to f(3)+f(2), and f(3) expands to f(2)+f(1). Which non-boundary state is requested twice?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "f(4)"
+        },
+        {
+          "id": "b",
+          "text": "f(3)"
+        },
+        {
+          "id": "c",
+          "text": "f(2)"
+        },
+        {
+          "id": "d",
+          "text": "There is no repeated state"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "f(2) occurs directly under f(4) and again under f(3), so those requests overlap."
+    },
+    {
+      "id": "overlapping_subproblems_practice_01",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "overlapping_subproblems",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.35,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "Which recursion pattern has no repeated state within one invocation, assuming n starts at 4 and the boundary is n==0?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "f(n-1)+f(n-2)"
+        },
+        {
+          "id": "b",
+          "text": "One call to f(n-1)"
+        },
+        {
+          "id": "c",
+          "text": "Two separate calls to f(n-1)"
+        },
+        {
+          "id": "d",
+          "text": "f(n-1)+f(n-1)+f(n-1)"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "A single chain visits 4,3,2,1,0 once each. Branching into the same or converging states creates repetition."
+    },
+    {
+      "id": "overlapping_subproblems_practice_02",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "overlapping_subproblems",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.45,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A path-counting state is (row,column) on one fixed grid. Which two calls ask for exactly the same subproblem?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "paths(1,2) and paths(2,1)"
+        },
+        {
+          "id": "b",
+          "text": "paths(0,2) and paths(1,2)"
+        },
+        {
+          "id": "c",
+          "text": "paths(1,1) and paths(1,2)"
+        },
+        {
+          "id": "d",
+          "text": "paths(1,2) and paths(1,2)"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "The ordered pair identifies a cell. Exchanging coordinates or changing one coordinate generally changes the subproblem."
+    },
+    {
+      "id": "overlapping_subproblems_practice_03",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "overlapping_subproblems",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.5,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "The function's counter records every invocation. How many calls use the state n=1?",
+      "code": "calls = []\ndef f(n):\n    calls.append(n)\n    if n <= 1:\n        return 1\n    return f(n - 1) + f(n - 2)\nf(3)\nprint(calls.count(1))",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "1"
+        },
+        {
+          "id": "b",
+          "text": "2"
+        },
+        {
+          "id": "c",
+          "text": "3"
+        },
+        {
+          "id": "d",
+          "text": "4"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "f(3) calls f(2) and f(1); f(2) also calls f(1), so n=1 is requested twice."
+    },
+    {
+      "id": "overlapping_subproblems_practice_04",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "overlapping_subproblems",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.6,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "Which observation is sufficient to justify avoiding duplicate computation with a cache, for a pure function on fixed input data?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Its code contains a loop"
+        },
+        {
+          "id": "b",
+          "text": "It has at least two local variables"
+        },
+        {
+          "id": "c",
+          "text": "The same complete state is requested again and has the same answer"
+        },
+        {
+          "id": "d",
+          "text": "Its answer is always positive"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "Repeated requests to the same complete stable state are reusable. Loops, local-variable counts and positivity do not establish overlap."
+    },
+    {
+      "id": "overlapping_subproblems_reassessment_01",
+      "version": 1,
+      "kind": "question",
+      "role": "reassessment",
+      "primary_concept_id": "overlapping_subproblems",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.55,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A trace visits states (i,remaining) = (0,3),(1,2),(1,3),(2,2),(2,2). Which state represents repeated work?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "(0,3)"
+        },
+        {
+          "id": "b",
+          "text": "(1,2)"
+        },
+        {
+          "id": "c",
+          "text": "(1,3)"
+        },
+        {
+          "id": "d",
+          "text": "(2,2)"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "Only the complete pair (2,2) appears more than once. Sharing just i or remaining is insufficient to identify the same state."
+    },
+    {
+      "id": "overlapping_subproblems_lesson_01",
+      "version": 1,
+      "kind": "lesson",
+      "role": "lesson",
+      "primary_concept_id": "overlapping_subproblems",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "title": "Look for repeated complete states",
+      "body": "Two calls overlap when they ask for the same defined subproblem under the same fixed inputs. Trace the state arguments, not just the function name or the shape of its code. Independent recursive branches can revisit a state; a single decreasing chain need not do so. Caching helps repeated work only when a complete, stable state identifies the same answer."
+    },
+    {
+      "id": "state_definition_diagnostic_01",
+      "version": 1,
+      "kind": "question",
+      "role": "diagnostic",
+      "primary_concept_id": "state_definition",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": true,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "On a fixed list values, dp[i] means the sum of the first i entries. Which entries belong to dp[2]?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "values[0] and values[1]"
+        },
+        {
+          "id": "b",
+          "text": "values[1] and values[2]"
+        },
+        {
+          "id": "c",
+          "text": "Only values[2]"
+        },
+        {
+          "id": "d",
+          "text": "Every entry after index 2"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "The first two entries are at indices 0 and 1. The state counts a prefix length, not the index of an included final element."
+    },
+    {
+      "id": "state_definition_practice_01",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "state_definition",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": true,
+      "difficulty": 0.35,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A fixed list has values [5,2,7]. dp[i] means the sum of the first i entries. What is dp[2]?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "2"
+        },
+        {
+          "id": "b",
+          "text": "7"
+        },
+        {
+          "id": "c",
+          "text": "9"
+        },
+        {
+          "id": "d",
+          "text": "14"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The prefix of length two contains 5 and 2, whose sum is 7."
+    },
+    {
+      "id": "state_definition_practice_02",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "state_definition",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": true,
+      "difficulty": 0.45,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A subproblem chooses from items starting at index i under remaining capacity c; item data is fixed. Which state key retains both changing constraints?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i only"
+        },
+        {
+          "id": "b",
+          "text": "c only"
+        },
+        {
+          "id": "c",
+          "text": "The sum i+c"
+        },
+        {
+          "id": "d",
+          "text": "(i,c)"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "Both the remaining items and available capacity affect the subproblem. Their pair preserves both; the sum can collide."
+    },
+    {
+      "id": "state_definition_practice_03",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "state_definition",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": true,
+      "difficulty": 0.5,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A state dp[i] is defined as the best score using exactly the first i items. Which statement correctly describes dp[0]?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "It uses item at index 0"
+        },
+        {
+          "id": "b",
+          "text": "It uses no items"
+        },
+        {
+          "id": "c",
+          "text": "It uses all items"
+        },
+        {
+          "id": "d",
+          "text": "It means the score is unknown forever"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "A prefix containing zero items is empty. Its numeric boundary value depends on the objective, but its meaning is no items."
+    },
+    {
+      "id": "state_definition_practice_04",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "state_definition",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": true,
+      "difficulty": 0.6,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "Two path-counting queries share a fixed grid but use different row and column coordinates. Why can a cache keyed only by row be wrong?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "A row index cannot be an integer"
+        },
+        {
+          "id": "b",
+          "text": "A cache must always use text keys"
+        },
+        {
+          "id": "c",
+          "text": "Different columns in the same row can have different remaining path counts"
+        },
+        {
+          "id": "d",
+          "text": "Every grid cell has the same answer"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "Omitting column merges distinct cells. A complete state key must distinguish subproblems whose answers can differ."
+    },
+    {
+      "id": "state_definition_reassessment_01",
+      "version": 1,
+      "kind": "question",
+      "role": "reassessment",
+      "primary_concept_id": "state_definition",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": true,
+      "difficulty": 0.55,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "For a fixed string s, suffix(i) counts vowels in s[i:]. What changing information is sufficient to identify this subproblem?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "The start index i"
+        },
+        {
+          "id": "b",
+          "text": "The number of calls so far"
+        },
+        {
+          "id": "c",
+          "text": "The last character counted anywhere"
+        },
+        {
+          "id": "d",
+          "text": "The length of an unrelated string"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "With s fixed, i identifies the entire remaining suffix. The counter of past calls is not part of the question being answered."
+    },
+    {
+      "id": "state_definition_lesson_01",
+      "version": 1,
+      "kind": "lesson",
+      "role": "lesson",
+      "primary_concept_id": "state_definition",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": true,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "title": "Name the exact question each state answers",
+      "body": "Define a state in one sentence before choosing its representation. Retain every changing variable that can affect the answer, while treating declared fixed input data as fixed. Distinguish position from value, prefix from suffix, and capacity from items already used. A state key is sufficient only if equal keys always mean the same remaining subproblem."
+    },
+    {
+      "id": "state_transitions_diagnostic_01",
+      "version": 1,
+      "kind": "question",
+      "role": "diagnostic",
+      "primary_concept_id": "state_transitions",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "dp[i] is the sum of the first i entries of a fixed list a, with dp[0]=0. Which transition is correct for i≥1?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "dp[i]=dp[i-1]+a[i]"
+        },
+        {
+          "id": "b",
+          "text": "dp[i]=dp[i-1]+a[i-1]"
+        },
+        {
+          "id": "c",
+          "text": "dp[i]=dp[i+1]+a[i-1]"
+        },
+        {
+          "id": "d",
+          "text": "dp[i]=a[0]"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The newly included entry has index i-1, since dp uses prefix length rather than zero-based item index."
+    },
+    {
+      "id": "state_transitions_practice_01",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "state_transitions",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.35,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "What prefix totals does this transition produce?",
+      "code": "a = [2, 4, 1]\ndp = [0]\nfor value in a:\n    dp.append(dp[-1] + value)\nprint(dp)",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "[0, 2, 6, 7]"
+        },
+        {
+          "id": "b",
+          "text": "[2, 4, 1]"
+        },
+        {
+          "id": "c",
+          "text": "[0, 2, 4, 1]"
+        },
+        {
+          "id": "d",
+          "text": "[0, 7, 7, 7]"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "Starting at zero, the transitions add 2, then 4, then 1: totals 2,6,7."
+    },
+    {
+      "id": "state_transitions_practice_02",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "state_transitions",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.45,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "cost[i] is the cost to land at stair i. best[i] is minimum total cost to reach i from i-1 or i-2, with earlier boundaries already defined. For i≥2, which transition is correct?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "best[i]=max(best[i-1],best[i-2])"
+        },
+        {
+          "id": "b",
+          "text": "best[i]=cost[i]+best[i-1]+best[i-2]"
+        },
+        {
+          "id": "c",
+          "text": "best[i]=cost[i]+min(best[i-1],best[i-2])"
+        },
+        {
+          "id": "d",
+          "text": "best[i]=min(cost[i-1],cost[i-2])"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "Choose the cheaper valid predecessor, then add the landing cost. Adding both predecessor costs combines two alternative paths incorrectly."
+    },
+    {
+      "id": "state_transitions_practice_03",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "state_transitions",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.5,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "ways[i] counts ordered stair paths using steps 1 or 3, with ways[0]=1 and ways[j]=0 for j<0. Which transition counts paths by their final step for i≥1?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "ways[i]=ways[i-1]*ways[i-3]"
+        },
+        {
+          "id": "b",
+          "text": "ways[i]=ways[i-2]+ways[i-3]"
+        },
+        {
+          "id": "c",
+          "text": "ways[i]=ways[i-1]+3"
+        },
+        {
+          "id": "d",
+          "text": "ways[i]=ways[i-1]+ways[i-3]"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "The final step is either 1 from i-1 or 3 from i-3. The disjoint path counts add; negative predecessors contribute zero."
+    },
+    {
+      "id": "state_transitions_practice_04",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "state_transitions",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.6,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "An unreachable predecessor has cost INF, where INF exceeds every feasible finite path cost. What should the transition do with that alternative?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep it unreachable rather than treating it as zero cost"
+        },
+        {
+          "id": "b",
+          "text": "Always choose it because INF is a boundary"
+        },
+        {
+          "id": "c",
+          "text": "Replace its cost with zero"
+        },
+        {
+          "id": "d",
+          "text": "Delete the destination state even if another predecessor is reachable"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "An impossible route must not become a cheap candidate. Other reachable alternatives can still determine the destination."
+    },
+    {
+      "id": "state_transitions_reassessment_01",
+      "version": 1,
+      "kind": "question",
+      "role": "reassessment",
+      "primary_concept_id": "state_transitions",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.55,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "dp[i] counts ordered paths reaching i with steps 1 or 2. Earlier entries are already correct. Which line fixes this transition for i≥2?",
+      "code": "# Incorrect line inside the loop:\ndp[i] = dp[i-1] * dp[i-2]",
+      "question_type": "bug_identification",
+      "options": [
+        {
+          "id": "a",
+          "text": "dp[i] = dp[i-1] * dp[i-2]"
+        },
+        {
+          "id": "b",
+          "text": "dp[i] = dp[i-1] + dp[i-2]"
+        },
+        {
+          "id": "c",
+          "text": "dp[i] = dp[i+1] + dp[i+2]"
+        },
+        {
+          "id": "d",
+          "text": "dp[i] = i * 2"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "Paths ending with step 1 and step 2 are disjoint alternatives. Their counts must be added, not multiplied."
+    },
+    {
+      "id": "state_transitions_lesson_01",
+      "version": 1,
+      "kind": "lesson",
+      "role": "lesson",
+      "primary_concept_id": "state_transitions",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "title": "Build a state only from valid predecessor states",
+      "body": "Translate the state meaning into cases for the last choice or added element. Check that predecessor indices are valid, represent the intended smaller problem and use the right combining operation. Sum disjoint counts; use min or max for an optimization objective. An impossible predecessor must stay impossible rather than silently becoming a zero-cost solution."
+    },
+    {
+      "id": "dp_base_cases_diagnostic_01",
+      "version": 1,
+      "kind": "question",
+      "role": "diagnostic",
+      "primary_concept_id": "dp_base_cases",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "dp[i] is the sum of the first i list entries. What value represents the empty prefix dp[0]?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1"
+        },
+        {
+          "id": "b",
+          "text": "The first list entry"
+        },
+        {
+          "id": "c",
+          "text": "0"
+        },
+        {
+          "id": "d",
+          "text": "The list length"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "An empty prefix contains no addends, so its sum is zero."
+    },
+    {
+      "id": "dp_base_cases_practice_01",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "dp_base_cases",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.35,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "ways[n] counts ordered stair paths using steps 1 or 2. Staying at step 0 with no moves counts as one path. Which boundaries are correct?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "ways[0]=1 and ways[1]=1"
+        },
+        {
+          "id": "b",
+          "text": "ways[0]=0 and ways[1]=0"
+        },
+        {
+          "id": "c",
+          "text": "ways[0]=0 and ways[1]=1"
+        },
+        {
+          "id": "d",
+          "text": "ways[0]=2 and ways[1]=2"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "The stated empty path supplies ways[0]=1; exactly one one-step path supplies ways[1]=1."
+    },
+    {
+      "id": "dp_base_cases_practice_02",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "dp_base_cases",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.45,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A minimum-coin state dp[a] is the fewest coins needed to make amount a; coins have positive integer values. Which initialization distinguishes empty from impossible amounts?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Set every amount to zero"
+        },
+        {
+          "id": "b",
+          "text": "Set every amount to one"
+        },
+        {
+          "id": "c",
+          "text": "Set dp[0] to INF and all others to zero"
+        },
+        {
+          "id": "d",
+          "text": "Set dp[0]=0 and all positive amounts to INF before transitions"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "Zero amount needs zero coins. Positive amounts are not known reachable until transitions find actual coins."
+    },
+    {
+      "id": "dp_base_cases_practice_03",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "dp_base_cases",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.5,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A product-prefix state multiplies the first i entries. The product of no factors is defined as 1. What is dp[0]?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "The first entry"
+        },
+        {
+          "id": "d",
+          "text": "-1"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "One is the multiplicative identity; starting at zero would erase every subsequent product."
+    },
+    {
+      "id": "dp_base_cases_practice_04",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "dp_base_cases",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.6,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "In an obstacle-free grid, only moves right or down are allowed from (0,0). There is exactly one empty path to the starting cell. What is paths[0][0]?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "The grid area"
+        },
+        {
+          "id": "c",
+          "text": "1"
+        },
+        {
+          "id": "d",
+          "text": "Two, one for each move direction"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "The state counts paths reaching the cell, not outgoing directions. The defined empty path gives one at the origin."
+    },
+    {
+      "id": "dp_base_cases_reassessment_01",
+      "version": 1,
+      "kind": "question",
+      "role": "reassessment",
+      "primary_concept_id": "dp_base_cases",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.55,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "The DP counts strings of length n over A or B; the empty string counts as one string. Which boundary fixes the program's smallest input n=0?",
+      "code": "dp = [0] * (n + 1)\n# Fill dp[0] here.\nfor i in range(1, n + 1):\n    dp[i] = 2 * dp[i-1]",
+      "question_type": "bug_identification",
+      "options": [
+        {
+          "id": "a",
+          "text": "dp[0] = 0"
+        },
+        {
+          "id": "b",
+          "text": "dp[0] = 1"
+        },
+        {
+          "id": "c",
+          "text": "dp[0] = 2"
+        },
+        {
+          "id": "d",
+          "text": "dp[0] = n + 2"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The stated empty string must already be represented once before doubling for each added symbol."
+    },
+    {
+      "id": "dp_base_cases_lesson_01",
+      "version": 1,
+      "kind": "lesson",
+      "role": "lesson",
+      "primary_concept_id": "dp_base_cases",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "title": "Initialize the state meaning, including the empty case",
+      "body": "Boundary states encode the smallest valid subproblems. State their mathematical meaning: an empty sum is 0, an empty product is 1, and an empty construction may count as one way. These values are not interchangeable. Keep impossible states distinct from valid empty states. Check the smallest input before running any transition."
+    },
+    {
+      "id": "memoization_diagnostic_01",
+      "version": 1,
+      "kind": "question",
+      "role": "diagnostic",
+      "primary_concept_id": "memoization",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "For a pure solve(i,remaining) on fixed item data, which cache key is complete?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i"
+        },
+        {
+          "id": "b",
+          "text": "remaining"
+        },
+        {
+          "id": "c",
+          "text": "i+remaining"
+        },
+        {
+          "id": "d",
+          "text": "(i,remaining)"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "Both changing arguments can affect the answer; a complete key must distinguish their ordered pair."
+    },
+    {
+      "id": "memoization_practice_01",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "memoization",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.35,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A computed answer may be zero. Which check reliably distinguishes cached from uncached states?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "if memo.get(key):"
+        },
+        {
+          "id": "b",
+          "text": "if key in memo:"
+        },
+        {
+          "id": "c",
+          "text": "if key > 0:"
+        },
+        {
+          "id": "d",
+          "text": "if len(memo) == key:"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "Membership tests whether the key exists even when its stored value is zero. Truthiness would incorrectly treat zero as a miss."
+    },
+    {
+      "id": "memoization_practice_02",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "memoization",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.45,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "The expansion counter increases only on a cache miss. What is printed after requesting the same state twice?",
+      "code": "memo = {}\nmisses = []\ndef square(n):\n    if n in memo:\n        return memo[n]\n    misses.append(n)\n    memo[n] = n * n\n    return memo[n]\nsquare(5)\nsquare(5)\nprint(len(misses))",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "1"
+        },
+        {
+          "id": "b",
+          "text": "2"
+        },
+        {
+          "id": "c",
+          "text": "3"
+        },
+        {
+          "id": "d",
+          "text": "0"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "The first request stores 25. The second finds the same key before expansion, so the miss counter remains one."
+    },
+    {
+      "id": "memoization_practice_03",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "memoization",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.5,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "When should a newly computed deterministic state result normally be inserted into the cache?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only after the entire program exits"
+        },
+        {
+          "id": "b",
+          "text": "Before knowing its value, as an arbitrary zero"
+        },
+        {
+          "id": "c",
+          "text": "After its dependencies have produced the result and before returning it"
+        },
+        {
+          "id": "d",
+          "text": "Only after that state is requested a third time"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "Store the completed result on a miss so the next identical request can reuse it. A placeholder zero would be an incorrect answer."
+    },
+    {
+      "id": "memoization_practice_04",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "memoization",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.6,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A cache keyed only by start index is reused for suffix sums of two different lists. What is a valid repair?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep every old answer because indices match"
+        },
+        {
+          "id": "b",
+          "text": "Use a fresh cache per fixed list, or include the list identity/content in a stable complete key"
+        },
+        {
+          "id": "c",
+          "text": "Change all stored answers to zero"
+        },
+        {
+          "id": "d",
+          "text": "Use only the length of the cache as the key"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The fixed input changed, so equal indices may no longer identify equal subproblems. Separate cache scope or a complete key prevents cross-input reuse."
+    },
+    {
+      "id": "memoization_reassessment_01",
+      "version": 1,
+      "kind": "question",
+      "role": "reassessment",
+      "primary_concept_id": "memoization",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.55,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "Why does this code recompute a cached zero, and which check fixes it?",
+      "code": "if memo.get(key):\n    return memo[key]\n# Otherwise compute the state again.",
+      "question_type": "bug_identification",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zero keys cannot be stored; use negative keys"
+        },
+        {
+          "id": "b",
+          "text": "The dictionary is immutable; replace it with a list"
+        },
+        {
+          "id": "c",
+          "text": "Python forbids zero return values; return one"
+        },
+        {
+          "id": "d",
+          "text": "Zero is falsey; test key in memo instead"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "memo.get(key) may return the valid cached value zero. Membership checks existence independently of that value's truthiness."
+    },
+    {
+      "id": "memoization_lesson_01",
+      "version": 1,
+      "kind": "lesson",
+      "role": "lesson",
+      "primary_concept_id": "memoization",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "title": "Cache complete states before repeating their work",
+      "body": "In top-down evaluation, check whether a complete state is already cached before expanding it. On a miss, compute from valid smaller states, store the result and return it. Test cache membership rather than the truthiness of a numeric result, since zero may be valid. A cache must be scoped to the fixed input data or include that data in its key; do not reuse answers across different problems accidentally."
+    },
+    {
+      "id": "tabulation_diagnostic_01",
+      "version": 1,
+      "kind": "question",
+      "role": "diagnostic",
+      "primary_concept_id": "tabulation",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "dp[0] and dp[1] are initialized; dp[i]=dp[i-1]+dp[i-2] for 2≤i≤n. Which fill order makes dependencies available?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i=n down to 2"
+        },
+        {
+          "id": "b",
+          "text": "Any random order"
+        },
+        {
+          "id": "c",
+          "text": "i=2 up to n"
+        },
+        {
+          "id": "d",
+          "text": "Compute only dp[n] without earlier entries"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "Both predecessor indices are smaller than i, so increasing order computes them before use."
+    },
+    {
+      "id": "tabulation_practice_01",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "tabulation",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.35,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "With the stated initialized boundaries, what is printed?",
+      "code": "dp = [0, 1, 0, 0, 0, 0]\nfor i in range(2, 6):\n    dp[i] = dp[i-1] + dp[i-2]\nprint(dp[5])",
+      "question_type": "code_tracing",
+      "options": [
+        {
+          "id": "a",
+          "text": "4"
+        },
+        {
+          "id": "b",
+          "text": "5"
+        },
+        {
+          "id": "c",
+          "text": "6"
+        },
+        {
+          "id": "d",
+          "text": "8"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "The table becomes 0,1,1,2,3,5. Reading already-computed smaller indices yields dp[5]=5."
+    },
+    {
+      "id": "tabulation_practice_02",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "tabulation",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.45,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A suffix table has dp[n]=0 and dp[i]=a[i]+dp[i+1] for 0≤i<n. Which fill order is valid?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i=n-1 down to 0"
+        },
+        {
+          "id": "b",
+          "text": "i=0 up to n-1"
+        },
+        {
+          "id": "c",
+          "text": "Only even indices"
+        },
+        {
+          "id": "d",
+          "text": "Every index simultaneously without reading dp[i+1]"
+        }
+      ],
+      "correct_option": "a",
+      "explanation": "Each state needs the next larger index. Moving right-to-left ensures that suffix result has already been computed."
+    },
+    {
+      "id": "tabulation_practice_03",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "tabulation",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.5,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "A 0/1 item has a positive integer weight and can be used at most once. An in-place capacity update reads dp[c-weight] from before this item. Which capacity order avoids using the same item repeatedly?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Always increase c from weight"
+        },
+        {
+          "id": "b",
+          "text": "Only update c=weight"
+        },
+        {
+          "id": "c",
+          "text": "Update every c to zero first"
+        },
+        {
+          "id": "d",
+          "text": "Decrease c from the maximum capacity to weight"
+        }
+      ],
+      "correct_option": "d",
+      "explanation": "Descending capacity leaves smaller source capacities at the previous item stage during this item's updates. Increasing order can reuse a value just updated for the same item."
+    },
+    {
+      "id": "tabulation_practice_04",
+      "version": 1,
+      "kind": "question",
+      "role": "practice",
+      "primary_concept_id": "tabulation",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.6,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "For the recurrence dp[i]=dp[i-1]+a[i-1], which bug explains wrong totals when filling i from n down to 1 on a fresh zero table?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "All tables forbid zero boundaries"
+        },
+        {
+          "id": "b",
+          "text": "It reads dp[i-1] before that state has been computed"
+        },
+        {
+          "id": "c",
+          "text": "Python cannot index lists backwards"
+        },
+        {
+          "id": "d",
+          "text": "Addition is not allowed in tabulation"
+        }
+      ],
+      "correct_option": "b",
+      "explanation": "This recurrence depends on smaller indices; descending order reads default entries instead of computed prefix totals."
+    },
+    {
+      "id": "tabulation_reassessment_01",
+      "version": 1,
+      "kind": "question",
+      "role": "reassessment",
+      "primary_concept_id": "tabulation",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.55,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "prompt": "Every table state dp[i] depends only on initialized dp[0] and previously computed dp[i-1]. What property makes an increasing bottom-up pass valid?",
+      "code": null,
+      "question_type": "multiple_choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "The final answer must equal n"
+        },
+        {
+          "id": "b",
+          "text": "The table contains exactly two states"
+        },
+        {
+          "id": "c",
+          "text": "Every dependency is available before its state is evaluated"
+        },
+        {
+          "id": "d",
+          "text": "The code must use recursion internally"
+        }
+      ],
+      "correct_option": "c",
+      "explanation": "A valid evaluation order respects dependencies. It does not depend on the numeric answer, table size or use of recursive calls."
+    },
+    {
+      "id": "tabulation_lesson_01",
+      "version": 1,
+      "kind": "lesson",
+      "role": "lesson",
+      "primary_concept_id": "tabulation",
+      "secondary_concept_ids": [],
+      "active": true,
+      "foundational": false,
+      "difficulty": 0.2,
+      "provenance": {
+        "origin": "original",
+        "attribution": "LearnGraph AI project",
+        "created_on": "2026-11-21",
+        "license_status": "not_licensed"
+      },
+      "title": "Choose an order that computes dependencies first",
+      "body": "Bottom-up evaluation fills a table from initialized boundaries toward larger states. For every transition, verify that each read refers to a state already computed in the chosen order. Follow dependency direction rather than assuming every table must be filled left-to-right. In-place updates can change the meaning of a transition; preserve the required previous-stage values or use a second row."
+    }
+  ]
+}
