@@ -1,0 +1,13 @@
+{
+  "policy_tuning": "None; baseline-v1 unchanged before/after this audit",
+  "random_baseline_seed": 761121,
+  "release_manifest_sha256": "7d149a10c8187edccbb07f4c1a3beebec6b9aba5e1fe3e272f459685cf3bcd7b",
+  "scenario_version": "full-scenarios-v1",
+  "source_sha256": "b2485930646ffa489942644a5eac98c61cceb3cbbfb2cc9c422175cc1de66164",
+  "split_counts": {
+    "development": 12,
+    "test": 24,
+    "train": 12
+  },
+  "test_exposure": "Public at freeze; existing baseline implementation already known. No blind/generalization claim or output-guided tuning."
+}
