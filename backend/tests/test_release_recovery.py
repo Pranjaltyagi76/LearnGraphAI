@@ -11,6 +11,7 @@ import psycopg
 import pytest
 from psycopg import sql
 from psycopg.conninfo import conninfo_to_dict, make_conninfo
+from psycopg.rows import dict_row
 from psycopg.types.json import Jsonb
 
 from app.database import Database
@@ -72,7 +73,9 @@ def test_clean_database_restore_reseeds_exact_packages_and_runtime_grants(isolat
 @pytest.mark.integration
 def test_real_missing_quota_table_fails_closed_then_recovers(isolated_database):
     async def exercise():
-        async with await psycopg.AsyncConnection.connect(isolated_database) as conn:
+        async with await psycopg.AsyncConnection.connect(
+            isolated_database, row_factory=dict_row
+        ) as conn:
             await conn.execute("ALTER TABLE learngraph.quota_buckets RENAME TO quota_hidden")
             await conn.execute("SET LOCAL ROLE learngraph_runtime")
             db = Database(full_settings())

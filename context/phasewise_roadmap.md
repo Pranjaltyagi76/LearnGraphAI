@@ -1,6 +1,6 @@
 # Phasewise roadmap
 
-**Updated:** 21 November 2026. **Current stage:** Phases 0–4 complete at their bounded gates; Phase 5 release/recovery verification is next. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
+**Updated:** 21 November 2026. **Current stage:** Phases 0–4 complete; Phase 5 release/recovery verification is in progress. **Scope:** [requirement.md](../requirement.md); full phase rationale is in [PROJECT.md](../PROJECT.md), Section 18.
 
 This is the operational handoff/status document. Check an item only after its stated artifact or verification exists. Drafting this context does not create the application, validate a model, provision a service, or pass a release gate.
 
@@ -220,3 +220,7 @@ Before a future batch, read [AGENTS.md](../AGENTS.md), inspect working-tree/remo
 - **Publication/deployment:** active full-v1 package hash `1945410f663981ced5151e4a1c95009d8295712a7c3578af12bfb1126b857475`; old rows unchanged. [Runtime TLS/grants/hash proof](evidence/phase4_database.json), [release record](evidence/phase4_release.json). Both final deployments are READY at source `489c38fd8636a7699fb4749843eb9dddfbc37565`: API `dpl_FpoNGHyQQKrxqbsKTXx3JwQdtSM4`, web `dpl_4VwzFqJtRUhJbq9oSXPChRdLF3ob`. API readiness/pointer passed before web release. Same two Hobby projects/Supabase Free, no payment/new service/runtime dependency. Ten analysis reservations total across initial/final five-request browser runs; no automatic POST retries.
 - **Measurement boundary:** [Phase 4 regression](../evaluation/results/phase4-regression-v1/manifest.json) reuses the original exposed two-concept audit with unchanged metrics. Full-v1 intentionally publishes no incompatible quality summary; the endpoint returns 404. Full release, quota/outage/cold/load, rollback/restore and broader independent quality checks remain Phase 5.
 - **Delivery:** source fixes are separate owner-authored commits; this final evidence/documentation handoff does not change runtime code. No force-push or assistant co-author.
+
+### Phase 5 in progress — 21 November 2026
+
+Full-track audit inputs frozen before first measurement (12/12/24 groups), measured and reproduced with unchanged policy; unfavorable test prediction losses retained. Maximum 100-seed/200-visitor local compute measured. Real pause drill confirmed 503, preserved pending/refresh and static examples; first coordination window expired before provider resume, so failed run retained and a longer observation rerun is underway. Real hosted hashes/permissions/atomic limits/secret scan passed. First new CI run passed 214 tests but caught the recovery fixture's tuple row factory; corrected to the production adapter's dict-row contract. Final CI, rollback/promotion, public quota recovery, resource review and acceptance mapping remain pending.
