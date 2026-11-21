@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "LearnGraph AI — Find the concept behind the mistake",
   description:
-    "An explainable learning-diagnostics prototype with prerequisite graphs and targeted practice. Explore the first infrastructure preview.",
+    "Explore twelve connected concepts, evidence-based diagnostics and fresh practice with synthetic learners. Free, anonymous, and browser-local.",
 };
 
 export default function RootLayout({

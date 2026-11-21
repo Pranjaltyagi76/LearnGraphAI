@@ -31,6 +31,7 @@ export function LearningEvidence({ bundle, seed }: { bundle: AnalysisBundle; see
       {bundle.diagnosis.candidates.map((c) => <article className="gap-card" key={c.concept_id}>
         <strong>{label(c.concept_id)}</strong><span className="learn-muted">{label(c.relation)} gap</span>
         <p>{c.path.map(label).join(" → ")}</p>
+        <details><summary>Inspect diagnosis evidence</summary><p>Ranking score: {c.score.toFixed(4)} · {label(c.reason)}. A ranking score is not a probability of cause.</p><ul>{c.evidence_event_ids.map((id) => <li className="event-id" key={id}><a href={`#event-${id}`}>{id}</a></li>)}</ul></details>
         <p className="learn-muted">Based on {c.evidence_event_ids.length} eligible responses. The prerequisite path is an instructional hypothesis, not a proven cause.</p>
       </article>)}
       {bundle.diagnosis.evidence_requests.map((r) => <p key={r.concept_id} className="evidence-request">

@@ -18,9 +18,9 @@ export default function HomePage() {
         </Link>
         <nav aria-label="Main navigation">
           <a href="#how-it-works">The approach</a>
-          <a href={`${repository}/blob/main/requirement.md`}>
+          <Link href="/methodology">
             Methodology <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
           <a className="source-link" href={repository}>
             View source <span aria-hidden="true">↗</span>
           </a>

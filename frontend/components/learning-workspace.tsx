@@ -7,6 +7,8 @@ import { same, snapshot } from "@/lib/protocol";
 import type { Event, ProfileSummary, SandboxRecord, SeedResponse } from "@/lib/protocol";
 import { SandboxError, SandboxStore } from "@/lib/sandbox";
 import { label, LearningEvidence } from "./learning-evidence";
+import { CurriculumOverview } from "./curriculum-overview";
+import { EvidenceTimeline } from "./evidence-timeline";
 
 const messages: Record<string, string> = {
   storage_unavailable: "Browser storage could not commit this change. No unstored response was sent. You can continue in this tab only.",
@@ -88,11 +90,13 @@ export function LearningWorkspace() {
     const active = new AbortController(); controller.current = active;
     try {
       const release = await api.release(active.signal);
-      const list = await api.profiles(release.release_id, active.signal);
+      const releaseId = new URL(window.location.href).searchParams.get("release") ?? release.release_id;
+      const list = await api.profiles(releaseId, active.signal);
       if (current !== epoch.current) return;
-      if (list.profiles.some((p) => p.versions.release_id !== release.release_id ||
-          p.versions.release_hash !== release.release_hash || p.versions.graph_version !== release.graph_version ||
-          p.versions.catalog_version !== release.catalog_version || p.versions.model_version !== release.model_version)) throw new Error("response_mismatch");
+      const expected = releaseId === release.release_id ? release : list.profiles[0]?.versions;
+      if (!expected || list.profiles.some((p) => p.versions.release_id !== releaseId ||
+          p.versions.release_hash !== expected.release_hash || p.versions.graph_version !== expected.graph_version ||
+          p.versions.catalog_version !== expected.catalog_version || p.versions.model_version !== expected.model_version)) throw new Error("response_mismatch");
       setProfiles(list.profiles);
       const wanted = new URL(window.location.href).searchParams.get("profile");
       await chooseProfile(list.profiles.find((p) => p.id === wanted) ?? list.profiles.find((p) => p.id === "demo_base_cases") ?? list.profiles[0]);
@@ -215,14 +219,18 @@ export function LearningWorkspace() {
   const last = record?.acknowledged_events.at(-1);
   const feedback = bundle?.graded_events.find((g) => g.event_id === last?.event_id);
   const acceptedReassessment = feedback?.catalog_role === "reassessment" && feedback.attempt_number === 1;
-  return <main className="learn-shell">
+  function changeFocus(id: string) { setFocus(id); setLive(false); setOpened(""); setSelected(""); }
+  return <main className="learn-shell" id="workspace">
+    <a className="skip-link" href="#learner-content">Skip to learner content</a>
     <header className="learn-header"><Link href="/" className="brand">LearnGraph <span className="brand-ai">AI</span></Link>
       <span className="state-pill">Synthetic learners · no account</span></header>
+    <nav className="learn-nav" aria-label="Learning navigation"><Link href="/learn">Live demo</Link><Link href="/examples">Recorded examples</Link><Link href="/methodology">Methodology & limits</Link></nav>
     <div className="learn-intro"><p className="eyebrow">FOLLOW THE EVIDENCE</p><h1>A clearer next step.</h1>
       <p>Explore a learner, inspect a hypothesis, and try fresh practice. Progress stays in this browser.</p></div>
     {notice && <div className="learn-notice" role="alert">{notice}{retryBlocked && <p>Retry available after {new Date(retryAt).toLocaleTimeString()}.</p>}</div>}
     {profiles.length === 0 && !busy && <section className="learn-panel"><p className="state-pill">Prerecorded example · synthetic</p>
       <h2>Base cases: a starting hypothesis</h2><p>Recorded 20 November 2026. Mira has 0/3 eligible base-case responses correct and 3/3 function-call responses correct. This example was not submitted to a live service.</p>
+      <p><Link href="/examples">Open the versioned, read-only examples →</Link></p>
       <button className="learn-primary" onClick={() => { setBusy(true); setNotice(""); void connect(); }}>Reconnect live demo</button></section>}
     {profiles.length > 0 && <section className="profile-picker" aria-label="Synthetic learners">
       {profiles.map((p) => <button key={p.id} aria-pressed={seed?.profile.id === p.id} onClick={() => void chooseProfile(p)}>
@@ -230,15 +238,16 @@ export function LearningWorkspace() {
       </button>)}
     </section>}
     {seed && <>
-      <div className="workspace-toolbar"><div><strong>{seed.profile.name}&apos;s sandbox</strong><p className="learn-muted">{seed.profile.summary}</p></div>
+      <div className="workspace-toolbar" id="learner-content"><div><strong>{seed.profile.name}&apos;s sandbox</strong><p className="learn-muted">{seed.profile.summary}</p></div>
         <div className="toolbar-actions"><label>Focus concept <select aria-label="Focus concept" value={focus} disabled={busy || !!record?.pending}
-          onChange={(e) => { setFocus(e.target.value); setLive(false); setOpened(""); }}>
+          onChange={(e) => changeFocus(e.target.value)}>
           {seed.concepts.map((c) => <option key={c.id} value={c.id}>{label(c.id)}</option>)}</select></label>
           {(record || corrupt) && <button onClick={() => setConfirmReset(true)}>Reset local progress</button>}
           {(record || corrupt) && <button onClick={download}>Export local record</button>}
         </div></div>
       {confirmReset && <div className="learn-notice" role="region" aria-label="Confirm local reset"><strong>Reset this sandbox?</strong><p>This removes only your local changes. Other browsers and canonical seeds are unaffected.</p><button onClick={() => void reset()}>Confirm reset</button><button onClick={() => setConfirmReset(false)}>Cancel</button></div>}
       {storageProblem && <button className="learn-primary" onClick={() => void sessionOnly()}>Continue in this tab only</button>}
+      <details className="release-details"><summary>Release & storage boundaries</summary><p className="event-id">{seed.versions.release_id} · {seed.versions.catalog_version} · {seed.versions.graph_version} · {seed.versions.model_version} · {seed.versions.seed_id} v{seed.versions.seed_version}</p><p className="event-id">Release hash: {seed.versions.release_hash}</p><p>{seed.activities.filter((a) => a.kind === "question").length} distinct questions and {seed.activities.filter((a) => a.kind === "lesson").length} lessons in this pinned release. Browser storage can be cleared or evicted; export before relying on it. Each release has a separate local sandbox.</p><p><a href="/learn">Open the current release</a> · <a href="/learn?release=learngraph-review-v1">Reopen the retained two-concept release</a></p></details>
       {record && <>
         <div className="sandbox-status"><span>{record.persistence === "session" ? "Session-only · no refresh recovery" : "Browser-local · IndexedDB"}</span>
           <span>{record.acknowledged_events.length} accepted local events · revision {record.revision}</span>
@@ -249,6 +258,8 @@ export function LearningWorkspace() {
           <button disabled={busy} onClick={() => void discard()}>Discard pending response</button>
         </section> : !live && <button className="learn-primary" disabled={busy || retryBlocked} onClick={() => void send(record)}>
           {busy ? "Analyzing…" : bundle ? "Recheck live analysis" : "Analyze this learner"}</button>}
+        {bundle && focus !== bundle.focus_concept_id && <p className="learn-notice" role="status">Focus changed to {label(focus)}. Displayed evidence and steps still belong to {label(bundle.focus_concept_id)} until you recheck live analysis.</p>}
+        <CurriculumOverview seed={seed} bundle={bundle} focus={focus} onFocus={changeFocus} disabled={busy || !!record.pending} />
         {bundle && <div className="learning-grid"><div className="learning-main">
           <section className="learn-panel question-panel" aria-labelledby="practice-title">
             <div className="panel-kicker">03 / A FRESH RESPONSE</div>
@@ -260,10 +271,10 @@ export function LearningWorkspace() {
                   <input type="radio" name={activity.id} value={o.id} checked={selected === o.id} onChange={() => setSelected(o.id)} />
                   <span className="option-letter">{o.id.toUpperCase()}</span><span>{o.text}</span></label>)}
               </div></fieldset><button className="learn-primary" disabled={busy || !live || !selected || !!record.pending} type="submit">{busy ? "Checking response…" : "Submit response"}</button>
-              <p className="learn-muted">No hints are provided in this slice. The server derives grades and evidence eligibility.</p>
+              <p className="learn-muted">No hints are provided. The server derives grades and evidence eligibility.</p>
             </form>}
             {activity?.kind === "lesson" && <><h3>{activity.title}</h3><p className="lesson-body">{activity.body}</p><button className="learn-primary" disabled={!live || busy || !!record.pending} onClick={() => void submit(activity.id)}>Mark lesson read</button><p className="learn-muted">Reading a lesson adds no correctness evidence or prerequisite readiness.</p></>}
-            {!activity && <p>No currently permitted fresh question is available. {bundle.plan.status === "catalog_exhausted" ? "The needed question pool is exhausted. Review your evidence or reset the sandbox; we will not relabel a retry as new evidence." : "Inspect prerequisite locks or choose a different focus. Some concepts still lack authored activities."}</p>}
+            {!activity && <p>No currently permitted fresh question is available. {bundle.plan.status === "catalog_exhausted" ? "The needed question pool is exhausted. Review your evidence or reset the sandbox; we will not relabel a retry as new evidence." : "Inspect prerequisite locks or choose a different focus. The retained review release covers only two concepts."}</p>}
             {feedback && <div className="response-feedback" role="status"><strong>{feedback.kind === "lesson_completed" ? "Lesson recorded · zero new observations" : feedback.is_correct ? "Correct response" : "Incorrect response"}</strong>
               <p>{feedback.explanation}</p><p className="learn-muted">{label(feedback.eligibility_reason)} · {label(feedback.catalog_role)}</p>
               {acceptedReassessment && <p><strong>Distinct reassessment received.</strong> Compare the seed/current counts below. An unchanged, lower, or developing estimate is an honest outcome.</p>}
@@ -276,15 +287,14 @@ export function LearningWorkspace() {
             <button disabled={i.readiness === "locked" || busy || !!record.pending} aria-pressed={activity?.id === i.activity_id}
               onClick={() => { setOpened(i.activity_id); setSelected(""); }}>
               <strong>{label(i.role)}</strong><span>{label(i.concept_id)}</span><small>{i.readiness === "locked" ? "Locked" : "Available"} · {label(i.reason)}</small>
-            </button>{i.blocked_by_concept_ids.length > 0 && <p className="learn-muted">Needs ready prerequisites: {i.blocked_by_concept_ids.map(label).join(", ")}.</p>}
+            </button>{i.blocked_by_concept_ids.length > 0 && <div className="learn-muted">Needs ready prerequisites: {i.blocked_by_concept_ids.map((id) => <button className="inline-focus" disabled={busy || !!record.pending} key={id} onClick={() => changeFocus(id)}>Assess {label(id)}</button>)}.</div>}
             {i.depends_on_activity_ids.length > 0 && <p className="learn-muted">Requires a fresh same-run practice response first.</p>}
           </li>)}</ol><p className="learn-muted">Steps unlock only when observed evidence permits it. Recompute after every response.</p></section>
-          <section className="learn-panel"><h2>Local response timeline</h2><ol className="timeline">{bundle.graded_events.filter((g) => g.provenance === "visitor_demo").map((g) => <li key={g.event_id}><strong>{label(g.catalog_role)}</strong><span>{label(g.concept_id)} · {g.is_correct === null ? "read" : g.is_correct ? "correct" : "incorrect"}</span><small>{label(g.eligibility_reason)}</small></li>)}</ol>
-            {record.acknowledged_events.length === 0 && <p className="learn-muted">Your new responses will appear here. Canonical seed observations are kept separately.</p>}</section>
+          <EvidenceTimeline bundle={bundle} seed={seed} events={record.acknowledged_events} />
         </aside></div>}
       </>}
     </>}
     {busy && !seed && <p role="status">Loading the pinned synthetic release…</p>}
-    <footer className="learn-footer"><p>Observed correctness is not mastery, causal proof, or a learning-gain claim. Only two concepts currently have authored activities.</p><Link href="/">Back to the project</Link><a href="https://github.com/Pranjaltyagi76/LearnGraphAI/blob/main/evaluation/model_card.md">Methods & measured limits ↗</a></footer>
+    <footer className="learn-footer"><p>Observed correctness is not mastery, causal proof, or a learning-gain claim. All learners and responses are synthetic examples or browser-local demo activity.</p><Link href="/">Back to the project</Link><Link href="/methodology">Methods & measured limits</Link></footer>
   </main>;
 }
